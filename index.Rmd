@@ -10,7 +10,7 @@ link-citations: yes
 description: "xxx"
 ---
 
-# Ön Bilgi
+# Ön Bilgi 
 
 Ders notları temelde _IST3032 İstatistiksel Kalite Kontrol_ dersine kaynaklık etmesi amacıyla tasarlanmış olup konu çerçevesinde kendisini geliştirmek isteyen herkesin faydalanabilmesi hedeflenmiştir.
 
