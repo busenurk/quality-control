@@ -1,0 +1,29 @@
+--- 
+title: "İstatistiksel Kalite Kontrol"
+author: "Busenur Kızılaslan"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "xxx"
+---
+
+# Ön Bilgi
+
+Ders notları temelde _IST3032 İstatistiksel Kalite Kontrol_ dersine kaynaklık etmesi amacıyla tasarlanmış olup konu çerçevesinde kendisini geliştirmek isteyen herkesin faydalanabilmesi hedeflenmiştir.
+
+**Kaynaklar**
+
+- [Introduction to Statistical Quality Control - Douglas C. Montgomery](http://endustri.eskisehir.edu.tr/ipoyraz/TKY302/icerik/text%20book_montgomery_6th%20edition.pdf) 
+
+- [Statistical Process Control - John S. Oakland](http://www.diliev.com/Home/materiali/KHEA/referati/6812268-Statistical-Process-Control-eBook-VG.pdf)
+
+- İstatistiksel Kalite Kontrol Ders Notları - Erhan Öner
+
+- [İstatistiksel Kalite Kontrol Ders Notları - Tuncay Özcan](http://auzefkitap.istanbul.edu.tr/kitap/endustrimuhlt_ue/istatistikselkalitekontrolu.pdf)
+
+
+
+

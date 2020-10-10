@@ -1,0 +1,21 @@
+# Kısaltmalar
+
+```{r , echo=FALSE, results='asis'}
+  cat('
+
+  | Kısaltma    | İngilizce  | Türkçe      |
+  |:------------|:-----------|:------------|
+  | ASQ| American Society for Quality | Amerikan Kalite Derneği |
+  | CUSUM| Cumulative Sum | Kümülatif Toplam |
+  | EFQM| European Foundation for Quality Management | Avrupa Kalite Yönetimi Vakfı |
+  | EWMA| Exponentially Weighted Moving Average | Üstel Ağırlıklı Hareketli Ortalama |
+  | ISO| International Organization for Standardization | Uluslararası Standartlar Teşkilatı |
+  | MBNQA| Malcolm Baldrige National Quality Award | Malcolm Baldrige Ulusal Kalite Ödülü |
+  | SPC| Statistical Process Control| İstatistiksel Proses Kontrol|
+  | SQC| Statistical Quality Control | İstatistiksel Kalite Kontrol|
+  | TQM| Total Quality Management | Toplam Kalite Yönetimi|
+')
+
+```
+
+
