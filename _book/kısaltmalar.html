@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Bölüm 7 Kısaltmalar | İstatistiksel Kalite Kontrol</title>
+  <meta name="description" content="Statistical quality control lecture notes" />
+  <meta name="generator" content="bookdown 0.20.6 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Bölüm 7 Kısaltmalar | İstatistiksel Kalite Kontrol" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Statistical quality control lecture notes" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Bölüm 7 Kısaltmalar | İstatistiksel Kalite Kontrol" />
+  
+  <meta name="twitter:description" content="Statistical quality control lecture notes" />
+  
+
+<meta name="author" content="Dr. Busenur Kızılaslan" />
+
+
+<meta name="date" content="2020-10-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="istatistiksel-kavramlar.html"/>
+<link rel="next" href="referanslar.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">İstatistiksel Kalite Kontrol</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Ön Bilgi</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#hakkımda"><i class="fa fa-check"></i><b>1.1</b> Hakkımda</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="motivasyon.html"><a href="motivasyon.html"><i class="fa fa-check"></i><b>2</b> Motivasyon</a></li>
+<li class="chapter" data-level="3" data-path="genel-bakış.html"><a href="genel-bakış.html"><i class="fa fa-check"></i><b>3</b> Genel Bakış</a></li>
+<li class="chapter" data-level="4" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html"><i class="fa fa-check"></i><b>4</b> Kalite Yönetimi Temel Kavramları</a><ul>
+<li class="chapter" data-level="4.1" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-kavramı"><i class="fa fa-check"></i><b>4.1</b> Kalite Kavramı</a></li>
+<li class="chapter" data-level="4.2" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-boyutları"><i class="fa fa-check"></i><b>4.2</b> Kalite Boyutları</a></li>
+<li class="chapter" data-level="4.3" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-mühendislik-terminolojisi"><i class="fa fa-check"></i><b>4.3</b> Kalite Mühendislik Terminolojisi</a></li>
+<li class="chapter" data-level="4.4" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#toplam-kalite-yönetiminin-tarihsel-gelişimi"><i class="fa fa-check"></i><b>4.4</b> Toplam Kalite Yönetiminin Tarihsel Gelişimi</a></li>
+<li class="chapter" data-level="4.5" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-kontrol-ve-iyileştirme-için-istatistiksel-yöntemler"><i class="fa fa-check"></i><b>4.5</b> Kalite Kontrol ve İyileştirme için İstatistiksel Yöntemler</a></li>
+<li class="chapter" data-level="4.6" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-iyileştirmede-yönetim-cephesi"><i class="fa fa-check"></i><b>4.6</b> Kalite İyileştirmede Yönetim Cephesi</a></li>
+<li class="chapter" data-level="4.7" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-yönetimi-liderleri"><i class="fa fa-check"></i><b>4.7</b> Kalite Yönetimi Liderleri</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#walter-shewhart"><i class="fa fa-check"></i><b>4.7.1</b> Walter Shewhart</a></li>
+<li class="chapter" data-level="4.7.2" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#w.-edwards-deming"><i class="fa fa-check"></i><b>4.7.2</b> W. Edwards Deming</a></li>
+<li class="chapter" data-level="4.7.3" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#joseph-m.-juran"><i class="fa fa-check"></i><b>4.7.3</b> Joseph M. Juran</a></li>
+<li class="chapter" data-level="4.7.4" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#armand-v.-feigenbaum"><i class="fa fa-check"></i><b>4.7.4</b> Armand V. Feigenbaum</a></li>
+<li class="chapter" data-level="4.7.5" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#philip-crosby"><i class="fa fa-check"></i><b>4.7.5</b> Philip Crosby</a></li>
+<li class="chapter" data-level="4.7.6" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kaoru-ishikawa"><i class="fa fa-check"></i><b>4.7.6</b> Kaoru Ishikawa</a></li>
+<li class="chapter" data-level="4.7.7" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#genichi-taguchi"><i class="fa fa-check"></i><b>4.7.7</b> Genichi Taguchi</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#toplam-kalite-yönetimi"><i class="fa fa-check"></i><b>4.8</b> Toplam Kalite Yönetimi</a></li>
+<li class="chapter" data-level="4.9" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-sistemleri-ve-standartları"><i class="fa fa-check"></i><b>4.9</b> Kalite Sistemleri ve Standartları</a></li>
+<li class="chapter" data-level="4.10" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#iso-9000-kalite-standartları"><i class="fa fa-check"></i><b>4.10</b> ISO 9000 Kalite Standartları</a></li>
+<li class="chapter" data-level="4.11" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#malcolm-baldrige-ulusal-kalite-ödülü"><i class="fa fa-check"></i><b>4.11</b> Malcolm Baldrige Ulusal Kalite Ödülü</a></li>
+<li class="chapter" data-level="4.12" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#altı-sigma"><i class="fa fa-check"></i><b>4.12</b> Altı Sigma</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="dmaic-süreci.html"><a href="dmaic-süreci.html"><i class="fa fa-check"></i><b>5</b> DMAIC Süreci</a><ul>
+<li class="chapter" data-level="5.1" data-path="dmaic-süreci.html"><a href="dmaic-süreci.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="dmaic-süreci.html"><a href="dmaic-süreci.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html"><i class="fa fa-check"></i><b>6</b> İstatistiksel Kavramlar</a></li>
+<li class="chapter" data-level="7" data-path="kısaltmalar.html"><a href="kısaltmalar.html"><i class="fa fa-check"></i><b>7</b> Kısaltmalar</a></li>
+<li class="chapter" data-level="" data-path="referanslar.html"><a href="referanslar.html"><i class="fa fa-check"></i>Referanslar</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">İstatistiksel Kalite Kontrol</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="kısaltmalar" class="section level1">
+<h1><span class="header-section-number">Bölüm 7</span> Kısaltmalar</h1>
+<table>
+<colgroup>
+<col width="34%" />
+<col width="31%" />
+<col width="34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Kısaltma</th>
+<th align="left">İngilizce</th>
+<th align="left">Türkçe</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ASQ</td>
+<td align="left">American Society for Quality</td>
+<td align="left">Amerikan Kalite Derneği</td>
+</tr>
+<tr class="even">
+<td align="left">CUSUM</td>
+<td align="left">Cumulative Sum</td>
+<td align="left">Kümülatif Toplam</td>
+</tr>
+<tr class="odd">
+<td align="left">EFQM</td>
+<td align="left">European Foundation for Quality Management</td>
+<td align="left">Avrupa Kalite Yönetimi Vakfı</td>
+</tr>
+<tr class="even">
+<td align="left">EWMA</td>
+<td align="left">Exponentially Weighted Moving Average</td>
+<td align="left">Üstel Ağırlıklı Hareketli Ortalama</td>
+</tr>
+<tr class="odd">
+<td align="left">ISO</td>
+<td align="left">International Organization for Standardization</td>
+<td align="left">Uluslararası Standartlar Teşkilatı</td>
+</tr>
+<tr class="even">
+<td align="left">MBNQA</td>
+<td align="left">Malcolm Baldrige National Quality Award</td>
+<td align="left">Malcolm Baldrige Ulusal Kalite Ödülü</td>
+</tr>
+<tr class="odd">
+<td align="left">SPC</td>
+<td align="left">Statistical Process Control</td>
+<td align="left">İstatistiksel Proses Kontrol</td>
+</tr>
+<tr class="even">
+<td align="left">SQC</td>
+<td align="left">Statistical Quality Control</td>
+<td align="left">İstatistiksel Kalite Kontrol</td>
+</tr>
+<tr class="odd">
+<td align="left">TQM</td>
+<td align="left">Total Quality Management</td>
+<td align="left">Toplam Kalite Yönetimi</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="istatistiksel-kavramlar.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="referanslar.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["SPC Notes.pdf", "SPC Notes.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
