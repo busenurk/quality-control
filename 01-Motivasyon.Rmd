@@ -1,3 +1,17 @@
 # Motivasyon
 
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/dprize.png" style="float: right;" width="250" height="250" title="Deming Prize" /> 
+
+Kaliteyi kontrol etmek ve iyileştirmek rekabet ortamında kazananı belirleyen faktör haline gelmiştir. Bu bakımdan doğru yürütülen bir kalite kontrol süreci başarının anahtarı olacaktır. Sürecin başarılı yürütülmesi ise ancak alanında uzman kişilerin önderliğinde mümkündür. 
+
+İstatistikçiler için olası bir çalışma alanı olan _İstatistiksel Kalite Kontrol_, gelecekte sizlerden biri veya birilerinin de yöneleceği alan olabilir. Bu bakımdan ders kapsamındaki bilgileri özümsemek, uygulamaları kavramak önem arz etmektedir. 
+
+<br>
+
+
+Dr. W. Edwards Deming tarafından yazılmış, incelenmesi gereken makaleler;
+
+[On the statistician's contribution to quality](https://deming.org/wp-content/uploads/2020/06/On-The-Statisticians-Contribution-to-Quality-1987.pdf)
+
+[Some responsibilities of the statistician](https://deming.org/wp-content/uploads/2020/06/Some-Responsibilities-of-a-Statistician-1964.pdf)
 
