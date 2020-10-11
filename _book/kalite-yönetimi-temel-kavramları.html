@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Bölüm 4 Kalite Yönetimi Temel Kavramları | İstatistiksel Kalite Kontrol</title>
+  <meta name="description" content="xxx" />
+  <meta name="generator" content="bookdown 0.20.6 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Bölüm 4 Kalite Yönetimi Temel Kavramları | İstatistiksel Kalite Kontrol" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="xxx" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Bölüm 4 Kalite Yönetimi Temel Kavramları | İstatistiksel Kalite Kontrol" />
+  
+  <meta name="twitter:description" content="xxx" />
+  
+
+<meta name="author" content="Busenur Kızılaslan" />
+
+
+<meta name="date" content="2020-10-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="genel-bakış.html"/>
+<link rel="next" href="dmaic-süreci.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">İstatistiksel Kalite Kontrol</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Ön Bilgi</a></li>
+<li class="chapter" data-level="2" data-path="motivasyon.html"><a href="motivasyon.html"><i class="fa fa-check"></i><b>2</b> Motivasyon</a></li>
+<li class="chapter" data-level="3" data-path="genel-bakış.html"><a href="genel-bakış.html"><i class="fa fa-check"></i><b>3</b> Genel Bakış</a></li>
+<li class="chapter" data-level="4" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html"><i class="fa fa-check"></i><b>4</b> Kalite Yönetimi Temel Kavramları</a><ul>
+<li class="chapter" data-level="4.1" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-kavramı"><i class="fa fa-check"></i><b>4.1</b> Kalite Kavramı</a></li>
+<li class="chapter" data-level="4.2" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-boyutları"><i class="fa fa-check"></i><b>4.2</b> Kalite Boyutları</a></li>
+<li class="chapter" data-level="4.3" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-mühendislik-terminolojisi"><i class="fa fa-check"></i><b>4.3</b> Kalite Mühendislik Terminolojisi</a></li>
+<li class="chapter" data-level="4.4" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#toplam-kalite-yönetiminin-tarihsel-gelişimi"><i class="fa fa-check"></i><b>4.4</b> Toplam Kalite Yönetiminin Tarihsel Gelişimi</a></li>
+<li class="chapter" data-level="4.5" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-kontrol-ve-iyileştirme-için-istatistiksel-yöntemler"><i class="fa fa-check"></i><b>4.5</b> Kalite Kontrol ve İyileştirme için İstatistiksel Yöntemler</a></li>
+<li class="chapter" data-level="4.6" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-iyileştirmede-yönetim-cephesi"><i class="fa fa-check"></i><b>4.6</b> Kalite İyileştirmede Yönetim Cephesi</a></li>
+<li class="chapter" data-level="4.7" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-yönetimi-liderleri"><i class="fa fa-check"></i><b>4.7</b> Kalite Yönetimi Liderleri</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#walter-shewhart"><i class="fa fa-check"></i><b>4.7.1</b> Walter Shewhart</a></li>
+<li class="chapter" data-level="4.7.2" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#w.-edwards-deming"><i class="fa fa-check"></i><b>4.7.2</b> W. Edwards Deming</a></li>
+<li class="chapter" data-level="4.7.3" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#joseph-m.-juran"><i class="fa fa-check"></i><b>4.7.3</b> Joseph M. Juran</a></li>
+<li class="chapter" data-level="4.7.4" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#armand-v.-feigenbaum"><i class="fa fa-check"></i><b>4.7.4</b> Armand V. Feigenbaum</a></li>
+<li class="chapter" data-level="4.7.5" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#philip-crosby"><i class="fa fa-check"></i><b>4.7.5</b> Philip Crosby</a></li>
+<li class="chapter" data-level="4.7.6" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kaoru-ishikawa"><i class="fa fa-check"></i><b>4.7.6</b> Kaoru Ishikawa</a></li>
+<li class="chapter" data-level="4.7.7" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#genichi-taguchi"><i class="fa fa-check"></i><b>4.7.7</b> Genichi Taguchi</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#toplam-kalite-yönetimi"><i class="fa fa-check"></i><b>4.8</b> Toplam Kalite Yönetimi</a></li>
+<li class="chapter" data-level="4.9" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-sistemleri-ve-standartları"><i class="fa fa-check"></i><b>4.9</b> Kalite Sistemleri ve Standartları</a></li>
+<li class="chapter" data-level="4.10" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#iso-9000-kalite-standartları"><i class="fa fa-check"></i><b>4.10</b> ISO 9000 Kalite Standartları</a></li>
+<li class="chapter" data-level="4.11" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#malcolm-baldrige-ulusal-kalite-ödülü"><i class="fa fa-check"></i><b>4.11</b> Malcolm Baldrige Ulusal Kalite Ödülü</a></li>
+<li class="chapter" data-level="4.12" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#altı-sigma"><i class="fa fa-check"></i><b>4.12</b> Altı Sigma</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="dmaic-süreci.html"><a href="dmaic-süreci.html"><i class="fa fa-check"></i><b>5</b> DMAIC Süreci</a><ul>
+<li class="chapter" data-level="5.1" data-path="dmaic-süreci.html"><a href="dmaic-süreci.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="dmaic-süreci.html"><a href="dmaic-süreci.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html"><i class="fa fa-check"></i><b>6</b> İstatistiksel Kavramlar</a></li>
+<li class="chapter" data-level="7" data-path="kısaltmalar.html"><a href="kısaltmalar.html"><i class="fa fa-check"></i><b>7</b> Kısaltmalar</a></li>
+<li class="chapter" data-level="" data-path="referanslar.html"><a href="referanslar.html"><i class="fa fa-check"></i>Referanslar</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">İstatistiksel Kalite Kontrol</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="kalite-yönetimi-temel-kavramları" class="section level1">
+<h1><span class="header-section-number">Bölüm 4</span> Kalite Yönetimi Temel Kavramları</h1>
+<div id="kalite-kavramı" class="section level2">
+<h2><span class="header-section-number">4.1</span> Kalite Kavramı</h2>
+<p><img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/quality1.jpg" style="float: right;" width="400" height="260" title="Quality" /></p>
+<p>Kalite tanımı birçok farklı şekilde yapılabilir. Kalitenin sözlük anlamı <em>mükemmeliyet derecesi</em> olmakla birlikte, ürün/hizmette mevcut olması istenen özellik veya özellikler, kalite tanımı için başlangıç noktası olarak seçilebilir. Kalitenin çok boyutlu ve doğası gereği göreceli yapısı ortak bir tanımdan ziyade farklı bakış açılarıyla geliştirilmiş kalite tanımlarını ortaya çıkarmıştır. Amerikan Kalite Derneği (ASQ); kaliteyi farklı tanımlamaların yapılabileceği öznel bir terim olarak tanımlamıştır.</p>
+<ul>
+<li>Kalite, gereksinimlere uygunluktur. (Crosby)</li>
+<li>Kalite, kullanıma uygunluktur. (Juran)</li>
+<li>Kalite, müşterinin şimdiki ve gelecekteki ihtiyaçlarını hedeflemektir. (Deming)</li>
+<li>Kalite, müşteri beklentilerini karşılayacak ürün ve hizmetin pazarlama, mühendislik, imalat ve bakım aşamalarındaki karakteristiklerinin toplamıdır. (Feigenbaum)</li>
+<li>Kalite, özelliklerin ve gereksinimleri yerine getirme derecesidir. (ISO 9000)</li>
+<li>Kalite, mal ve hizmetlerde, özellikle gereksinimlere uydukları ve müşterileri tatmin ettikleri ölçüde mükemmelliği ifade eder. (ASQ)</li>
+</ul>
+<p>Kalite değişkenlikle ters orantılıdır. Ürün/hizmetin önemli karakteristiklerindeki değişkenliğin azaltılması kaliteyi arttıracaktır.</p>
+<p>Değişkenliğin kalite kontrol açısından önemini kavramak açısından bir örnek verelim. Amerika Birleşik Devletleri’ndeki bir otomobil şirketi, şanzıman üretimlerini hem yerli bir tesiste hem de Japon bir tedarikçi aracılığıyla gerçekleştirmektedir.</p>
+<p>Garanti taleplerinin ve onarım maliyetlerinin analizi, sütun grafikte gösterilmiştir, Japon üretimi şanzımanın çok daha düşük maliyetlere sahip olmasıyla, iki üretim kaynağı arasında çarpıcı bir fark olduğu görülmektedir. Maliyet ve performanstaki bu farkın nedenini keşfetme çalışmasının bir parçası olarak, şirket her tesisten rastgele iletim örnekleri seçmiş, bunları parçalara ayırmış ve birkaç kritik kalite özelliğini ölçmüştür.</p>
+<p><img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/target1.png" style="float: right;" width="350" height="220" title="Şekil1" /></p>
+<p>Kritik boyutların her iki dağılımı da hedef değerde ortalanmıştır. Bununla birlikte, Amerika Birleşik Devletleri’nde üretilen şanzımanlar için kritik özelliklerin dağılımı, spesifikasyonların genişliğinin yaklaşık% 75’ini kaplar ve bu da çok az sayıda uygun olmayan birimin üretileceğini gösterir. Aslında tesis, şirket içinde genel kabul görmüş kalite anlayışına göre oldukça iyi bir kalite seviyesinde üretim yapmaktadır. Buna karşılık, Japon fabrikası aynı kritik özelliklerin spesifikasyon bandının sadece yaklaşık% 25’ini kapladığı aktarımlar üretmiştir. Sonuç olarak, Japon yapımı şanzımanların kritik kalite özelliklerinde Amerika Birleşik Devletleri’nde üretilenlere kıyasla önemli ölçüde daha az değişkenlik mecvuttur.</p>
+<p><img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/target.png" style="float: right;" width="350" height="220" title="Şekil2" /></p>
+<p>Akla gelen ilk soru Japonlar bunu nasıl yaptı? Burada azalan değişkenlik, doğrudan daha düşük maliyetlere dönüşmüştür. Dahası, Japon yapımı şanzımanlar daha sorunsuz vites değiştirmiş, daha sessiz çalışmış ve genellikle müşteri tarafından yurt içinde üretilenlerden daha üstün olarak algılanmıştır. Daha az onarım ve garanti talebi, daha az yeniden çalışma ve boşa harcanan zaman, çaba ve paranın azaltılması anlamına gelmektedir. Dolayısıyla, <strong>kalite gerçekten değişkenlikle ters orantılıdır.</strong> Dahası maliyetle yakından ilişkilidir.</p>
+<p>Japonlar bunu nasıl yaptı? Cevap, kalite kontrolün sistematik ve etkili kullanımında yatmaktadır.</p>
+<p>Kalite, rakip ürün/hizmetlerin seçiminde en önemli tüketici karar faktörlerinden biri haline gelmiştir. Bu görüş, tüketicinin bir birey, bir endüstriyel kuruluş, bir perakende mağazası, bir banka veya finans kurumu veya bir askeri savunma programı olmasına bakılmaksızın yaygındır. Sonuç olarak, kaliteyi anlamak ve iyileştirmek, iş başarısı, büyüme ve rekabet gücü açısından önemlidir. Bu bakımdan kalitenin iyileştirilmesi ve genel iş stratejisinin ayrılmaz bir parçası haline getirilmesi başarının temel gereklerindendir.</p>
+<p><code>Kalite terminolojisinde ürün (product) hem ürün hem de hizmet anlamında kullanılmaktdır.</code></p>
+<p><strong>Kalite iyileştirme (quality improvement):</strong> Proses ve ürünler açısından değişkenliğin azaltılması olarak tanımlanmaktadır. Fazla miktarda değişkenlik performansta kayıba (waste) neden olmaktadır, para kaybı, zaman kaybı veya enerji kaybı örnek olarak verilebilir. Kalite iyileştirmenin bir diğer tanımı da <em>kaybın azaltılması (reduction of waste)</em> olarak yapılabilir.</p>
+</div>
+<div id="kalite-boyutları" class="section level2">
+<h2><span class="header-section-number">4.2</span> Kalite Boyutları</h2>
+<p>Kalitenin çok boyutlu yapısı farklı kalite tanımlarının ortaya çıkmasına neden olmuştur. Garvin (1987), kalitenin sekiz boyutunu şöyle tanımlamaktadır.</p>
+<p><strong>1. Performans:</strong> Temel ürün özellikleri</p>
+<p><strong>2. Güvenilirlik:</strong> Kullanım ömrü içerisindeki performans tutarlılığı</p>
+<p><strong>3. Dayanıklılık:</strong> Yararlı kullanım ömrü</p>
+<p><strong>4. Hizmet:</strong> Kullanım ömrü içerisinde problem ve şikayetlerin çözümü</p>
+<p><strong>5. Estetik:</strong> Duyulara seslenebilme özelliği</p>
+<p><strong>6. Özellikler:</strong> Öne çıkmayı sağlayan ikincil karakteristikler</p>
+<p><strong>7. İtibar:</strong> Geçmiş performans ve algılanan kalite</p>
+<p><strong>8. Uygunluk:</strong> Endüstri standartlarına uygunluk</p>
+<p><br></p>
+<pre><code>Kalite çalışmalarında tüm boyutlar dikkate alınmalıdır.</code></pre>
+</div>
+<div id="kalite-mühendislik-terminolojisi" class="section level2">
+<h2><span class="header-section-number">4.3</span> Kalite Mühendislik Terminolojisi</h2>
+<p>Her ürün, kullanıcının veya tüketicinin kalite göstergesi olarak tanımladığı bir takım unsurlara sahiptir. Bu unsurlara genellikle kalite karakteristikleri denir. Aynı zamanda kalite için kritik (critical to quality (CTQ)) karakteristikler olarak da tanımlanmaktadır. Kalite karakteristikleri birkaç türde olabilir:</p>
+<ul>
+<li><p><strong>Fiziksel:</strong> uzunluk, ağırlık, voltaj, viskozite</p></li>
+<li><p><strong>Duyusal:</strong> tat, görünüş, renk</p></li>
+<li><p><strong>Zamansal:</strong> güvenilirlik, dayanıklılık, hizmet</p></li>
+</ul>
+<p>Kalite karakteristikleri doğrudan ya da dolaylı olarak kalite boyutlarını etkilemektedir.</p>
+<p><strong>Kalite mühendisliği</strong>, bir şirketin bir ürünün kalite özelliklerinin gerekli seviyelerde olmasını ve bu istenen seviyeler etrafındaki değişkenliğin minimum olmasını sağlamak için kullandığı operasyonel, yönetimsel ve mühendislik faaliyetleridir.</p>
+<p>Çoğu kuruluş, müşteriye her zaman aynı olan veya müşteri beklentilerini karşılayan seviyelerde kalite karakteristiklerine sahip ürünler sağlamayı zor (ve pahalı) bulur. Bunun başlıca nedeni <strong>değişkenliktir</strong>. Her üründe belli bir miktar değişkenlik vardır; sonuç olarak, iki ürün hiçbir zaman özdeş değildir. Örneğin, bir jet türbin motoru pervanesi üzerindeki kanatların kalınlığı, aynı pervane üzerinde bile aynı değildir. Kanat kalınlığı da pervaneler arasında farklılık gösterecektir. Bıçak kalınlığındaki bu değişiklik küçükse, müşteri üzerinde hiçbir etkisi olmayabilir. Ancak, varyasyon büyükse, müşteri üniteyi istenmeyen ve kabul edilemez olarak algılayabilir. Bu değişkenliğin kaynakları, malzemelerdeki farklılıkları, üretim ekipmanının performans ve işletimindeki farklılıkları ve operatörlerin görevlerini yerine getirme biçimlerindeki farklılıkları içerir. Kalite iyileştirme bu noktada önemli yere sahiptir.</p>
+<p>Değişkenlik yalnızca istatistiksel terimlerle tanımlanabildiğinden, <strong>istatistiksel yöntemler</strong> kalite iyileştirme çabalarında merkezi bir rol oynar. İstatistiksel yöntemlerin kalite mühendisliğine uygulanmasında, kalite karakteristiklerine ilişkin veriler <strong>niceliksel (variables)</strong> veya <strong>niteliksel (attributes)</strong> veriler olarak sınıflandırılmaktadır.</p>
+<p>Kalite özellikleri genellikle spesifikasyonlara göre değerlendirilir. Üretilen bir ürün için <strong>spesifikasyonlar (specifications)</strong>, ürünün alt parçaları ve nihai ürünün kalite özellikleri için istenen değerlerdir. Örneğin, bir otomobil şanzımanında kullanılan bir şaftın çapı çok büyük veya çok küçük olamaz, gerekli boyutta olmalıdır, aksi taktirde arızaya neden olacaktır.</p>
+<p>Kalite karakteristikleri için istenen değer <strong>nominal</strong> veya <strong>hedef değer (target value)</strong> olarak tanımlanmaktadır. Bu hedef değerler genellikle bir aralıkla sınırlandırılır, bu yapıda en büyük değer; <strong>üst sınır (upper specification limit (USL))</strong> ve en küçük değer; <strong>alt sınır (lower specification limit (LSL))</strong> olarak adlandırılır. Bazı kalite karakteristiklerinin spesifikasyon limitleri tek taraflı olabilir. Spesifikasyon sınırları genellikle tasarım mühendisleri tarafından belirlenir.</p>
+</div>
+<div id="toplam-kalite-yönetiminin-tarihsel-gelişimi" class="section level2">
+<h2><span class="header-section-number">4.4</span> Toplam Kalite Yönetiminin Tarihsel Gelişimi</h2>
+<p><img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/timeline.png" style="float: center;" width="1000" height="600" title="timeline" /></p>
+<p>Önemli zaman dilimlerinin detaylandırıldığı tarihsel gelişimi temel aşamaları ile altı ana başlık altında toplamak mümkündür.</p>
+<p><strong>1.</strong> Operatör kalite kontrolü</p>
+<p><strong>2.</strong> Ustabaşı kalite kontrolü</p>
+<p><strong>3.</strong> Muayene ile kalite kontrol</p>
+<p><strong>4.</strong> İstatistiksel kalite kontrol</p>
+<p><strong>5.</strong> Toplam kalite kontrol</p>
+<p><strong>6.</strong> Toplam kalite yönetimi</p>
+<p>Rekabetçi ortamda çağdaş kalite politikası oluşturulması ve geliştirilmesi önem arz etmektedir, müşteri fiyat-kalite ikileminde tercih yapmak durumunda bırakılmamalıdır.</p>
+</div>
+<div id="kalite-kontrol-ve-iyileştirme-için-istatistiksel-yöntemler" class="section level2">
+<h2><span class="header-section-number">4.5</span> Kalite Kontrol ve İyileştirme için İstatistiksel Yöntemler</h2>
+<ul>
+<li><p><strong>İstatistiksel proses kontrol (SPC):</strong> Proses kısaca girdiler ve çıktıdan oluşan bir sistem olarak tanımlanabilir. Kontrol diyagramları istatistiksel proses kontrol için temel yöntemlerden biridir.</p></li>
+<li><p><strong>Deney tasarımı:</strong> İstatistiksel olarak tasarlanmış deneyler, kalite karakteristiklerindeki değişkenliği azaltmada ve proses performansını optimize eden kontrol edilebilir değişkenlerin seviyelerini belirlemede oldukça önemlidir. Genellikle proses performansı ve ürün kalitesindeki önemli gelişmeler de tasarlanmış deneylerin kullanılmasından kaynaklanır.</p></li>
+</ul>
+<p><img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/kabulorn.png" style="float: right;" width="400" height="250" title="Kabul Örneklemesi" /></p>
+<ul>
+<li><strong>Kabul örneklemesi:</strong> Kalite kontrolünün en eski yönlerinden biridir ve kalite iyileştirme için istatistiksel metodolojinin geliştirilmesinden çok öncesine dayanmaktadır. Örnekleme çeşitli aşamalarda gerçekleştirilebilir. Modern kalite güvence sistemleri genellikle kabul örneklemesine daha az vurgu yapmakta, istatistiksel proses kontrol ve deney tasarımına odaklanmaktadır. Kabul örneklemesi, kalitenin spesifikasyona uygunluk görüşünü pekiştirme eğilimindedir.</li>
+</ul>
+<p>Kalite mühendisliği çabalarının temel amacı, ürünün temel kalite özelliklerindeki değişkenliğin sistematik olarak azaltılmasıdır.</p>
+<p><img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/percentapp.png" style="float: center;" width="300" height="300" title="" /> <img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/3d.png" style="float: center;" width="450" height="300" title="" /></p>
+</div>
+<div id="kalite-iyileştirmede-yönetim-cephesi" class="section level2">
+<h2><span class="header-section-number">4.6</span> Kalite İyileştirmede Yönetim Cephesi</h2>
+<p>SPC ve deney tasarımı dahil istatistiksel teknikler ve diğer problem çözme araçları kalite kontrol ve iyileştirmenin teknik temelini oluşturur. Ancak, en etkin kullanım, bu tekniklerin kalite iyileştirmeye odaklanan bir yönetim sistemi içinde uygulanmasıyla mümkündür. Bir kuruluşun yönetim sistemi, genel kalite iyileştirme felsefesini doğru bir şekilde yönlendirmek ve işletmenin tüm yönlerine yayılmasını sağlamak için organize edilmelidir. Kalitenin etkin yönetimi için üç faaliyetin başarılı bir şekilde yürütülmesi gerekir: kalite planlama, kalite güvencesi ve kalite kontrolü ve iyileştirme.</p>
+<p><strong>Kalite planlama:</strong> Kalite planlama stratejik bir faaliyettir ve bir kuruluşun uzun vadeli iş başarısı için ürün geliştirme planı, finansal plan, pazarlama planı ve insan kaynaklarının kullanımına yönelik planlar kadar önemlidir. Stratejik bir kalite planı olmadan, hatalı tasarımlar, üretim hataları, saha arızaları ve müşteri şikayetleri oluşacak ve muazzam miktarda zaman, para ve çaba boşa harcanacaktır. Kalite planlaması, müşterilerin tanımlanmasını ve ihtiyaçlarını tanımlamayı içerir (buna bazen müşterinin sesini dinleme (voice of the customer (VOC)) denir). Daha sonra müşteri beklentilerini karşılayan veya aşan ürün veya hizmetler geliştirilmelidir. Kalitenin sekiz boyutu bu çabanın önemli bir parçasıdır. Kuruluş daha sonra bu ürün ve hizmetlerin nasıl gerçekleştirileceğini belirlemelidir. Belirli, sistematik bir temelde kalite iyileştirme planlaması da bu sürecin önemli bir parçasıdır.</p>
+<p><strong>Kalite güvencesi:</strong> Ürün ve hizmetlerin kalite seviyelerinin uygun şekilde sürdürülmesini ve tedarikçi ve müşteri kalite sorunlarının uygun şekilde çözülmesini sağlayan faaliyetler bütünüdür.</p>
+<p><strong>Kalite kontrol ve iyileştirme:</strong> Kalite kontrol ve iyileştirme, ürün ve hizmetlerin gereksinimleri karşılamasını ve sürekli olarak iyileştirilmesini sağlamak için kullanılan faaliyetler dizisini içerir. Değişkenlik genellikle düşük kalitenin ana kaynağı olduğundan, SPC ve deney tasarımı dahil istatistiksel teknikler, kalite kontrol ve iyileştirmenin ana araçlarıdır. Kalite iyileştirme genellikle proje bazında yapılır ve istatistiksel yöntemlerle ilgili özel bilgiye ve bunların uygulanmasında deneyime sahip personel tarafından yönetilen ekipleri içerir.</p>
+</div>
+<div id="kalite-yönetimi-liderleri" class="section level2">
+<h2><span class="header-section-number">4.7</span> Kalite Yönetimi Liderleri</h2>
+<p>Kaliteyi iyileştirmenin istatistiksel metodolojisine birçok kişi katkıda bulunmuştur ancak uygulama ve yönetim felsefesi açısından önemli katkıları bulunan bilim insanları üzerinde durulacaktır.</p>
+<ul>
+<li>Walter Shewhart</li>
+<li>W. E. Deming</li>
+<li>J. M. Juran</li>
+<li>A. V. Feigenbaum</li>
+<li>Philip Crosby</li>
+<li>Kaoru Ishikawa</li>
+<li>Genichi Taguchi</li>
+</ul>
+<div id="walter-shewhart" class="section level3">
+<h3><span class="header-section-number">4.7.1</span> Walter Shewhart</h3>
+<p>Walter Andrew Shewhart Amerikalı bir fizikçi, mühendis ve istatistikçidir. İstatistiksel kalite kontrolün babası olarak bilinir. Kontrol diyagramlarını ilk olarak kullanan kişidir. Kontrol diyagramlarının kullanımı genellikle istatistiksel kalite kontrolün resmi başlangıcı olarak kabul edilmektedir.</p>
+</div>
+<div id="w.-edwards-deming" class="section level3">
+<h3><span class="header-section-number">4.7.2</span> W. Edwards Deming</h3>
+<p><img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/Deming.jpeg" style="float: right;" width="230" height="300" title="Deming" /></p>
+<p>W. Edwards Deming, Wyoming Üniversitesi ve Yale Üniversitesi’nde mühendislik ve fizik eğitimi almıştır. Western Electric için çalışmış ve kontrol şemasının (control charts) geliştiricisi Walter A. Shewhart’tan büyük ölçüde etkilenmiştir.</p>
+<p>İkinci Dünya Savaşı ardından, Japon endüstrilerine danışmanlık görevinde bulunmuş, istatistiksel yöntemlerin gücü ve kalitenin rekabetçi bir silah olarak kullanımı konularında yöneticilerini ikna etmiştir.İstatistiksel yöntemlere olan bu bağlılık ve kullanım, Japonya endüstrisinin ve ekonomisinin genişlemesinde kilit bir unsur olmuştur.</p>
+<p>Japon Bilim Adamları ve Mühendisler Birliği, onuruna kalite iyileştirme için Deming Ödülü’nü yaratmıştır.</p>
+<p>Deming, Shewhart’ın bilimsel çıkarımları etrafında bazı metodolojik önerilerini geliştirdi ve sentezini Shewhart döngüsü (Shewhart (PDCA) cycle) olarak adlandırdı. PDCA döngüsü tüm proseslere uygulanabilir. Döngü iteratif olup karmaşık problemler için çok sayıda döngü gerekebilir.</p>
+<p><img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/sh.cyc.png" style="float: left;" width="270" height="270" title="Deming" /></p>
+<p><strong>(P) Planla:</strong> Müşteri talebi ve kuruluş politikasına uyumlu sonuçların elde edilebilmesi için gereken objektif hedef ve proseslerin tasarlanması</p>
+<p><strong>(D) Uygula:</strong> Proseslerin uygulanması</p>
+<p><strong>(C) Kontrol et:</strong> Proseslerin ve ürünün belirlenen politika, şart ve hedeflere uygunluğunun incelenmesi ve raporlanması</p>
+<p><strong>(A) Önlem al:</strong> Performansın iyileştirilmesi için gereken önlemlerin alınması</p>
+<p><br></p>
+<p><strong>Kalite yönetimi için 14 ilke belirlemiştir;</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Ürün/hizmetlerin iyileştirilmesine odaklanan bir amaç sürekliliği yaratın</p></li>
+<li><p>Yeni felsefeyi benimseyin</p></li>
+<li><p>Muayene kavramını anlayın.</p></li>
+<li><p>Fiyat bazlı olmayan, performans odaklı uzun dönemli bağlantı hedefleyin.</p></li>
+<li><p>İstatistiksel yöntemlerden yararlanarak sürekli iyileştirmeye odaklanın.</p></li>
+<li><p>Eğitime önem verin ve modern eğitim yöntemlerini takip edin.</p></li>
+<li><p>Liderliği geliştirin.</p></li>
+<li><p>Korkuyu ortadan kaldırın.</p></li>
+<li><p>Engelleri kaldırın, ekip çalışmasına teşvik edin.</p></li>
+<li><p>Çalışanlara yönelik ikazları ortadan kaldırın.</p></li>
+<li><p>Sayısal kotaları ve çalışma standartlarını ortadan kaldırın, gelişimi hedefleyin.</p></li>
+<li><p>Çalışanları çalışanları dinleyin ve engelleri kaldırın.</p></li>
+<li><p>Çalışanların gelişimini önemseyin ve destekleyin.</p></li>
+<li><p>Sürekli iyileştirmeyi ortak hedef haline getirin.</p></li>
+</ol>
+<p><br></p>
+<p>Deming’in 14 maddesini okurken, organizasyonel değişime güçlü bir vurgu yapıldığı fark edilmaktedir. Ayrıca, bu değişim sürecine rehberlik etmede yönetimin rolü büyük önem taşımaktadır. Ancak nelerin değişmesi gerekiyor ve bu değişim süreci nasıl başlatılmalı? Bu noktada istatistiksel yöntemler devreye girmektedir.</p>
+<p><span style="color: red;">Deming’in tanımladığı yönetimdeki 7 ölümcül hastalık nedir araştırınız.</span></p>
+<p><span style="background:yellow">Deming’in tanımladığı yönetimdeki 7 ölümcül hastalık nedir araştırınız.</span></p>
+</div>
+<div id="joseph-m.-juran" class="section level3">
+<h3><span class="header-section-number">4.7.3</span> Joseph M. Juran</h3>
+<p><img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/Juran.jpg" style="float: right;" width="200" height="270" title="Juran" /></p>
+<p>Joseph M. Juran Minnesota Üniversitesi Elektrik Mühendisliği Bölümü’nden mezun olmuştur. William Edwards Deming gibi o da gerek ABD’de gerek Japonya’da toplam kalite yönetiminin yaygınlaşmasında çok önemli rol oynamıştır. 1981 yılında Japon İmparatoru, Hirohito tarafından Order of Sacred Treasure ile ödüllendirilmiştir.</p>
+<p>Juran, toplam kalite yönetimi alanında çok önemli eserler yayınlamıştır. Juran’ın Kalite Kontrol El Kitabı (Juran’s Quality Control Handbook) adlı çalışması toplam kalite yönetimi alanında klasik ve en önemli eserlerden birisi olarak kabul edilmektedir.</p>
+<p>Kalite yönetimi için planlama, kontrol ve iyileştirme adımlarından oluşan <strong>Juran üçlemesini (Juran Trilogy)</strong> geliştirmiştir.</p>
+<p><strong>Juran üçlemesi (Juran Trilogy)</strong></p>
+<ul>
+<li><p><strong>Planlama:</strong> Harici müşterilerin tanımlanması ve ihtiyaçların belirlenmesi, düzenli kalite iyileştirme planlaması</p></li>
+<li><p><strong>Kontrol:</strong> Ürünün veya hizmetin gereksinimleri karşıladığından emin olmak için işletmenin işletme güçleri tarafından incelenmesi. SPC, kontrolün birincil araçlarından biridir.</p></li>
+<li><p><strong>İyileştirme:</strong> Mevcut seviyeden daha yüksek performans ve kalite seviyelerine ulaşma hedefi. Juran, iyileştirmenin proje bazında olması gerektiğini vurgulamaktadır. Bu projeler tipik olarak üçlemenin planlama aşamasında belirlenmelidir.</p></li>
+</ul>
+</div>
+<div id="armand-v.-feigenbaum" class="section level3">
+<h3><span class="header-section-number">4.7.4</span> Armand V. Feigenbaum</h3>
+<p><img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/Feigenbaum.png" style="float: right;" width="200" height="210" title="Feigenbaum" /></p>
+<p>Armand V. Feigenbaum, Lisans eğitimini Union College’de, Yüksek Lisans ve Doktora Eğitimini ise MIT (Massachusetts Institute of Technology)’de tamamlamıştır. 1961 – 1963 yılları arasında Amerikan Kalite Topluluğu’na (American Society for Quality) başkanlık etmiştir.</p>
+<p>Daha sonra Toplam Kalite Yönetimi olarak anılacak Toplam Kalite Kontrol kavramının yaratıcısıdır. Şirket çapında kalite kontrol kavramını ilk kez kitabı Toplam Kalite Kontrolü’nde tanıtmıştır. Bu kitap, 1950’lerin başlarında Japonya’daki erken kalite yönetimi felsefesinin etkilemiştir. Birçok Japon şirketi “toplam kalite kontrol” terimini kullanmıştır. Kaliteyi iyileştirmek için üç aşamalı bir yaklaşım önermiştir: kalite liderliği, kalite teknolojisi ve örgütsel bağlılık.</p>
+<hr />
+<p>Deming, Juran ve Feigenbaum bu öncülerin üçü de</p>
+<ul>
+<li>kalitenin temel bir rekabet silahı olarak önemini,</li>
+<li>kalite iyileştirmenin uygulanmasında yönetimin oynaması gereken önemli rolü</li>
+<li>organizasyonun “kalite dönüşümünde” istatistiksel yöntem ve tekniklerin önemini</li>
+</ul>
+<p>vurgulamaktadır.</p>
+<hr />
+</div>
+<div id="philip-crosby" class="section level3">
+<h3><span class="header-section-number">4.7.5</span> Philip Crosby</h3>
+<p>Philip B. Crosby, kalite uzmanıdır ve <code>sıfır hata görüşü</code> ile tanınmaktadır. Crosby’ye göre kalite, yerine göre kullanımdır ve gereksiz kullanım maliyetiyle değerlendirilir. Crosby kalitenin yaklaşımını mutlak 4 esas ile açıklamıştır;</p>
+<ul>
+<li><p>Kalite mükemmellik olarak değil gereksinimlere uygunluk olarak tanımlanır.</p></li>
+<li><p>Kalite değerleme ile değil önleme ile başarılır.</p></li>
+<li><p>Standart performans sıfır hatadır.</p></li>
+<li><p>Kalite maliyet ile ölçülür.</p></li>
+</ul>
+</div>
+<div id="kaoru-ishikawa" class="section level3">
+<h3><span class="header-section-number">4.7.6</span> Kaoru Ishikawa</h3>
+<p>Kaoru Ishikawa, Japonya’da toplam kalite yönetimine katkıda bulunan liderlerin başında gelmektedir. İkinci dünya savaşı sonrasında ABD’de Deming ve Juran ile tanışmıştır. Ishikawa, kalite kontrol alanındaki çalışmaları ile Japonya’da kalite bilincinin yaygınlaşmasında önemli rol oynamıştır.</p>
+</div>
+<div id="genichi-taguchi" class="section level3">
+<h3><span class="header-section-number">4.7.7</span> Genichi Taguchi</h3>
+<p>Genichi Taguchi, mühendis ve istatistikçidir. Varyasyonun azaltılması ve performans sürekliliğine odaklanmıştır. Ayrıca Taguchi tarafından önerilen kalite kayıp fonksiyonu kalite yönetim literatüründe önemli yere sahiptir.</p>
+</div>
+</div>
+<div id="toplam-kalite-yönetimi" class="section level2">
+<h2><span class="header-section-number">4.8</span> Toplam Kalite Yönetimi</h2>
+<p>Toplam Kalite Yönetimi (TQM), organizasyon temelinde kalite iyileştirme aktivitelerinin uygulanması ve yönetilmesini kapsayan bir stratejidir.</p>
+<p>Geleneksel yönetim yaklaşımına odaklanan işletmelerde gelişme <strong>reaktif</strong> tarzdadır. Bu yapıda müşteri şikayeti durumunda hatanın düzeltilmesi, tekrar üretim ve satış döngüsü gerçekleşir. Hataları düzeltme yerine önleme yaklaşımını içeren <strong>proaktif</strong> gelişme modeli ise toplam kalite yönetiminin temelini oluşturmaktadır. Hatalar oluşmadan ve müşteriye ulaşmadan önleme hedefindedir.</p>
+<p>Tüketici isteklerini en ekonomik şekilde karşılamak hedefiyle işletme organizasyonu içerisindeki çeşitli birimlerin; kalitenin yaratılması, yaşatılması ve geliştirilmesi yolundaki çabalarını bir araya getirip düzenlenmesini sağlayan etkili sistem <strong>toplam kalite kontrol</strong> olarak tanımlanır.</p>
+</div>
+<div id="kalite-sistemleri-ve-standartları" class="section level2">
+<h2><span class="header-section-number">4.9</span> Kalite Sistemleri ve Standartları</h2>
+<p><a href="https://www.iso.org/home.html">ISO</a> (International Organization for Standardization), Uluslararası Standartlar Teşkilâtı, Uluslararası Elektroteknik Komisyonu’nun çalışma sahasına giren elektrik ve elektronik mühendisliği konuları dışında, bütün teknik ve teknik dışı dallardaki standartların belirlenmesi çalışmalarını yürütmek amacıyla 1947 yılında Cenevre’de kurulmuştur.</p>
+<p>Uluslararası Standartlar Teşkilâtına <a href="https://www.iso.org/members.html">üye ülkelerin</a> sayısı 165’dir.</p>
+<p>Teknolojik ihtiyaçlardan dolayı ISO standartları, her beş yılda bir gözden geçirilir ve gerekli değişiklikler yapılır.</p>
+<p>Çoğu zaman ISO standard kodlarıyla ISO kalite belgesi anlamsal olarak karıştırılmakta ve anlam karmaşasına neden olabilmektedir. Uluslararası standartlar organizasyonu ISO 9001 ve ISO 14001 gibi Uluslararası Standartları geliştirmekte, ancak belgelendirme yapmamakta ve ISO kalite belgesi vermemektedir. Belgelendirme işlemleri, akredite belgelendirme kuruluşları tarafından gerçekleştirilmektedir.</p>
+<p>ISO kısaltmasının yanında yer alan rakam standardın kodu ve sondaki yıl bilgisi içeren diğer rakamsa, ilgili standardın son revizyonuna ait yılı göstermektedir. Örnek: ISO 9001:2015, ISO 22000:2016 vb.</p>
+<p><img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/env.png" style="float: center;" width="370" height="150" title="environment" /> <img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/health.png" style="float: center;" width="370" height="150" title="health" /></p>
+<p><img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/food.png" style="float: center;" width="370" height="150" title="food" /> <img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/energy.png" style="float: center;" width="370" height="150" title="energy" /></p>
+<p><img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/security.png" style="float: center;" width="370" height="150" title="security" /> <img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/quality.png" style="float: center;" width="370" height="150" title="quality" /></p>
+</div>
+<div id="iso-9000-kalite-standartları" class="section level2">
+<h2><span class="header-section-number">4.10</span> ISO 9000 Kalite Standartları</h2>
+<p>ISO 9000 Kalite Sistem Standartları Mart 1987’de yayınlanmış ve birçok ülke tarafından benimsenerek uygulamaya geçilmiştir. ISO 9000 İmalat ve Hizmet endüstrilerinde kalite güvencesi için kurulmuş, kapsamlı bir standartlar kümesidir. ISO 9000 serileri, bir firmanın kalite sistemini geliştirmesini, belgelemesini ve çalıştırılmasını ister, yani firma içinde yönetiminin kalite tetkik uygulamaları için sahip olduğu sorumluluktan, satın alma politikalarından, eğitime kadar uzanan Kalite yönetim sistemleri uygulamalarının tümünü kapsar.</p>
+<p>170’den fazla ülkede ISO 9001 sertifikalı bir milyonun üzerinde şirket ve kuruluş bulunmaktadır.</p>
+<p><strong>Standardın Amacı</strong></p>
+<ul>
+<li>Kalite yönetimi için genel bir çerçeve sağlaması,</li>
+<li>Kuruluşlar arasında güven ortamı yaratması,</li>
+<li>Proseslerin yönetilmesiyle ürün/hizmet kalitesinin sağlanması, devam ettirilmesi ve iyileştirilmesi,</li>
+<li>Müşteriye ürün ve hizmetlerin tutarlılığının güveninin verilmesidir.</li>
+</ul>
+<p><strong>Sağladığı yararlar</strong></p>
+<ul>
+<li>Çalışanların kalite bilincinde artış sağlanması</li>
+<li>İşletmenin piyasa itibarında artış sağlanması (prestij)</li>
+<li>Pazarlama faaliyetlerinde rakiplerden farklılık sağlanması</li>
+<li>İşletmenin uluslararası geçerliliğe sahip bir kalite belgesi edinmesinin getirdiği ticari avantajlardan yararlanabilme (ihracat için kalitenin belge ile ispatlanabilmesi)</li>
+<li>Müşteri memnuniyetinde ve müşteri sadakatinde artış sağlanması</li>
+<li>Hata oranlarında, firelerde, yeniden işlemelerde azalma sağlanması</li>
+<li>Girdi, üretim ve son kontrollerin etkin olarak yapılabilmesi</li>
+<li>Tedarikçilerin seçiminde, değerlendirilmesinde ve takibinde kolaylık sağlanması</li>
+<li>İşletme içi yetki ve sorumlulukların tespitinde ve dağıtılmasında kolaylık sağlanması</li>
+<li>İşletme faaliyetlerinin standartlaştırılmasını sağlayacak dokümantasyonun (alt yapının) oluşturulması</li>
+<li>Geçmişe yönelik kayıtların düzenli bir şekilde tutulmasını sağlayacak altyapının oluşturulması</li>
+<li>Veriler ve istatistiksel ölçümler doğrultusunda durum analizlerinin yapılabilmesi ve geleceğe yönelik kararlarda bu analiz sonuçlarının kullanılabilmesi</li>
+<li>Kurumsallaşma yolunda önemli bir adım atılmış olması</li>
+</ul>
+<p><strong>ISO 9000 Belgesi almak yeterli mi?</strong></p>
+<p>ISO 9000 uygulama sürecinde yapılabilecek en önemli yanlışlık belgenin alınması ile bu sürecin sona erdiğini düşünmektir. ISO 9000 Kalite Sistem Belgesi yeter mi? sorusuna verilecek yanıt hayırdır. Çünkü IS0 9000 uygulama süreci kuruluşun kalite yönetim sisteminin gelişme ihtiyacına göre paralel olarak süreklilik arz eder. Bu nedenle Kalite yönetim sistemleri nin sürekli gelişme anlayışına uygun olarak ve müşterilerin değişen talep ve beklentilerine cevap verecek şekilde daha üst bir performans düzeyine çıkarılması için çaba sarf edilmelidir. Kalite yönetim sistemlerinin evrim sürecinde uzun vadede benimsenmesi gereken hedef sürekli mükemmellik anlayışı ile Toplam Kalite Yönetimi stratejisini geliştirmek ve bunu kuruluşun bütününe uygulayabilmektir.</p>
+<p><img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/9000.png" style="float: center;" width="700" height="300" title="9000" /></p>
+</div>
+<div id="malcolm-baldrige-ulusal-kalite-ödülü" class="section level2">
+<h2><span class="header-section-number">4.11</span> Malcolm Baldrige Ulusal Kalite Ödülü</h2>
+<p>Malcolm Baldrige Ulusal Kalite Ödülü (MBNQA) 1987 yılında ABD Kongresi tarafından oluşturulmuş kalite değerlendirme ve ödüllendirme sistemidir. Performans mükemmelliği için ABD kuruluşlarını tanımak için yıllık olarak verilmektedir. Kuruluşlara beş kategoride ödül verilmektedir: üretim, hizmet, küçük işletme, sağlık ve eğitim. Her kategoride her yıl üç ödül verilebilir. Birçok kuruluş ödüller için rekabet etmektedir ve birçok şirket, öz değerlendirme için performans mükemmelliği kriterlerini kullanmaktadır. Ödül, NIST (Ulusal Standartlar ve Teknoloji Bürosu) tarafından verilmektedir.</p>
+<p>Değerlendirmenin 1000 puan üzerinden yapıldığı ödül sisteminde yedi farklı kategori bulunmaktadır ve her biri farklı puanlara dolayısıyla farklı ağırlıklara sahiptir.</p>
+<p><strong>Ödül Kategorileri</strong></p>
+<ul>
+<li>Liderlik</li>
+<li>Stratejik Planlama</li>
+<li>Müşteri ve Piyasa Odağı</li>
+<li>Ölçme, Analiz ve Bilgi Yönetimi</li>
+<li>İnsan Kaynakları Odağı</li>
+<li>Süreç Yönetimi</li>
+<li>Sonuçlar</li>
+</ul>
+<p><img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/malcolm.png" style="float: center;" width="500" height="500" title="Malcolm Baldrige" /></p>
+</div>
+<div id="altı-sigma" class="section level2">
+<h2><span class="header-section-number">4.12</span> Altı Sigma</h2>
+<p>Motorola, ürünlerine olan talebe yanıt olarak 1980’lerin sonunda Altı Sigma (Six Sigma) programını geliştirmiştir.</p>
+<p><img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/normal.png" style="float: center;" width="700" height="300" title="normal" /></p>
+<p><img src="/Users/busenursarica/Desktop/Stat%20Quality%20Cont%20Lec%20Notes/images/sixsigma.png" style="float: center;" width="700" height="300" title="sixsigma" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="genel-bakış.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="dmaic-süreci.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["SPC Notes.pdf", "SPC Notes.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
