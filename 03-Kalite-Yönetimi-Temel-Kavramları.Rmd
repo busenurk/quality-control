@@ -2,7 +2,7 @@
 
 ## Kalite Kavramı
 
-<img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/quality1.jpg" style="float: right;" width="400" height="260" title="Quality" /> 
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/quality1.jpg" style="float: right;" width="400" height="260" title="Quality" /> 
 
 Kalite tanımı birçok farklı şekilde yapılabilir. Kalitenin sözlük anlamı _mükemmeliyet derecesi_ olmakla birlikte, ürün/hizmette mevcut olması istenen özellik veya özellikler, kalite tanımı için başlangıç noktası olarak seçilebilir. Kalitenin çok boyutlu ve doğası gereği göreceli yapısı ortak bir tanımdan ziyade farklı bakış açılarıyla geliştirilmiş kalite tanımlarını ortaya çıkarmıştır. Amerikan Kalite Derneği (ASQ); kaliteyi farklı tanımlamaların yapılabileceği öznel bir terim olarak tanımlamıştır. 
 
@@ -20,13 +20,13 @@ Değişkenliğin kalite kontrol açısından önemini kavramak açısından bir 
 
 Garanti taleplerinin ve onarım maliyetlerinin analizi, sütun grafikte gösterilmiştir, Japon üretimi şanzımanın çok daha düşük maliyetlere sahip olmasıyla, iki üretim kaynağı arasında çarpıcı bir fark olduğu görülmektedir. Maliyet ve performanstaki bu farkın nedenini keşfetme çalışmasının bir parçası olarak, şirket her tesisten rastgele iletim örnekleri seçmiş, bunları parçalara ayırmış ve birkaç kritik kalite özelliğini ölçmüştür.
 
-<img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/target1.png" style="float: right;" width="350" height="220" title="Şekil1" /> 
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/target1.png" style="float: right;" width="350" height="220" title="Şekil1" /> 
 
 
 
 Kritik boyutların her iki dağılımı da hedef değerde ortalanmıştır. Bununla birlikte, Amerika Birleşik Devletleri'nde üretilen şanzımanlar için kritik özelliklerin dağılımı, spesifikasyonların genişliğinin yaklaşık% 75'ini kaplar ve bu da çok az sayıda uygun olmayan birimin üretileceğini gösterir. Aslında tesis, şirket içinde genel kabul görmüş kalite anlayışına göre oldukça iyi bir kalite seviyesinde üretim yapmaktadır. Buna karşılık, Japon fabrikası aynı kritik özelliklerin spesifikasyon bandının sadece yaklaşık% 25'ini kapladığı aktarımlar üretmiştir. Sonuç olarak, Japon yapımı şanzımanların kritik kalite özelliklerinde Amerika Birleşik Devletleri'nde üretilenlere kıyasla önemli ölçüde daha az değişkenlik mecvuttur.
 
-<img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/target.png" style="float: right;" width="350" height="220" title="Şekil2" />
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/target.png" style="float: right;" width="350" height="220" title="Şekil2" />
 
 
 Akla gelen ilk soru Japonlar bunu nasıl yaptı? Burada azalan değişkenlik, doğrudan daha düşük maliyetlere dönüşmüştür. Dahası, Japon yapımı şanzımanlar daha sorunsuz vites değiştirmiş, daha sessiz çalışmış ve genellikle müşteri tarafından yurt içinde üretilenlerden daha üstün olarak algılanmıştır. Daha az onarım ve garanti talebi, daha az yeniden çalışma ve boşa harcanan zaman, çaba ve paranın azaltılması anlamına gelmektedir. Dolayısıyla, **kalite gerçekten değişkenlikle ters orantılıdır.** Dahası maliyetle yakından ilişkilidir.
@@ -91,7 +91,7 @@ Kalite karakteristikleri için istenen değer **nominal** veya **hedef değer (t
 
 ## Toplam Kalite Yönetiminin Tarihsel Gelişimi
 
-<img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/timeline.png" style="float: center;" width="1000" height="600" title="timeline" />
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/timeline.png" style="float: center;" width="1000" height="600" title="timeline" />
 
 
 Önemli zaman dilimlerinin detaylandırıldığı tarihsel gelişimi temel aşamaları ile altı ana başlık altında toplamak mümkündür.
@@ -117,13 +117,13 @@ Rekabetçi ortamda çağdaş kalite politikası oluşturulması ve geliştirilme
 
 - **Deney tasarımı:**  İstatistiksel olarak tasarlanmış deneyler, kalite karakteristiklerindeki değişkenliği azaltmada ve proses performansını optimize eden kontrol edilebilir değişkenlerin seviyelerini belirlemede oldukça önemlidir. Genellikle proses performansı ve ürün kalitesindeki önemli gelişmeler de tasarlanmış deneylerin kullanılmasından kaynaklanır.
 
-<img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/kabulorn.png" style="float: right;" width="400" height="250" title="Kabul Örneklemesi" />
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/kabulorn.png" style="float: right;" width="400" height="250" title="Kabul Örneklemesi" />
 
 - **Kabul örneklemesi:** Kalite kontrolünün en eski yönlerinden biridir ve kalite iyileştirme için istatistiksel metodolojinin geliştirilmesinden çok öncesine dayanmaktadır. Örnekleme çeşitli aşamalarda gerçekleştirilebilir. Modern kalite güvence sistemleri genellikle kabul örneklemesine daha az vurgu yapmakta, istatistiksel proses kontrol ve deney tasarımına odaklanmaktadır. Kabul örneklemesi, kalitenin spesifikasyona uygunluk görüşünü pekiştirme eğilimindedir. 
 
 Kalite mühendisliği çabalarının temel amacı, ürünün temel kalite özelliklerindeki değişkenliğin sistematik olarak azaltılmasıdır. 
 
-<img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/percentapp.png" style="float: center;" width="300" height="300" title="" /> <img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/3d.png" style="float: center;" width="450" height="300" title="" />
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/percentapp.png" style="float: center;" width="300" height="300" title="" /> <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/3d.png" style="float: center;" width="450" height="300" title="" />
 
 ## Kalite İyileştirmede Yönetim Cephesi
 
@@ -153,7 +153,7 @@ Walter Andrew Shewhart Amerikalı bir fizikçi, mühendis ve istatistikçidir. �
 
 ### W. Edwards Deming
 
-<img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/Deming.jpeg" style="float: right;" width="230" height="300" title="Deming" />
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/Deming.jpeg" style="float: right;" width="230" height="300" title="Deming" />
 
 W. Edwards Deming, Wyoming Üniversitesi ve Yale Üniversitesi'nde mühendislik ve fizik eğitimi almıştır. Western Electric için çalışmış ve kontrol şemasının (control charts) geliştiricisi Walter A. Shewhart'tan büyük ölçüde etkilenmiştir.
 
@@ -163,7 +163,7 @@ Japon Bilim Adamları ve Mühendisler Birliği, onuruna kalite iyileştirme içi
 
 Deming, Shewhart'ın bilimsel çıkarımları etrafında bazı metodolojik önerilerini geliştirdi ve sentezini Shewhart döngüsü (Shewhart (PDCA) cycle) olarak adlandırdı. PDCA döngüsü tüm proseslere uygulanabilir. Döngü iteratif olup karmaşık problemler için çok sayıda döngü gerekebilir.
 
-<img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/sh.cyc.png" style="float: left;" width="270" height="270" title="Deming" />
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/sh.cyc.png" style="float: left;" width="270" height="270" title="Deming" />
 
 **(P) Planla:** Müşteri talebi ve kuruluş politikasına uyumlu sonuçların elde edilebilmesi için gereken objektif hedef ve proseslerin tasarlanması
 
@@ -211,11 +211,10 @@ Deming’in 14 maddesini okurken, organizasyonel değişime güçlü bir vurgu y
 
 <span style="color: red;">Deming'in tanımladığı yönetimdeki 7 ölümcül hastalık nedir araştırınız.</span>
 
-<span style="background:yellow">Deming'in tanımladığı yönetimdeki 7 ölümcül hastalık nedir araştırınız.</span>
 
 ### Joseph M. Juran
 
-<img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/Juran.jpg" style="float: right;" width="200" height="270" title="Juran" />
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/Juran.jpg" style="float: right;" width="200" height="270" title="Juran" />
 
 Joseph M. Juran Minnesota Üniversitesi Elektrik Mühendisliği Bölümü’nden mezun olmuştur. William Edwards Deming gibi o da gerek ABD’de gerek Japonya’da toplam kalite yönetiminin yaygınlaşmasında çok önemli rol oynamıştır. 1981 yılında Japon İmparatoru, Hirohito tarafından Order of Sacred Treasure ile ödüllendirilmiştir.
 
@@ -234,7 +233,7 @@ Kalite yönetimi için planlama, kontrol ve iyileştirme adımlarından oluşan 
 
 ### Armand V. Feigenbaum
 
-<img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/Feigenbaum.png" style="float: right;" width="200" height="210" title="Feigenbaum" />
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/Feigenbaum.png" style="float: right;" width="200" height="210" title="Feigenbaum" />
 
 Armand V. Feigenbaum, Lisans eğitimini Union College'de, Yüksek Lisans ve Doktora Eğitimini ise MIT (Massachusetts Institute of Technology)'de tamamlamıştır. 1961 – 1963 yılları arasında Amerikan Kalite Topluluğu'na (American Society for Quality) başkanlık etmiştir. 
 
@@ -296,11 +295,11 @@ ISO kısaltmasının yanında yer alan rakam standardın kodu ve sondaki yıl bi
 
 
 
-<img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/env.png" style="float: center;" width="370" height="150" title="environment" /> <img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/health.png" style="float: center;" width="370" height="150" title="health" />
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/env.png" style="float: center;" width="370" height="150" title="environment" /> <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/health.png" style="float: center;" width="370" height="150" title="health" />
 
-<img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/food.png" style="float: center;" width="370" height="150" title="food" /> <img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/energy.png" style="float: center;" width="370" height="150" title="energy" />
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/food.png" style="float: center;" width="370" height="150" title="food" /> <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/energy.png" style="float: center;" width="370" height="150" title="energy" />
 
-<img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/security.png" style="float: center;" width="370" height="150" title="security" /> <img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/quality.png" style="float: center;" width="370" height="150" title="quality" />
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/security.png" style="float: center;" width="370" height="150" title="security" /> <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/quality.png" style="float: center;" width="370" height="150" title="quality" />
 
 ## ISO 9000 Kalite Standartları
 
@@ -335,7 +334,7 @@ ISO 9000 Kalite Sistem Standartları Mart 1987’de yayınlanmış ve birçok ü
 
 ISO 9000 uygulama sürecinde yapılabilecek en önemli yanlışlık belgenin alınması ile bu sürecin sona erdiğini düşünmektir. ISO 9000 Kalite Sistem Belgesi yeter mi? sorusuna verilecek yanıt hayırdır. Çünkü IS0 9000 uygulama süreci kuruluşun kalite yönetim sisteminin gelişme ihtiyacına göre paralel olarak süreklilik arz eder. Bu nedenle Kalite yönetim sistemleri nin sürekli gelişme anlayışına uygun olarak ve müşterilerin değişen talep ve beklentilerine cevap verecek şekilde daha üst bir performans düzeyine çıkarılması için çaba sarf edilmelidir. Kalite yönetim sistemlerinin evrim sürecinde uzun vadede benimsenmesi gereken hedef sürekli mükemmellik anlayışı ile Toplam Kalite Yönetimi stratejisini geliştirmek ve bunu kuruluşun bütününe uygulayabilmektir.
  
-<img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/9000.png" style="float: center;" width="700" height="300" title="9000" />
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/9000.png" style="float: center;" width="700" height="300" title="9000" />
 
 
 ## Malcolm Baldrige Ulusal Kalite Ödülü 
@@ -354,14 +353,14 @@ Değerlendirmenin 1000 puan üzerinden yapıldığı ödül sisteminde yedi fark
 - Süreç Yönetimi
 - Sonuçlar
 
-<img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/malcolm.png" style="float: center;" width="500" height="500" title="Malcolm Baldrige" />
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/malcolm.png" style="float: center;" width="500" height="500" title="Malcolm Baldrige" />
 
 
 ## Altı Sigma
 
 Motorola, ürünlerine olan talebe yanıt olarak 1980'lerin sonunda Altı Sigma (Six Sigma) programını geliştirmiştir. 
 
-<img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/normal.png" style="float: center;" width="700" height="300" title="normal" />
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/normal.png" style="float: center;" width="700" height="300" title="normal" />
 
 
-<img src="/Users/busenursarica/Desktop/Stat Quality Cont Lec Notes/images/sixsigma.png" style="float: center;" width="700" height="300" title="sixsigma" />
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/sixsigma.png" style="float: center;" width="700" height="300" title="sixsigma" />
