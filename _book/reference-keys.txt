@@ -25,3 +25,4 @@ altı-sigma
 dmaic-süreci
 istatistiksel-kavramlar
 kısaltmalar
+ders-planı

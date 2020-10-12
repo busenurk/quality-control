@@ -1,3 +1,44 @@
-# Genel Bakış
+# Ders Planı
 
-Here is a review of existing methods.
+**Öğretim elemanı:** Arş. Gör. Dr. Busenur KIZILASLAN
+
+**e-posta:** busenur.sarica@marmara.edu.tr
+
+**Ders saati ve şekli:** Pzts 15:00-17:00, Cmts 11:00-13:00, UZEM
+
+**Ders amacı:** İstatistiksel Kalite Kontrol tarihçesi, yöntemler ve işleyiş hakkında bilgi sahibi olmak, R uygulamaları ile güncel hayat uygulamaları gerçekleştirmek
+
+<br>
+
+**Kaynaklar:** 
+
+- [Introduction to Statistical Quality Control - Douglas C. Montgomery](http://endustri.eskisehir.edu.tr/ipoyraz/TKY302/icerik/text%20book_montgomery_6th%20edition.pdf) 
+
+- [Statistical Process Control - John S. Oakland](http://www.diliev.com/Home/materiali/KHEA/referati/6812268-Statistical-Process-Control-eBook-VG.pdf)
+
+- İstatistiksel Kalite Kontrol Ders Notları - Erhan Öner
+
+- [İstatistiksel Kalite Kontrol Ders Notları - Tuncay Özcan](http://auzefkitap.istanbul.edu.tr/kitap/endustrimuhlt_ue/istatistikselkalitekontrolu.pdf)
+
+<br>
+
+**Ders Planı:** 
+
+- Terminoloji ve genel bakış
+
+- Kalite öncüleri
+
+- Çıkarımsal istatistik
+
+- Kontrol grafikleri
+  - Niceliksel kalite özellikleri için kontrol diyagramları
+  - Niteliksel kalite özellikleri için kontrol diyagramları
+  
+- Proses yeterlilik analizi
+
+- CUSUM ve EWMA diyagramları
+
+- Kabul örneklemesi
+
+- R uygulamaları _(Uygulamalar her konu içeriğinde yer alacaktır.)_
+
