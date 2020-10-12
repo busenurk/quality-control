@@ -22,7 +22,13 @@ Ders dili Türkçe'dir. Bu bakımdan genel anlatımda Türkçe kullanılacaktır
 
 Ders uygulamaları R programlama dili ile gerçekleştirilecek olup ödev uygulamalarınızı bu programlama dili ile hazırlamanız istenecektir, bu sebeple _Bilgisayar III_ ve _Bilgisayar IV_ ders notlarınızı gözden geçirmeniz faydalı olacaktır.
 
-**İletişim adresi:** busenur.sarica@marmara.edu.tr
+Ders notunuz bookdown^[https://bookdown.org] ile hazırlanmış olup [linkten](https://busenurk.github.io/quality-control/_book/index.html) ulaşabilirsiniz. Ders notlarınızın pdf halini bookdown üzerinden indirebilirsiniz veya UZEM ders notları kısmından ulaşabilirsiniz.
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/bookdown.png" style="float: center;" width="800" height="400" title="Bookdown" /> 
+
+<br>
 
 **Kaynaklar**
 
