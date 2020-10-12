@@ -207,6 +207,8 @@ Deming, Shewhart'ın bilimsel çıkarımları etrafında bazı metodolojik öner
  
  <br>
  
+Belirtilen 14 Madde'yi Deming'den dinlemek de mümkün; [The 14 Points](https://www.youtube.com/watch?v=tsF-8u-V4j4)
+ 
 Deming’in 14 maddesini okurken, organizasyonel değişime güçlü bir vurgu yapıldığı fark edilmaktedir. Ayrıca, bu değişim sürecine rehberlik etmede yönetimin rolü büyük önem taşımaktadır. Ancak nelerin değişmesi gerekiyor ve bu değişim süreci nasıl başlatılmalı? Bu noktada istatistiksel yöntemler devreye girmektedir. 
 
 <span style="color: red;">Deming'in tanımladığı yönetimdeki 7 ölümcül hastalık nedir araştırınız.</span>
