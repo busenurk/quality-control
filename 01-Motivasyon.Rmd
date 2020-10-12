@@ -6,6 +6,7 @@ output:
 # Motivasyon
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/dprize.png" style="float: right;" width="230" height="230" title="Quality" /> 
 =======
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/dprize.png" style="float: right;" width="250" height="250" title="Deming Prize" /> 
@@ -23,6 +24,8 @@ Dr. W. Edwards Deming tarafından yazılmış, incelenmesi gereken makaleler;
 
 [Some responsibilities of the statistician](https://deming.org/wp-content/uploads/2020/06/Some-Responsibilities-of-a-Statistician-1964.pdf)
 >>>>>>> 84c9b6494dce5a2898b9bb1e32c325d01e136c1a
+=======
+>>>>>>> e811708188c14fd401695de1028ac3a22c00378f
 
 Kaliteyi kontrol etmek ve iyileştirmek rekabet ortamında kazananı belirleyen faktör haline gelmiştir. Bu bakımdan doğru yürütülen bir kalite kontrol süreci başarının anahtarı olacaktır. Sürecin başarılı yürütülmesi ise ancak alanında uzman kişilerin önderliğinde mümkündür. 
 
