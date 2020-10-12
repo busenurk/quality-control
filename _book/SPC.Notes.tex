@@ -20,6 +20,7 @@
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \IfFileExists{microtype.sty}{% use microtype if available
   \usepackage[]{microtype}
+  \usepackage{wrapfig}
   \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
 \makeatletter
@@ -42,6 +43,7 @@
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage{longtable,booktabs}
+\usepackage{graphicx}
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -85,13 +87,18 @@
 \hypertarget{uxf6n-bilgi}{%
 \chapter{Ön Bilgi}\label{uxf6n-bilgi}}
 
+\begin{wrapfigure}{r}{0.25\textwidth}
+    \centering
+    \includegraphics[width=0.25\textwidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/dreamb.png}
+\end{wrapfigure}
+
 Ders notları temelde \emph{IST3032 İstatistiksel Kalite Kontrol} dersine kaynaklık etmesi amacıyla tasarlanmış olup konu çerçevesinde kendini geliştirmek isteyen herkesin faydalanabilmesi hedeflenmiştir.
 
 Ders dili Türkçe'dir. Bu bakımdan genel anlatımda Türkçe kullanılacaktır. Literatürü rahat takip edebilmeniz ve terim karmaşası yaşamamanız adına temel terim kısaltmaları orijinal haliyle kullanılacaktır (Kısaltmalar bölümünde hem Türkçe hem İngilizce açılımları bulabilirsiniz). Referans verilen kaynaklardan faydalanabilmeniz ve ders sürecinde incelemeniz gereken makalelerde zorluk yaşamamanız adına İngilizce eksikliğinizi gidermeniz önerilir.
 
 Ders uygulamaları R programlama dili ile gerçekleştirilecek olup ödev uygulamalarınızı bu programlama dili ile hazırlamanız istenecektir, bu sebeple \emph{Bilgisayar III} ve \emph{Bilgisayar IV} ders notlarınızı gözden geçirmeniz faydalı olacaktır.
 
-\textbf{İletişim adresi:} \href{mailto:busenur.sarica@marmara.edu.tr}{\nolinkurl{busenur.sarica@marmara.edu.tr}}
+Ders notunuz bookdown\footnote{\url{https://bookdown.org}} ile hazırlanmış olup \href{https://busenurk.github.io/quality-control/_book/index.html}{linkten} ulaşabilirsiniz. Ders notlarınızın pdf halini bookdown üzerinden indirebilirsiniz veya UZEM ders notları kısmından ulaşabilirsiniz.
 
 \textbf{Kaynaklar}
 
@@ -106,8 +113,15 @@ Ders uygulamaları R programlama dili ile gerçekleştirilecek olup ödev uygula
   \href{http://auzefkitap.istanbul.edu.tr/kitap/endustrimuhlt_ue/istatistikselkalitekontrolu.pdf}{İstatistiksel Kalite Kontrol Ders Notları - Tuncay Özcan}
 \end{itemize}
 
+\newpage
+
 \hypertarget{hakkux131mda}{%
 \section{Hakkımda}\label{hakkux131mda}}
+
+\begin{wrapfigure}{l}{0.25\textwidth}
+    \centering
+    \includegraphics[width=0.25\textwidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/busenur1.jpg}
+\end{wrapfigure}
 
 2012 yılında Mimar Sinan G. S. Üniversitesi istatistik bölümünde lisans öğrenimimi tamamlamamın ardından 2014 yılı itibariyle Marmara Üniversitesi istatistik bölümünde araştırma görevlisi olarak göreve başladım. Eş zamanlı olarak başladığım yüksek lisans öğrenimimi yine Mimar Sinan G. S. Üniversitesi istatistik anabilim dalında tamamlarken artık çalışma alanım bulanık mantık (\href{https://en.wikipedia.org/wiki/Fuzzy_logic}{fuzzy logic}) olarak şekillenmişti. Bir buçuk yılda tamamladığım yüksek lisansın ardından farklı bakış açısı kazanma fikriyle yönümü Yıldız Teknik Üniversitesi'ne çevirdim. 2015 yılında istatistik bölümünde başladığım doktora öğrenimimi 2020 yılında yine bulanık mantık ile öngörü üzerine hazırladığım tezim ile tamamladım. Doktora öğrenimim sırasında İstanbul Teknik Üniversitesi endüstri mühendisliği bölümünden de çeşitli dersler alarak alanında uzman hocaların\footnote{\href{http://akademi.itu.edu.tr/kahramanc/}{Prof.~Dr.~Cengiz Kahraman}} bilgilerinden faydalanma imkanı buldum.
 
@@ -120,11 +134,20 @@ Akademik kariyer hedefiyle başlamadığım öğrenim yaşamımda ufku açık, a
 \hypertarget{motivasyon}{%
 \chapter{Motivasyon}\label{motivasyon}}
 
+\begin{wrapfigure}{r}{0.25\textwidth}
+    \centering
+    \includegraphics[width=0.25\textwidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/dprize.png}
+\end{wrapfigure}
+
 Kaliteyi kontrol etmek ve iyileştirmek rekabet ortamında kazananı belirleyen faktör haline gelmiştir. Bu bakımdan doğru yürütülen bir kalite kontrol süreci başarının anahtarı olacaktır. Sürecin başarılı yürütülmesi ise ancak alanında uzman kişilerin önderliğinde mümkündür.
 
 İstatistikçiler için olası bir çalışma alanı olan \emph{İstatistiksel Kalite Kontrol}, gelecekte sizlerden biri veya birilerinin de yöneleceği alan olabilir. Bu bakımdan ders kapsamındaki bilgileri özümsemek, uygulamaları kavramak önem arz etmektedir.
 
-Dr.~W. Edwards Deming tarafından yazılmış, incelenmesi gereken makaleler;
+\vspace{0.3cm}
+
+\textbf{Dr.~W. Edwards Deming tarafından yazılmış, incelenmesi gereken makaleler;}
+
+\vspace{0.1cm}
 
 \href{https://deming.org/wp-content/uploads/2020/06/On-The-Statisticians-Contribution-to-Quality-1987.pdf}{On the statistician's contribution to quality}
 
@@ -404,6 +427,8 @@ Deming, Shewhart'ın bilimsel çıkarımları etrafında bazı metodolojik öner
 \item
   Sürekli iyileştirmeyi ortak hedef haline getirin.
 \end{enumerate}
+
+Belirtilen 14 Madde'yi Deming'den dinlemek de mümkün; \href{https://www.youtube.com/watch?v=tsF-8u-V4j4}{The 14 Points}
 
 Deming'in 14 maddesini okurken, organizasyonel değişime güçlü bir vurgu yapıldığı fark edilmaktedir. Ayrıca, bu değişim sürecine rehberlik etmede yönetimin rolü büyük önem taşımaktadır. Ancak nelerin değişmesi gerekiyor ve bu değişim süreci nasıl başlatılmalı? Bu noktada istatistiksel yöntemler devreye girmektedir.
 

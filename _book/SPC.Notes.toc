@@ -1,7 +1,7 @@
 \contentsline {chapter}{\numberline {1}Ön Bilgi}{5}{chapter.1}
-\contentsline {section}{\numberline {1.1}Hakkımda}{5}{section.1.1}
+\contentsline {section}{\numberline {1.1}Hakkımda}{6}{section.1.1}
 \contentsline {chapter}{\numberline {2}Motivasyon}{7}{chapter.2}
-\contentsline {chapter}{\numberline {3}Genel Bakış}{9}{chapter.3}
+\contentsline {chapter}{\numberline {3}Ders Planı}{9}{chapter.3}
 \contentsline {chapter}{\numberline {4}Kalite Yönetimi Temel Kavramları}{11}{chapter.4}
 \contentsline {section}{\numberline {4.1}Kalite Kavramı}{11}{section.4.1}
 \contentsline {section}{\numberline {4.2}Kalite Boyutları}{13}{section.4.2}
