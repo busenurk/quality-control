@@ -34,9 +34,7 @@
   - Niceliksel kalite özellikleri için kontrol diyagramları
   - Niteliksel kalite özellikleri için kontrol diyagramları
   
-- Proses yeterlilik analizi
-
-- CUSUM ve EWMA diyagramları
+- Proses yeterlilik analizi, CUSUM ve EWMA diyagramları
 
 - Kabul örneklemesi
 

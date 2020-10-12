@@ -5,6 +5,10 @@
 \documentclass[
 ]{book}
 \usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{subcaption}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
@@ -73,6 +77,13 @@
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Dr. Busenur KIZILASLAN}
+\lhead{SQC Ders Notları'20}
+\rfoot{Page \thepage}
+
 \title{İstatistiksel Kalite Kontrol}
 \author{Dr.~Busenur Kızılaslan}
 \date{2020-10-12}
@@ -99,6 +110,12 @@ Ders dili Türkçe'dir. Bu bakımdan genel anlatımda Türkçe kullanılacaktır
 Ders uygulamaları R programlama dili ile gerçekleştirilecek olup ödev uygulamalarınızı bu programlama dili ile hazırlamanız istenecektir, bu sebeple \emph{Bilgisayar III} ve \emph{Bilgisayar IV} ders notlarınızı gözden geçirmeniz faydalı olacaktır.
 
 Ders notunuz bookdown\footnote{\url{https://bookdown.org}} ile hazırlanmış olup \href{https://busenurk.github.io/quality-control/_book/index.html}{linkten} ulaşabilirsiniz. Ders notlarınızın pdf halini bookdown üzerinden indirebilirsiniz veya UZEM ders notları kısmından ulaşabilirsiniz.
+
+\vspace{0.3cm}
+
+\begin{figure}
+ \includegraphics{/Users/busenursarica/Documents/GitHub/quality-control/images/bookdown.png}
+\end{figure}
 
 \textbf{Kaynaklar}
 
@@ -197,9 +214,7 @@ Kaliteyi kontrol etmek ve iyileştirmek rekabet ortamında kazananı belirleyen 
     Niteliksel kalite özellikleri için kontrol diyagramları
   \end{itemize}
 \item
-  Proses yeterlilik analizi
-\item
-  CUSUM ve EWMA diyagramları
+  Proses yeterlilik analizi,   CUSUM ve EWMA diyagramları
 \item
   Kabul örneklemesi
 \item
@@ -211,6 +226,11 @@ Kaliteyi kontrol etmek ve iyileştirmek rekabet ortamında kazananı belirleyen 
 
 \hypertarget{kalite-kavramux131}{%
 \section{Kalite Kavramı}\label{kalite-kavramux131}}
+
+\begin{wrapfigure}{r}{0.25\textwidth}
+    \centering
+    \includegraphics[width=0.25\textwidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/quality1.jpg}
+\end{wrapfigure}
 
 Kalite tanımı birçok farklı şekilde yapılabilir. Kalitenin sözlük anlamı \emph{mükemmeliyet derecesi} olmakla birlikte, ürün/hizmette mevcut olması istenen özellik veya özellikler, kalite tanımı için başlangıç noktası olarak seçilebilir. Kalitenin çok boyutlu ve doğası gereği göreceli yapısı ortak bir tanımdan ziyade farklı bakış açılarıyla geliştirilmiş kalite tanımlarını ortaya çıkarmıştır. Amerikan Kalite Derneği (ASQ); kaliteyi farklı tanımlamaların yapılabileceği öznel bir terim olarak tanımlamıştır.
 
@@ -236,7 +256,17 @@ Değişkenliğin kalite kontrol açısından önemini kavramak açısından bir 
 
 Garanti taleplerinin ve onarım maliyetlerinin analizi, sütun grafikte gösterilmiştir, Japon üretimi şanzımanın çok daha düşük maliyetlere sahip olmasıyla, iki üretim kaynağı arasında çarpıcı bir fark olduğu görülmektedir. Maliyet ve performanstaki bu farkın nedenini keşfetme çalışmasının bir parçası olarak, şirket her tesisten rastgele iletim örnekleri seçmiş, bunları parçalara ayırmış ve birkaç kritik kalite özelliğini ölçmüştür.
 
+\begin{figure}
+\centering
+    \includegraphics[width=0.70\textwidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/target1.png}
+\end{figure}
+
 Kritik boyutların her iki dağılımı da hedef değerde ortalanmıştır. Bununla birlikte, Amerika Birleşik Devletleri'nde üretilen şanzımanlar için kritik özelliklerin dağılımı, spesifikasyonların genişliğinin yaklaşık\% 75'ini kaplar ve bu da çok az sayıda uygun olmayan birimin üretileceğini gösterir. Aslında tesis, şirket içinde genel kabul görmüş kalite anlayışına göre oldukça iyi bir kalite seviyesinde üretim yapmaktadır. Buna karşılık, Japon fabrikası aynı kritik özelliklerin spesifikasyon bandının sadece yaklaşık\% 25'ini kapladığı aktarımlar üretmiştir. Sonuç olarak, Japon yapımı şanzımanların kritik kalite özelliklerinde Amerika Birleşik Devletleri'nde üretilenlere kıyasla önemli ölçüde daha az değişkenlik mecvuttur.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.70\textwidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/target.png}
+\end{figure}
 
 Akla gelen ilk soru Japonlar bunu nasıl yaptı? Burada azalan değişkenlik, doğrudan daha düşük maliyetlere dönüşmüştür. Dahası, Japon yapımı şanzımanlar daha sorunsuz vites değiştirmiş, daha sessiz çalışmış ve genellikle müşteri tarafından yurt içinde üretilenlerden daha üstün olarak algılanmıştır. Daha az onarım ve garanti talebi, daha az yeniden çalışma ve boşa harcanan zaman, çaba ve paranın azaltılması anlamına gelmektedir. Dolayısıyla, \textbf{kalite gerçekten değişkenlikle ters orantılıdır.} Dahası maliyetle yakından ilişkilidir.
 
@@ -302,6 +332,11 @@ Kalite karakteristikleri için istenen değer \textbf{nominal} veya \textbf{hede
 \hypertarget{toplam-kalite-yuxf6netiminin-tarihsel-geliux15fimi}{%
 \section{Toplam Kalite Yönetiminin Tarihsel Gelişimi}\label{toplam-kalite-yuxf6netiminin-tarihsel-geliux15fimi}}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/timeline.png}
+\end{figure}
+
 Önemli zaman dilimlerinin detaylandırıldığı tarihsel gelişimi temel aşamaları ile altı ana başlık altında toplamak mümkündür.
 
 \textbf{1.} Operatör kalite kontrolü
@@ -334,7 +369,23 @@ Rekabetçi ortamda çağdaş kalite politikası oluşturulması ve geliştirilme
   \textbf{Kabul örneklemesi:} Kalite kontrolünün en eski yönlerinden biridir ve kalite iyileştirme için istatistiksel metodolojinin geliştirilmesinden çok öncesine dayanmaktadır. Örnekleme çeşitli aşamalarda gerçekleştirilebilir. Modern kalite güvence sistemleri genellikle kabul örneklemesine daha az vurgu yapmakta, istatistiksel proses kontrol ve deney tasarımına odaklanmaktadır. Kabul örneklemesi, kalitenin spesifikasyona uygunluk görüşünü pekiştirme eğilimindedir.
 \end{itemize}
 
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.80\textwidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/kabulorn.png}
+\end{figure}
+
 Kalite mühendisliği çabalarının temel amacı, ürünün temel kalite özelliklerindeki değişkenliğin sistematik olarak azaltılmasıdır.
+
+\begin{figure}
+\begin{subfigure}[h]{0.4\linewidth}
+\includegraphics[width=\linewidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/percentapp.png}
+\end{subfigure}
+\hfill
+\begin{subfigure}[h]{0.6\linewidth}
+\includegraphics[width=\linewidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/3d.png}
+\end{subfigure}%
+\end{figure}
 
 \hypertarget{kalite-iyileux15ftirmede-yuxf6netim-cephesi}{%
 \section{Kalite İyileştirmede Yönetim Cephesi}\label{kalite-iyileux15ftirmede-yuxf6netim-cephesi}}
@@ -378,6 +429,11 @@ Walter Andrew Shewhart Amerikalı bir fizikçi, mühendis ve istatistikçidir. �
 \hypertarget{w.-edwards-deming}{%
 \subsection{W. Edwards Deming}\label{w.-edwards-deming}}
 
+\begin{wrapfigure}{l}{0.25\textwidth}
+    \centering
+    \includegraphics[width=0.25\textwidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/Deming.jpeg}
+\end{wrapfigure}
+
 W. Edwards Deming, Wyoming Üniversitesi ve Yale Üniversitesi'nde mühendislik ve fizik eğitimi almıştır. Western Electric için çalışmış ve kontrol şemasının (control charts) geliştiricisi Walter A. Shewhart'tan büyük ölçüde etkilenmiştir.
 
 İkinci Dünya Savaşı ardından, Japon endüstrilerine danışmanlık görevinde bulunmuş, istatistiksel yöntemlerin gücü ve kalitenin rekabetçi bir silah olarak kullanımı konularında yöneticilerini ikna etmiştir.İstatistiksel yöntemlere olan bu bağlılık ve kullanım, Japonya endüstrisinin ve ekonomisinin genişlemesinde kilit bir unsur olmuştur.
@@ -385,6 +441,12 @@ W. Edwards Deming, Wyoming Üniversitesi ve Yale Üniversitesi'nde mühendislik 
 Japon Bilim Adamları ve Mühendisler Birliği, onuruna kalite iyileştirme için Deming Ödülü'nü yaratmıştır.
 
 Deming, Shewhart'ın bilimsel çıkarımları etrafında bazı metodolojik önerilerini geliştirdi ve sentezini Shewhart döngüsü (Shewhart (PDCA) cycle) olarak adlandırdı. PDCA döngüsü tüm proseslere uygulanabilir. Döngü iteratif olup karmaşık problemler için çok sayıda döngü gerekebilir.
+
+
+\begin{wrapfigure}{r}{0.25\textwidth}
+    \centering
+    \includegraphics[width=0.40\textwidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/sh.cyc.png}
+\end{wrapfigure}
 
 \textbf{(P) Planla:} Müşteri talebi ve kuruluş politikasına uyumlu sonuçların elde edilebilmesi için gereken objektif hedef ve proseslerin tasarlanması
 
@@ -432,10 +494,15 @@ Belirtilen 14 Madde'yi Deming'den dinlemek de mümkün; \href{https://www.youtub
 
 Deming'in 14 maddesini okurken, organizasyonel değişime güçlü bir vurgu yapıldığı fark edilmaktedir. Ayrıca, bu değişim sürecine rehberlik etmede yönetimin rolü büyük önem taşımaktadır. Ancak nelerin değişmesi gerekiyor ve bu değişim süreci nasıl başlatılmalı? Bu noktada istatistiksel yöntemler devreye girmektedir.
 
-{Deming'in tanımladığı yönetimdeki 7 ölümcül hastalık nedir araştırınız.}
+\textbf{Deming'in tanımladığı yönetimdeki 7 ölümcül hastalık nedir araştırınız.}
 
 \hypertarget{joseph-m.-juran}{%
 \subsection{Joseph M. Juran}\label{joseph-m.-juran}}
+
+\begin{wrapfigure}{l}{0.25\textwidth}
+    \centering
+    \includegraphics[width=0.25\textwidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/Juran.jpg}
+\end{wrapfigure}
 
 Joseph M. Juran Minnesota Üniversitesi Elektrik Mühendisliği Bölümü'nden mezun olmuştur. William Edwards Deming gibi o da gerek ABD'de gerek Japonya'da toplam kalite yönetiminin yaygınlaşmasında çok önemli rol oynamıştır. 1981 yılında Japon İmparatoru, Hirohito tarafından Order of Sacred Treasure ile ödüllendirilmiştir.
 
@@ -457,11 +524,15 @@ Kalite yönetimi için planlama, kontrol ve iyileştirme adımlarından oluşan 
 \hypertarget{armand-v.-feigenbaum}{%
 \subsection{Armand V. Feigenbaum}\label{armand-v.-feigenbaum}}
 
+\begin{wrapfigure}{l}{0.25\textwidth}
+    \centering
+    \includegraphics[width=0.25\textwidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/Feigenbaum.png}
+\end{wrapfigure}
+
 Armand V. Feigenbaum, Lisans eğitimini Union College'de, Yüksek Lisans ve Doktora Eğitimini ise MIT (Massachusetts Institute of Technology)'de tamamlamıştır. 1961 -- 1963 yılları arasında Amerikan Kalite Topluluğu'na (American Society for Quality) başkanlık etmiştir.
 
 Daha sonra Toplam Kalite Yönetimi olarak anılacak Toplam Kalite Kontrol kavramının yaratıcısıdır. Şirket çapında kalite kontrol kavramını ilk kez kitabı Toplam Kalite Kontrolü'nde tanıtmıştır. Bu kitap, 1950'lerin başlarında Japonya'daki erken kalite yönetimi felsefesinin etkilemiştir. Birçok Japon şirketi ``toplam kalite kontrol'' terimini kullanmıştır. Kaliteyi iyileştirmek için üç aşamalı bir yaklaşım önermiştir: kalite liderliği, kalite teknolojisi ve örgütsel bağlılık.
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 Deming, Juran ve Feigenbaum bu öncülerin üçü de
 
@@ -476,8 +547,6 @@ Deming, Juran ve Feigenbaum bu öncülerin üçü de
 \end{itemize}
 
 vurgulamaktadır.
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{philip-crosby}{%
 \subsection{Philip Crosby}\label{philip-crosby}}
@@ -526,6 +595,36 @@ Teknolojik ihtiyaçlardan dolayı ISO standartları, her beş yılda bir gözden
 Çoğu zaman ISO standard kodlarıyla ISO kalite belgesi anlamsal olarak karıştırılmakta ve anlam karmaşasına neden olabilmektedir. Uluslararası standartlar organizasyonu ISO 9001 ve ISO 14001 gibi Uluslararası Standartları geliştirmekte, ancak belgelendirme yapmamakta ve ISO kalite belgesi vermemektedir. Belgelendirme işlemleri, akredite belgelendirme kuruluşları tarafından gerçekleştirilmektedir.
 
 ISO kısaltmasının yanında yer alan rakam standardın kodu ve sondaki yıl bilgisi içeren diğer rakamsa, ilgili standardın son revizyonuna ait yılı göstermektedir. Örnek: ISO 9001:2015, ISO 22000:2016 vb.
+
+\begin{figure}
+\begin{subfigure}[h]{0.5\linewidth}
+\includegraphics[width=\linewidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/env.png}
+\end{subfigure}
+\hfill
+\begin{subfigure}[h]{0.5\linewidth}
+\includegraphics[width=\linewidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/health.png}
+\end{subfigure}%
+\end{figure}
+
+\begin{figure}
+\begin{subfigure}[h]{0.5\linewidth}
+\includegraphics[width=\linewidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/food.png}
+\end{subfigure}
+\hfill
+\begin{subfigure}[h]{0.5\linewidth}
+\includegraphics[width=\linewidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/energy.png}
+\end{subfigure}%
+\end{figure}
+
+\begin{figure}
+\begin{subfigure}[h]{0.5\linewidth}
+\includegraphics[width=\linewidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/security.png}
+\end{subfigure}
+\hfill
+\begin{subfigure}[h]{0.5\linewidth}
+\includegraphics[width=\linewidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/quality.png}
+\end{subfigure}%
+\end{figure}
 
 \hypertarget{iso-9000-kalite-standartlarux131}{%
 \section{ISO 9000 Kalite Standartları}\label{iso-9000-kalite-standartlarux131}}
@@ -580,9 +679,22 @@ ISO 9000 Kalite Sistem Standartları Mart 1987'de yayınlanmış ve birçok ülk
   Kurumsallaşma yolunda önemli bir adım atılmış olması
 \end{itemize}
 
+\vspace{0.3cm}
+
 \textbf{ISO 9000 Belgesi almak yeterli mi?}
 
+\vspace{0.1cm}
+
 ISO 9000 uygulama sürecinde yapılabilecek en önemli yanlışlık belgenin alınması ile bu sürecin sona erdiğini düşünmektir. ISO 9000 Kalite Sistem Belgesi yeter mi? sorusuna verilecek yanıt hayırdır. Çünkü IS0 9000 uygulama süreci kuruluşun kalite yönetim sisteminin gelişme ihtiyacına göre paralel olarak süreklilik arz eder. Bu nedenle Kalite yönetim sistemleri nin sürekli gelişme anlayışına uygun olarak ve müşterilerin değişen talep ve beklentilerine cevap verecek şekilde daha üst bir performans düzeyine çıkarılması için çaba sarf edilmelidir. Kalite yönetim sistemlerinin evrim sürecinde uzun vadede benimsenmesi gereken hedef sürekli mükemmellik anlayışı ile Toplam Kalite Yönetimi stratejisini geliştirmek ve bunu kuruluşun bütününe uygulayabilmektir.
+
+\vspace{0.3cm}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.70\linewidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/9000.png}
+\end{figure}
+
+\newpage
 
 \hypertarget{malcolm-baldrige-ulusal-kalite-uxf6duxfcluxfc}{%
 \section{Malcolm Baldrige Ulusal Kalite Ödülü}\label{malcolm-baldrige-ulusal-kalite-uxf6duxfcluxfc}}
@@ -610,6 +722,11 @@ Değerlendirmenin 1000 puan üzerinden yapıldığı ödül sisteminde yedi fark
 \item
   Sonuçlar
 \end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth]{/Users/busenursarica/Documents/GitHub/quality-control/images/malcolm.png}
+\end{figure}
 
 \hypertarget{altux131-sigma}{%
 \section{Altı Sigma}\label{altux131-sigma}}
