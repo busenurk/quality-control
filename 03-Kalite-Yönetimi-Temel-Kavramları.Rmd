@@ -13,18 +13,18 @@ Kalite tanımı birçok farklı şekilde yapılabilir. Kalitenin sözlük anlam�
 - Kalite, özelliklerin ve gereksinimleri yerine getirme derecesidir. (ISO 9000)
 - Kalite, mal ve hizmetlerde, özellikle gereksinimlere uydukları ve müşterileri tatmin ettikleri ölçüde mükemmelliği ifade eder. (ASQ)
 
-Kalite değişkenlikle ters orantılıdır. Ürün/hizmetin önemli karakteristiklerindeki değişkenliğin azaltılması kaliteyi arttıracaktır. 
+Kalite **değişkenlikle (variability)** ters orantılıdır. Ürün/hizmetin önemli karakteristiklerindeki değişkenliğin azaltılması kaliteyi arttıracaktır. 
 
 Değişkenliğin kalite kontrol açısından önemini kavramak açısından bir örnek verelim. Amerika Birleşik Devletleri'ndeki bir otomobil şirketi, şanzıman üretimlerini hem yerli bir tesiste hem de Japon bir tedarikçi aracılığıyla gerçekleştirmektedir. 
 
 
-Garanti taleplerinin ve onarım maliyetlerinin analizi, sütun grafikte gösterilmiştir, Japon üretimi şanzımanın çok daha düşük maliyetlere sahip olmasıyla, iki üretim kaynağı arasında çarpıcı bir fark olduğu görülmektedir. Maliyet ve performanstaki bu farkın nedenini keşfetme çalışmasının bir parçası olarak, şirket her tesisten rastgele iletim örnekleri seçmiş, bunları parçalara ayırmış ve birkaç kritik kalite özelliğini ölçmüştür.
+Garanti taleplerinin ve onarım maliyetlerinin analizi, sütun grafikte gösterilmiştir, Japon üretimi şanzımanın çok daha düşük maliyetlere sahip olmasıyla, iki üretim kaynağı arasında çarpıcı bir fark olduğu görülmektedir. Maliyet ve performanstaki bu farkın nedenini keşfetme çalışmasının bir parçası olarak, şirket her tesisten rastgele örnekler seçmiş, bunları parçalara ayırmış ve birkaç kritik kalite özelliğini ölçmüştür.
 
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/target1.png" style="float: right;" width="350" height="220" title="Şekil1" /> 
 
 
 
-Kritik boyutların her iki dağılımı da hedef değerde ortalanmıştır. Bununla birlikte, Amerika Birleşik Devletleri'nde üretilen şanzımanlar için kritik özelliklerin dağılımı, spesifikasyonların genişliğinin yaklaşık% 75'ini kaplar ve bu da çok az sayıda uygun olmayan birimin üretileceğini gösterir. Aslında tesis, şirket içinde genel kabul görmüş kalite anlayışına göre oldukça iyi bir kalite seviyesinde üretim yapmaktadır. Buna karşılık, Japon fabrikası aynı kritik özelliklerin spesifikasyon bandının sadece yaklaşık% 25'ini kapladığı aktarımlar üretmiştir. Sonuç olarak, Japon yapımı şanzımanların kritik kalite özelliklerinde Amerika Birleşik Devletleri'nde üretilenlere kıyasla önemli ölçüde daha az değişkenlik mecvuttur.
+Kritik boyutların her iki dağılımı da hedef değerde ortalanmıştır. Bununla birlikte, Amerika Birleşik Devletleri'nde üretilen şanzımanlar için kritik özelliklerin dağılımı, spesifikasyonların genişliğinin yaklaşık% 75'ini kaplar ve bu da çok az sayıda uygun olmayan birimin üretileceğini gösterir. Aslında tesis, şirket içinde genel kabul görmüş kalite anlayışına göre oldukça iyi bir kalite seviyesinde üretim yapmaktadır. Buna karşılık, Japon fabrikası aynı kritik özelliklerin spesifikasyon bandının sadece yaklaşık% 25'ini kapladığı aktarımlar üretmiştir. Sonuç olarak, Japon yapımı şanzımanların kritik kalite özelliklerinde Amerika Birleşik Devletleri'nde üretilenlere kıyasla önemli ölçüde daha az değişkenlik mevcuttur.
 
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/target.png" style="float: right;" width="350" height="220" title="Şekil2" />
 
