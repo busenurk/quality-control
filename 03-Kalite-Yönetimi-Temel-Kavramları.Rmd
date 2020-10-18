@@ -360,4 +360,160 @@ Değerlendirmenin 1000 puan üzerinden yapıldığı ödül sisteminde yedi fark
 
 ## Altı Sigma
 
+Motorola, ürünlerine olan talebe yanıt olarak 1980'lerin sonunda altı sigma (six sigma (6$\sigma$)) yaklaşımını geliştirmiştir. Altı sigmanın odak noktası, ürün (kalite) özelliklerindeki değişkenliği azaltmak, başarısızlık veya kusurları minimum seviyeye indirmektir. Müşteri odaklı bir yöntem olan altı sigma, sorununun çözümü için müşterinin temel gereksinimlerine önem verir. Altı sigma, müşteri memnuniyetini arttıran, paralelinde rekabet gücünde artış sağlayan ve böylece karlılık getiren bir sistem olarak özetlenebilir. Motorola'nın 1988 yılında Malcolm Baldrige ödülünü kazanması ile daha da yaygınlaşmıştır.
+
+Sıfır hatayı hedefleyen yöntem, doğru uygulandığında oldukça başarılı sonuçlar elde etmektedir. Altı sigma yaklaşımı bir milyon üründe _(parts per million (ppm))_ yalnızca 3.4'lük hata seviyesinde çalışmaktadır. Bu bakımda mükemmeliyet hedefleyen firmalar için tercih edilen bir yaklaşımdır.
+
+Sigma standart sapmanın simgesi, standart sapma da istatistiksel olarak yayılım ve değişkenlik ölçüsüdür.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/sapma1.png" style="float: center;" width="150" height="100" title="mean shifted" /> <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/sapma2.png" style="float: center;" width="150" height="100" title="mean shifted" />
+
+Altı sigma yaklaşımında da hataları düzeltme yerine önleme yaklaşımını içeren **proaktif** gelişme modeli tercih edilmiştir. Problemlerin sonuçları yerine nedenleri üzerine odaklanma esastır.
+
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/normal.png" style="float: center;" width="700" height="300" title="normal" />
+  
+  
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ndist.png" style="float: center;" width="500" height="200" title="normal distribution" />
+    
+Motorola altı sigma konsepti, prosesdeki değişkenliği azaltmak için spesifikasyon sınırlarını ortalamadan en az altı standart sapma uzaklıkta olacak şekilde konumlandırmaktadır.
+  
+    
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/sixsigma.png" style="float: center;" width="700" height="300" title="sixsigma" />
+      
+      
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/mshifted.png" style="float: center;" width="500" height="200" title="mean shifted" />
+        
+### Neden 6$\sigma$        
+
+6$\sigma$'nın asıl hedefinin 3.4 ppm hata seviyesinde çalışmak olduğundan bahsetmiştik, %99.99966 hatasızlığa karşılık gelen bu değer çok yüksek kaliteye karşılık geliyor gibi görünebilir ancak öyle olmadığını ilerleyen örneklerde uygulamalı olarak göreceğiz. Günlük yaşamdaki çok basit işlerde bile 6$\sigma$'nın ne kadar önemli yere sahip olduğunu bir örnekle açıklayalım.
+
+Bir fast food restoranına gittiğinizi varsayalım. Hamburger (hamburger ekmeği, köfte, özel sos, peynir, turşu, soğan, marul ve domates), kızarmış patates ve içecek sipariş verdiniz. Siparişiniz (ürün) 10 birimden oluşuyor. %99 kalite sizi memnun eder mi? (10 birimin birbirinden bağımsız olduğu varsayılır)
+
+**Yemeğin iyi olma olasılığı;**
+
+P{Yemeğin iyi olması}=$(0.99)^{10}=0.9044$
+
+Yaklaşık %90 olasılıkla yemeğinizden memnun olacaksınız. Peki bu yemeği dört kişilik bir aile olarak yemiş olsaydınız memnuniyetiniz değişir miydi?
+
+<br>
+
+**Tüm yemeklerin iyi olma olasılığı;**
+
+P{Tüm yemeklerin iyi olması}=$(0.9044)^{4}=0.6690$
+
+Tüm yemeklerin yalnızca 2/3'ü iyi olma ihtimaline sahip görünüyor. Memnuniyet seviyenizin düştüğü açık. Peki ailenizle birlikte her ay hamburger yemek için çıktığınızda durum ne olacak?
+
+<br>
+
+**Bir yıldaki tüm yemeklerin iyi olma olasılığı;**
+
+P{Bir yıldaki tüm yemeklerin iyi olması}=$(0.6690)^{12}=0.0080$
+
+Memnuniyet açısından kabul edilemez bir olasılık! Görüldüğü üzere oldukça basit bir ürün için bile oldukça yüksek düzeyde kalite ve hizmete ihtiyaç vardır.
+
+<br>
+
+> 3$\sigma$ seviyesinde üretim yapan bir çok şirket ürettiği her bir milyon parçada 66.000 kusurlu parça çıkmasından dolayı toplam gelirlerinin yaklaşık %25'ini kaybetmektedirler.
+
+<br>
+
+Gönderilen her 300.000 mektupta;
+
+  - 3$\sigma$ ile 3000 kayıp
+  - 6$\sigma$ ile 1 kayıp
+
+Her hafta TV yayını;
+
+  - 3$\sigma$ ile 1.68 saati bozuk yayın yapıyor.
+  - 6$\sigma$ ile 1.8 saniye bozuk yayın yapıyor.
+
+### Sigma Kalite Seviyesi
+
+Altı sigma yaklaşımı, kalite seviyelendirmesini _sigma kalite seviyesi_ ölçütüne bağlı olarak değerlendirmektedir. Yaklaşımın isminden de anlaşılacağı üzere hedef, sigma kalite seviyesinin 6 olmasıdır. Bir milyonda 3.4 hata olması anlamına gelen 6 sigma kalite seviyesi aynı zamanda hatasız yüzdesinin %99.99966 olması anlamına gelmektedir. Her ne kadar %99 hatasız oranı kusursuza yakınmış gibi görünse de gerçek hayatta ne denli önemli olduğunu anlamak adına örnekler verelim;
+
+- Bir saatte kaybolan 20.000 mektup
+- Her hafta 5000 yanlış ameliyat gerçekleşmesi
+- Her ay yaklaşık 7 saat elektrik kesintisi (6$\sigma$ seviyesinde 8.8sn)
+- Her yıl 200.000 adet yanlış reçete yazılması
+
+> Sistemdeki iyileşme, değişkenliğin azalması ile mümkündür, bu da istatistiksel olarak standart sapma yani sigmanın azalması anlamına gelir. İyileşme aynı zamanda 'sigma kalite seviyesindeki' artış olarak da tanımlanır, bu bakımdan ifadeleri karıştırmamak önemlidir.
+
+<center><img src="/Users/busenursarica/Documents/GitHub/quality-control/images/positions.png" style="float:center;" width="500" height="250" title="Pozisyonlar" /> 
+
+### Altı Sigma Proje Yönetimi
+Altı sigma yaklaşımının uygulaması bu alanda uzmanlaşan kişiler tarafından gerçekleştirilmektedir. Uzmanlar, bilgi ve donanımlarına bağlı olarak; yeşil kuşak, kara kuşak, uzman kara kuşak, şampiyon ve liderlik konseyi olarak isimlendirilmektedir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ssgma.png" style="float:right;" width="300" height="300" title="sixsigma" /> 
+
+
+**Yeşil kuşak (Green Belts (GBs)):** Projelerde kısmi zamanlı çalışan kişilerdir. Sorumlulukları;
+
+- Proje şampiyonu ile proje amacını tanımlamak
+- Proje sürecinde takıma her türlü desteği sağlamak
+- Proje süresince gerekli veri analizlerini gerçekleştirmek
+- 6$\sigma$ araçlarının kullanımı ile ilgili takımı bilgilendirmek
+
+
+**Kara kuşak (Black Belts (BBs)):** İyileştirme takımının lideridir, ve şu özellikleri barındırır;
+
+- Prosesi iyileştirme yeteneği
+- Takım çalışmasına yatkın olma ve empati
+- Müşteri odaklı düşünebilen
+- 6$\sigma$ araçlarını etkin kullanabilme
+
+Kara kuşaklar 4 ay süreyle eğitim alırlar, aday olarak çalıştıkları projede başarılı olmaları durumunda _uzman kara kuşak_ ünvanını almaya hak kazanırlar.
+
+**Uzman Kara kuşak (Master Black Belts (MBBs)):** Proje sorumlusu olarak liderlik vasfı mevcuttur. Yöntem ve araçlara hakimdir, teknik danışman olarak da tanımlanabilir.
+
+- Proje takımına istatistiksel yöntemler başta olmak üzere her konuda teknik destek sağlamak
+- Şampiyonlara proje sürelerinin belirlenmesinde yardımcı olmak
+- 6$\sigma$ yöntemlerini uygulamak
+- Yeşil ve Kara kuşaklara eğitim verme ve mentorluk yapmak
+
+**Şampiyon (Champion):** Proje uygulama ve yürütme adımlarında aktif rol oynar, sponsorluk ve liderlik rolü bulunur. 
+
+- Projeyi belirlemek
+- Proje takımı ve yönetim arasında köprü olmak
+- Projeler için kaynak bulmak
+- Proje takımını yönetim katında temsil etmek ve savunuculuğunu üstlenmek
+- Yol gösterici olmak ve projeyi odak noktası haline getirmek
+- Projede 6$\sigma$ yöntemlerinin kullanılmasını sağlamak
+
+**Liderlik Konseyi (Leadership Team):** 6$\sigma$ başarısı için destek ve yönlendirmeyi sağlar. Sorumlulukları;
+
+- 6$\sigma$ yönetimini incelemek
+- Projeler ve işletme hedefleri arasında ilişki kurmak
+- Proje sürecini yakından takip etmek
+
+<br>
+
+Altı sigma uygulamaları 3 nesile ayrılmıştır;
+
+**I. Nesil (Generation I):** 1987-1994 yılları, değişkenliğin azaltılması ve hataların elenmesi odak noktası olmuştur. Örn: Motorola
+
+**II. Nesil (Generation II):** 1994-2000 yılları, I. nesilin devamı olarak ürün tasarımlarında iyileştirme ve maliyetlerin azaltılması odaklanma noktası olmuştur. Örn: General Elektrik
+
+**III. Nesil (Generation III):** 2000 li yıllar ve sonrası, geçmiş nesillere ek olarak değer yaratma (yeni ürünler üretilmesi, pazarın genişletilmesi, hisse senetlerindeki değer artışı ) üzerine odaklanma noktası olmuştur.
+
+
+Son yıllarda _yalın sistemler (lean systems)_ ve _altı sigma için tasarım (design for six sigma (DFSS))_ olmak üzere iki yaklaşım daha tanımlanmıştır. Birçok kuruluş bu yaklaşımların birini veya her ikisini de altı sigma yaklaşımlarına dahil etmişlerdir. Altı sigma özellikle bu yaklaşımlarla birlikte kullanıldığında oldukça başarılı olmaktadır. 
+
+<center><img src="/Users/busenursarica/Documents/GitHub/quality-control/images/tri.png" style="float:center;" width="600" height="400" title="sixsigma" /><center> 
+
 [The Six Sigma Revolution by Thomas Pyzdek](http://www.bxlnc.com/download/The-Six-Sigma-Revolution.pdf)
+
+Altı sigma yaklaşımı **DMAIC** olarak tanımlanan bir yol haritası eşliğinde uygulanır.
+
+## Kalite Maliyetleri
+
+Kalite maliyetleri ölçülebilen (kalite kontrol giderleri, üretim kaybı, hurda) ve ölçülemeyen (müşteri kaybı, pazar kaybı, imaj kaybı) kısımları nedeniyle buz dağına benzetilmektedir. Ölçülemeyen kısımlaeın etkileri uzun zamanda görülmektedir. Kalite maliyetleri üç ana başlıkta incelenebilir;
+
+**Önleme maliyetleri:** kalite standartlarından sapmaları önlemek amacıyla gerçekleştirilen çalışmalara ait harcamalar
+
+**Ölçme ve değerlendirme maliyetleri:** kalite özelliklerinin ( giriş, ara ve son kontrol, cihaz bakımı) değerlendirilmesi için gerçekleştirilen çalışmalara ait harcamalar
+
+**Başarısızlık maliyetleri:** kalite standartlarından sapmaların neden olduğu maliyetler olup iç ve dış başarısızlık maliyetleri olarak iki başlık halinde incelenir. İç başarısızlık maliyetleri; ıskarta, hurda, fire vb., dış başarısızlık maliyetleri; reddedilen ürünler, gecikme farkları, garanti giderleri vb.
+
+<center><img src="/Users/busenursarica/Documents/GitHub/quality-control/images/qcost.png" style="float:center;" width="600" height="200" title="Quality Cost" /><center>
+

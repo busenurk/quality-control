@@ -1,4 +1,35 @@
 # DMAIC Süreci
 
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/dmaic.png" style="float:right;" width="300" height="270" title="DMAIC" />
 
+DMAIC, kalite ve süreç iyileştirmede yaygın olarak kullanılan yapılandırılmış bir problem çözme yöntemidir. Tanımlama (define), ölçme (measure), analiz (analyse), iyileştirme (improve) ve kontrol (control) adımlarından oluşur. Genellikle altı sigma yaklaşımı ile ilişkilendirilir ve altı sigmanın neredeyse tüm uygulamaları, proje yönetimi ve tamamlanması için DMAIC sürecini kullanır. Ancak, DMAIC resmi olarak altı sigmaya bağlı değildir ve bir kuruluşun altı sigma kullanmasına bakılmaksızın kullanılabilir. Örneğin, döngü süresinin azaltılmasına, iş hacminin iyileştirilmesine ve kaybın (waste) ortadan kaldırılmasına odaklanan yalın projeler, DMAIC kullanılarak kolayca ve verimli bir şekilde yürütülebilir.
 
+DMAIC yapısı yaratıcı düşünmeyi teşvik eder. Süreç kötü çalışıyorsa, orijinal süreci terk etmek ve baştan başlamak gerekliyse veya yeni bir ürün veya hizmetin gerekli olduğu belirlendiğinde, DMAIC'in iyileştirme adımı tasarım adımı haline gelir. Altı sigma yaklaşımında, bu muhtemelen Altı Sigma için Tasarım (DFSS) adımının gerekli olduğu anlamına gelir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/D.png" style="float:center;" width="600" height="200" title="DMAIC" />
+
+**(D)EFINE:** Tanımlama aşaması, potansiyel problemi tanımlamak ve bu problemin müşteri tatminine, paydaşlara, çalışanlara ve karlılığa etkisini belirlemek amacıyla yapılır. Bu aşamada, kritik müşteri istekleri, proje amaç ve hedefleri, ekibin rolleri ve sorumlulukları, süreç haritası ve performans kriterleri tanımlanır
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/M.png" style="float:center;" width="600" height="200" title="DMAIC" />
+
+**(M)EASURE:** Ölçme aşamasında proje durum raporu doldurularak termin ve hedefler belirlenir. Ardından proje ekibi seçilir ve bu ekipte süreçten, tedarikçilerden ve müşterilerden temsilcilerin bulunmasına dikkat edilir. Sürecin akış diyagramı çizilirken, girdiler ve çıktılar belirlenir. Problemi oluşturan sürecin çıktıları ile girdilerinin bir listesi hazırlanarak, sebep-sonuç diyagramı, sebep-sonuç matrisi ve hata türü ve etkileri analizi (FMEA) gibi araçların kullanımı ile sebep- sonuç ilişkileri incelenir. Bu aşamada temel amaç, projenin girdi ve çıktılarının doğru olduğundan emin olmak ve mevcut durumu değişik görsel analizler yardımı ile ortaya koymaktır. Süreç performans göstergelerinin ne kadar doğru ölçülüp ölçülmediğinin belirlenmesi çalışmaları bu aşamada yürütülür.
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/A.png" style="float:center;" width="600" height="200" title="DMAIC" />
+
+**(A)NALYSE:** Analiz aşamasında, problemin ya da sürecin mevcut performansı ile arzu edilen hedef arasındaki boşluğu ortadan kaldırmak için yöntemleri saptamaya yönelik analizler yapılır. Bu aşamada verilerin anlaşılmasına yardımcı olması için istatististiksel veri analizleri kullanılır.
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/I.png" style="float:center;" width="600" height="200" title="DMAIC" />
+
+**(I)MPROVE:** İyileştirme aşamasında, sürecin sahip olduğu sorunları ortadan kaldıracak çözümler tasarlanır ve uygulama planları geliştirilir. Gerekli kişilerin hizmet içi eğitim ve motivasyon sistemleri sayesinde iyileştirme sistemine dahil edilmesi ile iyileştirilmenin sürekliliği sağlanır.
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/C.png" style="float:center;" width="600" height="200" title="DMAIC" />
+
+**(C)ONTROL:** Kontrol aşamasında, süreç iyileştirmesi başarılı ise doğrulanır ve zaman içinde iyileştirmenin süreceğinden emin olunur. Yapılacak işlem; insana dayalı yanlışları gidermek, güncel eğitimi sağlamak, kontrol prosedürlerini güncelleştirmek, değişmenin özel nedenlerini yok ederek yeni sürecin istatistiksel süreç kontrolü altına alınmasını sağlamaktır. Yeni süreç kararlı olduğunda elde edilen gerçek iş sonuçları belgelendirilir. Eğer hedefler karşılanmaz ise düzeltici faaliyet olarak DMAIC döngüsü tekrar başlatılır.
