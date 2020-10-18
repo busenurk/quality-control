@@ -10,7 +10,7 @@ Kalite tanımı birçok farklı şekilde yapılabilir. Kalitenin sözlük anlam�
 - Kalite, kullanıma uygunluktur. (Juran)
 - Kalite, müşterinin şimdiki ve gelecekteki ihtiyaçlarını hedeflemektir. (Deming)
 - Kalite, müşteri beklentilerini karşılayacak ürün ve hizmetin pazarlama, mühendislik, imalat ve bakım aşamalarındaki karakteristiklerinin toplamıdır. (Feigenbaum)
-- Kalite, özelliklerin ve gereksinimleri yerine getirme derecesidir. (ISO 9000)
+- Kalite, özellikleri ve gereksinimleri yerine getirme derecesidir. (ISO 9000)
 - Kalite, mal ve hizmetlerde, özellikle gereksinimlere uydukları ve müşterileri tatmin ettikleri ölçüde mükemmelliği ifade eder. (ASQ)
 
 Kalite **değişkenlikle (variability)** ters orantılıdır. Ürün/hizmetin önemli karakteristiklerindeki değişkenliğin azaltılması kaliteyi arttıracaktır. 
@@ -360,9 +360,4 @@ Değerlendirmenin 1000 puan üzerinden yapıldığı ödül sisteminde yedi fark
 
 ## Altı Sigma
 
-Motorola, ürünlerine olan talebe yanıt olarak 1980'lerin sonunda Altı Sigma (Six Sigma) programını geliştirmiştir. 
-
-<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/normal.png" style="float: center;" width="700" height="300" title="normal" />
-
-
-<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/sixsigma.png" style="float: center;" width="700" height="300" title="sixsigma" />
+[The Six Sigma Revolution by Thomas Pyzdek](http://www.bxlnc.com/download/The-Six-Sigma-Revolution.pdf)
