@@ -73,7 +73,7 @@
 
 \title{İstatistiksel Kalite Kontrol}
 \author{Dr.~Busenur Kızılaslan}
-\date{2020-10-18}
+\date{2020-10-19}
 
 \begin{document}
 \maketitle
@@ -589,10 +589,206 @@ Değerlendirmenin 1000 puan üzerinden yapıldığı ödül sisteminde yedi fark
 \hypertarget{altux131-sigma}{%
 \section{Altı Sigma}\label{altux131-sigma}}
 
+Motorola, ürünlerine olan talebe yanıt olarak 1980'lerin sonunda altı sigma (six sigma (6\(\sigma\))) yaklaşımını geliştirmiştir. Altı sigmanın odak noktası, ürün (kalite) özelliklerindeki değişkenliği azaltmak, başarısızlık veya kusurları minimum seviyeye indirmektir. Müşteri odaklı bir yöntem olan altı sigma, sorununun çözümü için müşterinin temel gereksinimlerine önem verir. Altı sigma, müşteri memnuniyetini arttıran, paralelinde rekabet gücünde artış sağlayan ve böylece karlılık getiren bir sistem olarak özetlenebilir. Motorola'nın 1988 yılında Malcolm Baldrige ödülünü kazanması ile daha da yaygınlaşmıştır.
+
+Sıfır hatayı hedefleyen yöntem, doğru uygulandığında oldukça başarılı sonuçlar elde etmektedir. Altı sigma yaklaşımı bir milyon üründe \emph{(parts per million (ppm))} yalnızca 3.4'lük hata seviyesinde çalışmaktadır. Bu bakımda mükemmeliyet hedefleyen firmalar için tercih edilen bir yaklaşımdır.
+
+Sigma standart sapmanın simgesi, standart sapma da istatistiksel olarak yayılım ve değişkenlik ölçüsüdür.
+
+Altı sigma yaklaşımında da hataları düzeltme yerine önleme yaklaşımını içeren \textbf{proaktif} gelişme modeli tercih edilmiştir. Problemlerin sonuçları yerine nedenleri üzerine odaklanma esastır.
+
+Motorola altı sigma konsepti, prosesdeki değişkenliği azaltmak için spesifikasyon sınırlarını ortalamadan en az altı standart sapma uzaklıkta olacak şekilde konumlandırmaktadır.
+
+\hypertarget{neden-6sigma}{%
+\subsection{\texorpdfstring{Neden 6\(\sigma\)}{Neden 6\textbackslash sigma}}\label{neden-6sigma}}
+
+6\(\sigma\)'nın asıl hedefinin 3.4 ppm hata seviyesinde çalışmak olduğundan bahsetmiştik, \%99.99966 hatasızlığa karşılık gelen bu değer çok yüksek kaliteye karşılık geliyor gibi görünebilir ancak öyle olmadığını ilerleyen örneklerde uygulamalı olarak göreceğiz. Günlük yaşamdaki çok basit işlerde bile 6\(\sigma\)'nın ne kadar önemli yere sahip olduğunu bir örnekle açıklayalım.
+
+Bir fast food restoranına gittiğinizi varsayalım. Hamburger (hamburger ekmeği, köfte, özel sos, peynir, turşu, soğan, marul ve domates), kızarmış patates ve içecek sipariş verdiniz. Siparişiniz (ürün) 10 birimden oluşuyor. \%99 kalite sizi memnun eder mi? (10 birimin birbirinden bağımsız olduğu varsayılır)
+
+\textbf{Yemeğin iyi olma olasılığı;}
+
+P\{Yemeğin iyi olması\}=\((0.99)^{10}=0.9044\)
+
+Yaklaşık \%90 olasılıkla yemeğinizden memnun olacaksınız. Peki bu yemeği dört kişilik bir aile olarak yemiş olsaydınız memnuniyetiniz değişir miydi?
+
+\textbf{Tüm yemeklerin iyi olma olasılığı;}
+
+P\{Tüm yemeklerin iyi olması\}=\((0.9044)^{4}=0.6690\)
+
+Tüm yemeklerin yalnızca 2/3'ü iyi olma ihtimaline sahip görünüyor. Memnuniyet seviyenizin düştüğü açık. Peki ailenizle birlikte her ay hamburger yemek için çıktığınızda durum ne olacak?
+
+\textbf{Bir yıldaki tüm yemeklerin iyi olma olasılığı;}
+
+P\{Bir yıldaki tüm yemeklerin iyi olması\}=\((0.6690)^{12}=0.0080\)
+
+Memnuniyet açısından kabul edilemez bir olasılık! Görüldüğü üzere oldukça basit bir ürün için bile oldukça yüksek düzeyde kalite ve hizmete ihtiyaç vardır.
+
+\begin{quote}
+3\(\sigma\) seviyesinde üretim yapan bir çok şirket ürettiği her bir milyon parçada 66.000 kusurlu parça çıkmasından dolayı toplam gelirlerinin yaklaşık \%25'ini kaybetmektedirler.
+\end{quote}
+
+Gönderilen her 300.000 mektupta;
+
+\begin{itemize}
+\tightlist
+\item
+  3\(\sigma\) ile 3000 kayıp
+\item
+  6\(\sigma\) ile 1 kayıp
+\end{itemize}
+
+Her hafta TV yayını;
+
+\begin{itemize}
+\tightlist
+\item
+  3\(\sigma\) ile 1.68 saati bozuk yayın yapıyor.
+\item
+  6\(\sigma\) ile 1.8 saniye bozuk yayın yapıyor.
+\end{itemize}
+
+\hypertarget{sigma-kalite-seviyesi}{%
+\subsection{Sigma Kalite Seviyesi}\label{sigma-kalite-seviyesi}}
+
+Altı sigma yaklaşımı, kalite seviyelendirmesini \emph{sigma kalite seviyesi} ölçütüne bağlı olarak değerlendirmektedir. Yaklaşımın isminden de anlaşılacağı üzere hedef, sigma kalite seviyesinin 6 olmasıdır. Bir milyonda 3.4 hata olması anlamına gelen 6 sigma kalite seviyesi aynı zamanda hatasız yüzdesinin \%99.99966 olması anlamına gelmektedir. Her ne kadar \%99 hatasız oranı kusursuza yakınmış gibi görünse de gerçek hayatta ne denli önemli olduğunu anlamak adına örnekler verelim;
+
+\begin{itemize}
+\tightlist
+\item
+  Bir saatte kaybolan 20.000 mektup
+\item
+  Her hafta 5000 yanlış ameliyat gerçekleşmesi
+\item
+  Her ay yaklaşık 7 saat elektrik kesintisi (6\(\sigma\) seviyesinde 8.8sn)
+\item
+  Her yıl 200.000 adet yanlış reçete yazılması
+\end{itemize}
+
+\begin{quote}
+Sistemdeki iyileşme, değişkenliğin azalması ile mümkündür, bu da istatistiksel olarak standart sapma yani sigmanın azalması anlamına gelir. İyileşme aynı zamanda `sigma kalite seviyesindeki' artış olarak da tanımlanır, bu bakımdan ifadeleri karıştırmamak önemlidir.
+\end{quote}
+
+\hypertarget{altux131-sigma-proje-yuxf6netimi}{%
+\subsection{Altı Sigma Proje Yönetimi}\label{altux131-sigma-proje-yuxf6netimi}}
+
+Altı sigma yaklaşımının uygulaması bu alanda uzmanlaşan kişiler tarafından gerçekleştirilmektedir. Uzmanlar, bilgi ve donanımlarına bağlı olarak; yeşil kuşak, kara kuşak, uzman kara kuşak, şampiyon ve liderlik konseyi olarak isimlendirilmektedir.
+
+\textbf{Yeşil kuşak (Green Belts (GBs)):} Projelerde kısmi zamanlı çalışan kişilerdir. Sorumlulukları;
+
+\begin{itemize}
+\tightlist
+\item
+  Proje şampiyonu ile proje amacını tanımlamak
+\item
+  Proje sürecinde takıma her türlü desteği sağlamak
+\item
+  Proje süresince gerekli veri analizlerini gerçekleştirmek
+\item
+  6\(\sigma\) araçlarının kullanımı ile ilgili takımı bilgilendirmek
+\end{itemize}
+
+\textbf{Kara kuşak (Black Belts (BBs)):} İyileştirme takımının lideridir, ve şu özellikleri barındırır;
+
+\begin{itemize}
+\tightlist
+\item
+  Prosesi iyileştirme yeteneği
+\item
+  Takım çalışmasına yatkın olma ve empati
+\item
+  Müşteri odaklı düşünebilen
+\item
+  6\(\sigma\) araçlarını etkin kullanabilme
+\end{itemize}
+
+Kara kuşaklar 4 ay süreyle eğitim alırlar, aday olarak çalıştıkları projede başarılı olmaları durumunda \emph{uzman kara kuşak} ünvanını almaya hak kazanırlar.
+
+\textbf{Uzman Kara kuşak (Master Black Belts (MBBs)):} Proje sorumlusu olarak liderlik vasfı mevcuttur. Yöntem ve araçlara hakimdir, teknik danışman olarak da tanımlanabilir.
+
+\begin{itemize}
+\tightlist
+\item
+  Proje takımına istatistiksel yöntemler başta olmak üzere her konuda teknik destek sağlamak
+\item
+  Şampiyonlara proje sürelerinin belirlenmesinde yardımcı olmak
+\item
+  6\(\sigma\) yöntemlerini uygulamak
+\item
+  Yeşil ve Kara kuşaklara eğitim verme ve mentorluk yapmak
+\end{itemize}
+
+\textbf{Şampiyon (Champion):} Proje uygulama ve yürütme adımlarında aktif rol oynar, sponsorluk ve liderlik rolü bulunur.
+
+\begin{itemize}
+\tightlist
+\item
+  Projeyi belirlemek
+\item
+  Proje takımı ve yönetim arasında köprü olmak
+\item
+  Projeler için kaynak bulmak
+\item
+  Proje takımını yönetim katında temsil etmek ve savunuculuğunu üstlenmek
+\item
+  Yol gösterici olmak ve projeyi odak noktası haline getirmek
+\item
+  Projede 6\(\sigma\) yöntemlerinin kullanılmasını sağlamak
+\end{itemize}
+
+\textbf{Liderlik Konseyi (Leadership Team):} 6\(\sigma\) başarısı için destek ve yönlendirmeyi sağlar. Sorumlulukları;
+
+\begin{itemize}
+\tightlist
+\item
+  6\(\sigma\) yönetimini incelemek
+\item
+  Projeler ve işletme hedefleri arasında ilişki kurmak
+\item
+  Proje sürecini yakından takip etmek
+\end{itemize}
+
+Altı sigma uygulamaları 3 nesile ayrılmıştır;
+
+\textbf{I. Nesil (Generation I):} 1987-1994 yılları, değişkenliğin azaltılması ve hataların elenmesi odak noktası olmuştur. Örn: Motorola
+
+\textbf{II. Nesil (Generation II):} 1994-2000 yılları, I. nesilin devamı olarak ürün tasarımlarında iyileştirme ve maliyetlerin azaltılması odaklanma noktası olmuştur. Örn: General Elektrik
+
+\textbf{III. Nesil (Generation III):} 2000 li yıllar ve sonrası, geçmiş nesillere ek olarak değer yaratma (yeni ürünler üretilmesi, pazarın genişletilmesi, hisse senetlerindeki değer artışı ) üzerine odaklanma noktası olmuştur.
+
+Son yıllarda \emph{yalın sistemler (lean systems)} ve \emph{altı sigma için tasarım (design for six sigma (DFSS))} olmak üzere iki yaklaşım daha tanımlanmıştır. Birçok kuruluş bu yaklaşımların birini veya her ikisini de altı sigma yaklaşımlarına dahil etmişlerdir. Altı sigma özellikle bu yaklaşımlarla birlikte kullanıldığında oldukça başarılı olmaktadır.
+
 \href{http://www.bxlnc.com/download/The-Six-Sigma-Revolution.pdf}{The Six Sigma Revolution by Thomas Pyzdek}
+
+Altı sigma yaklaşımı \textbf{DMAIC} olarak tanımlanan bir yol haritası eşliğinde uygulanır.
+
+\hypertarget{kalite-maliyetleri}{%
+\section{Kalite Maliyetleri}\label{kalite-maliyetleri}}
+
+Kalite maliyetleri ölçülebilen (kalite kontrol giderleri, üretim kaybı, hurda) ve ölçülemeyen (müşteri kaybı, pazar kaybı, imaj kaybı) kısımları nedeniyle buz dağına benzetilmektedir. Ölçülemeyen kısımlaeın etkileri uzun zamanda görülmektedir. Kalite maliyetleri üç ana başlıkta incelenebilir;
+
+\textbf{Önleme maliyetleri:} kalite standartlarından sapmaları önlemek amacıyla gerçekleştirilen çalışmalara ait harcamalar
+
+\textbf{Ölçme ve değerlendirme maliyetleri:} kalite özelliklerinin ( giriş, ara ve son kontrol, cihaz bakımı) değerlendirilmesi için gerçekleştirilen çalışmalara ait harcamalar
+
+\textbf{Başarısızlık maliyetleri:} kalite standartlarından sapmaların neden olduğu maliyetler olup iç ve dış başarısızlık maliyetleri olarak iki başlık halinde incelenir. İç başarısızlık maliyetleri; ıskarta, hurda, fire vb., dış başarısızlık maliyetleri; reddedilen ürünler, gecikme farkları, garanti giderleri vb.
 
 \hypertarget{dmaic-suxfcreci}{%
 \chapter{DMAIC Süreci}\label{dmaic-suxfcreci}}
+
+DMAIC, kalite ve süreç iyileştirmede yaygın olarak kullanılan yapılandırılmış bir problem çözme yöntemidir. Tanımlama (define), ölçme (measure), analiz (analyse), iyileştirme (improve) ve kontrol (control) adımlarından oluşur. Genellikle altı sigma yaklaşımı ile ilişkilendirilir ve altı sigmanın neredeyse tüm uygulamaları, proje yönetimi ve tamamlanması için DMAIC sürecini kullanır. Ancak, DMAIC resmi olarak altı sigmaya bağlı değildir ve bir kuruluşun altı sigma kullanmasına bakılmaksızın kullanılabilir. Örneğin, döngü süresinin azaltılmasına, iş hacminin iyileştirilmesine ve kaybın (waste) ortadan kaldırılmasına odaklanan yalın projeler, DMAIC kullanılarak kolayca ve verimli bir şekilde yürütülebilir.
+
+DMAIC yapısı yaratıcı düşünmeyi teşvik eder. Süreç kötü çalışıyorsa, orijinal süreci terk etmek ve baştan başlamak gerekliyse veya yeni bir ürün veya hizmetin gerekli olduğu belirlendiğinde, DMAIC'in iyileştirme adımı tasarım adımı haline gelir. Altı sigma yaklaşımında, bu muhtemelen Altı Sigma için Tasarım (DFSS) adımının gerekli olduğu anlamına gelir.
+
+\textbf{(D)EFINE:} Tanımlama aşaması, potansiyel problemi tanımlamak ve bu problemin müşteri tatminine, paydaşlara, çalışanlara ve karlılığa etkisini belirlemek amacıyla yapılır. Bu aşamada, kritik müşteri istekleri, proje amaç ve hedefleri, ekibin rolleri ve sorumlulukları, süreç haritası ve performans kriterleri tanımlanır
+
+\textbf{(M)EASURE:} Ölçme aşamasında proje durum raporu doldurularak termin ve hedefler belirlenir. Ardından proje ekibi seçilir ve bu ekipte süreçten, tedarikçilerden ve müşterilerden temsilcilerin bulunmasına dikkat edilir. Sürecin akış diyagramı çizilirken, girdiler ve çıktılar belirlenir. Problemi oluşturan sürecin çıktıları ile girdilerinin bir listesi hazırlanarak, sebep-sonuç diyagramı, sebep-sonuç matrisi ve hata türü ve etkileri analizi (FMEA) gibi araçların kullanımı ile sebep- sonuç ilişkileri incelenir. Bu aşamada temel amaç, projenin girdi ve çıktılarının doğru olduğundan emin olmak ve mevcut durumu değişik görsel analizler yardımı ile ortaya koymaktır. Süreç performans göstergelerinin ne kadar doğru ölçülüp ölçülmediğinin belirlenmesi çalışmaları bu aşamada yürütülür.
+
+\textbf{(A)NALYSE:} Analiz aşamasında, problemin ya da sürecin mevcut performansı ile arzu edilen hedef arasındaki boşluğu ortadan kaldırmak için yöntemleri saptamaya yönelik analizler yapılır. Bu aşamada verilerin anlaşılmasına yardımcı olması için istatististiksel veri analizleri kullanılır.
+
+\textbf{(I)MPROVE:} İyileştirme aşamasında, sürecin sahip olduğu sorunları ortadan kaldıracak çözümler tasarlanır ve uygulama planları geliştirilir. Gerekli kişilerin hizmet içi eğitim ve motivasyon sistemleri sayesinde iyileştirme sistemine dahil edilmesi ile iyileştirilmenin sürekliliği sağlanır.
+
+\textbf{(C)ONTROL:} Kontrol aşamasında, süreç iyileştirmesi başarılı ise doğrulanır ve zaman içinde iyileştirmenin süreceğinden emin olunur. Yapılacak işlem; insana dayalı yanlışları gidermek, güncel eğitimi sağlamak, kontrol prosedürlerini güncelleştirmek, değişmenin özel nedenlerini yok ederek yeni sürecin istatistiksel süreç kontrolü altına alınmasını sağlamaktır. Yeni süreç kararlı olduğunda elde edilen gerçek iş sonuçları belgelendirilir. Eğer hedefler karşılanmaz ise düzeltici faaliyet olarak DMAIC döngüsü tekrar başlatılır.
 
 \hypertarget{istatistiksel-kavramlar}{%
 \chapter{İstatistiksel Kavramlar}\label{istatistiksel-kavramlar}}
@@ -682,6 +878,9 @@ Toplam Kalite Yönetimi\strut
 \hypertarget{referanslar}{%
 \chapter*{Referanslar}\label{referanslar}}
 \addcontentsline{toc}{chapter}{Referanslar}
+
+\hypertarget{tablolar}{%
+\section{Tablolar}\label{tablolar}}
 
   \bibliography{book.bib,packages.bib}
 
