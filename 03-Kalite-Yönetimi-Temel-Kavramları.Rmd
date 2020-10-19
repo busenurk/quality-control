@@ -375,6 +375,11 @@ Altı sigma yaklaşımında da hataları düzeltme yerine önleme yaklaşımın�
   
   
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ndist.png" style="float: center;" width="500" height="200" title="normal distribution" />
+
+```{r}
+(1-0.9973)*1000000  #milyon fırsattaki hata sayısı 
+```
+
     
 Motorola altı sigma konsepti, prosesdeki değişkenliği azaltmak için spesifikasyon sınırlarını ortalamadan en az altı standart sapma uzaklıkta olacak şekilde konumlandırmaktadır. Çalışmalar sonucunda uzun vadede spesifikasyon sınırları orta noktasından (-+)1.5$\sigma$ kadar sapabildiği, dolayısıyla 6$\sigma$ ile milyonda 3.4 kusurluya ulaşılabileceğini ortaya koymuştur.
   
@@ -392,7 +397,7 @@ Farklı kayma miktarlarına bağlı olarak sigma seviyeleri;
         
 ### Neden 6$\sigma$        
 
-6$\sigma$'nın asıl hedefinin 3.4 ppm hata seviyesinde çalışmak olduğundan bahsetmiştik, %99.99966 hatasızlığa karşılık gelen bu değer çok yüksek kaliteye karşılık geliyor gibi görünebilir ancak öyle olmadığını ilerleyen örneklerde uygulamalı olarak göreceğiz. Günlük yaşamdaki çok basit işlerde bile 6$\sigma$'nın ne kadar önemli yere sahip olduğunu bir örnekle açıklayalım.
+6$\sigma$'nın asıl hedefinin 3.4 ppm hata seviyesinde çalışmak olduğundan bahsetmiştik, %99.99966 hatasızlığa karşılık gelmektedir. Günlük yaşamdaki çok basit işlerde bile 6$\sigma$'nın ne kadar önemli yere sahip olduğunu bir örnekle açıklayalım.
 
 Bir fast food restoranına gittiğinizi varsayalım. Hamburger (hamburger ekmeği, köfte, özel sos, peynir, turşu, soğan, marul ve domates), kızarmış patates ve içecek sipariş verdiniz. Siparişiniz (ürün) 10 birimden oluşuyor. %99 kalite sizi memnun eder mi? (10 birimin birbirinden bağımsız olduğu varsayılır)
 
@@ -515,9 +520,9 @@ Altı sigma uygulamaları 3 nesile ayrılmıştır;
 
 **I. Nesil (Generation I):** 1987-1994 yılları, değişkenliğin azaltılması ve hataların elenmesi odak noktası olmuştur. Örn: Motorola
 
-**II. Nesil (Generation II):** 1994-2000 yılları, I. nesilin devamı olarak ürün tasarımlarında iyileştirme ve maliyetlerin azaltılması odaklanma noktası olmuştur. Örn: General Elektrik
+**II. Nesil (Generation II):** 1994-2000 yılları, I. nesilin devamı olarak ürün tasarımlarında iyileştirme ve maliyetlerin azaltılması odak noktası olmuştur. Örn: General Elektrik
 
-**III. Nesil (Generation III):** 2000 li yıllar ve sonrası, geçmiş nesillere ek olarak değer yaratma (yeni ürünler üretilmesi, pazarın genişletilmesi, hisse senetlerindeki değer artışı ) üzerine odaklanma noktası olmuştur.
+**III. Nesil (Generation III):** 2000 li yıllar ve sonrası, geçmiş nesillere ek olarak değer yaratma (yeni ürünler üretilmesi, pazarın genişletilmesi, hisse senetlerindeki değer artışı ) odak noktası olmuştur.
 
 
 Son yıllarda _yalın sistemler (lean systems)_ ve _altı sigma için tasarım (design for six sigma (DFSS))_ olmak üzere iki yaklaşım daha tanımlanmıştır. Birçok kuruluş bu yaklaşımların birini veya her ikisini de altı sigma yaklaşımlarına dahil etmişlerdir. Altı sigma özellikle bu yaklaşımlarla birlikte kullanıldığında oldukça başarılı olmaktadır. 
@@ -530,7 +535,7 @@ Altı sigma yaklaşımı **DMAIC** olarak tanımlanan bir yol haritası eşliği
 
 ## Kalite Maliyetleri
 
-Kalite maliyetleri ölçülebilen (kalite kontrol giderleri, üretim kaybı, hurda) ve ölçülemeyen (müşteri kaybı, pazar kaybı, imaj kaybı) kısımları nedeniyle buz dağına benzetilmektedir. Ölçülemeyen kısımlaeın etkileri uzun zamanda görülmektedir. Kalite maliyetleri üç ana başlıkta incelenebilir;
+Kalite maliyetleri ölçülebilen (kalite kontrol giderleri, üretim kaybı, hurda) ve ölçülemeyen (müşteri kaybı, pazar kaybı, imaj kaybı) kısımları nedeniyle buz dağına benzetilmektedir. Ölçülemeyen kısımların etkileri uzun zamanda görülmektedir. Kalite maliyetleri üç ana başlıkta incelenebilir;
 
 **Önleme maliyetleri:** kalite standartlarından sapmaları önlemek amacıyla gerçekleştirilen çalışmalara ait harcamalar
 

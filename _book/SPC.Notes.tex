@@ -41,6 +41,46 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -597,6 +637,16 @@ Sigma standart sapmanın simgesi, standart sapma da istatistiksel olarak yayıl�
 
 Altı sigma yaklaşımında da hataları düzeltme yerine önleme yaklaşımını içeren \textbf{proaktif} gelişme modeli tercih edilmiştir. Problemlerin sonuçları yerine nedenleri üzerine odaklanma esastır.
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{1}\FloatTok{-0.9973}\NormalTok{)}\OperatorTok{*}\DecValTok{1000000}  \CommentTok{#milyon fırsattaki hata sayısı }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2700
+\end{verbatim}
+
 Motorola altı sigma konsepti, prosesdeki değişkenliği azaltmak için spesifikasyon sınırlarını ortalamadan en az altı standart sapma uzaklıkta olacak şekilde konumlandırmaktadır. Çalışmalar sonucunda uzun vadede spesifikasyon sınırları orta noktasından (-+)1.5\(\sigma\) kadar sapabildiği, dolayısıyla 6\(\sigma\) ile milyonda 3.4 kusurluya ulaşılabileceğini ortaya koymuştur.
 
 Farklı kayma miktarlarına bağlı olarak sigma seviyeleri;
@@ -604,7 +654,7 @@ Farklı kayma miktarlarına bağlı olarak sigma seviyeleri;
 \hypertarget{neden-6sigma}{%
 \subsection{\texorpdfstring{Neden 6\(\sigma\)}{Neden 6\textbackslash sigma}}\label{neden-6sigma}}
 
-6\(\sigma\)'nın asıl hedefinin 3.4 ppm hata seviyesinde çalışmak olduğundan bahsetmiştik, \%99.99966 hatasızlığa karşılık gelen bu değer çok yüksek kaliteye karşılık geliyor gibi görünebilir ancak öyle olmadığını ilerleyen örneklerde uygulamalı olarak göreceğiz. Günlük yaşamdaki çok basit işlerde bile 6\(\sigma\)'nın ne kadar önemli yere sahip olduğunu bir örnekle açıklayalım.
+6\(\sigma\)'nın asıl hedefinin 3.4 ppm hata seviyesinde çalışmak olduğundan bahsetmiştik, \%99.99966 hatasızlığa karşılık gelmektedir. Günlük yaşamdaki çok basit işlerde bile 6\(\sigma\)'nın ne kadar önemli yere sahip olduğunu bir örnekle açıklayalım.
 
 Bir fast food restoranına gittiğinizi varsayalım. Hamburger (hamburger ekmeği, köfte, özel sos, peynir, turşu, soğan, marul ve domates), kızarmış patates ve içecek sipariş verdiniz. Siparişiniz (ürün) 10 birimden oluşuyor. \%99 kalite sizi memnun eder mi? (10 birimin birbirinden bağımsız olduğu varsayılır)
 
@@ -764,9 +814,9 @@ Altı sigma uygulamaları 3 nesile ayrılmıştır;
 
 \textbf{I. Nesil (Generation I):} 1987-1994 yılları, değişkenliğin azaltılması ve hataların elenmesi odak noktası olmuştur. Örn: Motorola
 
-\textbf{II. Nesil (Generation II):} 1994-2000 yılları, I. nesilin devamı olarak ürün tasarımlarında iyileştirme ve maliyetlerin azaltılması odaklanma noktası olmuştur. Örn: General Elektrik
+\textbf{II. Nesil (Generation II):} 1994-2000 yılları, I. nesilin devamı olarak ürün tasarımlarında iyileştirme ve maliyetlerin azaltılması odak noktası olmuştur. Örn: General Elektrik
 
-\textbf{III. Nesil (Generation III):} 2000 li yıllar ve sonrası, geçmiş nesillere ek olarak değer yaratma (yeni ürünler üretilmesi, pazarın genişletilmesi, hisse senetlerindeki değer artışı ) üzerine odaklanma noktası olmuştur.
+\textbf{III. Nesil (Generation III):} 2000 li yıllar ve sonrası, geçmiş nesillere ek olarak değer yaratma (yeni ürünler üretilmesi, pazarın genişletilmesi, hisse senetlerindeki değer artışı ) odak noktası olmuştur.
 
 Son yıllarda \emph{yalın sistemler (lean systems)} ve \emph{altı sigma için tasarım (design for six sigma (DFSS))} olmak üzere iki yaklaşım daha tanımlanmıştır. Birçok kuruluş bu yaklaşımların birini veya her ikisini de altı sigma yaklaşımlarına dahil etmişlerdir. Altı sigma özellikle bu yaklaşımlarla birlikte kullanıldığında oldukça başarılı olmaktadır.
 
@@ -777,7 +827,7 @@ Altı sigma yaklaşımı \textbf{DMAIC} olarak tanımlanan bir yol haritası eş
 \hypertarget{kalite-maliyetleri}{%
 \section{Kalite Maliyetleri}\label{kalite-maliyetleri}}
 
-Kalite maliyetleri ölçülebilen (kalite kontrol giderleri, üretim kaybı, hurda) ve ölçülemeyen (müşteri kaybı, pazar kaybı, imaj kaybı) kısımları nedeniyle buz dağına benzetilmektedir. Ölçülemeyen kısımlaeın etkileri uzun zamanda görülmektedir. Kalite maliyetleri üç ana başlıkta incelenebilir;
+Kalite maliyetleri ölçülebilen (kalite kontrol giderleri, üretim kaybı, hurda) ve ölçülemeyen (müşteri kaybı, pazar kaybı, imaj kaybı) kısımları nedeniyle buz dağına benzetilmektedir. Ölçülemeyen kısımların etkileri uzun zamanda görülmektedir. Kalite maliyetleri üç ana başlıkta incelenebilir;
 
 \textbf{Önleme maliyetleri:} kalite standartlarından sapmaları önlemek amacıyla gerçekleştirilen çalışmalara ait harcamalar
 
@@ -788,7 +838,7 @@ Kalite maliyetleri ölçülebilen (kalite kontrol giderleri, üretim kaybı, hur
 \hypertarget{dmaic-suxfcreci}{%
 \chapter{DMAIC Süreci}\label{dmaic-suxfcreci}}
 
-DMAIC, kalite ve süreç iyileştirmede yaygın olarak kullanılan yapılandırılmış bir problem çözme yöntemidir. Tanımlama (define), ölçme (measure), analiz (analyse), iyileştirme (improve) ve kontrol (control) adımlarından oluşur. Genellikle altı sigma yaklaşımı ile ilişkilendirilir ve altı sigmanın neredeyse tüm uygulamaları, proje yönetimi ve tamamlanması için DMAIC sürecini kullanır. Ancak, DMAIC resmi olarak altı sigmaya bağlı değildir ve bir kuruluşun altı sigma kullanmasına bakılmaksızın kullanılabilir. Örneğin, döngü süresinin azaltılmasına, iş hacminin iyileştirilmesine ve kaybın (waste) ortadan kaldırılmasına odaklanan yalın projeler, DMAIC kullanılarak kolayca ve verimli bir şekilde yürütülebilir.
+DMAIC, kalite ve süreç iyileştirmede yaygın olarak kullanılan yapılandırılmış bir problem çözme yöntemidir. Tanımlama (define), ölçme (measure), analiz (analyse), iyileştirme (improve) ve kontrol (control) adımlarından oluşur. Genellikle altı sigma yaklaşımı ile ilişkilendirilir ve altı sigmanın neredeyse tüm uygulamaları, proje yönetimi ve tamamlanması için DMAIC sürecini kullanır. Ancak, DMAIC resmi olarak altı sigmaya bağlı değildir ve bir kuruluşun altı sigma kullanmasına bakılmaksızın kullanılabilir. Örneğin, döngü süresinin azaltılmasına, iş hacminin iyileştirilmesine ve kaybın (waste) ortadan kaldırılmasına odaklanan yalın (lean) projeler, DMAIC kullanılarak kolayca ve verimli bir şekilde yürütülebilir.
 
 DMAIC yapısı yaratıcı düşünmeyi teşvik eder. Süreç kötü çalışıyorsa, orijinal süreci terk etmek ve baştan başlamak gerekliyse veya yeni bir ürün veya hizmetin gerekli olduğu belirlendiğinde, DMAIC'in iyileştirme adımı tasarım adımı haline gelir. Altı sigma yaklaşımında, bu muhtemelen Altı Sigma için Tasarım (DFSS) adımının gerekli olduğu anlamına gelir.
 
@@ -800,7 +850,7 @@ DMAIC yapısı yaratıcı düşünmeyi teşvik eder. Süreç kötü çalışıyo
 
 \textbf{(I)MPROVE:} İyileştirme aşamasında, sürecin sahip olduğu sorunları ortadan kaldıracak çözümler tasarlanır ve uygulama planları geliştirilir. Gerekli kişilerin hizmet içi eğitim ve motivasyon sistemleri sayesinde iyileştirme sistemine dahil edilmesi ile iyileştirilmenin sürekliliği sağlanır.
 
-\textbf{(C)ONTROL:} Kontrol aşamasında, süreç iyileştirmesi başarılı ise doğrulanır ve zaman içinde iyileştirmenin süreceğinden emin olunur. Yapılacak işlem; insana dayalı yanlışları gidermek, güncel eğitimi sağlamak, kontrol prosedürlerini güncelleştirmek, değişmenin özel nedenlerini yok ederek yeni sürecin istatistiksel süreç kontrolü altına alınmasını sağlamaktır. Yeni süreç kararlı olduğunda elde edilen gerçek iş sonuçları belgelendirilir. Eğer hedefler karşılanmaz ise düzeltici faaliyet olarak DMAIC döngüsü tekrar başlatılır.
+\textbf{(C)ONTROL:} Kontrol aşamasında, süreç iyileştirmesi başarılı ise doğrulanır ve zaman içinde iyileştirmenin süreceğinden emin olunur. Yapılacak işlem; insana dayalı yanlışları gidermek, güncel eğitimi sağlamak, kontrol prosedürlerini güncelleştirmek, değişmenin özel nedenlerini yok ederek yeni sürecin istatistiksel süreç kontrolü altına alınmasını sağlamaktır. Yeni süreç kararlı olduğunda elde edilen gerçek iş sonuçları belgelendirilir. \textbf{Eğer hedefler karşılanmaz ise düzeltici faaliyet olarak DMAIC döngüsü tekrar başlatılır.}
 
 \hypertarget{istatistiksel-kavramlar}{%
 \chapter{İstatistiksel Kavramlar}\label{istatistiksel-kavramlar}}
