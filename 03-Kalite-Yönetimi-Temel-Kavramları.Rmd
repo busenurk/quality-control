@@ -360,9 +360,9 @@ Değerlendirmenin 1000 puan üzerinden yapıldığı ödül sisteminde yedi fark
 
 ## Altı Sigma
 
-Motorola, ürünlerine olan talebe yanıt olarak 1980'lerin sonunda altı sigma (six sigma (6$\sigma$)) yaklaşımını geliştirmiştir. Altı sigmanın odak noktası, ürün (kalite) özelliklerindeki değişkenliği azaltmak, başarısızlık veya kusurları minimum seviyeye indirmektir. Müşteri odaklı bir yöntem olan altı sigma, sorununun çözümü için müşterinin temel gereksinimlerine önem verir. Altı sigma, müşteri memnuniyetini arttıran, paralelinde rekabet gücünde artış sağlayan ve böylece karlılık getiren bir sistem olarak özetlenebilir. Motorola'nın 1988 yılında Malcolm Baldrige ödülünü kazanması ile daha da yaygınlaşmıştır.
+Motorola, ürünlerine olan talebe yanıt olarak 1980'lerin sonunda altı sigma (six sigma (6$\sigma$)) yaklaşımını geliştirmiştir. Altı sigmanın odak noktası, ürün (kalite) özelliklerindeki değişkenliği azaltmak, başarısızlık veya kusurları minimum seviyeye indirmektir. Müşteri odaklı bir yöntem olan altı sigma, sorunun çözümü için müşterinin temel gereksinimlerine önem verir. Altı sigma, müşteri memnuniyetini arttıran, paralelinde rekabet gücünde artış sağlayan ve böylece karlılık getiren bir sistem olarak özetlenebilir. Motorola'nın 1988 yılında Malcolm Baldrige ödülünü kazanması ile daha da yaygınlaşmıştır.
 
-Sıfır hatayı hedefleyen yöntem, doğru uygulandığında oldukça başarılı sonuçlar elde etmektedir. Altı sigma yaklaşımı bir milyon üründe _(parts per million (ppm))_ yalnızca 3.4'lük hata seviyesinde çalışmaktadır. Bu bakımda mükemmeliyet hedefleyen firmalar için tercih edilen bir yaklaşımdır.
+Sıfır hatayı hedefleyen yöntem, doğru uygulandığında oldukça başarılı sonuçlar elde etmektedir. Altı sigma yaklaşımı bir milyon üründe _(parts per million (ppm))_ yalnızca 3.4'lük hata seviyesinde çalışmaktadır. Bu bakımdan mükemmeliyet hedefleyen firmalar için tercih edilen bir yaklaşımdır.
 
 Sigma standart sapmanın simgesi, standart sapma da istatistiksel olarak yayılım ve değişkenlik ölçüsüdür.
 
@@ -376,13 +376,19 @@ Altı sigma yaklaşımında da hataları düzeltme yerine önleme yaklaşımın�
   
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ndist.png" style="float: center;" width="500" height="200" title="normal distribution" />
     
-Motorola altı sigma konsepti, prosesdeki değişkenliği azaltmak için spesifikasyon sınırlarını ortalamadan en az altı standart sapma uzaklıkta olacak şekilde konumlandırmaktadır.
+Motorola altı sigma konsepti, prosesdeki değişkenliği azaltmak için spesifikasyon sınırlarını ortalamadan en az altı standart sapma uzaklıkta olacak şekilde konumlandırmaktadır. Çalışmalar sonucunda uzun vadede spesifikasyon sınırları orta noktasından (-+)1.5$\sigma$ kadar sapabildiği, dolayısıyla 6$\sigma$ ile milyonda 3.4 kusurluya ulaşılabileceğini ortaya koymuştur.
   
     
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/sixsigma.png" style="float: center;" width="700" height="300" title="sixsigma" />
       
       
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/mshifted.png" style="float: center;" width="500" height="200" title="mean shifted" />
+
+<br>
+
+Farklı kayma miktarlarına bağlı olarak sigma seviyeleri;
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/slevel.png" style="float:center;" width="600" height="350" title="Pozisyonlar" />
         
 ### Neden 6$\sigma$        
 
@@ -427,6 +433,8 @@ Her hafta TV yayını;
 
   - 3$\sigma$ ile 1.68 saati bozuk yayın yapıyor.
   - 6$\sigma$ ile 1.8 saniye bozuk yayın yapıyor.
+  
+  
 
 ### Sigma Kalite Seviyesi
 
@@ -439,7 +447,22 @@ Altı sigma yaklaşımı, kalite seviyelendirmesini _sigma kalite seviyesi_ öl�
 
 > Sistemdeki iyileşme, değişkenliğin azalması ile mümkündür, bu da istatistiksel olarak standart sapma yani sigmanın azalması anlamına gelir. İyileşme aynı zamanda 'sigma kalite seviyesindeki' artış olarak da tanımlanır, bu bakımdan ifadeleri karıştırmamak önemlidir.
 
-<center><img src="/Users/busenursarica/Documents/GitHub/quality-control/images/positions.png" style="float:center;" width="500" height="250" title="Pozisyonlar" /> 
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/positions.png" style="float:center;" width="500" height="250" title="Pozisyonlar" /> 
+
+**Örn:** Bir pastanenin 200 adet üretmiş olduğu pastanın 2 adedinin hatalı (yanık vs.) olması durumunda pasta üretim prosesinin sigma kalite seviyesini hesaplayınız.
+
+P{Hatalı pasta üretme}=2/200=0.01 (%1)
+
+P{Hatasız pasta üretme}=1-0.01=0.99
+
+Z tablo değeri 2.33 olduğundan 2.33+1.5=3.83
+
+
+<br>
+
+Sigma seviyeleri arasında geçiş için harcanacak çaba üst seviyelerde giderek artmaktadır. Sigma seviyesinin 2'den 3'e çıkarılması için hata sayısında yaklaşık **4.6** katlık bir azalma gerekmektedir. Benzer şekilde 3'den 4'e çıkarmak için **10.7** katlık, 4'den 5'e çıkarmak için **26.7** katlık ve 5'den 6'ya çıkarmak için **68.5** katlık bir iyileştirme gerekmektedir.
+
+
 
 ### Altı Sigma Proje Yönetimi
 Altı sigma yaklaşımının uygulaması bu alanda uzmanlaşan kişiler tarafından gerçekleştirilmektedir. Uzmanlar, bilgi ve donanımlarına bağlı olarak; yeşil kuşak, kara kuşak, uzman kara kuşak, şampiyon ve liderlik konseyi olarak isimlendirilmektedir.

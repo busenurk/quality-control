@@ -379,16 +379,19 @@
 </div>
 <div id="altı-sigma" class="section level2">
 <h2><span class="header-section-number">4.12</span> Altı Sigma</h2>
-<p>Motorola, ürünlerine olan talebe yanıt olarak 1980’lerin sonunda altı sigma (six sigma (6<span class="math inline">\(\sigma\)</span>)) yaklaşımını geliştirmiştir. Altı sigmanın odak noktası, ürün (kalite) özelliklerindeki değişkenliği azaltmak, başarısızlık veya kusurları minimum seviyeye indirmektir. Müşteri odaklı bir yöntem olan altı sigma, sorununun çözümü için müşterinin temel gereksinimlerine önem verir. Altı sigma, müşteri memnuniyetini arttıran, paralelinde rekabet gücünde artış sağlayan ve böylece karlılık getiren bir sistem olarak özetlenebilir. Motorola’nın 1988 yılında Malcolm Baldrige ödülünü kazanması ile daha da yaygınlaşmıştır.</p>
-<p>Sıfır hatayı hedefleyen yöntem, doğru uygulandığında oldukça başarılı sonuçlar elde etmektedir. Altı sigma yaklaşımı bir milyon üründe <em>(parts per million (ppm))</em> yalnızca 3.4’lük hata seviyesinde çalışmaktadır. Bu bakımda mükemmeliyet hedefleyen firmalar için tercih edilen bir yaklaşımdır.</p>
+<p>Motorola, ürünlerine olan talebe yanıt olarak 1980’lerin sonunda altı sigma (six sigma (6<span class="math inline">\(\sigma\)</span>)) yaklaşımını geliştirmiştir. Altı sigmanın odak noktası, ürün (kalite) özelliklerindeki değişkenliği azaltmak, başarısızlık veya kusurları minimum seviyeye indirmektir. Müşteri odaklı bir yöntem olan altı sigma, sorunun çözümü için müşterinin temel gereksinimlerine önem verir. Altı sigma, müşteri memnuniyetini arttıran, paralelinde rekabet gücünde artış sağlayan ve böylece karlılık getiren bir sistem olarak özetlenebilir. Motorola’nın 1988 yılında Malcolm Baldrige ödülünü kazanması ile daha da yaygınlaşmıştır.</p>
+<p>Sıfır hatayı hedefleyen yöntem, doğru uygulandığında oldukça başarılı sonuçlar elde etmektedir. Altı sigma yaklaşımı bir milyon üründe <em>(parts per million (ppm))</em> yalnızca 3.4’lük hata seviyesinde çalışmaktadır. Bu bakımdan mükemmeliyet hedefleyen firmalar için tercih edilen bir yaklaşımdır.</p>
 <p>Sigma standart sapmanın simgesi, standart sapma da istatistiksel olarak yayılım ve değişkenlik ölçüsüdür.</p>
 <p><img src="images/sapma1.png" style="float: center;" width="150" height="100" title="mean shifted" /> <img src="images/sapma2.png" style="float: center;" width="150" height="100" title="mean shifted" /></p>
 <p>Altı sigma yaklaşımında da hataları düzeltme yerine önleme yaklaşımını içeren <strong>proaktif</strong> gelişme modeli tercih edilmiştir. Problemlerin sonuçları yerine nedenleri üzerine odaklanma esastır.</p>
 <p><img src="images/normal.png" style="float: center;" width="700" height="300" title="normal" /></p>
 <p><img src="images/ndist.png" style="float: center;" width="500" height="200" title="normal distribution" /></p>
-<p>Motorola altı sigma konsepti, prosesdeki değişkenliği azaltmak için spesifikasyon sınırlarını ortalamadan en az altı standart sapma uzaklıkta olacak şekilde konumlandırmaktadır.</p>
+<p>Motorola altı sigma konsepti, prosesdeki değişkenliği azaltmak için spesifikasyon sınırlarını ortalamadan en az altı standart sapma uzaklıkta olacak şekilde konumlandırmaktadır. Çalışmalar sonucunda uzun vadede spesifikasyon sınırları orta noktasından (-+)1.5<span class="math inline">\(\sigma\)</span> kadar sapabildiği, dolayısıyla 6<span class="math inline">\(\sigma\)</span> ile milyonda 3.4 kusurluya ulaşılabileceğini ortaya koymuştur.</p>
 <p><img src="images/sixsigma.png" style="float: center;" width="700" height="300" title="sixsigma" /></p>
 <p><img src="images/mshifted.png" style="float: center;" width="500" height="200" title="mean shifted" /></p>
+<p><br></p>
+<p>Farklı kayma miktarlarına bağlı olarak sigma seviyeleri;</p>
+<p><img src="images/slevel.png" style="float:center;" width="600" height="350" title="Pozisyonlar" /></p>
 <div id="neden-6sigma" class="section level3">
 <h3><span class="header-section-number">4.12.1</span> Neden 6<span class="math inline">\(\sigma\)</span></h3>
 <p>6<span class="math inline">\(\sigma\)</span>’nın asıl hedefinin 3.4 ppm hata seviyesinde çalışmak olduğundan bahsetmiştik, %99.99966 hatasızlığa karşılık gelen bu değer çok yüksek kaliteye karşılık geliyor gibi görünebilir ancak öyle olmadığını ilerleyen örneklerde uygulamalı olarak göreceğiz. Günlük yaşamdaki çok basit işlerde bile 6<span class="math inline">\(\sigma\)</span>’nın ne kadar önemli yere sahip olduğunu bir örnekle açıklayalım.</p>
@@ -432,8 +435,13 @@
 <blockquote>
 <p>Sistemdeki iyileşme, değişkenliğin azalması ile mümkündür, bu da istatistiksel olarak standart sapma yani sigmanın azalması anlamına gelir. İyileşme aynı zamanda ‘sigma kalite seviyesindeki’ artış olarak da tanımlanır, bu bakımdan ifadeleri karıştırmamak önemlidir.</p>
 </blockquote>
-<center>
 <p><img src="images/positions.png" style="float:center;" width="500" height="250" title="Pozisyonlar" /></p>
+<p><strong>Örn:</strong> Bir pastanenin 200 adet üretmiş olduğu pastanın 2 adedinin hatalı (yanık vs.) olması durumunda pasta üretim prosesinin sigma kalite seviyesini hesaplayınız.</p>
+<p>P{Hatalı pasta üretme}=2/200=0.01 (%1)</p>
+<p>P{Hatasız pasta üretme}=1-0.01=0.99</p>
+<p>Z tablo değeri 2.33 olduğundan 2.33+1.5=3.83</p>
+<p><br></p>
+<p>Sigma seviyeleri arasında geçiş için harcanacak çaba üst seviyelerde giderek artmaktadır. Sigma seviyesinin 2’den 3’e çıkarılması için hata sayısında yaklaşık <strong>4.6</strong> katlık bir azalma gerekmektedir. Benzer şekilde 3’den 4’e çıkarmak için <strong>10.7</strong> katlık, 4’den 5’e çıkarmak için <strong>26.7</strong> katlık ve 5’den 6’ya çıkarmak için <strong>68.5</strong> katlık bir iyileştirme gerekmektedir.</p>
 </div>
 <div id="altı-sigma-proje-yönetimi" class="section level3">
 <h3><span class="header-section-number">4.12.3</span> Altı Sigma Proje Yönetimi</h3>

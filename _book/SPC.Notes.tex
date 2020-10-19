@@ -589,15 +589,17 @@ Değerlendirmenin 1000 puan üzerinden yapıldığı ödül sisteminde yedi fark
 \hypertarget{altux131-sigma}{%
 \section{Altı Sigma}\label{altux131-sigma}}
 
-Motorola, ürünlerine olan talebe yanıt olarak 1980'lerin sonunda altı sigma (six sigma (6\(\sigma\))) yaklaşımını geliştirmiştir. Altı sigmanın odak noktası, ürün (kalite) özelliklerindeki değişkenliği azaltmak, başarısızlık veya kusurları minimum seviyeye indirmektir. Müşteri odaklı bir yöntem olan altı sigma, sorununun çözümü için müşterinin temel gereksinimlerine önem verir. Altı sigma, müşteri memnuniyetini arttıran, paralelinde rekabet gücünde artış sağlayan ve böylece karlılık getiren bir sistem olarak özetlenebilir. Motorola'nın 1988 yılında Malcolm Baldrige ödülünü kazanması ile daha da yaygınlaşmıştır.
+Motorola, ürünlerine olan talebe yanıt olarak 1980'lerin sonunda altı sigma (six sigma (6\(\sigma\))) yaklaşımını geliştirmiştir. Altı sigmanın odak noktası, ürün (kalite) özelliklerindeki değişkenliği azaltmak, başarısızlık veya kusurları minimum seviyeye indirmektir. Müşteri odaklı bir yöntem olan altı sigma, sorunun çözümü için müşterinin temel gereksinimlerine önem verir. Altı sigma, müşteri memnuniyetini arttıran, paralelinde rekabet gücünde artış sağlayan ve böylece karlılık getiren bir sistem olarak özetlenebilir. Motorola'nın 1988 yılında Malcolm Baldrige ödülünü kazanması ile daha da yaygınlaşmıştır.
 
-Sıfır hatayı hedefleyen yöntem, doğru uygulandığında oldukça başarılı sonuçlar elde etmektedir. Altı sigma yaklaşımı bir milyon üründe \emph{(parts per million (ppm))} yalnızca 3.4'lük hata seviyesinde çalışmaktadır. Bu bakımda mükemmeliyet hedefleyen firmalar için tercih edilen bir yaklaşımdır.
+Sıfır hatayı hedefleyen yöntem, doğru uygulandığında oldukça başarılı sonuçlar elde etmektedir. Altı sigma yaklaşımı bir milyon üründe \emph{(parts per million (ppm))} yalnızca 3.4'lük hata seviyesinde çalışmaktadır. Bu bakımdan mükemmeliyet hedefleyen firmalar için tercih edilen bir yaklaşımdır.
 
 Sigma standart sapmanın simgesi, standart sapma da istatistiksel olarak yayılım ve değişkenlik ölçüsüdür.
 
 Altı sigma yaklaşımında da hataları düzeltme yerine önleme yaklaşımını içeren \textbf{proaktif} gelişme modeli tercih edilmiştir. Problemlerin sonuçları yerine nedenleri üzerine odaklanma esastır.
 
-Motorola altı sigma konsepti, prosesdeki değişkenliği azaltmak için spesifikasyon sınırlarını ortalamadan en az altı standart sapma uzaklıkta olacak şekilde konumlandırmaktadır.
+Motorola altı sigma konsepti, prosesdeki değişkenliği azaltmak için spesifikasyon sınırlarını ortalamadan en az altı standart sapma uzaklıkta olacak şekilde konumlandırmaktadır. Çalışmalar sonucunda uzun vadede spesifikasyon sınırları orta noktasından (-+)1.5\(\sigma\) kadar sapabildiği, dolayısıyla 6\(\sigma\) ile milyonda 3.4 kusurluya ulaşılabileceğini ortaya koymuştur.
+
+Farklı kayma miktarlarına bağlı olarak sigma seviyeleri;
 
 \hypertarget{neden-6sigma}{%
 \subsection{\texorpdfstring{Neden 6\(\sigma\)}{Neden 6\textbackslash sigma}}\label{neden-6sigma}}
@@ -668,6 +670,16 @@ Altı sigma yaklaşımı, kalite seviyelendirmesini \emph{sigma kalite seviyesi}
 \begin{quote}
 Sistemdeki iyileşme, değişkenliğin azalması ile mümkündür, bu da istatistiksel olarak standart sapma yani sigmanın azalması anlamına gelir. İyileşme aynı zamanda `sigma kalite seviyesindeki' artış olarak da tanımlanır, bu bakımdan ifadeleri karıştırmamak önemlidir.
 \end{quote}
+
+\textbf{Örn:} Bir pastanenin 200 adet üretmiş olduğu pastanın 2 adedinin hatalı (yanık vs.) olması durumunda pasta üretim prosesinin sigma kalite seviyesini hesaplayınız.
+
+P\{Hatalı pasta üretme\}=2/200=0.01 (\%1)
+
+P\{Hatasız pasta üretme\}=1-0.01=0.99
+
+Z tablo değeri 2.33 olduğundan 2.33+1.5=3.83
+
+Sigma seviyeleri arasında geçiş için harcanacak çaba üst seviyelerde giderek artmaktadır. Sigma seviyesinin 2'den 3'e çıkarılması için hata sayısında yaklaşık \textbf{4.6} katlık bir azalma gerekmektedir. Benzer şekilde 3'den 4'e çıkarmak için \textbf{10.7} katlık, 4'den 5'e çıkarmak için \textbf{26.7} katlık ve 5'den 6'ya çıkarmak için \textbf{68.5} katlık bir iyileştirme gerekmektedir.
 
 \hypertarget{altux131-sigma-proje-yuxf6netimi}{%
 \subsection{Altı Sigma Proje Yönetimi}\label{altux131-sigma-proje-yuxf6netimi}}
