@@ -54,7 +54,7 @@ Bir proses tarafından üretilen iki ürün birimi aynı değildir. Bazı deği�
 
 Verilerin sunulması için kullanılan başarılı görsellerden biri de dal-yaprak (steam and leaf) grafiğidir. 
 
-Büyük bir şirketin çalışanlarına 
+Çalışan Sağlık Sigortası Taleplerinin Ödenmesi İçin Gün Olarak Döngü Süresi 
 
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/claim.png" style="float: center;" width="500" height="250" title="Claim-Days" /> 
 
@@ -153,6 +153,12 @@ round(K)
 ```
 <br>
 
+**Sınıf aralığı**
+```{r}
+ara<-range/round(K); ara
+```
+<br>
+
 **Ödev:** Aşağıda yer alan mukavemet verisi için frekans tablosunu elde eden kodu yazınız.
 
 ```{r echo=FALSE}
@@ -176,8 +182,8 @@ Histogram verinin yayılımını göstermektedir ve SPC'ün temeli verideki değ
 
 Mukavemet örneği histogramı;
 
-```{r}
-fig<-plot_ly(x = ~muk) 
+```{r warning=FALSE}
+fig<-plot_ly(x = ~muk,type = "histogram") 
 htmltools::tagList(fig)
 ```
 
@@ -219,6 +225,14 @@ Bir frekans dağılımı için ortalama, medyan ve mod değerleri birbirine eşi
 
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/sym.png" style="float: center;" width="900" height="300" title="Skewness" /> 
 
+```{r}
+# Frequency
+
+d<-c(10,10,11,12,12,12,12,12,12,13,13,14,15,20,20,23)
+table(d)
+```
+
+
 
 ```{r}
 t<-rnorm(1000)^2
@@ -227,7 +241,8 @@ mean<-mean(t)     #mean
 
 median<-median(t)  #median
 
-freq <- table(t)   #frequency
+freq <- table(t);   #frequency
+
 mode<-as.numeric(names(freq)[which.max(freq)])   #mode
 
 sort(c(mean=mean,median=median,mode=mode))
@@ -293,11 +308,11 @@ Alt limit$=Q_{1}-1.5(Q_{3}-Q_{1})$
 Veride alt limitin altında veya üst limitin üzerinde bir gözlem yer alıyorsa bu gözlem **aykırı değer** olarak nitelendirilir.
 
 ```{r}
-boxp1 <- plot_ly(y = muk, type = "box"); boxp1
+boxp1 <- plot_ly(y = muk, type = "box",name="Mukavemet"); boxp1
 ```
 
 ```{r}
-boxp2 <- plot_ly(y = t, type = "box"); boxp2
+boxp2 <- plot_ly(y = t, type = "box",name="Norm^2"); boxp2
 ```
 
 <br>
@@ -305,7 +320,7 @@ boxp2 <- plot_ly(y = t, type = "box"); boxp2
 Çarpıklığı yatay eksende gözlemek daha iyi kavramamızı sağlayacaktır. Verinin sağa çarpık olduğu ve fazla miktarda aykırı değer içerdiği kutu grafikten gözlenebilmektedir.
 
 ```{r}
-boxp2.horizontal <- plot_ly(x = t, type = "box"); boxp2.horizontal
+boxp2.horizontal <- plot_ly(x = t, type = "box",name="Norm^2 Horizontal"); boxp2.horizontal
 ```
 
 
