@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Busenur Kızılaslan" />
 
 
-<meta name="date" content="2020-10-12" />
+<meta name="date" content="2020-10-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 
@@ -95,12 +97,19 @@
 <li class="chapter" data-level="4.9" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-sistemleri-ve-standartları"><i class="fa fa-check"></i><b>4.9</b> Kalite Sistemleri ve Standartları</a></li>
 <li class="chapter" data-level="4.10" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#iso-9000-kalite-standartları"><i class="fa fa-check"></i><b>4.10</b> ISO 9000 Kalite Standartları</a></li>
 <li class="chapter" data-level="4.11" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#malcolm-baldrige-ulusal-kalite-ödülü"><i class="fa fa-check"></i><b>4.11</b> Malcolm Baldrige Ulusal Kalite Ödülü</a></li>
-<li class="chapter" data-level="4.12" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#altı-sigma"><i class="fa fa-check"></i><b>4.12</b> Altı Sigma</a></li>
+<li class="chapter" data-level="4.12" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#altı-sigma"><i class="fa fa-check"></i><b>4.12</b> Altı Sigma</a><ul>
+<li class="chapter" data-level="4.12.1" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#neden-6sigma"><i class="fa fa-check"></i><b>4.12.1</b> Neden 6<span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="4.12.2" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#sigma-kalite-seviyesi"><i class="fa fa-check"></i><b>4.12.2</b> Sigma Kalite Seviyesi</a></li>
+<li class="chapter" data-level="4.12.3" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#altı-sigma-proje-yönetimi"><i class="fa fa-check"></i><b>4.12.3</b> Altı Sigma Proje Yönetimi</a></li>
+</ul></li>
+<li class="chapter" data-level="4.13" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-maliyetleri"><i class="fa fa-check"></i><b>4.13</b> Kalite Maliyetleri</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="dmaic-süreci.html"><a href="dmaic-süreci.html"><i class="fa fa-check"></i><b>5</b> DMAIC Süreci</a></li>
 <li class="chapter" data-level="6" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html"><i class="fa fa-check"></i><b>6</b> İstatistiksel Kavramlar</a></li>
 <li class="chapter" data-level="7" data-path="kısaltmalar.html"><a href="kısaltmalar.html"><i class="fa fa-check"></i><b>7</b> Kısaltmalar</a></li>
-<li class="chapter" data-level="" data-path="referanslar.html"><a href="referanslar.html"><i class="fa fa-check"></i>Referanslar</a></li>
+<li class="chapter" data-level="" data-path="referanslar.html"><a href="referanslar.html"><i class="fa fa-check"></i>Referanslar</a><ul>
+<li class="chapter" data-level="7.1" data-path="referanslar.html"><a href="referanslar.html#tablolar"><i class="fa fa-check"></i><b>7.1</b> Tablolar</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -123,7 +132,7 @@
             <section class="normal" id="section-">
 <div id="motivasyon" class="section level1">
 <h1><span class="header-section-number">Bölüm 2</span> Motivasyon</h1>
-<p><img src="images/dprize.png" style="float: right;" width="230" height="230" title="Quality" /></p>
+<p><img src="images/dprize.png" style="float: right;" width="250" height="250" title="Deming Prize" /></p>
 <p>Kaliteyi kontrol etmek ve iyileştirmek rekabet ortamında kazananı belirleyen faktör haline gelmiştir. Bu bakımdan doğru yürütülen bir kalite kontrol süreci başarının anahtarı olacaktır. Sürecin başarılı yürütülmesi ise ancak alanında uzman kişilerin önderliğinde mümkündür.</p>
 <p>İstatistikçiler için olası bir çalışma alanı olan <em>İstatistiksel Kalite Kontrol</em>, gelecekte sizlerden biri veya birilerinin de yöneleceği alan olabilir. Bu bakımdan ders kapsamındaki bilgileri özümsemek, uygulamaları kavramak önem arz etmektedir.</p>
 <p><br></p>
@@ -188,6 +197,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

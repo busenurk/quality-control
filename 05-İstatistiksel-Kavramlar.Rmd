@@ -1,3 +1,375 @@
 # İstatistiksel Kavramlar
 
-We have finished a nice book.
+İstatistik verinin toplanmasını, düzenlenmesini, analiz edilmesini ve yorumlanmasını sağlayan bir disiplindir. İstatistik betimsel (tanımlayıcı (descriptive)) ve çıkarımsal (tümevarımsal (inferential)) amaçlı istatistik olmak üzere ikiye ayrılır. 
+
+**Betimsel istatistik:** Verilerin tablolar, grafikler veya özet istatistikler aracılığıyla betimlenmesi ve özetlenmesi ile ilgilidir. Bu sayede büyük veri kümeleri tek bir tablo, grafik veya özet istatistik ile temsil edilmekte ve herkes tarafından kolay anlaşılabilir bir biçimde sunulmaktadır.
+
+**Çıkarımsal istatistik:** Kitleden rasgele seçilen örneklemden toplanan verileri kullanarak kitlenin parametrelerini tahmin etmeyi ve parametrelerle ilgili savların doğruluğunun araştırılmasını amaçlar. Çıkarımsal istatistikte örnekten elde edilen bilgilere dayanarak kitle hakkında kestirimlerde bulunmak, sonuçlar çıkarmak ve kararlar vermek istatistiğin önemli bir bölümünü oluşturur.
+
+## Verilerin Toplanması ve Sunulması
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/alien.jpg" style="float: right;" width="400" height="270" title="Remind!" /> 
+
+Veri; analiz, karar ve faaliyet için temeldir bu nedenle tüm veriler özellikle işlem ve üretim noktalarında kayıt edilmelidir. Sistematik ve doğru kayıt bu bakımdan oldukça önemlidir. Verinin yapısı prosesten prosese farklılık gösterebilir. Maliyet ve emek kaybının önlenmesi için yalnızca ihtiyaç duyulan veriler kayıt altına alınmalıdır. 
+
+Verilerin istenilen hassasiyette ve doğru elde edilebilmesi için ölçü aletlerinin uygunluğu ve güvenilirliği sağlanmalıdır, ancak bu şekilde tekrarlanabilirlik mümkün olacaktır.
+
+Kalite hakkında bilgi _sayarak_ veya _ölçerek_ elde edilebilir. Bu bakımdan veri tipleri niceliksel (variables) ve niteliksel (attributes) olarak ikiye ayrılmaktadır. 
+
+**Niteliksel veri (attributes):** Sayarak elde edilen veri tipi belirli aralıklarla ortaya çıkmaktadır. Ör: 10 adetlik bir örnek gruptaki hatalar 0, 1, 2 gibi olabilir. Belirli uzunluktaki bir kumaştaki hataların sayısı, bir sayfadaki yazım hatalarının sayısı niteliksel veri tipine örnek olarak verilebilir.
+
+**Niceliksel veri (variables):** Ölçerek elde edilen veri tipleri sürekli yapıdadırlar. Örn: sıcaklık, ağırlık, hacim, zaman vb.
+
+Veri toplanırken bazı noktalara dikkat edilmesi gerekir.
+
+- Amaca uygun hassasiyette veri toplanması gerekir.
+- Verinin hassasiyeti ölçü aleti hassasiyetini aşamaz. Ör: 0.0001g hassasiyetle yapılması gereken tartım için 0.001g hassasiyete sahip terazi kullanılamaz.
+- Gözlem sayısı, örnekleme yöntemi ve analiz için kullanılan yöntem araştırılan konuya uygun olarak belirlenmelidir.
+- Veri toplanırken gerekli tüm koşullar saptanmalı ve kaydedilmelidir. (İlgili vardiya, üretimi yapan kişi, kullanılan cihaz, hammadde, çevre koşulları vb.)
+
+
+
+Veri toplama işlemi otomatik veya manuel olarak yapılabilir. Çalışılan duruma bağlı olarak her iki yöntemin de avantajlı olduğu durumlar mevcuttur.
+
+**Manuel sistem;**
+
+- Veri toplayan kişi prosese daha yakındır ve daha iyi anlamaya çalışır.
+- Veri toplayan kişi proses üzerinde tecrübe sahibi oldukça neden-sonuç ilişkisi kuracak ve yorumlayabilecektir.
+- Veri toplanması daha dinamik hale gelecek, gerekli ve gereksiz parametreler açığa çıkacaktır.
+- Geçici faaliyetler için manuel sistemlerin kullanımı hem pratik hem de ucuzdur.
+
+**Otomatik sistem;**
+
+- Değişimin çok hızlı olduğu durumlarda kullanışlıdır.
+- Çok sayıda veri aynı anda toplanabilir.
+- Sağlık ve emniyet açısından manuel veri toplamanın riskli olduğu durumlarda kullanılabilir.
+- Veri toplama ve analiz aşamasının hızlı olması gerektiğinde kullanışlıdır.
+- Fazla miktarda veri toplanması bakımından avantajlıdır.
+
+## Değişkenliğin Tanımlanması
+
+### Dal-Yaprak Grafiği
+
+Bir proses tarafından üretilen iki ürün birimi aynı değildir. Bazı değişiklikler kaçınılmaz olarak ortaya çıkmaktadır. Örnek olarak, bir içecek şişesinin net içeriği, şişeden şişeye biraz değişir ve bir güç kaynağının çıkış voltajı, bir üniteden diğerine tam olarak aynı değildir. İstatistik, verilerdeki bu değişkenlikleri hesaba katarak analiz etme ve sonuç çıkarmada faydalandığımız bilimdir.
+
+Verilerin sunulması için kullanılan başarılı görsellerden biri de dal-yaprak (steam and leaf) grafiğidir. 
+
+Büyük bir şirketin çalışanlarına 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/claim.png" style="float: center;" width="500" height="250" title="Claim-Days" /> 
+
+```{r include=FALSE}
+claim<-1:40
+days<-c(48,41,35,36,37,26,36,46,35,47,35,34,36,42,43,36,56,32,46,30,37,43,17,26,28,27,45,33,22,27,16,22,33,30,24,23,22,30,31,17)
+data<-cbind(claim,days)
+data
+```
+
+```{r}
+stem(days)  #dal-yaprak grafiği
+```
+
+Dal-yaprak grafiği verinin yayılım ve merkezi eğilimi hakkında fikir sahibi olmamızı sağlamaktadır. Bu bakımdan oldukça faydalı olmakla birlikte gözlemlerin zaman sırasını hesaba katmaz. Zaman, genellikle kalite iyileştirme problemlerindeki değişkenliğin yorumlanmasına katkıda bulunan önemli bir faktördür. Zamanı dikkate alan grafikler üretmek ve yorumlamak da mümkündür.
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(plotly)
+library(htmltools)
+
+p<-plot_ly(as.data.frame(data), x = ~claim, y = ~days)
+htmltools::tagList(p)
+```
+
+### Frekans Dağılımı
+
+Kitle (popülasyon) çok sayıda birimden oluşuyorsa, bu birimleri sınıflandırmak kitlenin çeşitli özelliklerinin belirlenmesini kolaylaştıracaktır. Sınıflandırmanın en doğru yolu frekans tablosudur. Bu yapıda gözlenen veri sınıflara ayrılır, sonuçlanan tablo her bir sınıftaki gözlem sayısını vermektedir.
+
+SPC açısından prosesteki değişkenleri açıkça görebilmek ve prosesin geçerliliği hakkında bir yargıya varabilmek için örneklerden elde edilen verilerin büyüklüklerine göre gruplandırılması gerekmektedir.
+
+Frekans tablosu oluşturulurken dikkat edilmesi gereken noktalar aşağıda yer almaktadır.
+
+- Sınıflar ayrık olmalıdır.
+
+|**Yanlış** |   |**Doğru**  |
+|:---------:|---|:---------:|
+|4.00 - 4.50|   |4.00 - 4.49|    
+|4.50 - 5.00|   |4.50 - 4.99|          
+
+- Sınıflar veri kümesinde yer alan her değeri içine almalıdır.
+- Sınıf limitleri ve sınıf sayısı hiç bir sınıf boş kalmayacak şekilde seçilmelidir.
+
+<br>
+
+**Frekans tablosu hazırlanması;**
+
+Konu ile ilgili veriler mümkün olduğunca duyarlı , aynı ölçü birimi ile ve duyarlılığı aynı rakamlarla tespit edilir.
+
+En büyük ve en küçük değerler arası fark, yani **değişim genişliği (range)** bulunur. Değişim genişliği belirlenen **sınıf sayısına** bölünerek **sınıf aralığı** tespit edilir. Burada önemli nokta sınıf sayısının kaç olduğuna karar vermektir. Bu karar verinin miktarına ve cinsine bağlı olarak uzman tarafından verilmekle birlikte genellikle 5-20 arasında seçilmektedir. Sınıf sayısının belirlenmesinde sıklıkla kullanılan bir yöntem de **Sturgess Kuralı**'dır. 
+
+<br>
+
+$K=1+3.3log_{10}N$
+
+burada K sınıf sayısı, ve N toplam veri adedidir.
+
+```{r}
+1+3.3*(log(400,base=10))  #sturgess
+```
+<br>
+
+
+**Örnek:** Bir ipek ipliğine ait mukavemet değerleri için frekans tablosu oluşturunuz.
+
+```{r}
+muk<-c(83,63,81,76,54,87,84,86,84,60,71,90,92,78,92,84,53,68,80,83,84,71,65,81,94,73,95,82,81,71,76,92,69,61,102,84,67,68,108,88,82,67,78,89,80,97,103,86,64,97,99,89,76,68,65,94,75,95,103,74,103,94,103,83,88,64,67,81,91,97,84,70,105,99,76,72,96,63,84,82,78,89,80,92,106,73,71,70,94,76,71,75,91,81,70,78,56,73,68,82,88,78,81,71,73,81,94,90,61,71,64,54,93,86,87,81,71,65,90,74)
+
+N=length(muk); N    #gozlem sayisi
+```
+<br>
+
+**En büyük gözlem**
+```{r}
+enb<-max(muk); enb
+```
+<br>
+
+**En küçük gözlem**
+```{r}
+enk<-min(muk); enk
+```
+<br>
+
+**Değişim genişliği (range)**
+```{r}
+range=enb-enk  #degisim genisligi
+range
+```
+<br>
+
+**Sınıf sayısı**
+```{r}
+K=1+3.3*(log(N,base=10));K   #sturgess
+round(K)  
+```
+<br>
+
+**Ödev:** Aşağıda yer alan mukavemet verisi için frekans tablosunu elde eden kodu yazınız.
+
+```{r echo=FALSE}
+factorx <- factor(cut(muk, breaks=nclass.Sturges(muk)))
+#Tabulate and turn into data.frame
+xout <- as.data.frame(table(factorx))
+#Add cumFreq and proportions
+xout <- transform(xout, cumFreq = cumsum(Freq), relative = prop.table(Freq));xout
+```
+
+### Histogram
+
+Histogram verinin yayılımını göstermektedir ve SPC'ün temeli verideki değişkenliği tanımlamaktır. Histogramın kullanım amaçları şu şekilde sıralanabilir;
+
+- Problemleri çözmek
+- Proses yeterliliğini analiz etmek
+- Spesifikasyonlar ve gerçekleşen veriyi karşılaştırmak
+- Popülasyonun şekli hakkında fikir edinmek
+- Veri farklılıkları ve boşlukları ortaya koymak
+
+
+Mukavemet örneği histogramı;
+
+```{r}
+fig<-plot_ly(x = ~muk) 
+htmltools::tagList(fig)
+```
+
+```{r echo=FALSE}
+xout
+```
+
+
+### Merkezi Eğilim Ölçüleri
+
+Frekans dağılımının simetrik, sağa veya sola çarpık olma durumu merkezi eğilim ölçüleri yardımıyla belirlenir. Merkezi eğilim ölçüsü olarak üç ölçü sıklıkla kullanılır, bunlar;
+
+- Ortalama (mean)
+- Medyan (ortanca (median))
+- Mod  (tepedeğer (mode))
+
+<br>
+
+**Ortalama:** $x_{1},x_{2},...,x_{n}$ örneklemde yer alan gözlemler olmak üzere;
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/mean.png" style="float: center;" width="700" height="110" title="Mean" />
+
+eşitliği, en önemli merkezi eğilim ölçüsü olan ortalamayı elde etmemizi sağlar. Gözlem değerlerinde meydana gelen çok küçük değişmeler aritmetik ortalamayı etkiler, bu nedenle aykırı değer durumunda kullanımına dikkat edilmelidir. Bir veride yalnızca bir aritmetik ortalama vardır. Nicel verilere uygulanabilir.
+
+<br>
+
+**Medyan:** Gözlem değerleri en küçükten en büyüğe sıralandığında tam ortaya düşen gözlem medyan (ortanca)'dır.Gruplanmamış verilerde gözlem sayısı tek ise medyan tam ortadaki gözlemdir ancak gözlem sayısı çift ise tam ortaya denk gelen iki gözlemin aritmetik ortalamasıdır.
+
+Medyan aykırı değerlerden etkilenmez, bu bakımdan aritmetik ortalamadan üstündür. Ancak aritmetik ortalamanın daha hassas olduğu unutulmamalıdır. Bir veride yalnızca bir medyan vardır. Nicel verilere uygulanabilir.
+
+<br>
+
+**Mod:** Veriler arasında en çok tekrar eden gözleme mod (tepedeğer) denir. Hassaslığı en az olan ölçüdür ancak hesaplanması kolaydır. Hem nitel hem de nicel veriler için kullanılabilir. 
+
+<br>
+
+Bir frekans dağılımı için ortalama, medyan ve mod değerleri birbirine eşit ise dağılım **simetriktir (symmetrical)**. Mod $<$ Medyan $<$ Ortalama şeklinde sıralama söz konusu ise dağılım **sağa çarpık (positive skewness)**, Ortalama $<$ Medyan $<$ Mod şeklinde ise dağılım **sola çarpıktır (negative skewness)**.
+
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/sym.png" style="float: center;" width="900" height="300" title="Skewness" /> 
+
+
+```{r}
+t<-rnorm(1000)^2
+
+mean<-mean(t)     #mean
+
+median<-median(t)  #median
+
+freq <- table(t)   #frequency
+mode<-as.numeric(names(freq)[which.max(freq)])   #mode
+
+sort(c(mean=mean,median=median,mode=mode))
+
+
+```
+
+```{r}
+fig<-plot_ly(x = t, type="histogram")
+htmltools::tagList(fig)
+```
+
+
+### Yayılım Ölçüleri
+
+Merkezi eğilim ölçülerinin yanında, verinin nasıl yayıldığını ve ortalama değerin her bir tarafında nasıl dağıldığını ortaya koyan yayılım ölçüleri verinin tanımlanması ve anlamlandırılması açısından önem taşımaktadır. Yayılımın analizi için üç ölçü yaygın şekilde kullanılır;
+
+- Genişlik
+- Standart Sapma
+- Varyans
+
+**Genişlik (range):** Genişlik yayılımı hesaplamak için en kolay yoldur. Veri kümesindeki en büyük ve en küçük değer arasındaki farka karşılık gelir. 
+
+**Standart Sapma:** Standart sapma, yayılım için kullanılan bir diğer ölçüdür. Verinin sınıflandırılmış veya sınıflandırılmamış olmasına bağlı olarak farklı şekillerde hesaplanmaktadır.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/sd.png" style="float: center;" width="700" height="110" title="Sd" />
+
+**Varyans:** Varyans en hassas yayılım ölçüsüdür. Gözlemler arasındaki değişimi ölçer. Varyansın pozitif karekökü ise standart sapmayı ifade eder. Verideki birimlerin değerleri aritmetik ortalama etrafında yoğunlaşıyorsa varyans küçüktür ve bu durum verinin homojen olduğunu dolayısı ile kaliteyi gösterir. Gözlemlerin aldıkları değerler aynı ise varyans sıfırdır. Aşağıdaki eşitlikte örneklem varyansı formülasyonu yer almaktadır. 
+
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/var.png" style="float: center;" width="700" height="110" title="Variance" />
+
+<br>
+
+Araştırmada iki kitle üzerinde çalışılıyorsa bu iki kitlenin aritmetik ortalamaları eşit olduğu durumda varyansı küçük olan kitle daha homojen olarak tanımlanırken aritmetik ortalamaları farklı iki kitleyi varyans açısından yorumlamak doğru olmayacaktır. Bu durumda **değişim katsayısından** faydalanılır.
+
+$C=\sigma/\mu$ olarak tanımlanan değişim katsayısı ölçü birimlerinden kaynaklanan farklılıkları da gidermektedir.
+
+Çarpıklık-basıklık katsayıları ve değişken katsayısı da yayılım ölçüsü olarak kullanılabilmektedir.
+
+
+
+### Kutu Grafiği (Box Plot)
+
+Dal-yaprak grafiği ve histogram, bir veri seti hakkında görsel bir izlenim sağlarken, örnek ortalaması ve standart sapma, verilerin belirli özellikleri hakkında nicel bilgi sağlar. Kutu grafiği, verilerin merkezi eğilim, yayılma ve aykırı gözlemlerin gözlenebilmesi gibi verilerin birkaç önemli özelliğini eşzamanlı olarak görüntüleyen bir grafik türüdür.
+
+Aykırı değerlerin varlığı tanımlayıcı istatistiklerin yanlış hesaplanmasına neden olur bu nedenle tespit edilmeleri oldukça önemlidir ve kutu grafiği bu bakımdan oldukça faydalıdır.
+
+Kutu grafiğinin oluşturulabilmesi için gerekli 5 önemli değer bulunmaktadır. En küçük değer, birinci çeyrek değer ($Q_{1}$), medyan, üçüncü çeyrek değer ($Q_{3}$) ve en büyük değer. Kutu grafikleri iki farklı dağılımın karşılaştırılmasında kolaylık sağlar.
+
+> En küçükten en büyüğe sıralanmış verileri 4 eşit parçaya bölen değerlere çeyrek değerler ya da kartiller denir. 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/boxplot.jpg" style="float: center;" width="500" height="250" title="Box Plot" />
+
+$Q_{1}=(n+1)/4$
+
+$Q_{3}=3(n+1)/4$
+
+Alt limit$=Q_{1}-1.5(Q_{3}-Q_{1})$
+
+Üst limit$=Q_{3}+1.5(Q_{3}-Q_{1})$
+
+Veride alt limitin altında veya üst limitin üzerinde bir gözlem yer alıyorsa bu gözlem **aykırı değer** olarak nitelendirilir.
+
+```{r}
+boxp1 <- plot_ly(y = muk, type = "box"); boxp1
+```
+
+```{r}
+boxp2 <- plot_ly(y = t, type = "box"); boxp2
+```
+
+<br>
+
+Çarpıklığı yatay eksende gözlemek daha iyi kavramamızı sağlayacaktır. Verinin sağa çarpık olduğu ve fazla miktarda aykırı değer içerdiği kutu grafikten gözlenebilmektedir.
+
+```{r}
+boxp2.horizontal <- plot_ly(x = t, type = "box"); boxp2.horizontal
+```
+
+
+### Olasılık Dağılımları
+
+Olasılık dağılımları ve özellikle normal dağılım istatistiksel kalite kontrol ile ilgili teoremlerde önemli yer tutmaktadır. Olasılık dağılımları kesikli ve sürekli olmak üzere iki yapıda incelenmektedir. Değişkenin ölçülen değeri sürekli bir ölçek üzerinde ifade ediliyor ise bu değişkenin olasılık dağılımına sürekli dağılım, eğer ölçülen değişken 0, 1, 2... gibi tamsayılı değerler alıyorsa bu değişkenin olasılık dağılımı kesikli dağılım olarak adlandırılır.
+
+
+```
+Değeri deneyden deneye değişen sonuçlar ile belirtilen değişkene rastgele değişken denir.
+```
+
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/dist.png" style="float: center;" width="800" height="300" title="Box Plot" />
+
+
+Kesikli ve sürekli olasılık dağılımları sırasıyla $(a)$ ve $(b)$ ile grafiksel olarak gösterilmiştir. $X$ rasgele değişkeninin bir $x_{i}$ değerini alma olasılığı;
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/disc.png" style="float: center;" width="700" height="60" title="Discrete" />
+
+Sürekli dağılımda olasılık eğrinin altında kalan alana karşılık gelmektedir, $X$ rasgele değişkeninin $a$ ve $b$ arasında olma olasılığı; 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/cont.png" style="float: center;" width="700" height="60" title="Continuous" />
+
+Bir olasılık dağılımının ortalaması, dağılımın merkezi eğiliminin bir ölçüsüdür. Ortalama, kesikli ve sürekli dağılımlar için aşağıdaki gibi tanımlanır.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/distmu.png" style="float: center;" width="700" height="140" title="Mean" />
+
+Bir dağılımdaki yayılma veya değişkenlik, varyans ile ifade edilir. Varyans, kesikli ve sürekli dağılımlar için aşağıdaki gibi tanımlanır.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/distv.png" style="float: center;" width="700" height="140" title="Variance" />
+
+## Önemli Kesikli Olasılık Dağılımları
+
+### Hipergeometrik Dağılım
+
+### Binom Dağılımı
+
+### Poisson Dağılımı
+
+
+
+## Önemli Sürekli Olasılık Dağılımları
+
+### Normal Dağılım
+
+### Üstel Dağılım
+
+### Gamma Dağılımı
+
+
+
+## Olasılık Grafikleri
+
+
+
+## Bazı Faydalı Yaklaşımlar
+
+### Binom - Hipergeometrik
+
+### Poisson - Binom
+
+### Normal - Binom
+
+
