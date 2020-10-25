@@ -161,7 +161,7 @@ ara<-range/round(K); ara
 
 **Ödev:** Aşağıda yer alan mukavemet verisi için frekans tablosunu elde eden kodu yazınız.
 
-```{r echo=FALSE}
+```{r}
 factorx <- factor(cut(muk, breaks=nclass.Sturges(muk)))
 #Tabulate and turn into data.frame
 xout <- as.data.frame(table(factorx))
@@ -359,15 +359,243 @@ Bir dağılımdaki yayılma veya değişkenlik, varyans ile ifade edilir. Varyan
 
 ### Hipergeometrik Dağılım
 
+Hipergeometrik dağılım istatistiksel kalite kontrolde, belirli sayıda kusurlu ve belirli sayıda kusursuz ürün içeren bir kümeden seçilen (iadesiz) belirli sayıdaki ürünün  kusurlu ve kusursuz ürün sayılarına ilişkin olasılıkları vermektedir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/hipgeo.png" style="float: center;" width="600" height="370" title="Hipergeometrik" />
+
+**N:** Toplam eleman sayısı
+
+**D:** N'in bir bölümü ($D\leq N$)
+
+**n:** örnek hacmi
+
+**x:** istenen durum sayısı
+
+<br>
+
+**Kombinasyon hatırlatma:** 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/comb.png" style="float: center;" width="150" height="80" title="Kombinasyon" />
+
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/phyp.png" style="float: center;" width="800" height="250" title="phyp.r" />
+
+<br>
+
+**Örnek:** İçinde 10 sağlam ve 4 arızalı ürün bulunan bir kümeden 5 ürün alınmıştır. Bu ürünlerin
+
+  **a)** 3 adetinin sağlam olma olasılığı nedir?
+
+```{r}
+a<-dhyper(x = 3, m = 10, n = 4, k = 5); a
+```
+  <br>
+  
+  **b)** En fazla 2'sinin sağlam olma olasılığı nedir?
+  
+```{r}
+# P(X<=2)=P(X=0)+P(X=1)+P(X=2)
+
+tot=numeric()  # bos vektor
+for(i in 0:2){
+tot[i+1]=dhyper(x = i, m = 10, n = 4, k = 5)}
+b<-sum(tot); b
+```
+  
+   <br>
+   
+   **c)** En az üçünün sağlam olma olasılığı nedir?
+
+```{r}
+# P(X>=3)=1-(P(X=0)+P(X=1)+P(X=2))
+
+c<-1-b
+c
+
+```
+
+<br>
+
+**Örnek:** Bir tekstil fabrikasında üretilmiş 1000 tişörtün 200'ünün kusurlu olduğu biliniyor. Perakende satış yapan bir mağaza sahibi 25 tişörtü rasgele seçerek alırken kusurlu tişört sayısı 4'den çok çıkarsa malı iade edeceğini söylüyor. Malı iade etme olasılığı nedir?
+
+```{r}
+# P(X>4)=1-P(X<=4)
+
+z=numeric()  # bos vektor
+for(i in 0:4){
+z[i+1]=dhyper(x = i, m = 200, n = 800, k = 25)}
+sum<-sum(z);
+
+iade=1-sum; iade
+
+```
+
+
+
 ### Binom Dağılımı
+
+Sadece iki sonuç veren bir Bernoulli deneyinin n kez birbirinden bağımsız ve aynı koşullar altında tekrar ettiği biliniyorsa ve sıra gözetilmeden başarı türünden oluşan sonuçlarla ilgileniliyorsa bu dağılıma binom dağılımı denir. Binom dağılımı n (örnek büyüklüğü) ve p (hatalı/hatasız olasılığı) olmak üzere iki parametreye sahiptir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/binom.png" style="float: center;" width="600" height="280" title="Binom" />
+
+<br>
+
+**Örnek:** Bir fabrikada üretim yapan vardiyalardan birinin ürettiği ürünlerin $%$10 olasılıkla kusurlu olduğu tespit edilmiştir. Bu ürünlerden rasgele 5 adet alındığında,
+
+  **a)** 1 adedinin kusurlu olma olasılığı nedir?
+  
+```{r}
+dbinom(1, size=5, prob=0.10)
+```
+  
+  <br>
+  
+  
+  **b)** En fazla 1 adedinin kusurlu olma olasılığı nedir?
+  
+```{r}
+# P(X<=1)=P(X=0)+P(X=1)
+
+kusur=numeric()  # bos vektor
+for(k in 0:1){
+kusur[k+1]=dbinom(x=k, size=5, prob=0.10)}
+sum(kusur)
+```
+  
+  <br>
+  
+  **c)** En az 2 adedinin kusurlu olma olasılığı nedir?
+  
+```{r}
+# P(X>=2)=1-P(X<=1)
+
+1-sum(kusur)
+```
+  
+  
+ <br> 
+  
+**Örnek:** Bir firma %5 kusurlu ürün içeren büyük bir parti maldan rasgele 120 adet seçiyor. Y bu 120 üründeki kusurluların sayısı olsun. Firma kusurlu parçaları tamir için geri gönderecektir. Tamirin maliyeti;
+
+$M=8Y^{2}+0.5Y-10$
+
+fonksiyonu ile hesaplanmaktadır. Tamirin beklenen maliyeti nedir?
+
+```{r}
+# E(M)=8E(Y^2)+0.5E(Y)-E(10)
+
+# E(Y)=np
+
+#Var(Y)= npq= E(Y^2)-E(Y)^2
+
+ey=120*0.05
+eykare=120*0.05*0.95+(ey^2)
+em=8*eykare+0.5*ey-10; em
+```
+
+
 
 ### Poisson Dağılımı
 
+Poisson dağılımı belirli aralıkta gerçekleşme olasılığı çok küçük olan durumlarda kullanılır. Dağılımın tek parametresi $\lambda$ olup gerçekleşen ortalama olay sayısında eşittir. Poisson dağılımı istatistiksel kalite kontrolde ürünün bir biriminde oluşan uygunsuzlukların ya da kusur sayısının belirlenmesinde kullanılan bir dağılımdır. Zaman birimi başına gözlemleri içeren birçok durumda bu dağılım uygulanabilir.
+
+$\lambda=np$
+
+Poisson dağılımı, kabul örneklemesi ve ölçülemeyen özellikler için kontrol diyagramlarında bir temel oluşturmaktadır.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/poisson.png" style="float: center;" width="600" height="300" title="Poisson" />
+
+**Örnek:** Bir fabrikada üretilen ürünler 0.004 olasılıkla kusurludur. Üretilen bu ürünlerden rassal örnekleme ile 1000 adet alınmıştır.
+
+  **a)** 3 adet ürünün kusurlu olma olasılığı nedir?
+  
+```{r}
+# lambda=n*p
+
+dpois(x = 3, lambda = 1000*0.004)
+```
+  
+  
+   <br> 
+   
+  **b)** 3 adetten daha az ürünün kusurlu olma olasılığı nedir?
+  
+```{r}
+# P(X<3)=P(X=0)+P(X=1)+P(X=2)
+
+kusurlu=numeric()  # bos vektor
+for(t in 0:2){
+kusurlu[t+1]=dpois(x = t, lambda = 1000*0.004)}
+sum(kusurlu)
+```
+  
+   <br> 
+   
+  **c)** En az 2 ürünün kusurlu olması olasılıklarını hesaplayınız.
+
+```{r}
+# P(X>=2)=1-P(X<2)
+
+kusurlu
+1-sum(kusurlu[1:2])   # 2 dahil degil
+
+```
 
 
 ## Önemli Sürekli Olasılık Dağılımları
 
 ### Normal Dağılım
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/nd1.png" style="float: right;" width="300" height="150" title="Normal Dağılım" />
+
+İstatistiksel proses kontrol uygulamalarında kullanılan sayısal hesaplamaların önemli bir bölümü verinin normal dağılıma uyduğu kabulüne göre yapılmaktadır.
+
+Gauss dağılımı olarak da bilinen normal dağılım aşağıdaki temel özelliklere sahiptir.
+
+- Simetriktir, çan eğrisi şeklindedir.
+- Veriler ortalama etrafında yoğunlaşmıştır. Eğri altındaki alan tüm olasılıklar toplamına eşit yani 1'dir.
+- Dağılımın tek bir zirvesi vardır, ortalama, mod ve medyan değeri aynıdır.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/normdist.png" style="float: center;" width="700" height="250" title="Normal Dağılım" />
+
+Popülasyon değerlerinin %68.26'sının ortalama artı ve eksi bir standart sapma ($\mu$ ± 1$\sigma$) ile tanımlanan sınırlar arasında kalır, değerlerin %95.46'sı ortalama artı ve eksi iki standart sapma ($\mu$ ± 2$\sigma$) ile tanımlanan sınırlar arasında kalır; ve popülasyon değerlerinin %99.73'ü ortalama artı ve eksi üç standart sapma ($\mu$ ± 3$\sigma$) ile tanımlanan sınırlar dahilindedir. 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/nd2.png" style="float: center;" width="500" height="350" title="Normal Dağılım" />
+
+Ortalaması ve standart sapması bilinen bir popülasyona ait normal dağılım olasılıklarını hesaplayabilmek için standart normal dağılım tablosu kullanılmaktadır. Standart normal dağılım; ortalaması 0 ve standart sapması 1 olan normal dağılımı ifade etmektedir. Bir _X_ değişkeni aşağıdaki eşitlik yardımı ile Z standart normal değerine dönüştürülür ve bu sayede standart normal dağılım tablosu kullanılabilir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/norm.png" style="float: center;" width="90" height="70" title="Normal Dağılım" />
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ntable.png" style="float: center;" width="500" height="700" title="Normal Dağılım" />
+
+```{r}
+x=seq(0,3.09,by=0.01); head(x)
+```
+
+<br>
+
+```{r}
+prob=pnorm(x); head(prob)
+```
+<br>
+
+```{r}
+tablo=matrix(prob,ncol=10,byrow=TRUE); tablo
+options(digits=4)
+```
+
+<br>
+
+```{r}
+rownames(tablo)=seq(0,3,b=0.1)
+colnames(tablo)=seq(0,0.09,by=0.01)
+tablo
+```
+
+
+```{r}
+
+```
 
 ### Üstel Dağılım
 
