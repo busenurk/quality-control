@@ -361,6 +361,8 @@ Bir dağılımdaki yayılma veya değişkenlik, varyans ile ifade edilir. Varyan
 
 Hipergeometrik dağılım istatistiksel kalite kontrolde, belirli sayıda kusurlu ve belirli sayıda kusursuz ürün içeren bir kümeden seçilen (iadesiz) belirli sayıdaki ürünün  kusurlu ve kusursuz ürün sayılarına ilişkin olasılıkları vermektedir.
 
+Bazen sonlu elemanlı bir kitleden idesiz çekiliş yapılmak istenebilir. Bir deneyin sadece iki sonucu varsa, çekilen örnek sayısı n sabit ve denemeler bağımlı ise böyle durumlarda hipergeometrik dağılım kullanılır.
+
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/hipgeo.png" style="float: center;" width="600" height="370" title="Hipergeometrik" />
 
 **N:** Toplam eleman sayısı
@@ -440,7 +442,7 @@ Sadece iki sonuç veren bir Bernoulli deneyinin n kez birbirinden bağımsız ve
 
 <br>
 
-**Örnek:** Bir fabrikada üretim yapan vardiyalardan birinin ürettiği ürünlerin $%$10 olasılıkla kusurlu olduğu tespit edilmiştir. Bu ürünlerden rasgele 5 adet alındığında,
+**Örnek:** Bir fabrikada üretim yapan vardiyalardan birinin ürettiği ürünlerin %10 olasılıkla kusurlu olduğu tespit edilmiştir. Bu ürünlerden rasgele 5 adet alındığında,
 
   **a)** 1 adedinin kusurlu olma olasılığı nedir?
   
@@ -541,6 +543,44 @@ kusurlu
 
 ```
 
+   <br> 
+   
+**Örnek:** Bir büyük alışveriş merkezinde yürüyen merdivenlerin yılda ortalama 3 gün arızalandığı saptanmıştır.
+
+  **a)** Herhangi bir ay içinde merdivenlerin hiç arızalanmama olasılığı nedir?
+  
+```{r}
+lambda=3/365*30; lambda  #aylik
+
+# P(X=0)
+dpois(x = 0, lambda =lambda )
+```
+ <br>  
+  
+  
+  **b)** Herhangi bir ay içinde merdivenlerin 2'den az arızalanma olasılığı nedir?
+  
+```{r}
+# P(X<2)=P(X=0)+P(X=1)
+d1=dpois(x = 0, lambda =lambda)
+d2=dpois(x = 1, lambda =lambda)
+sum(d1,d2)
+```
+  <br>  
+  
+  **c)** Bir sonraki yıl merdivenlerin hiç arızalanmama olasılığı nedir?
+```{r}
+lambda2=3  # yil
+dpois(x = 0, lambda =lambda2)
+```
+
+  <br> 
+  
+**Ödev:** Bir fabrikanın deposundaki stoktan 365 gün içinde 36 ton mal çekilmiştir. Bu dönem içinde rasgele saptanan bir 15 günlük dilimde en az 3 ton mal çekilme olasılığı nedir? 
+
+
+
+-----------------------
 
 ## Önemli Sürekli Olasılık Dağılımları
 
@@ -593,9 +633,6 @@ tablo
 ```
 
 
-```{r}
-
-```
 
 ### Üstel Dağılım
 
