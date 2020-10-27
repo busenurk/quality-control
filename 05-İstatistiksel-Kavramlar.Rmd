@@ -602,7 +602,7 @@ Popülasyon değerlerinin %68.26'sının ortalama artı ve eksi bir standart sap
 
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/nd2.png" style="float: center;" width="500" height="350" title="Normal Dağılım" />
 
-Ortalaması ve standart sapması bilinen bir popülasyona ait normal dağılım olasılıklarını hesaplayabilmek için standart normal dağılım tablosu kullanılmaktadır. Standart normal dağılım; ortalaması 0 ve standart sapması 1 olan normal dağılımı ifade etmektedir. Bir _X_ değişkeni aşağıdaki eşitlik yardımı ile Z standart normal değerine dönüştürülür ve bu sayede standart normal dağılım tablosu kullanılabilir.
+Ortalaması ve standart sapması bilinen bir popülasyona ait normal dağılım olasılıklarını hesaplayabilmek için standart normal dağılım tablosu kullanılmaktadır. Standart normal dağılım; Z$\sim$N(0,1) şeklinde ifade edilmektedir. Bir _X_ değişkeni aşağıdaki eşitlik yardımı ile Z standart normal değerine dönüştürülür ve bu sayede standart normal dağılım tablosu kullanılabilir.
 
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/norm.png" style="float: center;" width="90" height="70" title="Normal Dağılım" />
 
@@ -631,14 +631,63 @@ rownames(tablo)=seq(0,3,b=0.1)
 colnames(tablo)=seq(0,0.09,by=0.01)
 tablo
 ```
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/pnorm.png" style="float: center;" width="700" height="250" title="Normal Dağılım" />
 
+<br>
 
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/pnormz.png" style="float: center;" width="700" height="220" title="Normal Dağılım" />
+
+**Örnek:** Bir işletme tarafındanüretilen belirli bir mısır gevreğinin geçtiğimiz yıl için ortalama ağırlığı 0.297 kg ve standart sapması 0.024 kg'dır. Normal dağılım varsayımı ile, alt spesifikasyon limiti olan 0.274 kg'dan daha az üretim yapılma olasılığını bulunuz. (Ortalama ve standart sapma geçtiğimiz yıl boyunca yapılan yüksek sayıdaki testten elde ediliği için bu değerler popülasyon değerlerinin tahmini olarak düşünülmelidir.)
+
+* pnorm fonksiyonu varyans değil standart sapma kullanılıyor!
+
+```{r}
+# P(X<0.274)
+# Z=(0.274-0.297)/0.024=-0.96
+# Z_0.96=0.8315     tablo degeri
+# P(Z<-0.96)=P(Z>0.96)= 1-0.8315
+urt<-pnorm(0.274,mean=0.297,sd=0.024, lower.tail = TRUE); urt
+```
+
+<br>
+
+**Örnek:** Bir fabrikada üretilen ürünlerin ortalama ağırlıkları 50 kg ve ağırlıkları dağılımının varyansı 49 kg olarak bulunmuştur. Ağırlıkların dağılımı normaldir. Bu ürünlerden 5000 adet alınmıştır. Bu 5000 üründen kaç adetinin
+
+  **a)** 48 ile 51 kg arasında olacağını hesaplayınız.
+  
+```{r}
+# P(48<X<51)= P(X<51)-P(X<48)
+a<-pnorm(51,50,7, lower.tail = TRUE)  # varyans 49 kg
+b<-pnorm(48,50,7, lower.tail = TRUE)
+c<-a-b
+```
+
+```{r}
+5000*c  # adet
+```
+  
+  
+  **b)** 52 kg'den fazla olacağını hesaplayınız.
+  
+```{r}
+# P(X>52)=P(Z>(52-50)/7=0.029)
+dgr<-pnorm(52,50,7, lower.tail = FALSE); dgr
+
+5000*dgr    # adet
+```
+  
 
 ### Üstel Dağılım
+
+Üstel dağılım adını olasılık yoğunluk fonksiyonundaki üstel fonksiyondan alır. Üstel dağılım belirli bir olayın ortaya çıkmasına kadar geçen süre olarak ortaya çıkar. 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/expo.png" style="float: center;" width="600" height="350" title="Üstel Dağılım" />
+
 
 ### Gamma Dağılımı
 
 
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/gamma.png" style="float: center;" width="600" height="350" title="Gamma Dağılım" />
 
 ## Olasılık Grafikleri
 
