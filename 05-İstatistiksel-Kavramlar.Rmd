@@ -683,7 +683,7 @@ dgr<-pnorm(52,50,7, lower.tail = FALSE); dgr
 
 **Örnek:** Büyük bir firmanın pazarlama elemanlarının aylık satış hasılasına göre dağılımı normal olup ortalaması 200 bin TL ve varyansı da 2500 olarak bilinmektedir. Firma yönetimi çok satış yapan ilk %10'a giren elemanlarına prim verecektir. Prim kazanabilmek için satış hasılası **en az** kaç olmalıdır?
 
-```{r include=FALSE}
+```{r echo=TRUE}
 # P(X>x)=0.10
 emt=numeric()
 for(i in 200:300)
