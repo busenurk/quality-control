@@ -194,3 +194,5 @@ binom---hipergeometrik-3
 poisson---binom-3
 normal---binom-3
 tablolar-3
+binom---poisson
+binom---poisson-1

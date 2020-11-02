@@ -631,13 +631,17 @@ rownames(tablo)=seq(0,3,b=0.1)
 colnames(tablo)=seq(0,0.09,by=0.01)
 tablo
 ```
+<br>
+
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/pnorm.png" style="float: center;" width="700" height="250" title="Normal Dağılım" />
 
 <br>
 
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/pnormz.png" style="float: center;" width="700" height="220" title="Normal Dağılım" />
 
-**Örnek:** Bir işletme tarafındanüretilen belirli bir mısır gevreğinin geçtiğimiz yıl için ortalama ağırlığı 0.297 kg ve standart sapması 0.024 kg'dır. Normal dağılım varsayımı ile, alt spesifikasyon limiti olan 0.274 kg'dan daha az üretim yapılma olasılığını bulunuz. (Ortalama ve standart sapma geçtiğimiz yıl boyunca yapılan yüksek sayıdaki testten elde ediliği için bu değerler popülasyon değerlerinin tahmini olarak düşünülmelidir.)
+<br>
+
+**Örnek:** Bir işletme tarafından üretilen belirli bir mısır gevreğinin geçtiğimiz yıl için ortalama ağırlığı 0.297 kg ve standart sapması 0.024 kg'dır. Normal dağılım varsayımı ile, alt spesifikasyon limiti olan 0.274 kg'dan daha az üretim yapılma olasılığını bulunuz. (Ortalama ve standart sapma geçtiğimiz yıl boyunca yapılan yüksek sayıdaki testten elde ediliği için bu değerler popülasyon değerlerinin tahmini olarak düşünülmelidir.)
 
 * pnorm fonksiyonu varyans değil standart sapma kullanılıyor!
 
@@ -645,7 +649,7 @@ tablo
 # P(X<0.274)
 # Z=(0.274-0.297)/0.024=-0.96
 # Z_0.96=0.8315     tablo degeri
-# P(Z<-0.96)=P(Z>0.96)= 1-0.8315
+# P(Z<-0.96)=P(Z>0.96)= 1-0.8315=0.1685
 urt<-pnorm(0.274,mean=0.297,sd=0.024, lower.tail = TRUE); urt
 ```
 
@@ -665,7 +669,7 @@ c<-a-b
 ```{r}
 5000*c  # adet
 ```
-  
+<br>  
   
   **b)** 52 kg'den fazla olacağını hesaplayınız.
   
@@ -675,30 +679,139 @@ dgr<-pnorm(52,50,7, lower.tail = FALSE); dgr
 
 5000*dgr    # adet
 ```
-  
+<br>
+
+**Örnek:** Büyük bir firmanın pazarlama elemanlarının aylık satış hasılasına göre dağılımı normal olup ortalaması 200 bin TL ve varyansı da 2500 olarak bilinmektedir. Firma yönetimi çok satış yapan ilk %10'a giren elemanlarına prim verecektir. Prim kazanabilmek için satış hasılası **en az** kaç olmalıdır?
+
+```{r include=FALSE}
+# P(X>x)=0.10
+emt=numeric()
+for(i in 200:300)
+emt[i]=pnorm(i,200,50, lower.tail = FALSE)
+emt<-round(emt,3);emt
+
+which(emt==0.10)
+
+```
+
+
 
 ### Üstel Dağılım
 
-Üstel dağılım adını olasılık yoğunluk fonksiyonundaki üstel fonksiyondan alır. Üstel dağılım belirli bir olayın ortaya çıkmasına kadar geçen süre olarak ortaya çıkar. 
+Üstel dağılım adını olasılık yoğunluk fonksiyonundaki üstel fonksiyondan alır. Üstel dağılım belirli bir olayın ortaya çıkmasına kadar geçen süre olarak ortaya tanımlanır. 
 
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/expo.png" style="float: center;" width="600" height="350" title="Üstel Dağılım" />
+
+<br>
+
+**Örnek:** Bir elektronik hesap makinesi üreticisi ürün garanti süresini bir yıl olarak belirlemiştir. Hesap makinesi bu süre içinde herhangi bir nedenle arızalanırsa, değiştirilir. Arıza zamanı, aşağıdaki olasılık dağılımı ile modellenmiştir:
+
+$f(x)=0.125e^{-0.125x}$,  $x>0$
+
+Hesap makinelerinin yüzde kaçı garanti süresi içinde arızalanır?
+  
+```{r}
+#lambda=0.125
+# P(X<1)
+
+pexp(1, rate = 0.125, lower.tail = TRUE)*100
+```
+<br>
 
 
 ### Gamma Dağılımı
 
 
+
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/gamma.png" style="float: center;" width="600" height="350" title="Gamma Dağılım" />
+
+Olasılık ve istatistikte çok karşılaşılan dağılımların bazıları (Üstel ve Ki-Kare gibi) Gamma dağılımının özel halidir.
+
+$\Gamma(k+1)=k!$ 
+
+- $X\sim Gamma(r,\lambda)$ olsun, $r=1$ için $X$ rasgele değişkeni üstel dağılıma sahiptir.
+
+- $X\sim Gamma(r,\lambda)$ olsun, $r=p/2$ ve $\lambda=2$ için $X$ rasgele değişkeni serbestlik derecesi $p$ olan ki-kare dağılımına sahiptir.
 
 ## Olasılık Grafikleri
 
+Belirli bir olasılık dağılımının, veriler için makul bir model olup olmadığını nasıl anlarız? Olasılık grafikleri, verilerin **öznel** bir görsel incelemesine dayalı olarak örnek verilerin varsayılmış bir dağılıma uygun olup olmadığını belirlemek için kullanılan bir yöntemdir. 
 
+Grafik çizimi için öncelikle veriler küçükten büyüğe doğru sıralanır, ardından sıra numaralarına göre $(j-0.5)/n$ (gözlenen kümülatif sıklık) değeri elde edilir ve gözleme karşılık gelen sıralama değeri $X$ ve $Y$ eksenlerine çizilir.
+
+Varsayılan dağılım verileri yeterince açıklarsa, çizilen noktalar yaklaşık olarak düz bir çizgi boyunca düşecektir; çizilen noktalar düz bir çizgiden önemli ve sistematik olarak saparsa, hipotez edilen model uygun değildir. Genellikle, veri grafiğinin düz bir çizgi olarak olup olmadığının belirlenmesi özneldir.
+
+Bu nedenle goodness-of-fit testlerini kullanmak daha güvenilir ve subjektif sonuçlar elde edilmesini sağlar.
+
+```{r message=FALSE, warning=FALSE}
+j<-1:10
+x<-c(86,87,87.2,87.4,87.8,88.2,88.9,89.6,89.7,90)
+y<-100*(j-0.5)/10
+x<-sort(x);x
+plot_ly(x=x,y=y)
+```
+
+[Diğer dağılımlar için detaylı bilgi](https://www.itl.nist.gov/div898/handbook/apr/section2/apr221.htm)
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/acont.png" style="float: center;" width="400" height="150" title="Contamination" />
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/others.png" style="float: center;" width="700" height="600" title="Plots" />
 
 ## Bazı Faydalı Yaklaşımlar
 
 ### Binom - Hipergeometrik
 
-### Poisson - Binom
+Hipergeometrik dağılım $n\rightarrow\infty$ iken Binom dağılımına yaklaşır. Bazen sonlu elemanlı bir kitleden iadesiz çekiliş yapılmak istenebilir. Bir deneyin sadece iki sonucu varsa (sarı ve lacivert topların bulunduğu bir kavanozdan aynı anda ya da iadesiz çekiliş yapılması), çekilen örnek sayısı  sabit ve denemeler bağımlı (deneylerde birinin sonucu diğerini etkiliyorsa) ise böyle durumlarda Hipergeometrik dağılım kullanılır.  
+
+
+### Binom - Poisson
+
+$X\sim Binom(n,p)$ ve $Y\sim Poisson(\mu)$ olmak üzere, $n$ yeterince büyük olduğu durumda binom dağılımına poisson dağılımı olarak yaklaşılabilir.
+
+Yaklaşım büyük $n$ değeri ve küçük $p$ değeri için uygundur (genellikle p <0.1). $n$'nin değeri ne kadar büyük ve $p$'nin değeri ne kadar küçükse, yaklaşım o kadar iyi çalışmaktadır.
+
+Binom dağılımı ile Poisson dağılımı arasında bir benzerlik kurulabilir. Örneğin, belirli bir saat dilimi içinde bir mağazaya giren müşterilerin sayısı Poisson rasgele değişkenidir. Oysa, mağazaya giren (maksimum müşteri sayısı sabit) her müşteriyi başarı olarak değerlendirirsek, mağazaya giren müşterilerin sayısı Binom dağılımına sahip olur. 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/binpois.png" style="float: center;" width="700" height="350" title="Poisson-Binom Dağılım" />
+
+Yukarıda, değişik $\mu$ değerleri için $Y\sim Poisson(\mu)$ ve $X\sim Binom(n,p)$ olmak üzere, $p=\mu/n$ alınarak $P(X=1)$ ve $P(Y=1)$ olasılıkları hesaplanarak (değerler dördüncü basamaktan sonra yuvarlatılmıştır) tablo halinde verilmiştir. Tablodaki değerlerden de görüldüğü gibi, $n$ değeri büyüdükçe, $P(X=1)$ Binom olasılıkları $P(Y=1)$ olasılıklarına yaklaşmaktadır.
+
 
 ### Normal - Binom
 
+$p$ çok küçük değilse ve $n$ de büyükse binom dağılımdan yararlanarak olasılıkları hesaplamak güçleşir. $n\rightarrow \infty$ iken binom olasılıkları normal dağılıma yaklaştırılabilir. Bu dağılımın ortalaması ve varyansı, binom dağılımından
+
+$\mu=E(X)=np$
+
+$\sigma^{2}=Var(X)=npq$
+
+olarak hesaplanır. Bu durumda $X\sim N(np,npq)$ olur. Bu nedenle $p$ çok küçük değilse ve $n$ de büyükse binom dağılımına sahip $X$ değişkeninin belli bir değerden küçük ya da büyük olması veya herhangi iki değer arasında yer alma  olasılıkları standart normal dağılım tablosu kullanılarak hesaplanabilir. Fakat Binom dağılımı kesikli ve normal dağılım sürekli olduğundan standart normale dönüştürme yapılırken düzeltme işlemi yapılması gerekir. Bu düzeltme işlemi $\pm0.5$ değeri kullanılarak yapılır.   
+
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/pm.png" style="float: center;" width="420" height="230" title="Süreklilik Düzeltmesi" />
+
+<br>
+
+**Örnek:** Bir firmanın ürünleri için yapılan müşteri memnuniyeti araştırması sonuçlarına göre müşterilerin 0.60'ı memnun olduklarını beyan etmişlerdir. Bu firmanın müşterilerinden rasgele 100 müşteri seçildiğinde en az 50 sinin memnuniyet beyan etme olasılıkları kaçtır?
+
+
+```{r}
+p=0.60 
+q=1-p
+n=100
+
+mu=n*p
+var=n*p*q
+mu; var
+```
+<br>
+ 
+```{r}
+# P(X>=50)
+pnorm(50-0.5,mu,sqrt(var), lower.tail = FALSE)   #-0.5 süreklilik düzeltmesi
+```
 
