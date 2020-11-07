@@ -328,10 +328,8 @@ boxp2.horizontal <- plot_ly(x = t, type = "box",name="Norm^2 Horizontal"); boxp2
 
 Olasılık dağılımları ve özellikle normal dağılım istatistiksel kalite kontrol ile ilgili teoremlerde önemli yer tutmaktadır. Olasılık dağılımları kesikli ve sürekli olmak üzere iki yapıda incelenmektedir. Değişkenin ölçülen değeri sürekli bir ölçek üzerinde ifade ediliyor ise bu değişkenin olasılık dağılımına sürekli dağılım, eğer ölçülen değişken 0, 1, 2... gibi tamsayılı değerler alıyorsa bu değişkenin olasılık dağılımı kesikli dağılım olarak adlandırılır.
 
+>Değeri deneyden deneye değişen sonuçlar ile belirtilen değişkene rastgele değişken denir.
 
-```
-Değeri deneyden deneye değişen sonuçlar ile belirtilen değişkene rastgele değişken denir.
-```
 
 
 <br>

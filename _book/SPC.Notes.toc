@@ -1,4 +1,3 @@
-\babel@toc {english}{}
 \contentsline {chapter}{\numberline {1}Ön Bilgi}{5}{chapter.1}
 \contentsline {section}{\numberline {1.1}Hakkımda}{6}{section.1.1}
 \contentsline {chapter}{\numberline {2}Motivasyon}{7}{chapter.2}
@@ -6,24 +5,29 @@
 \contentsline {chapter}{\numberline {4}Kalite Yönetimi Temel Kavramları}{11}{chapter.4}
 \contentsline {section}{\numberline {4.1}Kalite Kavramı}{11}{section.4.1}
 \contentsline {section}{\numberline {4.2}Kalite Boyutları}{13}{section.4.2}
-\contentsline {section}{\numberline {4.3}Kalite Mühendislik Terminolojisi}{14}{section.4.3}
-\contentsline {section}{\numberline {4.4}Toplam Kalite Yönetiminin Tarihsel Gelişimi}{15}{section.4.4}
-\contentsline {section}{\numberline {4.5}Kalite Kontrol ve İyileştirme için İstatistiksel Yöntemler}{16}{section.4.5}
-\contentsline {section}{\numberline {4.6}Kalite İyileştirmede Yönetim Cephesi}{17}{section.4.6}
-\contentsline {section}{\numberline {4.7}Kalite Yönetimi Liderleri}{18}{section.4.7}
-\contentsline {subsection}{\numberline {4.7.1}Walter Shewhart}{18}{subsection.4.7.1}
-\contentsline {subsection}{\numberline {4.7.2}W. Edwards Deming}{18}{subsection.4.7.2}
-\contentsline {subsection}{\numberline {4.7.3}Joseph M. Juran}{20}{subsection.4.7.3}
-\contentsline {subsection}{\numberline {4.7.4}Armand V. Feigenbaum}{20}{subsection.4.7.4}
-\contentsline {subsection}{\numberline {4.7.5}Philip Crosby}{21}{subsection.4.7.5}
-\contentsline {subsection}{\numberline {4.7.6}Kaoru Ishikawa}{21}{subsection.4.7.6}
-\contentsline {subsection}{\numberline {4.7.7}Genichi Taguchi}{21}{subsection.4.7.7}
-\contentsline {section}{\numberline {4.8}Toplam Kalite Yönetimi}{22}{section.4.8}
-\contentsline {section}{\numberline {4.9}Kalite Sistemleri ve Standartları}{22}{section.4.9}
-\contentsline {section}{\numberline {4.10}ISO 9000 Kalite Standartları}{23}{section.4.10}
-\contentsline {section}{\numberline {4.11}Malcolm Baldrige Ulusal Kalite Ödülü}{25}{section.4.11}
-\contentsline {section}{\numberline {4.12}Altı Sigma}{26}{section.4.12}
+\contentsline {section}{\numberline {4.3}Kalite Mühendislik Terminolojisi}{13}{section.4.3}
+\contentsline {section}{\numberline {4.4}Toplam Kalite Yönetiminin Tarihsel Gelişimi}{14}{section.4.4}
+\contentsline {section}{\numberline {4.5}Kalite Kontrol ve İyileştirme için İstatistiksel Yöntemler}{15}{section.4.5}
+\contentsline {section}{\numberline {4.6}Kalite İyileştirmede Yönetim Cephesi}{15}{section.4.6}
+\contentsline {section}{\numberline {4.7}Kalite Yönetimi Liderleri}{16}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Walter Shewhart}{16}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.2}W. Edwards Deming}{16}{subsection.4.7.2}
+\contentsline {subsection}{\numberline {4.7.3}Joseph M. Juran}{18}{subsection.4.7.3}
+\contentsline {subsection}{\numberline {4.7.4}Armand V. Feigenbaum}{18}{subsection.4.7.4}
+\contentsline {subsection}{\numberline {4.7.5}Philip Crosby}{19}{subsection.4.7.5}
+\contentsline {subsection}{\numberline {4.7.6}Kaoru Ishikawa}{19}{subsection.4.7.6}
+\contentsline {subsection}{\numberline {4.7.7}Genichi Taguchi}{19}{subsection.4.7.7}
+\contentsline {section}{\numberline {4.8}Toplam Kalite Yönetimi}{20}{section.4.8}
+\contentsline {section}{\numberline {4.9}Kalite Sistemleri ve Standartları}{20}{section.4.9}
+\contentsline {section}{\numberline {4.10}ISO 9000 Kalite Standartları}{20}{section.4.10}
+\contentsline {section}{\numberline {4.11}Malcolm Baldrige Ulusal Kalite Ödülü}{22}{section.4.11}
+\contentsline {section}{\numberline {4.12}Altı Sigma}{22}{section.4.12}
+\contentsline {subsection}{\numberline {4.12.1}Neden 6\(\mitsigma \)}{23}{subsection.4.12.1}
+\contentsline {subsection}{\numberline {4.12.2}Sigma Kalite Seviyesi}{24}{subsection.4.12.2}
+\contentsline {subsection}{\numberline {4.12.3}Altı Sigma Proje Yönetimi}{25}{subsection.4.12.3}
+\contentsline {section}{\numberline {4.13}Kalite Maliyetleri}{26}{section.4.13}
 \contentsline {chapter}{\numberline {5}DMAIC Süreci}{27}{chapter.5}
 \contentsline {chapter}{\numberline {6}İstatistiksel Kavramlar}{29}{chapter.6}
 \contentsline {chapter}{\numberline {7}Kısaltmalar}{31}{chapter.7}
-\contentsline {chapter}{Referanslar}{33}{chapter*.21}
+\contentsline {chapter}{Referanslar}{33}{chapter*.2}
+\contentsline {section}{\numberline {7.1}Tablolar}{33}{section.7.1}

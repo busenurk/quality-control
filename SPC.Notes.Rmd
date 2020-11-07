@@ -1047,10 +1047,8 @@ boxp2.horizontal <- plot_ly(x = t, type = "box",name="Norm^2 Horizontal"); boxp2
 
 Olasılık dağılımları ve özellikle normal dağılım istatistiksel kalite kontrol ile ilgili teoremlerde önemli yer tutmaktadır. Olasılık dağılımları kesikli ve sürekli olmak üzere iki yapıda incelenmektedir. Değişkenin ölçülen değeri sürekli bir ölçek üzerinde ifade ediliyor ise bu değişkenin olasılık dağılımına sürekli dağılım, eğer ölçülen değişken 0, 1, 2... gibi tamsayılı değerler alıyorsa bu değişkenin olasılık dağılımı kesikli dağılım olarak adlandırılır.
 
+>Değeri deneyden deneye değişen sonuçlar ile belirtilen değişkene rastgele değişken denir.
 
-```
-Değeri deneyden deneye değişen sonuçlar ile belirtilen değişkene rastgele değişken denir.
-```
 
 
 <br>
@@ -1737,4 +1735,2078 @@ Kontrol listeleri, istatistiksel kalite kontrol çalışmaları için temel veri
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ztable.png" style="float:center;" width=800" height="1000" title="Z Tablosu" /> 
 
 <!--chapter:end:07-Referanslar.Rmd-->
+
+--- 
+title: "İstatistiksel Kalite Kontrol"
+author: "Dr. Busenur Kızılaslan"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography:
+- book.bib
+- packages.bib
+biblio-style: apalike
+link-citations: yes
+description: Statistical quality control lecture notes
+---
+
+# Ön Bilgi
+
+Placeholder
+
+
+## Hakkımda
+
+<!--chapter:end:index.Rmd-->
+
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# Motivasyon
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/dprize.png" style="float: right;" width="250" height="250" title="Deming Prize" /> 
+
+Kaliteyi kontrol etmek ve iyileştirmek rekabet ortamında kazananı belirleyen faktör haline gelmiştir. Bu bakımdan doğru yürütülen bir kalite kontrol süreci başarının anahtarı olacaktır. Sürecin başarılı yürütülmesi ise ancak alanında uzman kişilerin önderliğinde mümkündür. 
+
+İstatistikçiler için olası bir çalışma alanı olan _İstatistiksel Kalite Kontrol_, gelecekte sizlerden biri veya birilerinin de yöneleceği alan olabilir. Bu bakımdan ders kapsamındaki bilgileri özümsemek, uygulamaları kavramak önem arz etmektedir. 
+
+<br>
+
+
+Dr. W. Edwards Deming tarafından yazılmış, incelenmesi gereken makaleler;
+
+[On the statistician's contribution to quality](https://deming.org/wp-content/uploads/2020/06/On-The-Statisticians-Contribution-to-Quality-1987.pdf)
+
+[Some responsibilities of the statistician](https://deming.org/wp-content/uploads/2020/06/Some-Responsibilities-of-a-Statistician-1964.pdf)
+
+<!--chapter:end:01-Motivasyon.Rmd-->
+
+
+# Ders Planı
+
+Placeholder
+
+
+
+<!--chapter:end:02-Genel-Bakış.Rmd-->
+
+
+# Kalite Yönetimi Temel Kavramları
+
+Placeholder
+
+
+## Kalite Kavramı
+## Kalite Boyutları
+## Kalite Mühendislik Terminolojisi
+## Toplam Kalite Yönetiminin Tarihsel Gelişimi
+## Kalite Kontrol ve İyileştirme için İstatistiksel Yöntemler
+## Kalite İyileştirmede Yönetim Cephesi
+## Kalite Yönetimi Liderleri
+### Walter Shewhart
+### W. Edwards Deming
+### Joseph M. Juran
+### Armand V. Feigenbaum
+### Philip Crosby
+### Kaoru Ishikawa
+### Genichi Taguchi
+## Toplam Kalite Yönetimi
+## Kalite Sistemleri ve Standartları
+## ISO 9000 Kalite Standartları
+## Malcolm Baldrige Ulusal Kalite Ödülü 
+## Altı Sigma
+### Neden 6$\sigma$        
+### Sigma Kalite Seviyesi
+### Altı Sigma Proje Yönetimi
+## Kalite Maliyetleri
+
+<!--chapter:end:03-Kalite-Yönetimi-Temel-Kavramları.Rmd-->
+
+
+# DMAIC Süreci
+
+Placeholder
+
+
+
+<!--chapter:end:04-DMAIC-Süreci.Rmd-->
+
+
+# İstatistiksel Kavramlar
+
+Placeholder
+
+
+## Verilerin Toplanması ve Sunulması
+## Değişkenliğin Tanımlanması
+### Dal-Yaprak Grafiği
+### Frekans Dağılımı
+### Histogram
+### Merkezi Eğilim Ölçüleri
+### Yayılım Ölçüleri
+### Kutu Grafiği (Box Plot)
+### Olasılık Dağılımları
+## Önemli Kesikli Olasılık Dağılımları
+### Hipergeometrik Dağılım
+### Binom Dağılımı
+### Poisson Dağılımı
+## Önemli Sürekli Olasılık Dağılımları
+### Normal Dağılım
+### Üstel Dağılım
+### Gamma Dağılımı
+## Olasılık Grafikleri
+## Bazı Faydalı Yaklaşımlar
+### Binom - Hipergeometrik
+### Binom - Poisson
+### Normal - Binom
+## Pareto Analizi 
+## Sebep-Sonuç (Cause and Effect) Analizi 
+## Kontrol Listeleri
+
+<!--chapter:end:05-İstatistiksel-Kavramlar.Rmd-->
+
+# Kısaltmalar
+
+```{r , echo=FALSE, results='asis'}
+  cat('
+
+  | Kısaltma    | İngilizce  | Türkçe      |
+  |:------------|:-----------|:------------|
+  | ASQ| American Society for Quality | Amerikan Kalite Derneği |
+  | CUSUM| Cumulative Sum | Kümülatif Toplam |
+  | EFQM| European Foundation for Quality Management | Avrupa Kalite Yönetimi Vakfı |
+  | EWMA| Exponentially Weighted Moving Average | Üstel Ağırlıklı Hareketli Ortalama |
+  | ISO| International Organization for Standardization | Uluslararası Standartlar Teşkilatı |
+  | MBNQA| Malcolm Baldrige National Quality Award | Malcolm Baldrige Ulusal Kalite Ödülü |
+  | PPI| Pareto Priority Index | Pareto Öncelik İndeksi|
+  | SPC| Statistical Process Control| İstatistiksel Proses Kontrol|
+  | SQC| Statistical Quality Control | İstatistiksel Kalite Kontrol|
+  | TQM| Total Quality Management | Toplam Kalite Yönetimi|
+')
+
+```
+
+
+
+<!--chapter:end:06-Kısaltmalar.Rmd-->
+
+# Referanslar {-}
+
+
+
+## Tablolar
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ztable.png" style="float:center;" width=800" height="1000" title="Z Tablosu" /> 
+
+<!--chapter:end:07-Referanslar.Rmd-->
+
+--- 
+title: "İstatistiksel Kalite Kontrol"
+author: "Dr. Busenur Kızılaslan"
+date: "`r Sys.Date()`"
+output: pdf_document
+documentclass: book
+bibliography:
+- book.bib
+- packages.bib
+biblio-style: apalike
+link-citations: yes
+description: Statistical quality control lecture notes
+site: bookdown::bookdown_site
+---
+
+# Ön Bilgi
+
+Placeholder
+
+
+## Hakkımda
+
+<!--chapter:end:index.Rmd-->
+
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# Motivasyon
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/dprize.png" style="float: right;" width="250" height="250" title="Deming Prize" /> 
+
+Kaliteyi kontrol etmek ve iyileştirmek rekabet ortamında kazananı belirleyen faktör haline gelmiştir. Bu bakımdan doğru yürütülen bir kalite kontrol süreci başarının anahtarı olacaktır. Sürecin başarılı yürütülmesi ise ancak alanında uzman kişilerin önderliğinde mümkündür. 
+
+İstatistikçiler için olası bir çalışma alanı olan _İstatistiksel Kalite Kontrol_, gelecekte sizlerden biri veya birilerinin de yöneleceği alan olabilir. Bu bakımdan ders kapsamındaki bilgileri özümsemek, uygulamaları kavramak önem arz etmektedir. 
+
+<br>
+
+
+Dr. W. Edwards Deming tarafından yazılmış, incelenmesi gereken makaleler;
+
+[On the statistician's contribution to quality](https://deming.org/wp-content/uploads/2020/06/On-The-Statisticians-Contribution-to-Quality-1987.pdf)
+
+[Some responsibilities of the statistician](https://deming.org/wp-content/uploads/2020/06/Some-Responsibilities-of-a-Statistician-1964.pdf)
+
+<!--chapter:end:01-Motivasyon.Rmd-->
+
+
+# Ders Planı
+
+Placeholder
+
+
+
+<!--chapter:end:02-Genel-Bakış.Rmd-->
+
+
+# Kalite Yönetimi Temel Kavramları
+
+Placeholder
+
+
+## Kalite Kavramı
+## Kalite Boyutları
+## Kalite Mühendislik Terminolojisi
+## Toplam Kalite Yönetiminin Tarihsel Gelişimi
+## Kalite Kontrol ve İyileştirme için İstatistiksel Yöntemler
+## Kalite İyileştirmede Yönetim Cephesi
+## Kalite Yönetimi Liderleri
+### Walter Shewhart
+### W. Edwards Deming
+### Joseph M. Juran
+### Armand V. Feigenbaum
+### Philip Crosby
+### Kaoru Ishikawa
+### Genichi Taguchi
+## Toplam Kalite Yönetimi
+## Kalite Sistemleri ve Standartları
+## ISO 9000 Kalite Standartları
+## Malcolm Baldrige Ulusal Kalite Ödülü 
+## Altı Sigma
+### Neden 6$\sigma$        
+### Sigma Kalite Seviyesi
+### Altı Sigma Proje Yönetimi
+## Kalite Maliyetleri
+
+<!--chapter:end:03-Kalite-Yönetimi-Temel-Kavramları.Rmd-->
+
+
+# DMAIC Süreci
+
+Placeholder
+
+
+
+<!--chapter:end:04-DMAIC-Süreci.Rmd-->
+
+
+# İstatistiksel Kavramlar
+
+Placeholder
+
+
+## Verilerin Toplanması ve Sunulması
+## Değişkenliğin Tanımlanması
+### Dal-Yaprak Grafiği
+### Frekans Dağılımı
+### Histogram
+### Merkezi Eğilim Ölçüleri
+### Yayılım Ölçüleri
+### Kutu Grafiği (Box Plot)
+### Olasılık Dağılımları
+## Önemli Kesikli Olasılık Dağılımları
+### Hipergeometrik Dağılım
+### Binom Dağılımı
+### Poisson Dağılımı
+## Önemli Sürekli Olasılık Dağılımları
+### Normal Dağılım
+### Üstel Dağılım
+### Gamma Dağılımı
+## Olasılık Grafikleri
+## Bazı Faydalı Yaklaşımlar
+### Binom - Hipergeometrik
+### Binom - Poisson
+### Normal - Binom
+## Pareto Analizi 
+## Sebep-Sonuç (Cause and Effect) Analizi 
+## Kontrol Listeleri
+
+<!--chapter:end:05-İstatistiksel-Kavramlar.Rmd-->
+
+# Kısaltmalar
+
+```{r , echo=FALSE, results='asis'}
+  cat('
+
+  | Kısaltma    | İngilizce  | Türkçe      |
+  |:------------|:-----------|:------------|
+  | ASQ| American Society for Quality | Amerikan Kalite Derneği |
+  | CUSUM| Cumulative Sum | Kümülatif Toplam |
+  | EFQM| European Foundation for Quality Management | Avrupa Kalite Yönetimi Vakfı |
+  | EWMA| Exponentially Weighted Moving Average | Üstel Ağırlıklı Hareketli Ortalama |
+  | ISO| International Organization for Standardization | Uluslararası Standartlar Teşkilatı |
+  | MBNQA| Malcolm Baldrige National Quality Award | Malcolm Baldrige Ulusal Kalite Ödülü |
+  | PPI| Pareto Priority Index | Pareto Öncelik İndeksi|
+  | SPC| Statistical Process Control| İstatistiksel Proses Kontrol|
+  | SQC| Statistical Quality Control | İstatistiksel Kalite Kontrol|
+  | TQM| Total Quality Management | Toplam Kalite Yönetimi|
+')
+
+```
+
+
+
+<!--chapter:end:06-Kısaltmalar.Rmd-->
+
+# Referanslar {-}
+
+
+
+## Tablolar
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ztable.png" style="float:center;" width=800" height="1000" title="Z Tablosu" /> 
+
+<!--chapter:end:07-Referanslar.Rmd-->
+
+--- 
+title: "İstatistiksel Kalite Kontrol"
+author: "Dr. Busenur Kızılaslan"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography:
+- book.bib
+- packages.bib
+biblio-style: apalike
+link-citations: yes
+description: Statistical quality control lecture notes
+---
+
+# Ön Bilgi
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/dreamb.png" style="float: right;" width="300" height="300" title="Dream Big" /> 
+
+Ders notları temelde _IST3032 İstatistiksel Kalite Kontrol_ dersine kaynaklık etmesi amacıyla tasarlanmış olup konu çerçevesinde kendini geliştirmek isteyen herkesin faydalanabilmesi hedeflenmiştir.
+
+Ders dili Türkçe'dir. Bu bakımdan genel anlatımda Türkçe kullanılacaktır. Literatürü rahat takip edebilmeniz ve terim karmaşası yaşamamanız adına temel terim kısaltmaları orijinal haliyle kullanılacaktır (Kısaltmalar bölümünde hem Türkçe hem İngilizce açılımları bulabilirsiniz). Referans verilen kaynaklardan faydalanabilmeniz ve ders sürecinde incelemeniz gereken makalelerde zorluk yaşamamanız adına İngilizce eksikliğinizi gidermeniz önerilir. 
+
+Ders uygulamaları R programlama dili ile gerçekleştirilecek olup ödev uygulamalarınızı bu programlama dili ile hazırlamanız istenecektir, bu sebeple _Bilgisayar III_ ve _Bilgisayar IV_ ders notlarınızı gözden geçirmeniz faydalı olacaktır.
+
+Ders notunuz bookdown^[https://bookdown.org] ile hazırlanmış olup [linkten](https://busenurk.github.io/quality-control/_book/index.html) ulaşabilirsiniz. Ders notlarınızın pdf halini bookdown üzerinden indirebilirsiniz veya UZEM ders notları kısmından ulaşabilirsiniz.
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/bookdown.png" style="float: center;" width="800" height="400" title="Bookdown" /> 
+
+<br>
+
+**Kaynaklar**
+
+- [Introduction to Statistical Quality Control - Douglas C. Montgomery](http://endustri.eskisehir.edu.tr/ipoyraz/TKY302/icerik/text%20book_montgomery_6th%20edition.pdf) 
+
+- [Statistical Process Control - John S. Oakland](http://www.diliev.com/Home/materiali/KHEA/referati/6812268-Statistical-Process-Control-eBook-VG.pdf)
+
+- İstatistiksel Kalite Kontrol Ders Notları - Erhan Öner
+
+- [İstatistiksel Kalite Kontrol Ders Notları - Tuncay Özcan](http://auzefkitap.istanbul.edu.tr/kitap/endustrimuhlt_ue/istatistikselkalitekontrolu.pdf)
+
+## Hakkımda
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/busenur1.jpg" style="float: right;" width="270" height="350" title="Busenur" /> 
+
+2012 yılında Mimar Sinan G. S. Üniversitesi istatistik bölümünde lisans öğrenimimi tamamlamamın ardından 2014 yılı itibariyle Marmara Üniversitesi istatistik bölümünde araştırma görevlisi olarak göreve başladım. Eş zamanlı olarak başladığım yüksek lisans öğrenimimi yine Mimar Sinan G. S. Üniversitesi istatistik anabilim dalında tamamlarken artık çalışma alanım bulanık mantık ([fuzzy logic](https://en.wikipedia.org/wiki/Fuzzy_logic)) olarak şekillenmişti. Bir buçuk yılda tamamladığım yüksek lisansın ardından farklı bakış açısı kazanma fikriyle yönümü Yıldız Teknik Üniversitesi'ne çevirdim. 2015 yılında istatistik bölümünde başladığım doktora öğrenimimi 2020 yılında yine bulanık mantık ile öngörü üzerine hazırladığım tezim ile tamamladım. Doktora öğrenimim sırasında İstanbul Teknik Üniversitesi endüstri mühendisliği bölümünden de çeşitli dersler alarak alanında uzman hocaların^[[Prof. Dr. Cengiz Kahraman](http://akademi.itu.edu.tr/kahramanc/)] bilgilerinden faydalanma imkanı buldum. 
+
+Akademik kariyer hedefiyle başlamadığım öğrenim yaşamımda ufku açık, aydınlık ve birikimli hocalarım yolumu bulmama yardımcı olmuştur. 2018 yılında Polonya'da gerçekleşen [International Conference on Trends and Perspectives in Linear Statistical Inference (LinStat'2018)](http://www.linstat2018.put.poznan.pl/ysa.html) kapsamında sunduğum, doktora tezimin bir kısmından oluşan çalışma ile aldığım Young Scientists Awards ikincilik ödülü de yanlış yolda olmadığımı göstermiştir. 
+
+Üzerimde emeği olan herkese teşekkürlerimle!
+
+<br>
+
+[**CV**](https://avesis.marmara.edu.tr/busenur.sarica), [**Google Scholar**](https://scholar.google.com.tr/citations?user=OKlYJEgAAAAJ&hl=tr), [**Linkedin**](https://www.linkedin.com/in/busenur-kızılaslan-795ab54a)
+
+
+
+
+
+<!--chapter:end:index.Rmd-->
+
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# Motivasyon
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/dprize.png" style="float: right;" width="250" height="250" title="Deming Prize" /> 
+
+Kaliteyi kontrol etmek ve iyileştirmek rekabet ortamında kazananı belirleyen faktör haline gelmiştir. Bu bakımdan doğru yürütülen bir kalite kontrol süreci başarının anahtarı olacaktır. Sürecin başarılı yürütülmesi ise ancak alanında uzman kişilerin önderliğinde mümkündür. 
+
+İstatistikçiler için olası bir çalışma alanı olan _İstatistiksel Kalite Kontrol_, gelecekte sizlerden biri veya birilerinin de yöneleceği alan olabilir. Bu bakımdan ders kapsamındaki bilgileri özümsemek, uygulamaları kavramak önem arz etmektedir. 
+
+<br>
+
+
+Dr. W. Edwards Deming tarafından yazılmış, incelenmesi gereken makaleler;
+
+[On the statistician's contribution to quality](https://deming.org/wp-content/uploads/2020/06/On-The-Statisticians-Contribution-to-Quality-1987.pdf)
+
+[Some responsibilities of the statistician](https://deming.org/wp-content/uploads/2020/06/Some-Responsibilities-of-a-Statistician-1964.pdf)
+
+<!--chapter:end:01-Motivasyon.Rmd-->
+
+# Ders Planı
+
+**Öğretim elemanı:** Arş. Gör. Dr. Busenur KIZILASLAN
+
+**e-posta:** busenur.sarica@marmara.edu.tr
+
+**Ders saati ve şekli:** Pzts 15:00-17:00, Cmts 11:00-13:00, UZEM
+
+**Ders amacı:** İstatistiksel Kalite Kontrol tarihçesi, yöntemler ve işleyiş hakkında bilgi sahibi olmak, R uygulamaları ile güncel hayat uygulamaları gerçekleştirmek
+
+<br>
+
+**Kaynaklar:** 
+
+- [Introduction to Statistical Quality Control - Douglas C. Montgomery](http://endustri.eskisehir.edu.tr/ipoyraz/TKY302/icerik/text%20book_montgomery_6th%20edition.pdf) 
+
+- [Statistical Process Control - John S. Oakland](http://www.diliev.com/Home/materiali/KHEA/referati/6812268-Statistical-Process-Control-eBook-VG.pdf)
+
+- İstatistiksel Kalite Kontrol Ders Notları - Erhan Öner
+
+- [İstatistiksel Kalite Kontrol Ders Notları - Tuncay Özcan](http://auzefkitap.istanbul.edu.tr/kitap/endustrimuhlt_ue/istatistikselkalitekontrolu.pdf)
+
+<br>
+
+**Ders Planı:** 
+
+- Terminoloji ve genel bakış
+
+- Kalite öncüleri
+
+- Çıkarımsal istatistik
+
+- Kontrol grafikleri
+  - Niceliksel kalite özellikleri için kontrol diyagramları
+  - Niteliksel kalite özellikleri için kontrol diyagramları
+  
+- Proses yeterlilik analizi, CUSUM ve EWMA diyagramları
+
+- Kabul örneklemesi
+
+- R uygulamaları _(Uygulamalar her konu içeriğinde yer alacaktır.)_
+
+
+<!--chapter:end:02-Genel-Bakış.Rmd-->
+
+# Kalite Yönetimi Temel Kavramları
+
+## Kalite Kavramı
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/quality1.jpg" style="float: right;" width="400" height="260" title="Quality" /> 
+
+Kalite tanımı birçok farklı şekilde yapılabilir. Kalitenin sözlük anlamı _mükemmeliyet derecesi_ olmakla birlikte, ürün/hizmette mevcut olması istenen özellik veya özellikler, kalite tanımı için başlangıç noktası olarak seçilebilir. Kalitenin çok boyutlu ve doğası gereği göreceli yapısı ortak bir tanımdan ziyade farklı bakış açılarıyla geliştirilmiş kalite tanımlarını ortaya çıkarmıştır. Amerikan Kalite Derneği (ASQ); kaliteyi farklı tanımlamaların yapılabileceği öznel bir terim olarak tanımlamıştır. 
+
+- Kalite, gereksinimlere uygunluktur. (Crosby)
+- Kalite, kullanıma uygunluktur. (Juran)
+- Kalite, müşterinin şimdiki ve gelecekteki ihtiyaçlarını hedeflemektir. (Deming)
+- Kalite, müşteri beklentilerini karşılayacak ürün ve hizmetin pazarlama, mühendislik, imalat ve bakım aşamalarındaki karakteristiklerinin toplamıdır. (Feigenbaum)
+- Kalite, özellikleri ve gereksinimleri yerine getirme derecesidir. (ISO 9000)
+- Kalite, mal ve hizmetlerde, özellikle gereksinimlere uydukları ve müşterileri tatmin ettikleri ölçüde mükemmelliği ifade eder. (ASQ)
+
+Kalite **değişkenlikle (variability)** ters orantılıdır. Ürün/hizmetin önemli karakteristiklerindeki değişkenliğin azaltılması kaliteyi arttıracaktır. 
+
+Değişkenliğin kalite kontrol açısından önemini kavramak açısından bir örnek verelim. Amerika Birleşik Devletleri'ndeki bir otomobil şirketi, şanzıman üretimlerini hem yerli bir tesiste hem de Japon bir tedarikçi aracılığıyla gerçekleştirmektedir. 
+
+
+Garanti taleplerinin ve onarım maliyetlerinin analizi, sütun grafikte gösterilmiştir, Japon üretimi şanzımanın çok daha düşük maliyetlere sahip olmasıyla, iki üretim kaynağı arasında çarpıcı bir fark olduğu görülmektedir. Maliyet ve performanstaki bu farkın nedenini keşfetme çalışmasının bir parçası olarak, şirket her tesisten rastgele örnekler seçmiş, bunları parçalara ayırmış ve birkaç kritik kalite özelliğini ölçmüştür.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/target1.png" style="float: right;" width="350" height="220" title="Şekil1" /> 
+
+
+
+Kritik boyutların her iki dağılımı da hedef değerde ortalanmıştır. Bununla birlikte, Amerika Birleşik Devletleri'nde üretilen şanzımanlar için kritik özelliklerin dağılımı, spesifikasyonların genişliğinin yaklaşık% 75'ini kaplar ve bu da çok az sayıda uygun olmayan birimin üretileceğini gösterir. Aslında tesis, şirket içinde genel kabul görmüş kalite anlayışına göre oldukça iyi bir kalite seviyesinde üretim yapmaktadır. Buna karşılık, Japon fabrikası aynı kritik özelliklerin spesifikasyon bandının sadece yaklaşık% 25'ini kapladığı aktarımlar üretmiştir. Sonuç olarak, Japon yapımı şanzımanların kritik kalite özelliklerinde Amerika Birleşik Devletleri'nde üretilenlere kıyasla önemli ölçüde daha az değişkenlik mevcuttur.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/target.png" style="float: right;" width="350" height="220" title="Şekil2" />
+
+
+Akla gelen ilk soru Japonlar bunu nasıl yaptı? Burada azalan değişkenlik, doğrudan daha düşük maliyetlere dönüşmüştür. Dahası, Japon yapımı şanzımanlar daha sorunsuz vites değiştirmiş, daha sessiz çalışmış ve genellikle müşteri tarafından yurt içinde üretilenlerden daha üstün olarak algılanmıştır. Daha az onarım ve garanti talebi, daha az yeniden çalışma ve boşa harcanan zaman, çaba ve paranın azaltılması anlamına gelmektedir. Dolayısıyla, **kalite gerçekten değişkenlikle ters orantılıdır.** Dahası maliyetle yakından ilişkilidir.
+
+Japonlar bunu nasıl yaptı? Cevap, kalite kontrolün sistematik ve etkili kullanımında yatmaktadır.
+
+
+
+Kalite, rakip ürün/hizmetlerin seçiminde en önemli tüketici karar faktörlerinden biri haline gelmiştir. Bu görüş, tüketicinin bir birey, bir endüstriyel kuruluş, bir perakende mağazası, bir banka veya finans kurumu veya bir askeri savunma programı olmasına bakılmaksızın yaygındır. Sonuç olarak, kaliteyi anlamak ve iyileştirmek, iş başarısı, büyüme ve rekabet gücü açısından önemlidir. Bu bakımdan kalitenin iyileştirilmesi ve genel iş stratejisinin ayrılmaz bir parçası haline getirilmesi başarının temel gereklerindendir.
+
+`Kalite terminolojisinde ürün (product) hem ürün hem de hizmet anlamında kullanılmaktdır.`
+
+**Kalite iyileştirme (quality improvement):** Proses ve ürünler açısından değişkenliğin azaltılması olarak tanımlanmaktadır. Fazla miktarda değişkenlik performansta kayıba (waste) neden olmaktadır, para kaybı, zaman kaybı veya enerji kaybı örnek olarak verilebilir. Kalite iyileştirmenin bir diğer tanımı da _kaybın azaltılması (reduction of waste)_ olarak yapılabilir.
+
+## Kalite Boyutları
+Kalitenin çok boyutlu yapısı farklı kalite tanımlarının ortaya çıkmasına neden olmuştur. Garvin (1987), kalitenin sekiz boyutunu şöyle tanımlamaktadır. 
+
+
+**1. Performans:** Temel ürün özellikleri
+
+**2. Güvenilirlik:** Kullanım ömrü içerisindeki performans tutarlılığı
+
+**3. Dayanıklılık:** Yararlı kullanım ömrü
+
+**4. Hizmet:** Kullanım ömrü içerisinde problem ve şikayetlerin çözümü
+
+**5. Estetik:** Duyulara seslenebilme özelliği
+
+**6. Özellikler:** Öne çıkmayı sağlayan ikincil karakteristikler
+
+**7. İtibar:** Geçmiş performans ve algılanan kalite
+
+**8. Uygunluk:** Endüstri standartlarına uygunluk
+
+<br>
+
+```
+Kalite çalışmalarında tüm boyutlar dikkate alınmalıdır.
+```
+
+## Kalite Mühendislik Terminolojisi
+
+Her ürün, kullanıcının veya tüketicinin kalite göstergesi olarak tanımladığı bir takım unsurlara sahiptir. Bu unsurlara genellikle kalite karakteristikleri denir. Aynı zamanda kalite için kritik (critical to quality (CTQ)) karakteristikler olarak da tanımlanmaktadır. Kalite karakteristikleri birkaç türde olabilir:
+
+- **Fiziksel:** uzunluk, ağırlık, voltaj, viskozite
+
+- **Duyusal:** tat, görünüş, renk
+
+- **Zamansal:** güvenilirlik, dayanıklılık, hizmet
+
+Kalite karakteristikleri doğrudan ya da dolaylı olarak kalite boyutlarını etkilemektedir.
+
+**Kalite mühendisliği**, bir şirketin bir ürünün kalite özelliklerinin gerekli seviyelerde olmasını ve bu istenen seviyeler etrafındaki değişkenliğin minimum olmasını sağlamak için kullandığı operasyonel, yönetimsel ve mühendislik faaliyetleridir.
+
+Çoğu kuruluş, müşteriye her zaman aynı olan veya müşteri beklentilerini karşılayan seviyelerde kalite karakteristiklerine sahip ürünler sağlamayı zor (ve pahalı) bulur. Bunun başlıca nedeni **değişkenliktir**. Her üründe belli bir miktar değişkenlik vardır; sonuç olarak, iki ürün hiçbir zaman özdeş değildir. Örneğin, bir jet türbin motoru pervanesi üzerindeki kanatların kalınlığı, aynı pervane üzerinde bile aynı değildir. Kanat kalınlığı da pervaneler arasında farklılık gösterecektir. Bıçak kalınlığındaki bu değişiklik küçükse, müşteri üzerinde hiçbir etkisi olmayabilir. Ancak, varyasyon büyükse, müşteri üniteyi istenmeyen ve kabul edilemez olarak algılayabilir. Bu değişkenliğin kaynakları, malzemelerdeki farklılıkları, üretim ekipmanının performans ve işletimindeki farklılıkları ve operatörlerin görevlerini yerine getirme biçimlerindeki farklılıkları içerir. Kalite iyileştirme bu noktada önemli yere sahiptir.
+
+Değişkenlik yalnızca istatistiksel terimlerle tanımlanabildiğinden, **istatistiksel yöntemler** kalite iyileştirme çabalarında merkezi bir rol oynar. İstatistiksel yöntemlerin kalite mühendisliğine uygulanmasında, kalite karakteristiklerine ilişkin veriler **niceliksel (variables)** veya **niteliksel (attributes)** veriler olarak sınıflandırılmaktadır.
+
+Kalite özellikleri genellikle spesifikasyonlara göre değerlendirilir. Üretilen bir ürün için **spesifikasyonlar (specifications)**, ürünün alt parçaları ve nihai ürünün kalite özellikleri için istenen değerlerdir. Örneğin, bir otomobil şanzımanında kullanılan bir şaftın çapı çok büyük veya çok küçük olamaz, gerekli boyutta olmalıdır, aksi taktirde arızaya neden olacaktır. 
+
+Kalite karakteristikleri için istenen değer **nominal** veya **hedef değer (target value)** olarak tanımlanmaktadır. Bu hedef değerler genellikle bir aralıkla sınırlandırılır, bu yapıda en büyük değer; **üst sınır (upper specification limit (USL))** ve en küçük değer; **alt sınır (lower specification limit (LSL))** olarak adlandırılır. Bazı kalite karakteristiklerinin spesifikasyon limitleri tek taraflı olabilir. Spesifikasyon sınırları genellikle tasarım mühendisleri tarafından belirlenir.
+
+## Toplam Kalite Yönetiminin Tarihsel Gelişimi
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/timeline.png" style="float: center;" width="1000" height="600" title="timeline" />
+
+
+Önemli zaman dilimlerinin detaylandırıldığı tarihsel gelişimi temel aşamaları ile altı ana başlık altında toplamak mümkündür.
+
+**1.** Operatör kalite kontrolü
+
+**2.** Ustabaşı kalite kontrolü
+
+**3.** Muayene ile kalite kontrol
+
+**4.** İstatistiksel kalite kontrol
+
+**5.** Toplam kalite kontrol
+
+**6.** Toplam kalite yönetimi
+
+
+Rekabetçi ortamda çağdaş kalite politikası oluşturulması ve geliştirilmesi önem arz etmektedir, müşteri fiyat-kalite ikileminde tercih yapmak durumunda bırakılmamalıdır. 
+
+## Kalite Kontrol ve İyileştirme için İstatistiksel Yöntemler
+
+- **İstatistiksel proses kontrol (SPC):** Proses kısaca girdiler ve çıktıdan oluşan bir sistem olarak tanımlanabilir. Kontrol diyagramları istatistiksel proses kontrol için temel yöntemlerden biridir.
+
+- **Deney tasarımı:**  İstatistiksel olarak tasarlanmış deneyler, kalite karakteristiklerindeki değişkenliği azaltmada ve proses performansını optimize eden kontrol edilebilir değişkenlerin seviyelerini belirlemede oldukça önemlidir. Genellikle proses performansı ve ürün kalitesindeki önemli gelişmeler de tasarlanmış deneylerin kullanılmasından kaynaklanır.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/kabulorn.png" style="float: right;" width="400" height="250" title="Kabul Örneklemesi" />
+
+- **Kabul örneklemesi:** Kalite kontrolünün en eski yönlerinden biridir ve kalite iyileştirme için istatistiksel metodolojinin geliştirilmesinden çok öncesine dayanmaktadır. Örnekleme çeşitli aşamalarda gerçekleştirilebilir. Modern kalite güvence sistemleri genellikle kabul örneklemesine daha az vurgu yapmakta, istatistiksel proses kontrol ve deney tasarımına odaklanmaktadır. Kabul örneklemesi, kalitenin spesifikasyona uygunluk görüşünü pekiştirme eğilimindedir. 
+
+Kalite mühendisliği çabalarının temel amacı, ürünün temel kalite özelliklerindeki değişkenliğin sistematik olarak azaltılmasıdır. 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/percentapp.png" style="float: center;" width="300" height="300" title="" /> <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/3d.png" style="float: center;" width="450" height="300" title="" />
+
+## Kalite İyileştirmede Yönetim Cephesi
+
+SPC ve deney tasarımı dahil istatistiksel teknikler ve diğer problem çözme araçları kalite kontrol ve iyileştirmenin teknik temelini oluşturur. Ancak, en etkin kullanım, bu tekniklerin kalite iyileştirmeye odaklanan bir yönetim sistemi içinde uygulanmasıyla mümkündür. Bir kuruluşun yönetim sistemi, genel kalite iyileştirme felsefesini doğru bir şekilde yönlendirmek ve işletmenin tüm yönlerine yayılmasını sağlamak için organize edilmelidir. Kalitenin etkin yönetimi için üç faaliyetin başarılı bir şekilde yürütülmesi gerekir: kalite planlama, kalite güvencesi ve kalite kontrolü ve iyileştirme.
+
+**Kalite planlama:** Kalite planlama stratejik bir faaliyettir ve bir kuruluşun uzun vadeli iş başarısı için ürün geliştirme planı, finansal plan, pazarlama planı ve insan kaynaklarının kullanımına yönelik planlar kadar önemlidir. Stratejik bir kalite planı olmadan, hatalı tasarımlar, üretim hataları, saha arızaları ve müşteri şikayetleri oluşacak ve muazzam miktarda zaman, para ve çaba boşa harcanacaktır. Kalite planlaması, müşterilerin tanımlanmasını ve ihtiyaçlarını tanımlamayı içerir (buna bazen müşterinin sesini dinleme (voice of the customer (VOC)) denir). Daha sonra müşteri beklentilerini karşılayan veya aşan ürün veya hizmetler geliştirilmelidir. Kalitenin sekiz boyutu bu çabanın önemli bir parçasıdır. Kuruluş daha sonra bu ürün ve hizmetlerin nasıl gerçekleştirileceğini belirlemelidir. Belirli, sistematik bir temelde kalite iyileştirme planlaması da bu sürecin önemli bir parçasıdır.
+
+**Kalite güvencesi:** Ürün ve hizmetlerin kalite seviyelerinin uygun şekilde sürdürülmesini ve tedarikçi ve müşteri kalite sorunlarının uygun şekilde çözülmesini sağlayan faaliyetler bütünüdür.
+
+**Kalite kontrol ve iyileştirme:** Kalite kontrol ve iyileştirme, ürün ve hizmetlerin gereksinimleri karşılamasını ve sürekli olarak iyileştirilmesini sağlamak için kullanılan faaliyetler dizisini içerir. Değişkenlik genellikle düşük kalitenin ana kaynağı olduğundan, SPC ve deney tasarımı dahil istatistiksel teknikler, kalite kontrol ve iyileştirmenin ana araçlarıdır. Kalite iyileştirme genellikle proje bazında yapılır ve istatistiksel yöntemlerle ilgili özel bilgiye ve bunların uygulanmasında deneyime sahip personel tarafından yönetilen ekipleri içerir.
+
+## Kalite Yönetimi Liderleri
+
+Kaliteyi iyileştirmenin istatistiksel metodolojisine birçok kişi katkıda bulunmuştur ancak uygulama ve yönetim felsefesi açısından önemli katkıları bulunan bilim insanları üzerinde durulacaktır. 
+
+- Walter Shewhart
+- W. E. Deming
+- J. M. Juran 
+- A. V. Feigenbaum
+- Philip Crosby
+- Kaoru Ishikawa
+- Genichi Taguchi
+
+### Walter Shewhart
+
+Walter Andrew Shewhart Amerikalı bir fizikçi, mühendis ve istatistikçidir. İstatistiksel kalite kontrolün babası olarak bilinir. Kontrol diyagramlarını ilk olarak kullanan kişidir. Kontrol diyagramlarının kullanımı genellikle istatistiksel kalite kontrolün resmi başlangıcı olarak kabul edilmektedir. 
+
+### W. Edwards Deming
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/Deming.jpeg" style="float: right;" width="230" height="300" title="Deming" />
+
+W. Edwards Deming, Wyoming Üniversitesi ve Yale Üniversitesi'nde mühendislik ve fizik eğitimi almıştır. Western Electric için çalışmış ve kontrol şemasının (control charts) geliştiricisi Walter A. Shewhart'tan büyük ölçüde etkilenmiştir.
+
+İkinci Dünya Savaşı ardından, Japon endüstrilerine danışmanlık görevinde bulunmuş, istatistiksel yöntemlerin gücü ve kalitenin rekabetçi bir silah olarak kullanımı konularında yöneticilerini ikna etmiştir.İstatistiksel yöntemlere olan bu bağlılık ve kullanım, Japonya endüstrisinin ve ekonomisinin genişlemesinde kilit bir unsur olmuştur. 
+
+Japon Bilim Adamları ve Mühendisler Birliği, onuruna kalite iyileştirme için Deming Ödülü'nü yaratmıştır.
+
+Deming, Shewhart'ın bilimsel çıkarımları etrafında bazı metodolojik önerilerini geliştirdi ve sentezini Shewhart döngüsü (Shewhart (PDCA) cycle) olarak adlandırdı. PDCA döngüsü tüm proseslere uygulanabilir. Döngü iteratif olup karmaşık problemler için çok sayıda döngü gerekebilir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/sh.cyc.png" style="float: left;" width="270" height="270" title="Deming" />
+
+**(P) Planla:** Müşteri talebi ve kuruluş politikasına uyumlu sonuçların elde edilebilmesi için gereken objektif hedef ve proseslerin tasarlanması
+
+**(D) Uygula:** Proseslerin uygulanması
+
+**(C) Kontrol et:** Proseslerin ve ürünün belirlenen politika, şart ve hedeflere uygunluğunun incelenmesi ve raporlanması
+
+**(A) Önlem al:** Performansın iyileştirilmesi için gereken önlemlerin alınması 
+
+<br>
+
+**Kalite yönetimi için 14 ilke belirlemiştir;**
+ 
+ 1. Ürün/hizmetlerin iyileştirilmesine odaklanan bir amaç sürekliliği yaratın
+ 
+ 2. Yeni felsefeyi benimseyin
+ 
+ 3. Muayene kavramını anlayın.
+ 
+ 4. Fiyat bazlı olmayan, performans odaklı uzun dönemli bağlantı hedefleyin.
+ 
+ 5. İstatistiksel yöntemlerden yararlanarak sürekli iyileştirmeye odaklanın.
+ 
+ 6. Eğitime önem verin ve modern eğitim yöntemlerini takip edin.
+ 
+ 7. Liderliği geliştirin.
+ 
+ 8. Korkuyu ortadan kaldırın.
+ 
+ 9. Engelleri kaldırın, ekip çalışmasına teşvik edin.
+ 
+ 10. Çalışanlara yönelik ikazları ortadan kaldırın.
+ 
+ 11. Sayısal kotaları ve çalışma standartlarını ortadan kaldırın, gelişimi hedefleyin.
+ 
+ 12. Çalışanları çalışanları dinleyin ve engelleri kaldırın.
+ 
+ 13. Çalışanların gelişimini önemseyin ve destekleyin.
+ 
+ 14. Sürekli iyileştirmeyi ortak hedef haline getirin. 
+ 
+ <br>
+ 
+Belirtilen 14 Madde'yi Deming'den dinlemek de mümkün; [The 14 Points](https://www.youtube.com/watch?v=tsF-8u-V4j4)
+ 
+Deming’in 14 maddesini okurken, organizasyonel değişime güçlü bir vurgu yapıldığı fark edilmaktedir. Ayrıca, bu değişim sürecine rehberlik etmede yönetimin rolü büyük önem taşımaktadır. Ancak nelerin değişmesi gerekiyor ve bu değişim süreci nasıl başlatılmalı? Bu noktada istatistiksel yöntemler devreye girmektedir. 
+
+<span style="color: red;">Deming'in tanımladığı yönetimdeki 7 ölümcül hastalık nedir araştırınız.</span>
+
+
+### Joseph M. Juran
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/Juran.jpg" style="float: right;" width="200" height="270" title="Juran" />
+
+Joseph M. Juran Minnesota Üniversitesi Elektrik Mühendisliği Bölümü’nden mezun olmuştur. William Edwards Deming gibi o da gerek ABD’de gerek Japonya’da toplam kalite yönetiminin yaygınlaşmasında çok önemli rol oynamıştır. 1981 yılında Japon İmparatoru, Hirohito tarafından Order of Sacred Treasure ile ödüllendirilmiştir.
+
+Juran, toplam kalite yönetimi alanında çok önemli eserler yayınlamıştır. Juran’ın Kalite Kontrol El Kitabı (Juran’s Quality Control Handbook) adlı çalışması toplam kalite yönetimi alanında klasik ve en önemli eserlerden birisi olarak kabul edilmektedir. 
+
+Kalite yönetimi için planlama, kontrol ve iyileştirme adımlarından oluşan **Juran üçlemesini (Juran Trilogy)** geliştirmiştir.
+
+**Juran üçlemesi (Juran Trilogy)** 
+
+  - **Planlama:** Harici müşterilerin tanımlanması ve ihtiyaçların belirlenmesi, düzenli kalite iyileştirme planlaması
+
+  - **Kontrol:** Ürünün veya hizmetin gereksinimleri karşıladığından emin olmak için işletmenin işletme güçleri tarafından incelenmesi. SPC, kontrolün birincil araçlarından biridir.
+
+  - **İyileştirme:** Mevcut seviyeden daha yüksek performans ve kalite seviyelerine ulaşma hedefi. Juran, iyileştirmenin proje bazında olması gerektiğini vurgulamaktadır. Bu projeler tipik olarak üçlemenin planlama aşamasında belirlenmelidir.
+
+
+### Armand V. Feigenbaum
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/Feigenbaum.png" style="float: right;" width="200" height="210" title="Feigenbaum" />
+
+Armand V. Feigenbaum, Lisans eğitimini Union College'de, Yüksek Lisans ve Doktora Eğitimini ise MIT (Massachusetts Institute of Technology)'de tamamlamıştır. 1961 – 1963 yılları arasında Amerikan Kalite Topluluğu'na (American Society for Quality) başkanlık etmiştir. 
+
+Daha sonra Toplam Kalite Yönetimi olarak anılacak Toplam Kalite Kontrol kavramının yaratıcısıdır. Şirket çapında kalite kontrol kavramını ilk kez kitabı Toplam Kalite Kontrolü'nde tanıtmıştır. Bu kitap, 1950'lerin başlarında Japonya'daki erken kalite yönetimi felsefesinin etkilemiştir. Birçok Japon şirketi "toplam kalite kontrol" terimini kullanmıştır. Kaliteyi iyileştirmek için üç aşamalı bir yaklaşım önermiştir: kalite liderliği, kalite teknolojisi ve örgütsel bağlılık.
+
+***
+
+Deming, Juran ve Feigenbaum bu öncülerin üçü de 
+
+- kalitenin temel bir rekabet silahı olarak önemini, 
+- kalite iyileştirmenin uygulanmasında yönetimin oynaması gereken önemli rolü 
+- organizasyonun “kalite dönüşümünde” istatistiksel yöntem ve tekniklerin önemini 
+
+vurgulamaktadır.
+
+***
+
+### Philip Crosby
+
+Philip B. Crosby, kalite uzmanıdır ve `sıfır hata görüşü` ile tanınmaktadır. Crosby’ye göre kalite, yerine göre kullanımdır ve gereksiz kullanım maliyetiyle değerlendirilir. Crosby kalitenin yaklaşımını mutlak 4 esas ile açıklamıştır;
+
+- Kalite mükemmellik olarak değil gereksinimlere uygunluk olarak tanımlanır.
+
+- Kalite değerleme ile değil önleme ile başarılır.
+
+- Standart performans sıfır hatadır.
+
+- Kalite maliyet ile ölçülür.
+
+### Kaoru Ishikawa
+
+Kaoru Ishikawa, Japonya'da toplam kalite yönetimine katkıda bulunan liderlerin başında gelmektedir. İkinci dünya savaşı sonrasında ABD'de Deming ve Juran ile tanışmıştır. Ishikawa, kalite kontrol alanındaki çalışmaları ile Japonya'da kalite bilincinin yaygınlaşmasında önemli rol oynamıştır. 
+
+
+### Genichi Taguchi
+
+Genichi Taguchi, mühendis ve istatistikçidir. Varyasyonun azaltılması ve performans sürekliliğine odaklanmıştır. Ayrıca Taguchi tarafından önerilen kalite kayıp fonksiyonu kalite yönetim literatüründe önemli yere sahiptir.
+
+
+## Toplam Kalite Yönetimi
+
+Toplam Kalite Yönetimi (TQM), organizasyon temelinde kalite iyileştirme aktivitelerinin uygulanması ve yönetilmesini kapsayan bir stratejidir.
+
+Geleneksel yönetim yaklaşımına odaklanan işletmelerde gelişme **reaktif** tarzdadır. Bu yapıda müşteri şikayeti durumunda hatanın düzeltilmesi, tekrar üretim ve satış döngüsü gerçekleşir. Hataları düzeltme yerine önleme yaklaşımını içeren **proaktif** gelişme modeli ise toplam kalite yönetiminin temelini oluşturmaktadır. Hatalar oluşmadan ve müşteriye ulaşmadan önleme hedefindedir.
+
+Tüketici isteklerini en ekonomik şekilde karşılamak hedefiyle işletme organizasyonu içerisindeki çeşitli birimlerin; kalitenin yaratılması, yaşatılması ve geliştirilmesi yolundaki çabalarını bir araya getirip düzenlenmesini sağlayan etkili sistem **toplam kalite kontrol** olarak tanımlanır.
+
+## Kalite Sistemleri ve Standartları
+
+[ISO](https://www.iso.org/home.html) (International Organization for Standardization), Uluslararası Standartlar Teşkilâtı, Uluslararası Elektroteknik Komisyonu'nun çalışma sahasına giren elektrik ve elektronik mühendisliği konuları dışında, bütün teknik ve teknik dışı dallardaki standartların belirlenmesi çalışmalarını yürütmek amacıyla 1947 yılında Cenevre'de kurulmuştur.
+
+Uluslararası Standartlar Teşkilâtına [üye ülkelerin](https://www.iso.org/members.html) sayısı 165'dir. 
+
+Teknolojik ihtiyaçlardan dolayı ISO standartları, her beş yılda bir gözden geçirilir ve gerekli değişiklikler yapılır.
+
+Çoğu zaman ISO standard kodlarıyla ISO kalite belgesi anlamsal olarak karıştırılmakta ve anlam karmaşasına neden olabilmektedir. Uluslararası standartlar organizasyonu ISO 9001 ve ISO 14001 gibi Uluslararası Standartları geliştirmekte, ancak belgelendirme yapmamakta ve ISO kalite belgesi vermemektedir. Belgelendirme işlemleri, akredite belgelendirme kuruluşları tarafından gerçekleştirilmektedir.
+
+ISO kısaltmasının yanında yer alan rakam standardın kodu ve sondaki yıl bilgisi içeren diğer rakamsa, ilgili standardın son revizyonuna ait yılı göstermektedir. Örnek: ISO 9001:2015, ISO 22000:2016 vb.
+
+
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/env.png" style="float: center;" width="370" height="150" title="environment" /> <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/health.png" style="float: center;" width="370" height="150" title="health" />
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/food.png" style="float: center;" width="370" height="150" title="food" /> <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/energy.png" style="float: center;" width="370" height="150" title="energy" />
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/security.png" style="float: center;" width="370" height="150" title="security" /> <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/quality.png" style="float: center;" width="370" height="150" title="quality" />
+
+## ISO 9000 Kalite Standartları
+
+ISO 9000 Kalite Sistem Standartları Mart 1987’de yayınlanmış ve birçok ülke tarafından benimsenerek uygulamaya geçilmiştir. ISO 9000 İmalat ve Hizmet endüstrilerinde kalite güvencesi için kurulmuş, kapsamlı bir standartlar kümesidir. ISO 9000 serileri, bir firmanın kalite sistemini geliştirmesini, belgelemesini ve çalıştırılmasını ister, yani firma içinde yönetiminin kalite tetkik uygulamaları için sahip olduğu sorumluluktan, satın alma politikalarından, eğitime kadar uzanan Kalite yönetim sistemleri uygulamalarının tümünü kapsar. 
+
+170'den fazla ülkede ISO 9001 sertifikalı bir milyonun üzerinde şirket ve kuruluş bulunmaktadır.
+
+**Standardın Amacı**
+
+- Kalite yönetimi için genel bir çerçeve sağlaması,
+- Kuruluşlar arasında güven ortamı yaratması,
+- Proseslerin yönetilmesiyle ürün/hizmet kalitesinin sağlanması, devam ettirilmesi ve iyileştirilmesi,
+- Müşteriye ürün ve hizmetlerin tutarlılığının güveninin verilmesidir.
+
+**Sağladığı yararlar**
+
+- Çalışanların kalite bilincinde artış sağlanması
+- İşletmenin piyasa itibarında artış sağlanması (prestij)
+- Pazarlama faaliyetlerinde rakiplerden farklılık sağlanması
+- İşletmenin uluslararası geçerliliğe sahip bir kalite belgesi edinmesinin getirdiği ticari avantajlardan yararlanabilme (ihracat için kalitenin belge ile ispatlanabilmesi)
+- Müşteri memnuniyetinde ve müşteri sadakatinde artış sağlanması
+- Hata oranlarında, firelerde, yeniden işlemelerde azalma sağlanması
+- Girdi, üretim ve son kontrollerin etkin olarak yapılabilmesi
+- Tedarikçilerin seçiminde, değerlendirilmesinde ve takibinde kolaylık sağlanması
+- İşletme içi yetki ve sorumlulukların tespitinde ve dağıtılmasında kolaylık sağlanması
+- İşletme faaliyetlerinin standartlaştırılmasını sağlayacak dokümantasyonun (alt yapının) oluşturulması
+- Geçmişe yönelik kayıtların düzenli bir şekilde tutulmasını sağlayacak altyapının oluşturulması
+- Veriler ve istatistiksel ölçümler doğrultusunda durum analizlerinin yapılabilmesi ve geleceğe yönelik kararlarda bu analiz sonuçlarının kullanılabilmesi
+- Kurumsallaşma yolunda önemli bir adım atılmış olması
+ 
+**ISO 9000 Belgesi almak yeterli mi?** 
+
+ISO 9000 uygulama sürecinde yapılabilecek en önemli yanlışlık belgenin alınması ile bu sürecin sona erdiğini düşünmektir. ISO 9000 Kalite Sistem Belgesi yeter mi? sorusuna verilecek yanıt hayırdır. Çünkü IS0 9000 uygulama süreci kuruluşun kalite yönetim sisteminin gelişme ihtiyacına göre paralel olarak süreklilik arz eder. Bu nedenle Kalite yönetim sistemleri nin sürekli gelişme anlayışına uygun olarak ve müşterilerin değişen talep ve beklentilerine cevap verecek şekilde daha üst bir performans düzeyine çıkarılması için çaba sarf edilmelidir. Kalite yönetim sistemlerinin evrim sürecinde uzun vadede benimsenmesi gereken hedef sürekli mükemmellik anlayışı ile Toplam Kalite Yönetimi stratejisini geliştirmek ve bunu kuruluşun bütününe uygulayabilmektir.
+ 
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/9000.png" style="float: center;" width="700" height="300" title="9000" />
+
+
+## Malcolm Baldrige Ulusal Kalite Ödülü 
+
+Malcolm Baldrige Ulusal Kalite Ödülü (MBNQA) 1987 yılında ABD Kongresi tarafından oluşturulmuş kalite değerlendirme ve ödüllendirme sistemidir. Performans mükemmelliği için ABD kuruluşlarını tanımak için yıllık olarak verilmektedir. Kuruluşlara beş kategoride ödül verilmektedir: üretim, hizmet, küçük işletme, sağlık ve eğitim. Her kategoride her yıl üç ödül verilebilir. Birçok kuruluş ödüller için rekabet etmektedir ve birçok şirket, öz değerlendirme için performans mükemmelliği kriterlerini kullanmaktadır. Ödül, NIST (Ulusal Standartlar ve Teknoloji Bürosu) tarafından verilmektedir.
+
+Değerlendirmenin 1000 puan üzerinden yapıldığı ödül sisteminde yedi farklı kategori bulunmaktadır ve her biri farklı puanlara dolayısıyla farklı ağırlıklara sahiptir.
+
+**Ödül Kategorileri**
+
+- Liderlik
+- Stratejik Planlama
+- Müşteri ve Piyasa Odağı
+- Ölçme, Analiz ve Bilgi Yönetimi
+- İnsan Kaynakları Odağı
+- Süreç Yönetimi
+- Sonuçlar
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/malcolm.png" style="float: center;" width="500" height="500" title="Malcolm Baldrige" />
+
+
+## Altı Sigma
+
+Motorola, ürünlerine olan talebe yanıt olarak 1980'lerin sonunda altı sigma (six sigma (6$\sigma$)) yaklaşımını geliştirmiştir. Altı sigmanın odak noktası, ürün (kalite) özelliklerindeki değişkenliği azaltmak, başarısızlık veya kusurları minimum seviyeye indirmektir. Müşteri odaklı bir yöntem olan altı sigma, sorunun çözümü için müşterinin temel gereksinimlerine önem verir. Altı sigma, müşteri memnuniyetini arttıran, paralelinde rekabet gücünde artış sağlayan ve böylece karlılık getiren bir sistem olarak özetlenebilir. Motorola'nın 1988 yılında Malcolm Baldrige ödülünü kazanması ile daha da yaygınlaşmıştır.
+
+Sıfır hatayı hedefleyen yöntem, doğru uygulandığında oldukça başarılı sonuçlar elde etmektedir. Altı sigma yaklaşımı bir milyon üründe _(parts per million (ppm))_ yalnızca 3.4'lük hata seviyesinde çalışmaktadır. Bu bakımdan mükemmeliyet hedefleyen firmalar için tercih edilen bir yaklaşımdır.
+
+Sigma standart sapmanın simgesi, standart sapma da istatistiksel olarak yayılım ve değişkenlik ölçüsüdür.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/sapma1.png" style="float: center;" width="150" height="100" title="mean shifted" /> <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/sapma2.png" style="float: center;" width="150" height="100" title="mean shifted" />
+
+Altı sigma yaklaşımında da hataları düzeltme yerine önleme yaklaşımını içeren **proaktif** gelişme modeli tercih edilmiştir. Problemlerin sonuçları yerine nedenleri üzerine odaklanma esastır.
+
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/normal.png" style="float: center;" width="700" height="300" title="normal" />
+  
+  
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ndist.png" style="float: center;" width="500" height="200" title="normal distribution" />
+
+```{r}
+(1-0.9973)*1000000  #milyon fırsattaki hata sayısı 
+```
+
+    
+Motorola altı sigma konsepti, prosesdeki değişkenliği azaltmak için spesifikasyon sınırlarını ortalamadan en az altı standart sapma uzaklıkta olacak şekilde konumlandırmaktadır. Çalışmalar sonucunda uzun vadede spesifikasyon sınırları orta noktasından (-+)1.5$\sigma$ kadar sapabildiği, dolayısıyla 6$\sigma$ ile milyonda 3.4 kusurluya ulaşılabileceğini ortaya koymuştur.
+  
+    
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/sixsigma.png" style="float: center;" width="700" height="300" title="sixsigma" />
+      
+      
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/mshifted.png" style="float: center;" width="500" height="200" title="mean shifted" />
+
+<br>
+
+Farklı kayma miktarlarına bağlı olarak sigma seviyeleri;
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/slevel.png" style="float:center;" width="600" height="350" title="Pozisyonlar" />
+        
+### Neden 6$\sigma$        
+
+6$\sigma$'nın asıl hedefinin 3.4 ppm hata seviyesinde çalışmak olduğundan bahsetmiştik, %99.99966 hatasızlığa karşılık gelmektedir. Günlük yaşamdaki çok basit işlerde bile 6$\sigma$'nın ne kadar önemli yere sahip olduğunu bir örnekle açıklayalım.
+
+Bir fast food restoranına gittiğinizi varsayalım. Hamburger (hamburger ekmeği, köfte, özel sos, peynir, turşu, soğan, marul ve domates), kızarmış patates ve içecek sipariş verdiniz. Siparişiniz (ürün) 10 birimden oluşuyor. %99 kalite sizi memnun eder mi? (10 birimin birbirinden bağımsız olduğu varsayılır)
+
+**Yemeğin iyi olma olasılığı;**
+
+P{Yemeğin iyi olması}=$(0.99)^{10}=0.9044$
+
+Yaklaşık %90 olasılıkla yemeğinizden memnun olacaksınız. Peki bu yemeği dört kişilik bir aile olarak yemiş olsaydınız memnuniyetiniz değişir miydi?
+
+<br>
+
+**Tüm yemeklerin iyi olma olasılığı;**
+
+P{Tüm yemeklerin iyi olması}=$(0.9044)^{4}=0.6690$
+
+Tüm yemeklerin yalnızca 2/3'ü iyi olma ihtimaline sahip görünüyor. Memnuniyet seviyenizin düştüğü açık. Peki ailenizle birlikte her ay hamburger yemek için çıktığınızda durum ne olacak?
+
+<br>
+
+**Bir yıldaki tüm yemeklerin iyi olma olasılığı;**
+
+P{Bir yıldaki tüm yemeklerin iyi olması}=$(0.6690)^{12}=0.0080$
+
+Memnuniyet açısından kabul edilemez bir olasılık! Görüldüğü üzere oldukça basit bir ürün için bile oldukça yüksek düzeyde kalite ve hizmete ihtiyaç vardır.
+
+<br>
+
+> 3$\sigma$ seviyesinde üretim yapan bir çok şirket ürettiği her bir milyon parçada 66.000 kusurlu parça çıkmasından dolayı toplam gelirlerinin yaklaşık %25'ini kaybetmektedirler.
+
+<br>
+
+Gönderilen her 300.000 mektupta;
+
+  - 3$\sigma$ ile 3000 kayıp
+  - 6$\sigma$ ile 1 kayıp
+
+Her hafta TV yayını;
+
+  - 3$\sigma$ ile 1.68 saati bozuk yayın yapıyor.
+  - 6$\sigma$ ile 1.8 saniye bozuk yayın yapıyor.
+  
+  
+
+### Sigma Kalite Seviyesi
+
+Altı sigma yaklaşımı, kalite seviyelendirmesini _sigma kalite seviyesi_ ölçütüne bağlı olarak değerlendirmektedir. Yaklaşımın isminden de anlaşılacağı üzere hedef, sigma kalite seviyesinin 6 olmasıdır. Bir milyonda 3.4 hata olması anlamına gelen 6 sigma kalite seviyesi aynı zamanda hatasız yüzdesinin %99.99966 olması anlamına gelmektedir. Her ne kadar %99 hatasız oranı kusursuza yakınmış gibi görünse de gerçek hayatta ne denli önemli olduğunu anlamak adına örnekler verelim;
+
+- Bir saatte kaybolan 20.000 mektup
+- Her hafta 5000 yanlış ameliyat gerçekleşmesi
+- Her ay yaklaşık 7 saat elektrik kesintisi (6$\sigma$ seviyesinde 8.8sn)
+- Her yıl 200.000 adet yanlış reçete yazılması
+
+> Sistemdeki iyileşme, değişkenliğin azalması ile mümkündür, bu da istatistiksel olarak standart sapma yani sigmanın azalması anlamına gelir. İyileşme aynı zamanda 'sigma kalite seviyesindeki' artış olarak da tanımlanır, bu bakımdan ifadeleri karıştırmamak önemlidir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/positions.png" style="float:center;" width="500" height="250" title="Pozisyonlar" /> 
+
+**Örn:** Bir pastanenin 200 adet üretmiş olduğu pastanın 2 adedinin hatalı (yanık vs.) olması durumunda pasta üretim prosesinin sigma kalite seviyesini hesaplayınız.
+
+P{Hatalı pasta üretme}=2/200=0.01 (%1)
+
+P{Hatasız pasta üretme}=1-0.01=0.99
+
+Z tablo değeri 2.33 olduğundan 2.33+1.5=3.83
+
+
+<br>
+
+Sigma seviyeleri arasında geçiş için harcanacak çaba üst seviyelerde giderek artmaktadır. Sigma seviyesinin 2'den 3'e çıkarılması için hata sayısında yaklaşık **4.6** katlık bir azalma gerekmektedir. Benzer şekilde 3'den 4'e çıkarmak için **10.7** katlık, 4'den 5'e çıkarmak için **26.7** katlık ve 5'den 6'ya çıkarmak için **68.5** katlık bir iyileştirme gerekmektedir.
+
+
+
+### Altı Sigma Proje Yönetimi
+Altı sigma yaklaşımının uygulaması bu alanda uzmanlaşan kişiler tarafından gerçekleştirilmektedir. Uzmanlar, bilgi ve donanımlarına bağlı olarak; yeşil kuşak, kara kuşak, uzman kara kuşak, şampiyon ve liderlik konseyi olarak isimlendirilmektedir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ssgma.png" style="float:right;" width="300" height="300" title="sixsigma" /> 
+
+
+**Yeşil kuşak (Green Belts (GBs)):** Projelerde kısmi zamanlı çalışan kişilerdir. Sorumlulukları;
+
+- Proje şampiyonu ile proje amacını tanımlamak
+- Proje sürecinde takıma her türlü desteği sağlamak
+- Proje süresince gerekli veri analizlerini gerçekleştirmek
+- 6$\sigma$ araçlarının kullanımı ile ilgili takımı bilgilendirmek
+
+
+**Kara kuşak (Black Belts (BBs)):** İyileştirme takımının lideridir, ve şu özellikleri barındırır;
+
+- Prosesi iyileştirme yeteneği
+- Takım çalışmasına yatkın olma ve empati
+- Müşteri odaklı düşünebilen
+- 6$\sigma$ araçlarını etkin kullanabilme
+
+Kara kuşaklar 4 ay süreyle eğitim alırlar, aday olarak çalıştıkları projede başarılı olmaları durumunda _uzman kara kuşak_ ünvanını almaya hak kazanırlar.
+
+**Uzman Kara kuşak (Master Black Belts (MBBs)):** Proje sorumlusu olarak liderlik vasfı mevcuttur. Yöntem ve araçlara hakimdir, teknik danışman olarak da tanımlanabilir.
+
+- Proje takımına istatistiksel yöntemler başta olmak üzere her konuda teknik destek sağlamak
+- Şampiyonlara proje sürelerinin belirlenmesinde yardımcı olmak
+- 6$\sigma$ yöntemlerini uygulamak
+- Yeşil ve Kara kuşaklara eğitim verme ve mentorluk yapmak
+
+**Şampiyon (Champion):** Proje uygulama ve yürütme adımlarında aktif rol oynar, sponsorluk ve liderlik rolü bulunur. 
+
+- Projeyi belirlemek
+- Proje takımı ve yönetim arasında köprü olmak
+- Projeler için kaynak bulmak
+- Proje takımını yönetim katında temsil etmek ve savunuculuğunu üstlenmek
+- Yol gösterici olmak ve projeyi odak noktası haline getirmek
+- Projede 6$\sigma$ yöntemlerinin kullanılmasını sağlamak
+
+**Liderlik Konseyi (Leadership Team):** 6$\sigma$ başarısı için destek ve yönlendirmeyi sağlar. Sorumlulukları;
+
+- 6$\sigma$ yönetimini incelemek
+- Projeler ve işletme hedefleri arasında ilişki kurmak
+- Proje sürecini yakından takip etmek
+
+<br>
+
+Altı sigma uygulamaları 3 nesile ayrılmıştır;
+
+**I. Nesil (Generation I):** 1987-1994 yılları, değişkenliğin azaltılması ve hataların elenmesi odak noktası olmuştur. Örn: Motorola
+
+**II. Nesil (Generation II):** 1994-2000 yılları, I. nesilin devamı olarak ürün tasarımlarında iyileştirme ve maliyetlerin azaltılması odak noktası olmuştur. Örn: General Elektrik
+
+**III. Nesil (Generation III):** 2000 li yıllar ve sonrası, geçmiş nesillere ek olarak değer yaratma (yeni ürünler üretilmesi, pazarın genişletilmesi, hisse senetlerindeki değer artışı ) odak noktası olmuştur.
+
+
+Son yıllarda _yalın sistemler (lean systems)_ ve _altı sigma için tasarım (design for six sigma (DFSS))_ olmak üzere iki yaklaşım daha tanımlanmıştır. Birçok kuruluş bu yaklaşımların birini veya her ikisini de altı sigma yaklaşımlarına dahil etmişlerdir. Altı sigma özellikle bu yaklaşımlarla birlikte kullanıldığında oldukça başarılı olmaktadır. 
+
+<center><img src="/Users/busenursarica/Documents/GitHub/quality-control/images/tri.png" style="float:center;" width="600" height="400" title="sixsigma" /><center> 
+
+[The Six Sigma Revolution by Thomas Pyzdek](http://www.bxlnc.com/download/The-Six-Sigma-Revolution.pdf)
+
+Altı sigma yaklaşımı **DMAIC** olarak tanımlanan bir yol haritası eşliğinde uygulanır.
+
+## Kalite Maliyetleri
+
+Kalite maliyetleri ölçülebilen (kalite kontrol giderleri, üretim kaybı, hurda) ve ölçülemeyen (müşteri kaybı, pazar kaybı, imaj kaybı) kısımları nedeniyle buz dağına benzetilmektedir. Ölçülemeyen kısımların etkileri uzun zamanda görülmektedir. Kalite maliyetleri üç ana başlıkta incelenebilir;
+
+**Önleme maliyetleri:** kalite standartlarından sapmaları önlemek amacıyla gerçekleştirilen çalışmalara ait harcamalar
+
+**Ölçme ve değerlendirme maliyetleri:** kalite özelliklerinin ( giriş, ara ve son kontrol, cihaz bakımı) değerlendirilmesi için gerçekleştirilen çalışmalara ait harcamalar
+
+**Başarısızlık maliyetleri:** kalite standartlarından sapmaların neden olduğu maliyetler olup iç ve dış başarısızlık maliyetleri olarak iki başlık halinde incelenir. İç başarısızlık maliyetleri; ıskarta, hurda, fire vb., dış başarısızlık maliyetleri; reddedilen ürünler, gecikme farkları, garanti giderleri vb.
+
+<center><img src="/Users/busenursarica/Documents/GitHub/quality-control/images/qcost.png" style="float:center;" width="600" height="200" title="Quality Cost" /><center>
+
+
+<!--chapter:end:03-Kalite-Yönetimi-Temel-Kavramları.Rmd-->
+
+# DMAIC Süreci
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/dmaic.png" style="float:right;" width="300" height="270" title="DMAIC" />
+
+DMAIC, kalite ve süreç iyileştirmede yaygın olarak kullanılan yapılandırılmış bir problem çözme yöntemidir. Tanımlama (define), ölçme (measure), analiz (analyse), iyileştirme (improve) ve kontrol (control) adımlarından oluşur. Genellikle altı sigma yaklaşımı ile ilişkilendirilir ve altı sigmanın neredeyse tüm uygulamaları, proje yönetimi ve tamamlanması için DMAIC sürecini kullanır. Ancak, DMAIC resmi olarak altı sigmaya bağlı değildir ve bir kuruluşun altı sigma kullanmasına bakılmaksızın kullanılabilir. Örneğin, döngü süresinin azaltılmasına, iş hacminin iyileştirilmesine ve kaybın (waste) ortadan kaldırılmasına odaklanan yalın (lean) projeler, DMAIC kullanılarak kolayca ve verimli bir şekilde yürütülebilir.
+
+DMAIC yapısı yaratıcı düşünmeyi teşvik eder. Süreç kötü çalışıyorsa, orijinal süreci terk etmek ve baştan başlamak gerekliyse veya yeni bir ürün veya hizmetin gerekli olduğu belirlendiğinde, DMAIC'in iyileştirme adımı tasarım adımı haline gelir. Altı sigma yaklaşımında, bu muhtemelen Altı Sigma için Tasarım (DFSS) adımının gerekli olduğu anlamına gelir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/D.png" style="float:center;" width="600" height="200" title="DMAIC" />
+
+**(D)EFINE:** Tanımlama aşaması, potansiyel problemi tanımlamak ve bu problemin müşteri tatminine, paydaşlara, çalışanlara ve karlılığa etkisini belirlemek amacıyla yapılır. Bu aşamada, kritik müşteri istekleri, proje amaç ve hedefleri, ekibin rolleri ve sorumlulukları, süreç haritası ve performans kriterleri tanımlanır
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/M.png" style="float:center;" width="600" height="200" title="DMAIC" />
+
+**(M)EASURE:** Ölçme aşamasında proje durum raporu doldurularak termin ve hedefler belirlenir. Ardından proje ekibi seçilir ve bu ekipte süreçten, tedarikçilerden ve müşterilerden temsilcilerin bulunmasına dikkat edilir. Sürecin akış diyagramı çizilirken, girdiler ve çıktılar belirlenir. Problemi oluşturan sürecin çıktıları ile girdilerinin bir listesi hazırlanarak, sebep-sonuç diyagramı, sebep-sonuç matrisi ve hata türü ve etkileri analizi (FMEA) gibi araçların kullanımı ile sebep- sonuç ilişkileri incelenir. Bu aşamada temel amaç, projenin girdi ve çıktılarının doğru olduğundan emin olmak ve mevcut durumu değişik görsel analizler yardımı ile ortaya koymaktır. Süreç performans göstergelerinin ne kadar doğru ölçülüp ölçülmediğinin belirlenmesi çalışmaları bu aşamada yürütülür.
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/A.png" style="float:center;" width="600" height="200" title="DMAIC" />
+
+**(A)NALYSE:** Analiz aşamasında, problemin ya da sürecin mevcut performansı ile arzu edilen hedef arasındaki boşluğu ortadan kaldırmak için yöntemleri saptamaya yönelik analizler yapılır. Bu aşamada verilerin anlaşılmasına yardımcı olması için istatististiksel veri analizleri kullanılır.
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/I.png" style="float:center;" width="600" height="200" title="DMAIC" />
+
+**(I)MPROVE:** İyileştirme aşamasında, sürecin sahip olduğu sorunları ortadan kaldıracak çözümler tasarlanır ve uygulama planları geliştirilir. Gerekli kişilerin hizmet içi eğitim ve motivasyon sistemleri sayesinde iyileştirme sistemine dahil edilmesi ile iyileştirilmenin sürekliliği sağlanır.
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/C.png" style="float:center;" width="600" height="200" title="DMAIC" />
+
+**(C)ONTROL:** Kontrol aşamasında, süreç iyileştirmesi başarılı ise doğrulanır ve zaman içinde iyileştirmenin süreceğinden emin olunur. Yapılacak işlem; insana dayalı yanlışları gidermek, güncel eğitimi sağlamak, kontrol prosedürlerini güncelleştirmek, değişmenin özel nedenlerini yok ederek yeni sürecin istatistiksel süreç kontrolü altına alınmasını sağlamaktır. Yeni süreç kararlı olduğunda elde edilen gerçek iş sonuçları belgelendirilir. **Eğer hedefler karşılanmaz ise düzeltici faaliyet olarak DMAIC döngüsü tekrar başlatılır.**
+
+<!--chapter:end:04-DMAIC-Süreci.Rmd-->
+
+# İstatistiksel Kavramlar
+
+İstatistik verinin toplanmasını, düzenlenmesini, analiz edilmesini ve yorumlanmasını sağlayan bir disiplindir. İstatistik betimsel (tanımlayıcı (descriptive)) ve çıkarımsal (tümevarımsal (inferential)) amaçlı istatistik olmak üzere ikiye ayrılır. 
+
+**Betimsel istatistik:** Verilerin tablolar, grafikler veya özet istatistikler aracılığıyla betimlenmesi ve özetlenmesi ile ilgilidir. Bu sayede büyük veri kümeleri tek bir tablo, grafik veya özet istatistik ile temsil edilmekte ve herkes tarafından kolay anlaşılabilir bir biçimde sunulmaktadır.
+
+**Çıkarımsal istatistik:** Kitleden rasgele seçilen örneklemden toplanan verileri kullanarak kitlenin parametrelerini tahmin etmeyi ve parametrelerle ilgili savların doğruluğunun araştırılmasını amaçlar. Çıkarımsal istatistikte örnekten elde edilen bilgilere dayanarak kitle hakkında kestirimlerde bulunmak, sonuçlar çıkarmak ve kararlar vermek istatistiğin önemli bir bölümünü oluşturur.
+
+## Verilerin Toplanması ve Sunulması
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/alien.jpg" style="float: right;" width="400" height="270" title="Remind!" /> 
+
+Veri; analiz, karar ve faaliyet için temeldir bu nedenle tüm veriler özellikle işlem ve üretim noktalarında kayıt edilmelidir. Sistematik ve doğru kayıt bu bakımdan oldukça önemlidir. Verinin yapısı prosesten prosese farklılık gösterebilir. Maliyet ve emek kaybının önlenmesi için yalnızca ihtiyaç duyulan veriler kayıt altına alınmalıdır. 
+
+Verilerin istenilen hassasiyette ve doğru elde edilebilmesi için ölçü aletlerinin uygunluğu ve güvenilirliği sağlanmalıdır, ancak bu şekilde tekrarlanabilirlik mümkün olacaktır.
+
+Kalite hakkında bilgi _sayarak_ veya _ölçerek_ elde edilebilir. Bu bakımdan veri tipleri niceliksel (variables) ve niteliksel (attributes) olarak ikiye ayrılmaktadır. 
+
+**Niteliksel veri (attributes):** Sayarak elde edilen veri tipi belirli aralıklarla ortaya çıkmaktadır. Ör: 10 adetlik bir örnek gruptaki hatalar 0, 1, 2 gibi olabilir. Belirli uzunluktaki bir kumaştaki hataların sayısı, bir sayfadaki yazım hatalarının sayısı niteliksel veri tipine örnek olarak verilebilir.
+
+**Niceliksel veri (variables):** Ölçerek elde edilen veri tipleri sürekli yapıdadırlar. Örn: sıcaklık, ağırlık, hacim, zaman vb.
+
+Veri toplanırken bazı noktalara dikkat edilmesi gerekir.
+
+- Amaca uygun hassasiyette veri toplanması gerekir.
+- Verinin hassasiyeti ölçü aleti hassasiyetini aşamaz. Ör: 0.0001g hassasiyetle yapılması gereken tartım için 0.001g hassasiyete sahip terazi kullanılamaz.
+- Gözlem sayısı, örnekleme yöntemi ve analiz için kullanılan yöntem araştırılan konuya uygun olarak belirlenmelidir.
+- Veri toplanırken gerekli tüm koşullar saptanmalı ve kaydedilmelidir. (İlgili vardiya, üretimi yapan kişi, kullanılan cihaz, hammadde, çevre koşulları vb.)
+
+
+
+Veri toplama işlemi otomatik veya manuel olarak yapılabilir. Çalışılan duruma bağlı olarak her iki yöntemin de avantajlı olduğu durumlar mevcuttur.
+
+**Manuel sistem;**
+
+- Veri toplayan kişi prosese daha yakındır ve daha iyi anlamaya çalışır.
+- Veri toplayan kişi proses üzerinde tecrübe sahibi oldukça neden-sonuç ilişkisi kuracak ve yorumlayabilecektir.
+- Veri toplanması daha dinamik hale gelecek, gerekli ve gereksiz parametreler açığa çıkacaktır.
+- Geçici faaliyetler için manuel sistemlerin kullanımı hem pratik hem de ucuzdur.
+
+**Otomatik sistem;**
+
+- Değişimin çok hızlı olduğu durumlarda kullanışlıdır.
+- Çok sayıda veri aynı anda toplanabilir.
+- Sağlık ve emniyet açısından manuel veri toplamanın riskli olduğu durumlarda kullanılabilir.
+- Veri toplama ve analiz aşamasının hızlı olması gerektiğinde kullanışlıdır.
+- Fazla miktarda veri toplanması bakımından avantajlıdır.
+
+## Değişkenliğin Tanımlanması
+
+### Dal-Yaprak Grafiği
+
+Bir proses tarafından üretilen iki ürün birimi aynı değildir. Bazı değişiklikler kaçınılmaz olarak ortaya çıkmaktadır. Örnek olarak, bir içecek şişesinin net içeriği, şişeden şişeye biraz değişir ve bir güç kaynağının çıkış voltajı, bir üniteden diğerine tam olarak aynı değildir. İstatistik, verilerdeki bu değişkenlikleri hesaba katarak analiz etme ve sonuç çıkarmada faydalandığımız bilimdir.
+
+Verilerin sunulması için kullanılan başarılı görsellerden biri de dal-yaprak (steam and leaf) grafiğidir. 
+
+Çalışan Sağlık Sigortası Taleplerinin Ödenmesi İçin Gün Olarak Döngü Süresi 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/claim.png" style="float: center;" width="500" height="250" title="Claim-Days" /> 
+
+```{r include=FALSE}
+claim<-1:40
+days<-c(48,41,35,36,37,26,36,46,35,47,35,34,36,42,43,36,56,32,46,30,37,43,17,26,28,27,45,33,22,27,16,22,33,30,24,23,22,30,31,17)
+data<-cbind(claim,days)
+data
+```
+
+```{r}
+stem(days)  #dal-yaprak grafiği
+```
+
+Dal-yaprak grafiği verinin yayılım ve merkezi eğilimi hakkında fikir sahibi olmamızı sağlamaktadır. Bu bakımdan oldukça faydalı olmakla birlikte gözlemlerin zaman sırasını hesaba katmaz. Zaman, genellikle kalite iyileştirme problemlerindeki değişkenliğin yorumlanmasına katkıda bulunan önemli bir faktördür. Zamanı dikkate alan grafikler üretmek ve yorumlamak da mümkündür.
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(plotly)
+library(htmltools)
+
+p<-plot_ly(as.data.frame(data), x = ~claim, y = ~days)
+htmltools::tagList(p)
+```
+
+### Frekans Dağılımı
+
+Kitle (popülasyon) çok sayıda birimden oluşuyorsa, bu birimleri sınıflandırmak kitlenin çeşitli özelliklerinin belirlenmesini kolaylaştıracaktır. Sınıflandırmanın en doğru yolu frekans tablosudur. Bu yapıda gözlenen veri sınıflara ayrılır, sonuçlanan tablo her bir sınıftaki gözlem sayısını vermektedir.
+
+SPC açısından prosesteki değişkenleri açıkça görebilmek ve prosesin geçerliliği hakkında bir yargıya varabilmek için örneklerden elde edilen verilerin büyüklüklerine göre gruplandırılması gerekmektedir.
+
+Frekans tablosu oluşturulurken dikkat edilmesi gereken noktalar aşağıda yer almaktadır.
+
+- Sınıflar ayrık olmalıdır.
+
+|**Yanlış** |   |**Doğru**  |
+|:---------:|---|:---------:|
+|4.00 - 4.50|   |4.00 - 4.49|    
+|4.50 - 5.00|   |4.50 - 4.99|          
+
+- Sınıflar veri kümesinde yer alan her değeri içine almalıdır.
+- Sınıf limitleri ve sınıf sayısı hiç bir sınıf boş kalmayacak şekilde seçilmelidir.
+
+<br>
+
+**Frekans tablosu hazırlanması;**
+
+Konu ile ilgili veriler mümkün olduğunca duyarlı , aynı ölçü birimi ile ve duyarlılığı aynı rakamlarla tespit edilir.
+
+En büyük ve en küçük değerler arası fark, yani **değişim genişliği (range)** bulunur. Değişim genişliği belirlenen **sınıf sayısına** bölünerek **sınıf aralığı** tespit edilir. Burada önemli nokta sınıf sayısının kaç olduğuna karar vermektir. Bu karar verinin miktarına ve cinsine bağlı olarak uzman tarafından verilmekle birlikte genellikle 5-20 arasında seçilmektedir. Sınıf sayısının belirlenmesinde sıklıkla kullanılan bir yöntem de **Sturgess Kuralı**'dır. 
+
+<br>
+
+$K=1+3.3log_{10}N$
+
+burada K sınıf sayısı, ve N toplam veri adedidir.
+
+```{r}
+1+3.3*(log(400,base=10))  #sturgess
+```
+<br>
+
+
+**Örnek:** Bir ipek ipliğine ait mukavemet değerleri için frekans tablosu oluşturunuz.
+
+```{r}
+muk<-c(83,63,81,76,54,87,84,86,84,60,71,90,92,78,92,84,53,68,80,83,84,71,65,81,94,73,95,82,81,71,76,92,69,61,102,84,67,68,108,88,82,67,78,89,80,97,103,86,64,97,99,89,76,68,65,94,75,95,103,74,103,94,103,83,88,64,67,81,91,97,84,70,105,99,76,72,96,63,84,82,78,89,80,92,106,73,71,70,94,76,71,75,91,81,70,78,56,73,68,82,88,78,81,71,73,81,94,90,61,71,64,54,93,86,87,81,71,65,90,74)
+
+N=length(muk); N    #gozlem sayisi
+```
+<br>
+
+**En büyük gözlem**
+```{r}
+enb<-max(muk); enb
+```
+<br>
+
+**En küçük gözlem**
+```{r}
+enk<-min(muk); enk
+```
+<br>
+
+**Değişim genişliği (range)**
+```{r}
+range=enb-enk  #degisim genisligi
+range
+```
+<br>
+
+**Sınıf sayısı**
+```{r}
+K=1+3.3*(log(N,base=10));K   #sturgess
+round(K)  
+```
+<br>
+
+**Sınıf aralığı**
+```{r}
+ara<-range/round(K); ara
+```
+<br>
+
+**Ödev:** Aşağıda yer alan mukavemet verisi için frekans tablosunu elde eden kodu yazınız.
+
+```{r}
+factorx <- factor(cut(muk, breaks=nclass.Sturges(muk)))
+#Tabulate and turn into data.frame
+xout <- as.data.frame(table(factorx))
+#Add cumFreq and proportions
+xout <- transform(xout, cumFreq = cumsum(Freq), relative = prop.table(Freq));xout
+```
+
+### Histogram
+
+Histogram verinin yayılımını göstermektedir ve SPC'ün temeli verideki değişkenliği tanımlamaktır. Histogramın kullanım amaçları şu şekilde sıralanabilir;
+
+- Problemleri çözmek
+- Proses yeterliliğini analiz etmek
+- Spesifikasyonlar ve gerçekleşen veriyi karşılaştırmak
+- Popülasyonun şekli hakkında fikir edinmek
+- Veri farklılıkları ve boşlukları ortaya koymak
+
+
+Mukavemet örneği histogramı;
+
+```{r warning=FALSE}
+fig<-plot_ly(x = ~muk,type = "histogram") 
+htmltools::tagList(fig)
+```
+
+```{r echo=FALSE}
+xout
+```
+
+
+### Merkezi Eğilim Ölçüleri
+
+Frekans dağılımının simetrik, sağa veya sola çarpık olma durumu merkezi eğilim ölçüleri yardımıyla belirlenir. Merkezi eğilim ölçüsü olarak üç ölçü sıklıkla kullanılır, bunlar;
+
+- Ortalama (mean)
+- Medyan (ortanca (median))
+- Mod  (tepedeğer (mode))
+
+<br>
+
+**Ortalama:** $x_{1},x_{2},...,x_{n}$ örneklemde yer alan gözlemler olmak üzere;
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/mean.png" style="float: center;" width="700" height="110" title="Mean" />
+
+eşitliği, en önemli merkezi eğilim ölçüsü olan ortalamayı elde etmemizi sağlar. Gözlem değerlerinde meydana gelen çok küçük değişmeler aritmetik ortalamayı etkiler, bu nedenle aykırı değer durumunda kullanımına dikkat edilmelidir. Bir veride yalnızca bir aritmetik ortalama vardır. Nicel verilere uygulanabilir.
+
+<br>
+
+**Medyan:** Gözlem değerleri en küçükten en büyüğe sıralandığında tam ortaya düşen gözlem medyan (ortanca)'dır.Gruplanmamış verilerde gözlem sayısı tek ise medyan tam ortadaki gözlemdir ancak gözlem sayısı çift ise tam ortaya denk gelen iki gözlemin aritmetik ortalamasıdır.
+
+Medyan aykırı değerlerden etkilenmez, bu bakımdan aritmetik ortalamadan üstündür. Ancak aritmetik ortalamanın daha hassas olduğu unutulmamalıdır. Bir veride yalnızca bir medyan vardır. Nicel verilere uygulanabilir.
+
+<br>
+
+**Mod:** Veriler arasında en çok tekrar eden gözleme mod (tepedeğer) denir. Hassaslığı en az olan ölçüdür ancak hesaplanması kolaydır. Hem nitel hem de nicel veriler için kullanılabilir. 
+
+<br>
+
+Bir frekans dağılımı için ortalama, medyan ve mod değerleri birbirine eşit ise dağılım **simetriktir (symmetrical)**. Mod $<$ Medyan $<$ Ortalama şeklinde sıralama söz konusu ise dağılım **sağa çarpık (positive skewness)**, Ortalama $<$ Medyan $<$ Mod şeklinde ise dağılım **sola çarpıktır (negative skewness)**.
+
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/sym.png" style="float: center;" width="900" height="300" title="Skewness" /> 
+
+```{r}
+# Frequency
+
+d<-c(10,10,11,12,12,12,12,12,12,13,13,14,15,20,20,23)
+table(d)
+```
+
+
+
+```{r}
+t<-rnorm(1000)^2
+
+mean<-mean(t)     #mean
+
+median<-median(t)  #median
+
+freq <- table(t);   #frequency
+
+mode<-as.numeric(names(freq)[which.max(freq)])   #mode
+
+sort(c(mean=mean,median=median,mode=mode))
+
+
+```
+
+```{r}
+fig<-plot_ly(x = t, type="histogram")
+htmltools::tagList(fig)
+```
+
+
+### Yayılım Ölçüleri
+
+Merkezi eğilim ölçülerinin yanında, verinin nasıl yayıldığını ve ortalama değerin her bir tarafında nasıl dağıldığını ortaya koyan yayılım ölçüleri verinin tanımlanması ve anlamlandırılması açısından önem taşımaktadır. Yayılımın analizi için üç ölçü yaygın şekilde kullanılır;
+
+- Genişlik
+- Standart Sapma
+- Varyans
+
+**Genişlik (range):** Genişlik yayılımı hesaplamak için en kolay yoldur. Veri kümesindeki en büyük ve en küçük değer arasındaki farka karşılık gelir. 
+
+**Standart Sapma:** Standart sapma, yayılım için kullanılan bir diğer ölçüdür. Verinin sınıflandırılmış veya sınıflandırılmamış olmasına bağlı olarak farklı şekillerde hesaplanmaktadır.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/sd.png" style="float: center;" width="700" height="110" title="Sd" />
+
+**Varyans:** Varyans en hassas yayılım ölçüsüdür. Gözlemler arasındaki değişimi ölçer. Varyansın pozitif karekökü ise standart sapmayı ifade eder. Verideki birimlerin değerleri aritmetik ortalama etrafında yoğunlaşıyorsa varyans küçüktür ve bu durum verinin homojen olduğunu dolayısı ile kaliteyi gösterir. Gözlemlerin aldıkları değerler aynı ise varyans sıfırdır. Aşağıdaki eşitlikte örneklem varyansı formülasyonu yer almaktadır. 
+
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/var.png" style="float: center;" width="700" height="110" title="Variance" />
+
+<br>
+
+Araştırmada iki kitle üzerinde çalışılıyorsa bu iki kitlenin aritmetik ortalamaları eşit olduğu durumda varyansı küçük olan kitle daha homojen olarak tanımlanırken aritmetik ortalamaları farklı iki kitleyi varyans açısından yorumlamak doğru olmayacaktır. Bu durumda **değişim katsayısından** faydalanılır.
+
+$C=\sigma/\mu$ olarak tanımlanan değişim katsayısı ölçü birimlerinden kaynaklanan farklılıkları da gidermektedir.
+
+Çarpıklık-basıklık katsayıları ve değişken katsayısı da yayılım ölçüsü olarak kullanılabilmektedir.
+
+
+
+### Kutu Grafiği (Box Plot)
+
+Dal-yaprak grafiği ve histogram, bir veri seti hakkında görsel bir izlenim sağlarken, örnek ortalaması ve standart sapma, verilerin belirli özellikleri hakkında nicel bilgi sağlar. Kutu grafiği, verilerin merkezi eğilim, yayılma ve aykırı gözlemlerin gözlenebilmesi gibi verilerin birkaç önemli özelliğini eşzamanlı olarak görüntüleyen bir grafik türüdür.
+
+Aykırı değerlerin varlığı tanımlayıcı istatistiklerin yanlış hesaplanmasına neden olur bu nedenle tespit edilmeleri oldukça önemlidir ve kutu grafiği bu bakımdan oldukça faydalıdır.
+
+Kutu grafiğinin oluşturulabilmesi için gerekli 5 önemli değer bulunmaktadır. En küçük değer, birinci çeyrek değer ($Q_{1}$), medyan, üçüncü çeyrek değer ($Q_{3}$) ve en büyük değer. Kutu grafikleri iki farklı dağılımın karşılaştırılmasında kolaylık sağlar.
+
+> En küçükten en büyüğe sıralanmış verileri 4 eşit parçaya bölen değerlere çeyrek değerler ya da kartiller denir. 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/boxplot.jpg" style="float: center;" width="500" height="250" title="Box Plot" />
+
+$Q_{1}=(n+1)/4$
+
+$Q_{3}=3(n+1)/4$
+
+Alt limit$=Q_{1}-1.5(Q_{3}-Q_{1})$
+
+Üst limit$=Q_{3}+1.5(Q_{3}-Q_{1})$
+
+Veride alt limitin altında veya üst limitin üzerinde bir gözlem yer alıyorsa bu gözlem **aykırı değer** olarak nitelendirilir.
+
+```{r}
+boxp1 <- plot_ly(y = muk, type = "box",name="Mukavemet"); boxp1
+```
+
+```{r}
+boxp2 <- plot_ly(y = t, type = "box",name="Norm^2"); boxp2
+```
+
+<br>
+
+Çarpıklığı yatay eksende gözlemek daha iyi kavramamızı sağlayacaktır. Verinin sağa çarpık olduğu ve fazla miktarda aykırı değer içerdiği kutu grafikten gözlenebilmektedir.
+
+```{r}
+boxp2.horizontal <- plot_ly(x = t, type = "box",name="Norm^2 Horizontal"); boxp2.horizontal
+```
+
+
+### Olasılık Dağılımları
+
+Olasılık dağılımları ve özellikle normal dağılım istatistiksel kalite kontrol ile ilgili teoremlerde önemli yer tutmaktadır. Olasılık dağılımları kesikli ve sürekli olmak üzere iki yapıda incelenmektedir. Değişkenin ölçülen değeri sürekli bir ölçek üzerinde ifade ediliyor ise bu değişkenin olasılık dağılımına sürekli dağılım, eğer ölçülen değişken 0, 1, 2... gibi tamsayılı değerler alıyorsa bu değişkenin olasılık dağılımı kesikli dağılım olarak adlandırılır.
+
+>Değeri deneyden deneye değişen sonuçlar ile belirtilen değişkene rastgele değişken denir.
+
+
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/dist.png" style="float: center;" width="800" height="300" title="Box Plot" />
+
+
+Kesikli ve sürekli olasılık dağılımları sırasıyla $(a)$ ve $(b)$ ile grafiksel olarak gösterilmiştir. $X$ rasgele değişkeninin bir $x_{i}$ değerini alma olasılığı;
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/disc.png" style="float: center;" width="700" height="60" title="Discrete" />
+
+Sürekli dağılımda olasılık eğrinin altında kalan alana karşılık gelmektedir, $X$ rasgele değişkeninin $a$ ve $b$ arasında olma olasılığı; 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/cont.png" style="float: center;" width="700" height="60" title="Continuous" />
+
+Bir olasılık dağılımının ortalaması, dağılımın merkezi eğiliminin bir ölçüsüdür. Ortalama, kesikli ve sürekli dağılımlar için aşağıdaki gibi tanımlanır.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/distmu.png" style="float: center;" width="700" height="140" title="Mean" />
+
+Bir dağılımdaki yayılma veya değişkenlik, varyans ile ifade edilir. Varyans, kesikli ve sürekli dağılımlar için aşağıdaki gibi tanımlanır.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/distv.png" style="float: center;" width="700" height="140" title="Variance" />
+
+## Önemli Kesikli Olasılık Dağılımları
+
+### Hipergeometrik Dağılım
+
+Hipergeometrik dağılım istatistiksel kalite kontrolde, belirli sayıda kusurlu ve belirli sayıda kusursuz ürün içeren bir kümeden seçilen (iadesiz) belirli sayıdaki ürünün  kusurlu ve kusursuz ürün sayılarına ilişkin olasılıkları vermektedir.
+
+Bazen sonlu elemanlı bir kitleden idesiz çekiliş yapılmak istenebilir. Bir deneyin sadece iki sonucu varsa, çekilen örnek sayısı n sabit ve denemeler bağımlı ise böyle durumlarda hipergeometrik dağılım kullanılır.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/hipgeo.png" style="float: center;" width="600" height="370" title="Hipergeometrik" />
+
+**N:** Toplam eleman sayısı
+
+**D:** N'in bir bölümü ($D\leq N$)
+
+**n:** örnek hacmi
+
+**x:** istenen durum sayısı
+
+<br>
+
+**Kombinasyon hatırlatma:** 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/comb.png" style="float: center;" width="150" height="80" title="Kombinasyon" />
+
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/phyp.png" style="float: center;" width="800" height="250" title="phyp.r" />
+
+<br>
+
+**Örnek:** İçinde 10 sağlam ve 4 arızalı ürün bulunan bir kümeden 5 ürün alınmıştır. Bu ürünlerin
+
+  **a)** 3 adetinin sağlam olma olasılığı nedir?
+
+```{r}
+a<-dhyper(x = 3, m = 10, n = 4, k = 5); a
+```
+  <br>
+  
+  **b)** En fazla 2'sinin sağlam olma olasılığı nedir?
+  
+```{r}
+# P(X<=2)=P(X=0)+P(X=1)+P(X=2)
+
+tot=numeric()  # bos vektor
+for(i in 0:2){
+tot[i+1]=dhyper(x = i, m = 10, n = 4, k = 5)}
+b<-sum(tot); b
+```
+  
+   <br>
+   
+   **c)** En az üçünün sağlam olma olasılığı nedir?
+
+```{r}
+# P(X>=3)=1-(P(X=0)+P(X=1)+P(X=2))
+
+c<-1-b
+c
+
+```
+
+<br>
+
+**Örnek:** Bir tekstil fabrikasında üretilmiş 1000 tişörtün 200'ünün kusurlu olduğu biliniyor. Perakende satış yapan bir mağaza sahibi 25 tişörtü rasgele seçerek alırken kusurlu tişört sayısı 4'den çok çıkarsa malı iade edeceğini söylüyor. Malı iade etme olasılığı nedir?
+
+```{r}
+# P(X>4)=1-P(X<=4)
+
+z=numeric()  # bos vektor
+for(i in 0:4){
+z[i+1]=dhyper(x = i, m = 200, n = 800, k = 25)}
+sum<-sum(z);
+
+iade=1-sum; iade
+
+```
+
+
+
+### Binom Dağılımı
+
+Sadece iki sonuç veren bir Bernoulli deneyinin n kez birbirinden bağımsız ve aynı koşullar altında tekrar ettiği biliniyorsa ve sıra gözetilmeden başarı türünden oluşan sonuçlarla ilgileniliyorsa bu dağılıma binom dağılımı denir. Binom dağılımı n (örnek büyüklüğü) ve p (hatalı/hatasız olasılığı) olmak üzere iki parametreye sahiptir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/binom.png" style="float: center;" width="600" height="280" title="Binom" />
+
+<br>
+
+**Örnek:** Bir fabrikada üretim yapan vardiyalardan birinin ürettiği ürünlerin %10 olasılıkla kusurlu olduğu tespit edilmiştir. Bu ürünlerden rasgele 5 adet alındığında,
+
+  **a)** 1 adedinin kusurlu olma olasılığı nedir?
+  
+```{r}
+dbinom(1, size=5, prob=0.10)
+```
+  
+  <br>
+  
+  
+  **b)** En fazla 1 adedinin kusurlu olma olasılığı nedir?
+  
+```{r}
+# P(X<=1)=P(X=0)+P(X=1)
+
+kusur=numeric()  # bos vektor
+for(k in 0:1){
+kusur[k+1]=dbinom(x=k, size=5, prob=0.10)}
+sum(kusur)
+```
+  
+  <br>
+  
+  **c)** En az 2 adedinin kusurlu olma olasılığı nedir?
+  
+```{r}
+# P(X>=2)=1-P(X<=1)
+
+1-sum(kusur)
+```
+  
+  
+ <br> 
+  
+**Örnek:** Bir firma %5 kusurlu ürün içeren büyük bir parti maldan rasgele 120 adet seçiyor. Y bu 120 üründeki kusurluların sayısı olsun. Firma kusurlu parçaları tamir için geri gönderecektir. Tamirin maliyeti;
+
+$M=8Y^{2}+0.5Y-10$
+
+fonksiyonu ile hesaplanmaktadır. Tamirin beklenen maliyeti nedir?
+
+```{r}
+# E(M)=8E(Y^2)+0.5E(Y)-E(10)
+
+# E(Y)=np
+
+#Var(Y)= npq= E(Y^2)-E(Y)^2
+
+ey=120*0.05
+eykare=120*0.05*0.95+(ey^2)
+em=8*eykare+0.5*ey-10; em
+```
+
+
+
+### Poisson Dağılımı
+
+Poisson dağılımı belirli aralıkta gerçekleşme olasılığı çok küçük olan durumlarda kullanılır. Dağılımın tek parametresi $\lambda$ olup gerçekleşen ortalama olay sayısında eşittir. Poisson dağılımı istatistiksel kalite kontrolde ürünün bir biriminde oluşan uygunsuzlukların ya da kusur sayısının belirlenmesinde kullanılan bir dağılımdır. Zaman birimi başına gözlemleri içeren birçok durumda bu dağılım uygulanabilir.
+
+$\lambda=np$
+
+Poisson dağılımı, kabul örneklemesi ve ölçülemeyen özellikler için kontrol diyagramlarında bir temel oluşturmaktadır.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/poisson.png" style="float: center;" width="600" height="300" title="Poisson" />
+
+**Örnek:** Bir fabrikada üretilen ürünler 0.004 olasılıkla kusurludur. Üretilen bu ürünlerden rassal örnekleme ile 1000 adet alınmıştır.
+
+  **a)** 3 adet ürünün kusurlu olma olasılığı nedir?
+  
+```{r}
+# lambda=n*p
+
+dpois(x = 3, lambda = 1000*0.004)
+```
+  
+  
+   <br> 
+   
+  **b)** 3 adetten daha az ürünün kusurlu olma olasılığı nedir?
+  
+```{r}
+# P(X<3)=P(X=0)+P(X=1)+P(X=2)
+
+kusurlu=numeric()  # bos vektor
+for(t in 0:2){
+kusurlu[t+1]=dpois(x = t, lambda = 1000*0.004)}
+sum(kusurlu)
+```
+  
+   <br> 
+   
+  **c)** En az 2 ürünün kusurlu olması olasılıklarını hesaplayınız.
+
+```{r}
+# P(X>=2)=1-P(X<2)
+
+kusurlu
+1-sum(kusurlu[1:2])   # 2 dahil degil
+
+```
+
+   <br> 
+   
+**Örnek:** Bir büyük alışveriş merkezinde yürüyen merdivenlerin yılda ortalama 3 gün arızalandığı saptanmıştır.
+
+  **a)** Herhangi bir ay içinde merdivenlerin hiç arızalanmama olasılığı nedir?
+  
+```{r}
+lambda=3/365*30; lambda  #aylik
+
+# P(X=0)
+dpois(x = 0, lambda =lambda )
+```
+ <br>  
+  
+  
+  **b)** Herhangi bir ay içinde merdivenlerin 2'den az arızalanma olasılığı nedir?
+  
+```{r}
+# P(X<2)=P(X=0)+P(X=1)
+d1=dpois(x = 0, lambda =lambda)
+d2=dpois(x = 1, lambda =lambda)
+sum(d1,d2)
+```
+  <br>  
+  
+  **c)** Bir sonraki yıl merdivenlerin hiç arızalanmama olasılığı nedir?
+```{r}
+lambda2=3  # yil
+dpois(x = 0, lambda =lambda2)
+```
+
+  <br> 
+  
+**Ödev:** Bir fabrikanın deposundaki stoktan 365 gün içinde 36 ton mal çekilmiştir. Bu dönem içinde rasgele saptanan bir 15 günlük dilimde en az 3 ton mal çekilme olasılığı nedir? 
+
+
+
+-----------------------
+
+## Önemli Sürekli Olasılık Dağılımları
+
+### Normal Dağılım
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/nd1.png" style="float: right;" width="300" height="150" title="Normal Dağılım" />
+
+İstatistiksel proses kontrol uygulamalarında kullanılan sayısal hesaplamaların önemli bir bölümü verinin normal dağılıma uyduğu kabulüne göre yapılmaktadır.
+
+Gauss dağılımı olarak da bilinen normal dağılım aşağıdaki temel özelliklere sahiptir.
+
+- Simetriktir, çan eğrisi şeklindedir.
+- Veriler ortalama etrafında yoğunlaşmıştır. Eğri altındaki alan tüm olasılıklar toplamına eşit yani 1'dir.
+- Dağılımın tek bir zirvesi vardır, ortalama, mod ve medyan değeri aynıdır.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/normdist.png" style="float: center;" width="700" height="250" title="Normal Dağılım" />
+
+Popülasyon değerlerinin %68.26'sının ortalama artı ve eksi bir standart sapma ($\mu$ ± 1$\sigma$) ile tanımlanan sınırlar arasında kalır, değerlerin %95.46'sı ortalama artı ve eksi iki standart sapma ($\mu$ ± 2$\sigma$) ile tanımlanan sınırlar arasında kalır; ve popülasyon değerlerinin %99.73'ü ortalama artı ve eksi üç standart sapma ($\mu$ ± 3$\sigma$) ile tanımlanan sınırlar dahilindedir. 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/nd2.png" style="float: center;" width="500" height="350" title="Normal Dağılım" />
+
+Ortalaması ve standart sapması bilinen bir popülasyona ait normal dağılım olasılıklarını hesaplayabilmek için standart normal dağılım tablosu kullanılmaktadır. Standart normal dağılım; Z$\sim$N(0,1) şeklinde ifade edilmektedir. Bir _X_ değişkeni aşağıdaki eşitlik yardımı ile Z standart normal değerine dönüştürülür ve bu sayede standart normal dağılım tablosu kullanılabilir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/norm.png" style="float: center;" width="90" height="70" title="Normal Dağılım" />
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ntable.png" style="float: center;" width="500" height="700" title="Normal Dağılım" />
+
+```{r}
+x=seq(0,3.09,by=0.01); head(x)
+```
+
+<br>
+
+```{r}
+prob=pnorm(x); head(prob)
+```
+<br>
+
+```{r}
+tablo=matrix(prob,ncol=10,byrow=TRUE); tablo
+options(digits=4)
+```
+
+<br>
+
+```{r}
+rownames(tablo)=seq(0,3,b=0.1)
+colnames(tablo)=seq(0,0.09,by=0.01)
+tablo
+```
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/pnorm.png" style="float: center;" width="700" height="250" title="Normal Dağılım" />
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/pnormz.png" style="float: center;" width="700" height="220" title="Normal Dağılım" />
+
+<br>
+
+**Örnek:** Bir işletme tarafından üretilen belirli bir mısır gevreğinin geçtiğimiz yıl için ortalama ağırlığı 0.297 kg ve standart sapması 0.024 kg'dır. Normal dağılım varsayımı ile, alt spesifikasyon limiti olan 0.274 kg'dan daha az üretim yapılma olasılığını bulunuz. (Ortalama ve standart sapma geçtiğimiz yıl boyunca yapılan yüksek sayıdaki testten elde ediliği için bu değerler popülasyon değerlerinin tahmini olarak düşünülmelidir.)
+
+* pnorm fonksiyonu varyans değil standart sapma kullanılıyor!
+
+```{r}
+# P(X<0.274)
+# Z=(0.274-0.297)/0.024=-0.96
+# Z_0.96=0.8315     tablo degeri
+# P(Z<-0.96)=P(Z>0.96)= 1-0.8315=0.1685
+urt<-pnorm(0.274,mean=0.297,sd=0.024, lower.tail = TRUE); urt
+```
+
+<br>
+
+**Örnek:** Bir fabrikada üretilen ürünlerin ortalama ağırlıkları 50 kg ve ağırlıkları dağılımının varyansı 49 kg olarak bulunmuştur. Ağırlıkların dağılımı normaldir. Bu ürünlerden 5000 adet alınmıştır. Bu 5000 üründen kaç adetinin
+
+  **a)** 48 ile 51 kg arasında olacağını hesaplayınız.
+  
+```{r}
+# P(48<X<51)= P(X<51)-P(X<48)
+a<-pnorm(51,50,7, lower.tail = TRUE)  # varyans 49 kg
+b<-pnorm(48,50,7, lower.tail = TRUE)
+c<-a-b
+```
+
+```{r}
+5000*c  # adet
+```
+<br>  
+  
+  **b)** 52 kg'den fazla olacağını hesaplayınız.
+  
+```{r}
+# P(X>52)=P(Z>(52-50)/7=0.029)
+dgr<-pnorm(52,50,7, lower.tail = FALSE); dgr
+
+5000*dgr    # adet
+```
+<br>
+
+**Örnek:** Büyük bir firmanın pazarlama elemanlarının aylık satış hasılasına göre dağılımı normal olup ortalaması 200 bin TL ve varyansı da 2500 olarak bilinmektedir. Firma yönetimi çok satış yapan ilk %10'a giren elemanlarına prim verecektir. Prim kazanabilmek için satış hasılası **en az** kaç olmalıdır?
+
+```{r echo=TRUE}
+# P(X>x)=0.10
+emt=numeric()
+for(i in 200:300)
+emt[i]=pnorm(i,200,50, lower.tail = FALSE)
+emt<-round(emt,3);emt
+
+which(emt==0.10)
+
+```
+
+
+
+### Üstel Dağılım
+
+Üstel dağılım adını olasılık yoğunluk fonksiyonundaki üstel fonksiyondan alır. Üstel dağılım belirli bir olayın ortaya çıkmasına kadar geçen süre olarak ortaya tanımlanır. 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/expo.png" style="float: center;" width="600" height="350" title="Üstel Dağılım" />
+
+<br>
+
+**Örnek:** Bir elektronik hesap makinesi üreticisi ürün garanti süresini bir yıl olarak belirlemiştir. Hesap makinesi bu süre içinde herhangi bir nedenle arızalanırsa, değiştirilir. Arıza zamanı, aşağıdaki olasılık dağılımı ile modellenmiştir:
+
+$f(x)=0.125e^{-0.125x}$,  $x>0$
+
+Hesap makinelerinin yüzde kaçı garanti süresi içinde arızalanır?
+  
+```{r}
+#lambda=0.125
+# P(X<1)
+
+pexp(1, rate = 0.125, lower.tail = TRUE)*100
+```
+<br>
+
+
+### Gamma Dağılımı
+
+
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/gamma.png" style="float: center;" width="600" height="350" title="Gamma Dağılım" />
+
+Olasılık ve istatistikte çok karşılaşılan dağılımların bazıları (Üstel ve Ki-Kare gibi) Gamma dağılımının özel halidir.
+
+$\Gamma(k+1)=k!$ 
+
+- $X\sim Gamma(r,\lambda)$ olsun, $r=1$ için $X$ rasgele değişkeni üstel dağılıma sahiptir.
+
+- $X\sim Gamma(r,\lambda)$ olsun, $r=p/2$ ve $\lambda=2$ için $X$ rasgele değişkeni serbestlik derecesi $p$ olan ki-kare dağılımına sahiptir.
+
+## Olasılık Grafikleri
+
+Belirli bir olasılık dağılımının, veriler için makul bir model olup olmadığını nasıl anlarız? Olasılık grafikleri, verilerin **öznel** bir görsel incelemesine dayalı olarak örnek verilerin varsayılmış bir dağılıma uygun olup olmadığını belirlemek için kullanılan bir yöntemdir. 
+
+Grafik çizimi için öncelikle veriler küçükten büyüğe doğru sıralanır, ardından sıra numaralarına göre $(j-0.5)/n$ (gözlenen kümülatif sıklık) değeri elde edilir ve gözleme karşılık gelen sıralama değeri $X$ ve $Y$ eksenlerine çizilir.
+
+Varsayılan dağılım verileri yeterince açıklarsa, çizilen noktalar yaklaşık olarak düz bir çizgi boyunca düşecektir; çizilen noktalar düz bir çizgiden önemli ve sistematik olarak saparsa, hipotez edilen model uygun değildir. Genellikle, veri grafiğinin düz bir çizgi olarak olup olmadığının belirlenmesi özneldir.
+
+Bu nedenle goodness-of-fit testlerini kullanmak daha güvenilir ve subjektif sonuçlar elde edilmesini sağlar.
+
+```{r message=FALSE, warning=FALSE}
+j<-1:10
+x<-c(86,87,87.2,87.4,87.8,88.2,88.9,89.6,89.7,90)
+y<-100*(j-0.5)/10
+x<-sort(x);x
+plot_ly(x=x,y=y)
+```
+
+[Diğer dağılımlar için detaylı bilgi](https://www.itl.nist.gov/div898/handbook/apr/section2/apr221.htm)
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/acont.png" style="float: center;" width="400" height="150" title="Contamination" />
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/others.png" style="float: center;" width="700" height="600" title="Plots" />
+
+## Bazı Faydalı Yaklaşımlar
+
+### Binom - Hipergeometrik
+
+Hipergeometrik dağılım $n\rightarrow\infty$ iken Binom dağılımına yaklaşır. Bazen sonlu elemanlı bir kitleden iadesiz çekiliş yapılmak istenebilir. Bir deneyin sadece iki sonucu varsa (sarı ve lacivert topların bulunduğu bir kavanozdan aynı anda ya da iadesiz çekiliş yapılması), çekilen örnek sayısı  sabit ve denemeler bağımlı (deneylerde birinin sonucu diğerini etkiliyorsa) ise böyle durumlarda Hipergeometrik dağılım kullanılır.  
+
+
+### Binom - Poisson
+
+$X\sim Binom(n,p)$ ve $Y\sim Poisson(\mu)$ olmak üzere, $n$ yeterince büyük olduğu durumda binom dağılımına poisson dağılımı olarak yaklaşılabilir.
+
+Yaklaşım büyük $n$ değeri ve küçük $p$ değeri için uygundur (genellikle p <0.1). $n$'nin değeri ne kadar büyük ve $p$'nin değeri ne kadar küçükse, yaklaşım o kadar iyi çalışmaktadır.
+
+Binom dağılımı ile Poisson dağılımı arasında bir benzerlik kurulabilir. Örneğin, belirli bir saat dilimi içinde bir mağazaya giren müşterilerin sayısı Poisson rasgele değişkenidir. Oysa, mağazaya giren (maksimum müşteri sayısı sabit) her müşteriyi başarı olarak değerlendirirsek, mağazaya giren müşterilerin sayısı Binom dağılımına sahip olur. 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/binpois.png" style="float: center;" width="700" height="350" title="Poisson-Binom Dağılım" />
+
+Yukarıda, değişik $\mu$ değerleri için $Y\sim Poisson(\mu)$ ve $X\sim Binom(n,p)$ olmak üzere, $p=\mu/n$ alınarak $P(X=1)$ ve $P(Y=1)$ olasılıkları hesaplanarak (değerler dördüncü basamaktan sonra yuvarlatılmıştır) tablo halinde verilmiştir. Tablodaki değerlerden de görüldüğü gibi, $n$ değeri büyüdükçe, $P(X=1)$ Binom olasılıkları $P(Y=1)$ olasılıklarına yaklaşmaktadır.
+
+
+### Normal - Binom
+
+$p$ çok küçük değilse ve $n$ de büyükse binom dağılımdan yararlanarak olasılıkları hesaplamak güçleşir. $n\rightarrow \infty$ iken binom olasılıkları normal dağılıma yaklaştırılabilir. Bu dağılımın ortalaması ve varyansı, binom dağılımından
+
+$\mu=E(X)=np$
+
+$\sigma^{2}=Var(X)=npq$
+
+olarak hesaplanır. Bu durumda $X\sim N(np,npq)$ olur. Bu nedenle $p$ çok küçük değilse ve $n$ de büyükse binom dağılımına sahip $X$ değişkeninin belli bir değerden küçük ya da büyük olması veya herhangi iki değer arasında yer alma  olasılıkları standart normal dağılım tablosu kullanılarak hesaplanabilir. Fakat Binom dağılımı kesikli ve normal dağılım sürekli olduğundan standart normale dönüştürme yapılırken düzeltme işlemi yapılması gerekir. Bu düzeltme işlemi $\pm0.5$ değeri kullanılarak yapılır.   
+
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/pm.png" style="float: center;" width="420" height="230" title="Süreklilik Düzeltmesi" />
+
+<br>
+
+**Örnek:** Bir firmanın ürünleri için yapılan müşteri memnuniyeti araştırması sonuçlarına göre müşterilerin 0.60'ı memnun olduklarını beyan etmişlerdir. Bu firmanın müşterilerinden rasgele 100 müşteri seçildiğinde en az 50 sinin memnuniyet beyan etme olasılıkları kaçtır?
+
+
+```{r}
+p=0.60 
+q=1-p
+n=100
+
+mu=n*p
+var=n*p*q
+mu; var
+```
+<br>
+ 
+```{r}
+# P(X>=50)
+pnorm(50-0.5,mu,sqrt(var), lower.tail = FALSE)   #-0.5 süreklilik düzeltmesi
+```
+
+## Pareto Analizi 
+
+Pareto analizi, kalite iyileştirme çalışmalarında en çok kullanılan tekniklerden biri olup, verileri önem veya öncelik sırasına göre düzenlemeye dayanan bir tekniktir. 
+
+Vilfredo Pareto tarafından ortaya koyulan yöntem, 80/20 kuralı olarak da bilinmektedir. Prensip bulunduğunda, İtalya'daki toprağın %80'ine popülasyonun %20'si sahiptir. Daha sonra, pareto prensibinin hayatın diğer alanlarında da geçerli olduğu keşfedilmiştir. Bu bakımdan pareto analizi için aşağıdaki örnekler verilebilir.
+
+- Proses hatalarının %80'i, proses problemlerinin %20'sinden dolayı oluşur. 
+- Şirket gelirinin %80'i, satış elemanlarının %20'si tarafından üretilir.
+- Çizelgelemedeki gecikmelerin %80'i, gecikme nedenlerinin %20'sinden kaynaklanır.
+- Müşteri şikayetlerinin %80'i, ürün ya da servislerin %20'sinden dolayı oluşur.
+
+Bu örneklerde yer alan tahminler, kaba tahminlerdir. Pareto diyagramları, kalite yönetimi ile ilgili çalışmalarda, en önemli problemleri belirlemede kullanılmaktadır. Bu diyagramlar; en büyük etkiye sahip nedenler üzerine takımın odaklanmasına yardım etmekte ve basit bir görsel formatta problemlerin bağıl önemini göstermektedir. 
+
+Pareto analizine ait aşamalar aşağıdaki gibidir;
+
+- Tüm hata unsurlarının listelenmesi
+- Hata unsurlarının miktarlarının (sıklık ve/veya maliyet) belirlenmesi
+- Hata unsurlarının **çoktan aza** doğru sıralanması ve verinin özetlenmesi
+- Kümülatif dağılımların hesaplanması
+- Pareto grafiğinin çizimi
+- Pareto eğrisinin çizimi
+- Pareto eğrisinin yorumu
+
+Pareto analizinde, verilerin hem **en sık rastlanan** hatalara göre , hem de **en fazla maliyet getiren** hatalara göre yapılması gereklidir. Çok sık rastlanan bir hatanın bize getireceği maddi yük (maliyet) düşük olabileceği gibi, az rastlanan bir hatanın oluşturacağı maliyet yüksek olabilir.
+
+<br>
+
+**Örnek1**
+```{r message=FALSE, warning=FALSE}
+
+#install.packages("qcc")
+
+library(qcc)
+kusur <- c(27, 789, 9, 65, 12, 109, 30, 15, 45, 621)
+
+names(kusur) <- c("Gürültülü", "Pahalı", "Taze değil",  
+                   "Lezzetsiz", "Pers. yetersiz", 
+                   "Uzun bekleme", "Temiz değil", "Tuzlu",  
+                   "Sunum kötü", "Porsiyon küçük" )
+
+pareto.chart(kusur, ylab="Sıklık",  # y-eksen ismi
+             
+# grafik rengi              
+col=heat.colors(length(kusur)),  
+  
+# yüzde aralıkları
+cumperc = seq(0, 100, by = 20),   
+  
+# label y right 
+ylab2 = "Kümülatif Yüzde",  
+  
+# grafik ismi 
+main = "Farklı Müşteri Şikayetleri" 
+
+)
+
+```
+
+<br>
+
+**Örnek2**
+```{r}
+defect <- c(80, 27, 66, 94, 33)
+names(defect) <- c("price code", "schedule date", "supplier code", "contact num.", "part num.")
+pareto.chart(defect, ylab = "Error frequency")
+```
+
+**Pareto Öncelik İndeksi (Pareto Priority Index):** Hangi hatanın düzeltilmesine öncelik verilmesi gerektiğini öngörmemizi sağlayan indekstir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ppi.png" style="float: center;" width="300" height="60" title="PPI" />
+
+Her bir hata düzeltme faaliyetini bir proje olarak planlamak gerekmektedir. Denklemdeki savings (tasarruf), bu hatayı ortadan kaldırdığımızda elde edilecek parasal tutarı, probability of success (başarı olasılığı), bu projenin başarılı olabilme şansını (0-1 aralığında), cost (proje maliyeti), bu projenin bize getireceği toplam maliyeti ve time of completion (projenin tamamlanma süresi), ay veya yıl olarak projenin ne kadar süre ile planlandığını ifade etmektedir. PPI'da en yüksek değerde olan hata unsurunun düzeltilmesi için bir çalışma başlatılması gerekmektedir.
+
+## Sebep-Sonuç (Cause and Effect) Analizi 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/fishbone.png" style="float: right;" width="320" height="100" title="Check Sheet" />
+
+Sebep-sonuç diyagramları Kaoru İshikawa tarafından 1943'te geliştirilmiştir. Belirli bir sorunun temel nedenini bulmak için olası nedenleri görselleştirmeye yardımcı olur. Kalite sorunlarını belirlemek, analiz etmek ve iyileştirmek amacıyla kullanılır.  
+
+Balık kılçığı (fishbone) diyagramı olarak da adlandırılan sebep-sonuç diyagramının oluşturulma adımları aşağıdaki gibi özetlenebilir;
+
+- Kalite problemini belirle
+- Önemli nedenleri belirle
+- Tüm minör nedenleri belirle (beyin fırtınası)
+- Diyagram tamamlandığında en olası nedenleri belirlemek için diyagramı değerlendir.
+- Çözümler geliştir.
+
+Sebep-sonuç analizinin yararları şunlardır;
+
+- Yöntem, sorunların üzerine giden aktif bir yönetimi geliştirir.
+- Diyagramın  hazırlanması iletişimi güçlendirir ve herkesin dikkatinin bir noktaya toplanmasını sağlar. 
+- Eğitici bir çalışmadır, herkesin bilgisini geliştirir.
+- Verilerin toplanmasını ve probleme bilimsel biçimde yaklaşmayı sağlar.
+- Tüm sorunlara uygulanabilir.
+
+İskeletin "başı" genellikle sağda gösterilen problemi veya etkiyi tasvir eder. Farklı nedenleri göstermek için solda "kemikler" uzanır. Kaburgalar, nedenlere ve alt nedenlere ayrılan analiz için nedenlerin kategorilerini veya sınıflandırmasını belirtir. Dallanma, her sınıflandırma altında gerekli olan seviyelere bağlıdır.
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/Fish1.png" style="float: center;" width="600" height="300" title="Fishbone" />
+
+<br>
+
+Fishbone diyagramı DMAIC sürecinin analiz aşamasında da kullanılmaktadır.
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/Fish2.png" style="float: center;" width="600" height="300" title="Fishbone" />
+
+<br>
+
+Fishbone diyagramının kullanımı ile;
+
+- Yeni ürün dizaynında ortaya çıkabilecek problemlerin potansiyel nedenleri
+- Kalite kusurlarından kaçınma yolları
+- Kusura neden olabilecek potansiyel faktörler
+
+tanımlanabilmektedir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/Fish3.png" style="float: center;" width="600" height="300" title="Fishbone" />
+
+**Örnek1:**
+```{r}
+library(SixSigma)
+effect <- "Flight Time"
+causes.gr <- c("Operator", "Environment", "Tools", "Design", 
+  "Raw.Material", "Measure.Tool")
+causes <- vector(mode = "list", length = length(causes.gr))
+causes[1] <- list(c("operator #1", "operator #2", "operator #3"))
+causes[2] <- list(c("height", "cleaning"))
+causes[3] <- list(c("scissors", "tape"))
+causes[4] <- list(c("rotor.length", "rotor.width2", "paperclip"))
+causes[5] <- list(c("thickness", "marks"))
+causes[6] <- list(c("calibrate", "model"))
+ss.ceDiag(effect, causes.gr, causes, sub = "Paper Helicopter Project")
+```
+<br>
+
+**Örnek2:**
+```{r}
+b.effect <- "Delay"
+b.groups <- c("Personnel", "Weather", "Suppliers", "Planning")
+b.causes <- vector(mode = "list", length = length(b.groups))
+b.causes[1] <- list(c("Training", "Inadequate"))
+b.causes[2] <- list(c("Rain", "Temperature", "Wind")) 
+b.causes[3] <- list(c("Materials", "Delays", "Rework"))
+b.causes[4] <- list(c("Customer", "Permissions", "Errors"))
+ss.ceDiag(b.effect, b.groups, b.causes, sub = "Construction Example")
+```
+
+
+## Kontrol Listeleri
+
+Kontrol listelerinin oluşturulmasının ana amacı; proses kontrolü ve problem çözümü için işletme personeli tarafından dikkatli şekilde ve doğru olarak veri toplanmasının sağlanmasıdır. Kontrol listelerinin yapısı, her bir durum için özelleştirilir ve proje takımı tarafından tasarlanır. Yaratıcılık, bir kontrol listesinin tasarlanmasında büyük rol oynamaktadır.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/check.png" style="float: center;" width="420" height="300" title="Check Sheet" />
+
+Bu kontrol listesi örneğinde, her bir kalite kusuru nedeni ve bu nedenlerin gözlenme sayıları yer almaktadır. Operatör, her üründe gözlemlediği kalite kusurunu, bu listede işaretler ve muayene işlemi tamamlandığında her bir kusur tipi için toplam sayı belirlenir. Kontrol listesinin üst kısmında ise veri toplanan ürüne ve sürece ait bilgiler ile muayeneyi gerçekleştiren operatöre ait bilgiler yer almaktadır. 
+
+Kontrol listeleri, istatistiksel kalite kontrol çalışmaları için temel veriyi sağlamaktadır. Kontrol listelerinin faydaları aşağıdaki şekilde özetlenebilir;
+
+- Veriyi anlamada kolaylık sağlar.
+- Gözlem ile oluşturulur, gerçeklerin daha net bir resmini sunmaktadır.
+- Verideki desenler hızlı ve net bir şekilde gözlenebilir.
+
+
+
+<!--chapter:end:05-İstatistiksel-Kavramlar.Rmd-->
+
+# Kısaltmalar
+
+```{r , echo=FALSE, results='asis'}
+  cat('
+
+  | Kısaltma    | İngilizce  | Türkçe      |
+  |:------------|:-----------|:------------|
+  | ASQ| American Society for Quality | Amerikan Kalite Derneği |
+  | CUSUM| Cumulative Sum | Kümülatif Toplam |
+  | EFQM| European Foundation for Quality Management | Avrupa Kalite Yönetimi Vakfı |
+  | EWMA| Exponentially Weighted Moving Average | Üstel Ağırlıklı Hareketli Ortalama |
+  | ISO| International Organization for Standardization | Uluslararası Standartlar Teşkilatı |
+  | MBNQA| Malcolm Baldrige National Quality Award | Malcolm Baldrige Ulusal Kalite Ödülü |
+  | PPI| Pareto Priority Index | Pareto Öncelik İndeksi|
+  | SPC| Statistical Process Control| İstatistiksel Proses Kontrol|
+  | SQC| Statistical Quality Control | İstatistiksel Kalite Kontrol|
+  | TQM| Total Quality Management | Toplam Kalite Yönetimi|
+')
+
+```
+
+
+
+<!--chapter:end:06-Kısaltmalar.Rmd-->
+
+# Referanslar {-}
+
+<!--chapter:end:07-Referanslar.Rmd-->
+
+
+<!--chapter:end:SPC.Notes.Rmd-->
+
+
+<!--chapter:end:SPC.Notes.Rmd-->
+
+
+<!--chapter:end:SPC.Notes.Rmd-->
 
