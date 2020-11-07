@@ -2,7 +2,7 @@
 title: "İstatistiksel Kalite Kontrol"
 author: "Dr. Busenur Kızılaslan"
 date: "`r Sys.Date()`"
-site: bookdown::bookdown_site
+output: pdf_document
 documentclass: book
 bibliography:
 - book.bib
@@ -10,6 +10,7 @@ bibliography:
 biblio-style: apalike
 link-citations: yes
 description: Statistical quality control lecture notes
+site: bookdown::bookdown_site
 ---
 
 # Ön Bilgi
