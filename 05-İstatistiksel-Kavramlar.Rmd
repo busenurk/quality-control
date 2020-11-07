@@ -815,3 +815,169 @@ mu; var
 pnorm(50-0.5,mu,sqrt(var), lower.tail = FALSE)   #-0.5 süreklilik düzeltmesi
 ```
 
+## Pareto Analizi 
+
+Pareto analizi, kalite iyileştirme çalışmalarında en çok kullanılan tekniklerden biri olup, verileri önem veya öncelik sırasına göre düzenlemeye dayanan bir tekniktir. 
+
+Vilfredo Pareto tarafından ortaya koyulan yöntem, 80/20 kuralı olarak da bilinmektedir. Prensip bulunduğunda, İtalya'daki toprağın %80'ine popülasyonun %20'si sahiptir. Daha sonra, pareto prensibinin hayatın diğer alanlarında da geçerli olduğu keşfedilmiştir. Bu bakımdan pareto analizi için aşağıdaki örnekler verilebilir.
+
+- Proses hatalarının %80'i, proses problemlerinin %20'sinden dolayı oluşur. 
+- Şirket gelirinin %80'i, satış elemanlarının %20'si tarafından üretilir.
+- Çizelgelemedeki gecikmelerin %80'i, gecikme nedenlerinin %20'sinden kaynaklanır.
+- Müşteri şikayetlerinin %80'i, ürün ya da servislerin %20'sinden dolayı oluşur.
+
+Bu örneklerde yer alan tahminler, kaba tahminlerdir. Pareto diyagramları, kalite yönetimi ile ilgili çalışmalarda, en önemli problemleri belirlemede kullanılmaktadır. Bu diyagramlar; en büyük etkiye sahip nedenler üzerine takımın odaklanmasına yardım etmekte ve basit bir görsel formatta problemlerin bağıl önemini göstermektedir. 
+
+Pareto analizine ait aşamalar aşağıdaki gibidir;
+
+- Tüm hata unsurlarının listelenmesi
+- Hata unsurlarının miktarlarının (sıklık ve/veya maliyet) belirlenmesi
+- Hata unsurlarının **çoktan aza** doğru sıralanması ve verinin özetlenmesi
+- Kümülatif dağılımların hesaplanması
+- Pareto grafiğinin çizimi
+- Pareto eğrisinin çizimi
+- Pareto eğrisinin yorumu
+
+Pareto analizinde, verilerin hem **en sık rastlanan** hatalara göre , hem de **en fazla maliyet getiren** hatalara göre yapılması gereklidir. Çok sık rastlanan bir hatanın bize getireceği maddi yük (maliyet) düşük olabileceği gibi, az rastlanan bir hatanın oluşturacağı maliyet yüksek olabilir.
+
+<br>
+
+**Örnek1**
+```{r message=FALSE, warning=FALSE}
+
+#install.packages("qcc")
+
+library(qcc)
+kusur <- c(27, 789, 9, 65, 12, 109, 30, 15, 45, 621)
+
+names(kusur) <- c("Gürültülü", "Pahalı", "Taze değil",  
+                   "Lezzetsiz", "Pers. yetersiz", 
+                   "Uzun bekleme", "Temiz değil", "Tuzlu",  
+                   "Sunum kötü", "Porsiyon küçük" )
+
+pareto.chart(kusur, ylab="Sıklık",  # y-eksen ismi
+             
+# grafik rengi              
+col=heat.colors(length(kusur)),  
+  
+# yüzde aralıkları
+cumperc = seq(0, 100, by = 20),   
+  
+# label y right 
+ylab2 = "Kümülatif Yüzde",  
+  
+# grafik ismi 
+main = "Farklı Müşteri Şikayetleri" 
+
+)
+
+```
+
+<br>
+
+**Örnek2**
+```{r}
+defect <- c(80, 27, 66, 94, 33)
+names(defect) <- c("price code", "schedule date", "supplier code", "contact num.", "part num.")
+pareto.chart(defect, ylab = "Error frequency")
+```
+
+**Pareto Öncelik İndeksi (Pareto Priority Index):** Hangi hatanın düzeltilmesine öncelik verilmesi gerektiğini öngörmemizi sağlayan indekstir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ppi.png" style="float: center;" width="300" height="60" title="PPI" />
+
+Her bir hata düzeltme faaliyetini bir proje olarak planlamak gerekmektedir. Denklemdeki savings (tasarruf), bu hatayı ortadan kaldırdığımızda elde edilecek parasal tutarı, probability of success (başarı olasılığı), bu projenin başarılı olabilme şansını (0-1 aralığında), cost (proje maliyeti), bu projenin bize getireceği toplam maliyeti ve time of completion (projenin tamamlanma süresi), ay veya yıl olarak projenin ne kadar süre ile planlandığını ifade etmektedir. PPI'da en yüksek değerde olan hata unsurunun düzeltilmesi için bir çalışma başlatılması gerekmektedir.
+
+## Sebep-Sonuç (Cause and Effect) Analizi 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/fishbone.png" style="float: right;" width="320" height="100" title="Check Sheet" />
+
+Sebep-sonuç diyagramları Kaoru İshikawa tarafından 1943'te geliştirilmiştir. Belirli bir sorunun temel nedenini bulmak için olası nedenleri görselleştirmeye yardımcı olur. Kalite sorunlarını belirlemek, analiz etmek ve iyileştirmek amacıyla kullanılır.  
+
+Balık kılçığı (fishbone) diyagramı olarak da adlandırılan sebep-sonuç diyagramının oluşturulma adımları aşağıdaki gibi özetlenebilir;
+
+- Kalite problemini belirle
+- Önemli nedenleri belirle
+- Tüm minör nedenleri belirle (beyin fırtınası)
+- Diyagram tamamlandığında en olası nedenleri belirlemek için diyagramı değerlendir.
+- Çözümler geliştir.
+
+Sebep-sonuç analizinin yararları şunlardır;
+
+- Yöntem, sorunların üzerine giden aktif bir yönetimi geliştirir.
+- Diyagramın  hazırlanması iletişimi güçlendirir ve herkesin dikkatinin bir noktaya toplanmasını sağlar. 
+- Eğitici bir çalışmadır, herkesin bilgisini geliştirir.
+- Verilerin toplanmasını ve probleme bilimsel biçimde yaklaşmayı sağlar.
+- Tüm sorunlara uygulanabilir.
+
+İskeletin "başı" genellikle sağda gösterilen problemi veya etkiyi tasvir eder. Farklı nedenleri göstermek için solda "kemikler" uzanır. Kaburgalar, nedenlere ve alt nedenlere ayrılan analiz için nedenlerin kategorilerini veya sınıflandırmasını belirtir. Dallanma, her sınıflandırma altında gerekli olan seviyelere bağlıdır.
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/Fish1.png" style="float: center;" width="600" height="300" title="Fishbone" />
+
+<br>
+
+Fishbone diyagramı DMAIC sürecinin analiz aşamasında da kullanılmaktadır.
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/Fish2.png" style="float: center;" width="600" height="300" title="Fishbone" />
+
+<br>
+
+Fishbone diyagramının kullanımı ile;
+
+- Yeni ürün dizaynında ortaya çıkabilecek problemlerin potansiyel nedenleri
+- Kalite kusurlarından kaçınma yolları
+- Kusura neden olabilecek potansiyel faktörler
+
+tanımlanabilmektedir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/Fish3.png" style="float: center;" width="600" height="300" title="Fishbone" />
+
+**Örnek1:**
+```{r}
+library(SixSigma)
+effect <- "Flight Time"
+causes.gr <- c("Operator", "Environment", "Tools", "Design", 
+  "Raw.Material", "Measure.Tool")
+causes <- vector(mode = "list", length = length(causes.gr))
+causes[1] <- list(c("operator #1", "operator #2", "operator #3"))
+causes[2] <- list(c("height", "cleaning"))
+causes[3] <- list(c("scissors", "tape"))
+causes[4] <- list(c("rotor.length", "rotor.width2", "paperclip"))
+causes[5] <- list(c("thickness", "marks"))
+causes[6] <- list(c("calibrate", "model"))
+ss.ceDiag(effect, causes.gr, causes, sub = "Paper Helicopter Project")
+```
+<br>
+
+**Örnek2:**
+```{r}
+b.effect <- "Delay"
+b.groups <- c("Personnel", "Weather", "Suppliers", "Planning")
+b.causes <- vector(mode = "list", length = length(b.groups))
+b.causes[1] <- list(c("Training", "Inadequate"))
+b.causes[2] <- list(c("Rain", "Temperature", "Wind")) 
+b.causes[3] <- list(c("Materials", "Delays", "Rework"))
+b.causes[4] <- list(c("Customer", "Permissions", "Errors"))
+ss.ceDiag(b.effect, b.groups, b.causes, sub = "Construction Example")
+```
+
+
+## Kontrol Listeleri
+
+Kontrol listelerinin oluşturulmasının ana amacı; proses kontrolü ve problem çözümü için işletme personeli tarafından dikkatli şekilde ve doğru olarak veri toplanmasının sağlanmasıdır. Kontrol listelerinin yapısı, her bir durum için özelleştirilir ve proje takımı tarafından tasarlanır. Yaratıcılık, bir kontrol listesinin tasarlanmasında büyük rol oynamaktadır.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/check.png" style="float: center;" width="420" height="300" title="Check Sheet" />
+
+Bu kontrol listesi örneğinde, her bir kalite kusuru nedeni ve bu nedenlerin gözlenme sayıları yer almaktadır. Operatör, her üründe gözlemlediği kalite kusurunu, bu listede işaretler ve muayene işlemi tamamlandığında her bir kusur tipi için toplam sayı belirlenir. Kontrol listesinin üst kısmında ise veri toplanan ürüne ve sürece ait bilgiler ile muayeneyi gerçekleştiren operatöre ait bilgiler yer almaktadır. 
+
+Kontrol listeleri, istatistiksel kalite kontrol çalışmaları için temel veriyi sağlamaktadır. Kontrol listelerinin faydaları aşağıdaki şekilde özetlenebilir;
+
+- Veriyi anlamada kolaylık sağlar.
+- Gözlem ile oluşturulur, gerçeklerin daha net bir resmini sunmaktadır.
+- Verideki desenler hızlı ve net bir şekilde gözlenebilir.
+
+

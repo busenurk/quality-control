@@ -11,6 +11,7 @@
   | EWMA| Exponentially Weighted Moving Average | Üstel Ağırlıklı Hareketli Ortalama |
   | ISO| International Organization for Standardization | Uluslararası Standartlar Teşkilatı |
   | MBNQA| Malcolm Baldrige National Quality Award | Malcolm Baldrige Ulusal Kalite Ödülü |
+  | PPI| Pareto Priority Index | Pareto Öncelik İndeksi|
   | SPC| Statistical Process Control| İstatistiksel Proses Kontrol|
   | SQC| Statistical Quality Control | İstatistiksel Kalite Kontrol|
   | TQM| Total Quality Management | Toplam Kalite Yönetimi|

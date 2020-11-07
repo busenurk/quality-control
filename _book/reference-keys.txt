@@ -196,3 +196,13 @@ normal---binom-3
 tablolar-3
 binom---poisson
 binom---poisson-1
+pareto-analizi
+pareto-analizi-1
+binom---poisson-2
+pareto-analizi-2
+binom---poisson-3
+pareto-analizi-3
+sebep-sonuç-cause-and-effect-analizi
+kontrol-listeleri
+sebep-sonuç-cause-and-effect-analizi-1
+kontrol-listeleri-1
