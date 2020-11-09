@@ -1,3 +1,9 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
+---
 # İstatistiksel Kavramlar
 
 İstatistik verinin toplanmasını, düzenlenmesini, analiz edilmesini ve yorumlanmasını sağlayan bir disiplindir. İstatistik betimsel (tanımlayıcı (descriptive)) ve çıkarımsal (tümevarımsal (inferential)) amaçlı istatistik olmak üzere ikiye ayrılır. 
@@ -58,7 +64,7 @@ Verilerin sunulması için kullanılan başarılı görsellerden biri de dal-yap
 
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/claim.png" style="float: center;" width="500" height="250" title="Claim-Days" /> 
 
-```{r include=FALSE}
+```{r include=FALSE,cache=TRUE}
 claim<-1:40
 days<-c(48,41,35,36,37,26,36,46,35,47,35,34,36,42,43,36,56,32,46,30,37,43,17,26,28,27,45,33,22,27,16,22,33,30,24,23,22,30,31,17)
 data<-cbind(claim,days)
@@ -72,7 +78,7 @@ stem(days)  #dal-yaprak grafiği
 Dal-yaprak grafiği verinin yayılım ve merkezi eğilimi hakkında fikir sahibi olmamızı sağlamaktadır. Bu bakımdan oldukça faydalı olmakla birlikte gözlemlerin zaman sırasını hesaba katmaz. Zaman, genellikle kalite iyileştirme problemlerindeki değişkenliğin yorumlanmasına katkıda bulunan önemli bir faktördür. Zamanı dikkate alan grafikler üretmek ve yorumlamak da mümkündür.
 
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE,cache=TRUE}
 library(plotly)
 library(htmltools)
 
@@ -182,7 +188,7 @@ Histogram verinin yayılımını göstermektedir ve SPC'ün temeli verideki değ
 
 Mukavemet örneği histogramı;
 
-```{r warning=FALSE}
+```{r warning=FALSE,cache=TRUE}
 fig<-plot_ly(x = ~muk,type = "histogram") 
 htmltools::tagList(fig)
 ```
@@ -250,7 +256,7 @@ sort(c(mean=mean,median=median,mode=mode))
 
 ```
 
-```{r}
+```{r,cache=TRUE}
 fig<-plot_ly(x = t, type="histogram")
 htmltools::tagList(fig)
 ```
@@ -307,11 +313,11 @@ Alt limit$=Q_{1}-1.5(Q_{3}-Q_{1})$
 
 Veride alt limitin altında veya üst limitin üzerinde bir gözlem yer alıyorsa bu gözlem **aykırı değer** olarak nitelendirilir.
 
-```{r}
+```{r,cache=TRUE}
 boxp1 <- plot_ly(y = muk, type = "box",name="Mukavemet"); boxp1
 ```
 
-```{r}
+```{r,cache=TRUE}
 boxp2 <- plot_ly(y = t, type = "box",name="Norm^2"); boxp2
 ```
 
@@ -319,7 +325,7 @@ boxp2 <- plot_ly(y = t, type = "box",name="Norm^2"); boxp2
 
 Çarpıklığı yatay eksende gözlemek daha iyi kavramamızı sağlayacaktır. Verinin sağa çarpık olduğu ve fazla miktarda aykırı değer içerdiği kutu grafikten gözlenebilmektedir.
 
-```{r}
+```{r,cache=TRUE}
 boxp2.horizontal <- plot_ly(x = t, type = "box",name="Norm^2 Horizontal"); boxp2.horizontal
 ```
 
@@ -741,7 +747,7 @@ Varsayılan dağılım verileri yeterince açıklarsa, çizilen noktalar yaklaş
 
 Bu nedenle goodness-of-fit testlerini kullanmak daha güvenilir ve subjektif sonuçlar elde edilmesini sağlar.
 
-```{r message=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE,cache=TRUE}
 j<-1:10
 x<-c(86,87,87.2,87.4,87.8,88.2,88.9,89.6,89.7,90)
 y<-100*(j-0.5)/10
@@ -978,4 +984,40 @@ Kontrol listeleri, istatistiksel kalite kontrol çalışmaları için temel veri
 - Gözlem ile oluşturulur, gerçeklerin daha net bir resmini sunmaktadır.
 - Verideki desenler hızlı ve net bir şekilde gözlenebilir.
 
+## Serpilme (Scatter) Diyagramı
 
+Serpilme diyagramı, iki değişken arasındaki ilişkinin incelenmesi için kullanılan bir grafik türüdür.
+
+Serpilme diyagramları;
+
+- İki değişkenin ilişkili olduğunu belirten bir hipotezi doğrulamak
+- İlişkinin gücünü test etmek için görsel ve istatistiksel bilgi sağlamak
+
+amacıyla kullanılabilir. Serpilme diyagramında iki değişken ilişkili gözlenebilir ancak bu durum değişkenlerin arasında nedensellik olduğu anlamına gelmemektedir.
+
+```{r message=FALSE, warning=FALSE}
+library(MSQC)
+library(plotly)
+data("mech1")
+mech1<-as.data.frame(mech1)
+head(mech1)
+attach(mech1)
+s1<-plot_ly(data = mech1, x = ~var1, y = ~var2);s1
+```
+
+```{r message=FALSE, warning=FALSE}
+s2<-plot_ly(data = mech1, x = ~var1, y = ~var1);s2
+```
+
+
+## Kusur Konsantrasyon Diyagramı
+
+Kusur verileri, yeterli sayıda birim üzerinde bir kusur konsantrasyon diyagramında gösterildiğinde, modeller ortaya çıkar ve bu modellerin konumu genellikle kusurların nedenleri hakkında çok fazla bilgi içerir. Kusur konsantrasyon diyagramı DMAIC sürecinin analiz kısmında oldukça kullanışlıdır. 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/dcd.png" style="float: center;" width="800" height="400" title="Defect Conc. Diag." />
+
+Bir buzdolabı üretim sürecinin son montaj aşaması için bir kusur konsantrasyon diyagramı görselde yer almaktadır. Yüzey bitirme kusurları, buzdolabındaki koyu gölgeli alanlarla belirlenmiştir. Diyagram incelendiğinde, bu kusurların çoğundan malzeme işlemenin sorumlu olduğu açıkça görülmektedir. Ünite, ortasına bir kayış sabitlenerek hareket ediyor ve bu kayış ya çok gevşek ya da sıkı, yıpranmış, aşındırıcı malzemeden yapılmış ya da çok dar olabilir. Ayrıca ünite hareket ettirildiğinde köşeler zarar görür. İşçi yorgunluğunun olası bir faktör olarak değerlendirilebilir. Her halükarda, uygun çalışma yöntemleri ve iyileştirilmiş malzeme kullanımı bu süreci büyük ölçüde iyileştirecektir.
+
+Benzer şekilde tank problemi için kusur konsantrasyon diyagramı görülmektedir. Hata kategorilerinin farklı harflerle temsil edildiği açıktır.
+
+Kaplama, boyama ve kaplama, döküm ve dökümhane işlemleri, işleme ve elektronik montaj dahil olmak üzere birçok sektörde kusur konsantrasyon diyagramlarının önemli problem çözme araçları olduğu bilinmektedir.

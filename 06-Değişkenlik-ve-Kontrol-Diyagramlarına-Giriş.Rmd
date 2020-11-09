@@ -1,0 +1,200 @@
+# Değişkenlik ve Kontrol Diyagramlarına Giriş
+
+## Değişkenlik Kavramı ve Kaynakları
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/covid.jpg" style="float: right;" width="300" height="400" title="Variability" />
+
+Her prosesin doğasında var olan değişkenlik, ürünlerden birinin diğerinden farklı olmasına sebep olmaktadır. Esasen değişkenlik kavramı doğanın bir kanunudur ve herhangi bir kategorideki iki doğal maddenin birbirinin tam olarak aynısı olmamasını ifade etmektedir. 
+
+Değişkenlik kilo gibi oldukça büyük ve fark edilebilir olabileceği gibi kar tanelerinin şekilleri gibi çok küçük olabilir. Değişkenlik çok küçük olduğunda öğeler özdeş görünebilir ancak hassas ölçüm aletleri ile farklılık tespit edilebilir. Eğer iki öğe aynı ölçüme sahip olarak görünüyorsa , bu durum ölçüm aletlerinin sınırlarından kaynaklanmaktadır. 
+
+Herhangi bir üretim sürecinde, ne kadar iyi tasarlanmış veya özenle korunmuş olursa olsun, belirli bir miktarda doğal değişkenlik her zaman var olacaktır. Bu doğal değişkenlik veya "arka plan gürültüsü", birçok küçük ve kaçınılmaz nedenin kümülatif etkisidir. Bu değişkenlikler, süreci revize etmekten başka, hakkında çok az şey yapılabilen şans veya rastgele değişkenlikler kategorisine aittir. Bu tür bir değişkenlik, birçoğu önemsiz olan "rastgele" veya "genel" nedenlerin karmaşık bir etkileşiminin çok sayıda etkisinin toplamıdır. 
+
+Rastgele değişkenlik tek başına mevcut olduğunda, nedenlerinin izini sürmek mümkün olmayacaktır. Örneğin, ürünlerin kalitesinde değişkenliğe neden olan yaygın nedenler kümesi, proses girdilerinde rastgele farklılıklar içerebilir: atmosferik basınç veya sıcaklık değişiklikleri, trafik veya ekipman titreşimleri, elektrik veya nem dalgalanmaları ve operatörün fiziksel ve duygusal koşulları. Bu, bir madeni paranın atıldığında tura veya tura gelmesine neden olan kuvvetler kümesine benzer. Diğer bir deyişle, _tesadüfi nedenler sürecin içsel bir parçasıdır._ Bir süreçte değişkenliklerin yalnızca genel nedenleri mevcut olduğunda, sürecin "istikrarlı", "istatistiksel kontrolde" veya "kontrolde (**in control**)" olduğu kabul edilir.
+
+
+Büyüklüğü görece büyük olan ve kolayca tanımlanan değişkenlik nedenleri, "atanabilir (assignable)" veya "özel" nedenler olarak sınıflandırılır.Temel kalite özelliklerindeki bu değişkenlik genellikle üç kaynaktan ortaya çıkar: 
+
+- yanlış ayarlanmış veya kontrol edilen makineler,
+- operatör hataları 
+- kusurlu hammadde 
+
+Bu tür bir değişkenlik, arka plan gürültüsüyle karşılaştırıldığında genellikle büyüktür ve genellikle kabul edilemez bir işlem performansı düzeyini temsil eder. Özel değişkenlik nedenleri mevcut olduğunda, değişkenlik aşırı olacaktır ve süreç "istikrarsız", "istatistiksel kontrol dışı" veya beklenen rastgele değişkenliğin ötesinde olarak sınıflandırılır. Kısaca "kontrol dışı (**out of control**)" olarak yazılır.
+
+Özel nedenler arasında, doğal olarak kararlı olduğunda prosesin kurcalanması veya gereksiz şekilde ayarlanması gibi yapısal değişiklikler yer alır.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/vva.png" style="float: center;" width="700" height="450" title="Variability" />
+
+- Genel neden değişkenliği; sürecin doğası
+
+- Özel neden değişkenliği; gerçek değişiklikler 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/causes.png" style="float: center;" width="500" height="450" title="Causes" />
+
+Değişkenlik; ekipman, malzeme, ortam, ve operatör kaynaklı olarak her proseste mevcuttur. Bir üretim prosesinde mevcut olabilecek değişkenlik kaynakları aşağıdaki görselde sunulmuştur.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/varkay.png" style="float: center;" width="600" height="270" title="Değişkenlik Kaynakları" />
+
+Değişkenlik genel ve özel nedenlerden kaynaklanabilir. İstatistiksel kalite kontrolde , yalnız genel nedenlerden kaynaklı bir değişkenlik söz konusu ise prosesin istatistiksel olarak kontrol altında olduğu söylenebilir. Bu durumda proses stabildir ve tahmin edilebilir niteliktedir.
+
+Bir ürün müşteri beklentilerini karşılayacak veya aşacaksa, genellikle istikrarlı veya tekrarlanabilir bir işlemle üretilmelidir. Proses, ürünün kalite özelliklerinin hedef veya nominal boyutları etrafında çok az değişkenlikle üretilebilmelidir. SPC, değişkenliğin azaltılması yoluyla süreç kararlılığının sağlanmasında ve kapasitenin iyileştirilmesinde yararlı olan güçlü bir problem çözme araçları bütünüdür.
+
+### Doğruluk ve Hassasiyet
+
+Ölçülebilen özellikler yoluyla proses değişkenliğinin ölçümünde bir prosesin **doğruluğu (accuracy)** ve **hassasiyeti (precision)** arasındaki fark genellikle yanlış anlaşılmaktadır. Aradaki fark aşağıda açıklanmaktadır;
+
+- Bir prosesin **doğruluğu** hedeflenen değeri bulma yeteneğine aittir.
+- Bir prosesin **hassasiyeti**, değerlerin yayılma derecesine aittir.
+- Hassasiyet ve doğruluk arasındaki bu ayrım, sonuçlara veya değerlere tek tek değil, sadece grup olarak bakıldığında anlaşılabilir.
+- Prosesin doğruluğu ve hassasiyeti hakkında bilgi eksikliğinden dolayı tek bir sonucu temel alarak proses ayarı konusunda karar vermek istenmeyen sonuçları ortaya çıkarabilir.
+- Proses hassasiyetinin yokluğunu düzeltmek üzere ayar yapmak, yayılmayı düzeltmek için gereken araştırmayı yapmaktan genellikle daha kolaydır.
+
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/vari.png" style="float: center;" width="600" height="600" title="Variability" />
+
+Şekilde görülen dağılımlara göre;
+
+**Proses 1** -  **hassastır** (değişkenlik azdır) fakat merkezlenme hedef değer olmadığından _doğru_ değildir.
+
+**Proses 2** - **doğrudur** fakat _hassas_ değildir, dağılımda değişkenlik çok fazladır.
+
+**Proses 3** - hem doğru değildir hem de hassas değildir.
+
+**Proses 4** - hem **doğru** hem de **hassas** bir dağılım sergilemektedir.
+
+
+
+## Kontrol Diyagramlarına Giriş
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/tms.jpg" style="float: right;" width="250" height="300" title="The Magnificent Seven" />
+
+
+SPC, yirminci yüzyılın en büyük teknolojik gelişmelerinden biridir, çünkü sağlam temel ilkelere dayanır, kullanımı kolaydır, önemli bir etkiye sahiptir ve herhangi bir sürece uygulanabilir. Bu bakımdan SPC'nin yedi temel aracı (**the magnificent seven**)
+
+1. Histogram veya dal-yaprak grafiği
+2. Kontrol listeleri
+3. Pareto diyagramı
+4. Sebep-sonuç diyagramı
+5. Kusur konsantrasyon diyagramı
+6. Serpilme diyagramı
+7. Kontrol grafiği
+
+olarak tanımlanmıştır. Yedi araçtan Shewhart kontrol grafiği muhtemelen teknik olarak en karmaşık olanıdır. 1920'lerde Bell Telefon Laboratuvarlarında Walter A. Shewhart tarafından geliştirilmiştir.
+
+Bir proseste mevcut olan değişkenliğin genel veya özel nedenlerden kaynaklı olma durumu kontrol diyagramları yardımı ile analiz edilmektedir.
+
+Kontrol diyagramları; arzu edilen niteliklerde ürün veya hizmet üretebilmek için prosesin istatistiksel olarak kontrol ve analiz edilmesinde kullanılmaktadır.
+
+Bu diyagramlar proseste bir sorunun var olup olmadığını ortaya koymakta, sorun hakkında ipuçları vermekte ancak sorunun nedenini göstermemektedir.
+
+Kalite özelliğine, ölçülecek veri tipine ve kullanım amacına göre istatistiksel kalite kontrolde çok sayıda farklı kontrol diyagramı kullanılmaktadır.
+
+İstatistiksel proses kontrolünün temel bir amacı, birçok uygun olmayan birim üretilmeden önce sürecin araştırılması ve düzeltici eylemin gerçekleştirilebilmesi için süreç kaymalarının özel nedenlerinin oluşumunu hızlı bir şekilde tespit etmektir.
+
+Son olarak, istatistiksel süreç kontrolünün nihai amacının süreçteki değişkenliği ortadan kaldırmak olduğu unutulmamalıdır. Değişkenliği tamamen ortadan kaldırmak mümkün olmayabilir, ancak kontrol diyagramı, değişkenliği olabildiğince azaltmada etkili bir araçtır.
+
+Kalite kontrol diyagramının seçimi ilk olarak toplanan veri tipinin sürekli ya da kesikli olmasına göre farklılık göstermektedir. Diyagram seçimindeki ilerleyen adımları aşağıdaki tablodan inceleyebilirsiniz. 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/contc.png" style="float: center;" width="700" height="400" title="CC" />
+
+Tabloda yer alan kontrol diyagramları dışında sürekli veri tipinde daha hassas analizler için kullanılan **EWMA (Üstel Ağırlıklandırılmış Hareketli Ortalamalar)** ve **CUSUM (Kümülatif Toplam)** gibi farklı kontrol diyagramları da söz konusudur. 
+
+Kalite kontrol diyagramları, diyagram türünden bağımsız olarak 
+
+- üst kontrol limit (Upper Control Limit; UCL), 
+- merkez çizgisi (Center Line; CL) ve 
+- alt kontrol limitinden (Lower Control Limit; LCL) 
+
+oluşmaktadır. Kontrol limitleri merkez çizgisinin $\pm3 \sigma$ uzaklığında olmaktadır. Merkez çizgisi ise kalite diyagramına bağlı olarak incelenecek kalite özelliğinin ortalamasına eşittir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/cc1.png" style="float: center;" width="500" height="400" title="CC" />
+
+$UCL=CL+3\sigma$
+
+$LCL=CL-3\sigma$
+
+Bu kontrol limitleri, eğer proses kontrol altında ise, numune noktalarının neredeyse tamamı bunların arasına düşecek şekilde seçilir. Noktalar kontrol sınırları içinde kaldığı sürece, işlemin kontrol altında olduğu varsayılır ve herhangi bir işlem yapılması gerekmez. 
+
+Bununla birlikte, kontrol sınırlarının dışında kalan bir nokta, sürecin kontrol dışı olduğunun kanıtı olarak yorumlanır ve değişkenliğin özel nedeni olduğunu ifade eder.Bu problem ile ilgili sorumlu atanabilir, nedeni veya nedenleri bulmak ve ortadan kaldırmak için araştırma ve düzeltici eylem gereklidir. 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/cc4.png" style="float: center;" width="500" height="250" title="CC" />
+
+Tüm noktalar kontrol limitleri içinde çizilse bile, sistematik veya rastgele olmayan bir şekilde davranıyorlarsa, bu sürecin kontrol dışı olduğunun bir göstergesi olabilir. Örneğin, son 20 noktanın 18'i merkez çizgisinin üzerinde ancak üst kontrol sınırının altında çizilirse ve bu noktalardan yalnızca ikisi merkez çizgisinin altında ancak alt kontrol sınırının üzerinde çizilirse, bir şeylerin ters gittiği düşünülebilir. 
+
+Süreç kontrol altındaysa, çizilen tüm noktalar esasen rastgele bir modele sahip olmalıdır. Genellikle, belirli bir rastgele olmayan modelin bir kontrol çizelgesinde görünmesinin bir nedeni vardır ve bulunup ortadan kaldırılabilirse, süreç performansı iyileştirilebilir.
+
+
+Kontrol çizelgeleri ile hipotez testi arasında yakın bir bağlantı vardır. Bir anlamda, kontrol çizelgesi, sürecin istatistiksel bir kontrol durumunda olduğu hipotezinin bir testidir. Kontrol sınırları dahilinde bir nokta çizimi, istatistiksel kontrol hipotezini reddedememeye eşdeğerdir ve kontrol limitlerinin dışında kalan bir nokta, istatistiksel kontrol hipotezini reddetmeye eşdeğerdir.
+ 
+
+Bir kontrol şeması örneğini inceleyecek olursak; yarı iletken imalatında, ışığa duyarlı bir fotorezist malzemenin silikon levhaya uygulandığı fotolitografidir, devre modeli tipik olarak yüksek yoğunluklu UV ışığı kullanılarak dirence maruz bırakılır ve istenmeyen direnç malzemesi, gelişen bir süreçle kaldırılır. Direnç modeli tanımlandıktan sonra, alttaki malzeme ıslak kimyasal veya plazma aşındırma ile çıkarılır. Aşındırma direncini artırmak için geliştirmeyi sert pişirme işlemi ile takip etmek önemlidir.
+
+Sert pişirmede önemli bir kalite özelliği, direncin **akış genişliğidir**, pişirme işlemi nedeniyle ne kadar genişlediğinin bir ölçüsüdür. **Her saat, beş plaka örneği alınır**, ortalama akış genişliği hesaplanır ve grafiği çizilir. Çizilen tüm noktaların kontrol limitlerinin içinde olduğuna dikkat edin, bu nedenle grafik, sürecin istatistiksel kontrolde kabul edildiğini gösterir.
+
+Aşağıdaki örnek için akış genişliğinin ortalama 1.5 mikronda kontrol edilebileceğini ve akış genişliğinin standart sapmasının 0.15 mikron olduğu bilindiğini varsayalım. 
+
+```{r}
+CL=1.5
+sigma=0.15
+n=5
+
+sigma.x=sigma/sqrt(n); sigma.x
+
+sigma.x<-round(sigma.x,4); sigma.x
+```
+<br>
+
+Örneklem standart hatasını elde ettikten sonra alt ve üst sınırları elde etmek mümkündür.
+
+```{r}
+UCL=CL+3*sigma.x
+LCL=CL-3*sigma.x
+
+UCL; LCL
+```
+
+Bu yapı $3\sigma$ kontrol limitleri olarak adlandırılır. Benzer şekilde bu yapıda test ettiğimiz hipotez;
+
+$\mu=1.5$
+
+$\mu\neq1.5$
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/cc2.png" style="float: center;" width="500" height="400" title="CC" />
+
+Esasen burada alt ve üst sınırların hesabı güven aralıkları yaklaşımından doğmaktadır.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ci.png" style="float: center;" width="600" height="100" title="CC" />
+
+$1.5-Z_{\alpha/2}(0.0671)$
+
+$1.5+Z_{\alpha/2}(0.0671)$
+
+burada $Z_{\alpha/2}$ değeri 3 seçildiğinde eşitlik LCL ve UCL halini almaktadır.
+
+<br>
+
+Kontrol diyagramlarının avantajlarından bahsetmek gerekirse;
+
+- Kontrol çizelgeleri, verimliliği artırmak için kanıtlanmış bir tekniktir.
+
+- Kontrol çizelgeleri kusurların önlenmesinde etkilidir.
+
+- Kontrol çizelgeleri gereksiz süreç ayarlamasını önler.
+
+- Kontrol çizelgeleri, süreç kapasitesi hakkında bilgi sağlar.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/cc3.png" style="float: center;" width="650" height="400" title="CC" />
+
+### Kontrol Limitlerinin Seçimi
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/errors.png" style="float: right;" width="350" height="300" title="Error Types" />
+
+Kontrol limitlerinin belirlenmesi, bir kontrol diyagramı tasarlanırken verilmesi gereken kritik kararlardan biridir. Bu karara bağlı olarak Tip 1 ve Tip 2 hata olasılıklarında artış veya azalış meydana gelebilir.
+
+Kontrol sınırlarını merkez hattından daha uzağa taşımak, Tip I hata riskini azaltırken aynı zamanda Tip II hata (süreç gerçekten kontrolden çıktığında kontrol limitleri arasına düşme riski) riskini artıracaktır.
+
+Kontrol limitlerini merkez hattına yaklaştırmak, ters etkiye neden olup; Tip I hata riskini artırırken Tip II hata riski azaltacaktır.
+
+## Tekil Ölçümler için I ve MR (Individual-Moving Range) Kontrol Diyagramları
+
+

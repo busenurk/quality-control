@@ -31,8 +31,8 @@
 - Çıkarımsal istatistik
 
 - Kontrol grafikleri
-  - Niceliksel kalite özellikleri için kontrol diyagramları
-  - Niteliksel kalite özellikleri için kontrol diyagramları
+  - Ölçülebilir değişkenler için kontrol diyagramları
+  - Ölçülemeyen özellikler için kontrol diyagramları
   
 - Proses yeterlilik analizi, CUSUM ve EWMA diyagramları
 
