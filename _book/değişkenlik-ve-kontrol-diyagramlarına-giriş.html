@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Busenur Kızılaslan" />
 
 
-<meta name="date" content="2020-11-09" />
+<meta name="date" content="2020-11-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,14 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -299,6 +307,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>olarak tanımlanmıştır. Yedi araçtan Shewhart kontrol grafiği muhtemelen teknik olarak en karmaşık olanıdır. 1920’lerde Bell Telefon Laboratuvarlarında Walter A. Shewhart tarafından geliştirilmiştir.</p>
 <p>Bir proseste mevcut olan değişkenliğin genel veya özel nedenlerden kaynaklı olma durumu kontrol diyagramları yardımı ile analiz edilmektedir.</p>
 <p>Kontrol diyagramları; arzu edilen niteliklerde ürün veya hizmet üretebilmek için prosesin istatistiksel olarak kontrol ve analiz edilmesinde kullanılmaktadır.</p>
+<p>DMAIC sürecinin analiz ve kontrol aşamalarında kullanılan bir araçtır.</p>
 <p>Bu diyagramlar proseste bir sorunun var olup olmadığını ortaya koymakta, sorun hakkında ipuçları vermekte ancak sorunun nedenini göstermemektedir.</p>
 <p>Kalite özelliğine, ölçülecek veri tipine ve kullanım amacına göre istatistiksel kalite kontrolde çok sayıda farklı kontrol diyagramı kullanılmaktadır.</p>
 <p>İstatistiksel proses kontrolünün temel bir amacı, birçok uygun olmayan birim üretilmeden önce sürecin araştırılması ve düzeltici eylemin gerçekleştirilebilmesi için süreç kaymalarının özel nedenlerinin oluşumunu hızlı bir şekilde tespit etmektir.</p>
@@ -353,22 +362,137 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br></p>
 <p>Kontrol diyagramlarının avantajlarından bahsetmek gerekirse;</p>
 <ul>
-<li><p>Kontrol çizelgeleri, verimliliği artırmak için kanıtlanmış bir tekniktir.</p></li>
-<li><p>Kontrol çizelgeleri kusurların önlenmesinde etkilidir.</p></li>
-<li><p>Kontrol çizelgeleri gereksiz süreç ayarlamasını önler.</p></li>
-<li><p>Kontrol çizelgeleri, süreç kapasitesi hakkında bilgi sağlar.</p></li>
+<li><p>Verimliliği artırmak için kanıtlanmış bir tekniktir.</p></li>
+<li><p>Kusurların önlenmesinde etkilidir.</p></li>
+<li><p>Gereksiz süreç ayarlamasını önler.</p></li>
+<li><p>Süreç kapasitesi hakkında bilgi sağlar.</p></li>
 </ul>
 <p><img src="images/cc3.png" style="float: center;" width="650" height="400" title="CC" /></p>
 <div id="kontrol-limitlerinin-seçimi" class="section level3">
 <h3><span class="header-section-number">7.2.1</span> Kontrol Limitlerinin Seçimi</h3>
 <p><img src="images/errors.png" style="float: right;" width="350" height="300" title="Error Types" /></p>
 <p>Kontrol limitlerinin belirlenmesi, bir kontrol diyagramı tasarlanırken verilmesi gereken kritik kararlardan biridir. Bu karara bağlı olarak Tip 1 ve Tip 2 hata olasılıklarında artış veya azalış meydana gelebilir.</p>
+<p><strong>Tip 1 Hata (<span class="math inline">\(\alpha\)</span>):</strong> Gerçekte doğru olan yokluk hipotezini reddetme olasılığı</p>
+<p><strong>Tip 2 Hata (<span class="math inline">\(\beta\)</span>):</strong> Gerçekte yanlış olan yokluk hipotezini kabul olasılığı</p>
 <p>Kontrol sınırlarını merkez hattından daha uzağa taşımak, Tip I hata riskini azaltırken aynı zamanda Tip II hata (süreç gerçekten kontrolden çıktığında kontrol limitleri arasına düşme riski) riskini artıracaktır.</p>
 <p>Kontrol limitlerini merkez hattına yaklaştırmak, ters etkiye neden olup; Tip I hata riskini artırırken Tip II hata riski azaltacaktır.</p>
+<p><img src="images/normali.png" style="float: center;" width="600" height="300" title="CC" /></p>
 </div>
 </div>
 <div id="tekil-ölçümler-için-i-ve-mr-individual-moving-range-kontrol-diyagramları" class="section level2">
 <h2><span class="header-section-number">7.3</span> Tekil Ölçümler için I ve MR (Individual-Moving Range) Kontrol Diyagramları</h2>
+<p>I ve MR (hareket aralığı) diyagramları, ölçülebilir değişkenler için verinin tekil gözlemler halinde toplandığı durumlarda kullanılmaktadır. Bu durumların bazı örnekleri aşağıdaki gibidir:</p>
+<ul>
+<li>Veriler nispeten yavaş bir şekilde elde edilir ve analizden önce <span class="math inline">\(n&gt;1\)</span> örnek boyutlarının birikmesine izin vermek zahmetlidir. Gözlemler arasındaki uzun aralık, alt gruplamayla ilgili sorunlara neden olacaktır. Bu, hem imalat hem de imalat dışı durumlarda sıklıkla meydana gelir.</li>
+</ul>
+<p>Tekil ölçümler için kontrol diyagramlarının birçok uygulamasında, işlem değişkenliğini tahmin etmenin temeli olarak iki ardışık gözlem hareket aralığını kullanırız. Hareket aralığı şu şekilde tanımlanır:</p>
+<p><img src="images/mri.png" style="float: center;" width="600" height="100" title="Factor Table" /></p>
+<p><strong>I kontrol diyagramında</strong>, LCL, CL ve UCL aşağıdaki formüller kullanılarak hesaplanabilir.</p>
+<p><span class="math inline">\(UCL_{I}=\bar{I}+3(\overline{MR}/d_{2})\)</span></p>
+<p><span class="math inline">\(CL_{I}=\bar{I}\)</span></p>
+<p><span class="math inline">\(LCL_{I}=\bar{I}-3(\overline{MR}/d_{2})\)</span></p>
+<p>Bu eşitliklerde yer alan <span class="math inline">\(d_{2}\)</span> değeri, kontrol limitleri faktör tablosu kullanılarak elde edilecektir. Tabloda <code>n</code> gözlem sayısını temsil etmektedir.</p>
+<p><img src="images/factable.png" style="float: center;" width="500" height="300" title="Factor Table" /></p>
+<p><br></p>
+<p><strong>MR kontrol diyagramında ise</strong>, LCL, CL ve UCL aşağıdaki formüller yardımı ile hesaplanabilir.</p>
+<p><span class="math inline">\(UCL_{MR}=D_{4}\overline{MR}\)</span></p>
+<p><span class="math inline">\(CL_{MR}=\overline{MR}\)</span></p>
+<p><span class="math inline">\(LCL_{MR}=D_{3}\overline{MR}\)</span></p>
+<p>Bu eşitliklerde <span class="math inline">\(D_{3}\)</span> ve <span class="math inline">\(D_{4}\)</span> değerleri kontrol limitleri faktör tablosu kullanılarak elde edilecektir.</p>
+<p><br></p>
+<p><strong>Örnek 1:</strong> Ambalaj endüstrisinde, oluklu mukavva üretiminde sıvı nişasta kullanılmaktadır. Nişastanın sıcaklığı sürekli olarak kontrol edilmiş 15 dk. aralıklarla değer kaydedilmiştir.</p>
+<p><div id="htmlwidget-895aaab7234a9b800324" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-895aaab7234a9b800324">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],["08:00","08:15","08:30","08:45","09:00","09:15","09:30","09:45","10:00","10:15","10:30","10:45","11:00","11:15","11:30","11:45","12:00","12:15","12:30","12:45"],[27.2,27.6,26.8,27.2,27.1,26.6,27.6,27.7,27.5,26.6,27.2,26.7,25.9,27.1,27.6,27.5,28.3,26.5,29,27.2]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Time<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":[0,1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<br></p>
+<p>I ve MR kontrol diyagramlarının kontrol limitlerinin hesaplanabilmesi için ilk olarak gözlemlere ait hareket aralığı <span class="math inline">\((MR)\)</span> değerlerinin ve bu değerlerin ortalamamasının <span class="math inline">\((\overline{MR})\)</span> hesaplanması gerekmektedir. <span class="math inline">\(MR\)</span> değerleri iki ardıl gözlemin farkının mutlak değeri alınarak hesaplanabilir.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb8-1"></a>MR=<span class="kw">c</span>()</span>
+<span id="cb8-2"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb8-2"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>){</span>
+<span id="cb8-3"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb8-3"></a>  MR[i]=<span class="kw">abs</span>(Degree[i]<span class="op">-</span>Degree[i<span class="dv">-1</span>])</span>
+<span id="cb8-4"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb8-4"></a>}</span>
+<span id="cb8-5"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb8-5"></a></span>
+<span id="cb8-6"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb8-6"></a>MR  </span></code></pre></div>
+<pre><code>##  [1]  NA 0.4 0.8 0.4 0.1 0.5 1.0 0.1 0.2 0.9 0.6 0.5 0.8 1.2 0.5 0.1 0.8 1.8 2.5
+## [20] 1.8</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb10-1"></a>m.MR=<span class="kw">mean</span>(MR[<span class="op">-</span><span class="dv">1</span>]); m.MR   <span class="co"># NA olan ilk gozlemi cikar, ortalama hesapla </span></span></code></pre></div>
+<pre><code>## [1] 0.7894737</code></pre>
+<p><br></p>
+<p>I kontrol diyagramında kontrol limitlerinin hesaplanması için gereken diğer bir değer, gözlem değerlerinin aritmetik ortalamasıdır. Bu değer, şu şekilde hesaplanabilir.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb12-1"></a>m.I=<span class="kw">mean</span>(Degree); m.I</span></code></pre></div>
+<pre><code>## [1] 27.245</code></pre>
+<p><br></p>
+<p>I diyagramının oluşturulabilmesi için gerekli son değer; <span class="math inline">\(d_{2}\)</span> faktör değeridir. Bu değer <span class="math inline">\(n=2\)</span> için faktör tablosundan <span class="math inline">\(d_{2}=1.128\)</span> olarak bulunur.</p>
+<p>Bu değerler LCL, CL ve UCL eşitliklerinde yerlerine konularak kontrol limitleri hesaplanabilir.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb14-1"></a>d2=<span class="fl">1.128</span></span>
+<span id="cb14-2"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb14-2"></a>UCL.I=m.I<span class="op">+</span><span class="dv">3</span><span class="op">*</span>(m.MR<span class="op">/</span>d2)</span>
+<span id="cb14-3"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb14-3"></a>UCL.I</span></code></pre></div>
+<pre><code>## [1] 29.34466</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb16-1"></a>CL.I=m.I</span>
+<span id="cb16-2"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb16-2"></a>CL.I</span></code></pre></div>
+<pre><code>## [1] 27.245</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb18-1"></a>LCL.I=m.I<span class="dv">-3</span><span class="op">*</span>(m.MR<span class="op">/</span>d2)</span>
+<span id="cb18-2"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb18-2"></a>LCL.I</span></code></pre></div>
+<pre><code>## [1] 25.14534</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb20-1"></a><span class="kw">library</span>(qicharts2)</span>
+<span id="cb20-2"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb20-2"></a><span class="co"># I</span></span>
+<span id="cb20-3"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb20-3"></a></span>
+<span id="cb20-4"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb20-4"></a>chartI&lt;-<span class="kw">qic</span>(Degree, <span class="dt">chart =</span> <span class="st">&#39;i&#39;</span>,<span class="dt">decimals=</span><span class="dv">3</span>); chartI</span></code></pre></div>
+<p><img src="SPC.Notes_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+<br></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb21-1"></a>D4=<span class="fl">3.267</span></span>
+<span id="cb21-2"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb21-2"></a>UCL.MR=D4<span class="op">*</span>m.MR</span>
+<span id="cb21-3"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb21-3"></a>UCL.MR</span></code></pre></div>
+<pre><code>## [1] 2.579211</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb23-1"></a>CL.MR=m.MR</span>
+<span id="cb23-2"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb23-2"></a>CL.MR</span></code></pre></div>
+<pre><code>## [1] 0.7894737</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb25-1"></a>D3=<span class="dv">0</span></span>
+<span id="cb25-2"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb25-2"></a>LCL.MR=D3<span class="op">*</span>m.MR</span>
+<span id="cb25-3"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb25-3"></a>LCL.MR</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb27-1"></a><span class="co"># MR</span></span>
+<span id="cb27-2"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb27-2"></a>chartMR&lt;-<span class="kw">qic</span>(Degree, <span class="dt">chart =</span> <span class="st">&#39;mr&#39;</span>,<span class="dt">decimals=</span><span class="dv">3</span>); chartMR</span></code></pre></div>
+<p><img src="SPC.Notes_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><br></p>
+<p>Kalite karakteristiğinin <strong>normallik varsayımı</strong> diyagramın hassasiyeti noktasında önem taşımaktadır. Analiz edilen veri setinin dağılımı incelenmeli ve normallik sağlanmıyorsa ilgili dönüşüm yapılarak inceleme sürecine devam edilmelidir. Özellikle I ve MR diyagramları normallikten sapmalara oldukça duyarlıdır.</p>
+<p><br></p>
+<p><strong>Örnek 2:</strong> Bir bankanın ipotek kredisi işleme birimi, kredi başvurularının işleme alınma maliyetlerini izler. İzlenen miktar, toplam haftalık maliyetlerin hafta boyunca işlenen kredi sayısına bölünmesiyle elde edilen ortalama haftalık işlem maliyetleridir. Son 20 haftanın işlem maliyetleri Tablo 6.6’da gösterilmektedir. Bu veriler için I (bireysel) ve MR (hareketli aralık) kontrol diyagramlarını çiziniz.</p>
+<div id="htmlwidget-e802f473474baaf63533" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e802f473474baaf63533">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],[310,288,297,298,307,303,294,297,308,306,294,299,297,299,314,295,293,306,301,304],[null,22,9,1,9,4,9,3,11,2,12,5,2,2,15,19,2,13,5,3]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>cost<\/th>\n      <th>MR<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":[0,1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb28-1"></a><span class="co"># I</span></span>
+<span id="cb28-2"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb28-2"></a></span>
+<span id="cb28-3"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb28-3"></a><span class="kw">library</span>(qicharts2)</span>
+<span id="cb28-4"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb28-4"></a>cI&lt;-<span class="kw">qic</span>(cost, <span class="dt">chart =</span> <span class="st">&#39;i&#39;</span>,<span class="dt">decimals=</span><span class="dv">3</span>); cI</span></code></pre></div>
+<p><img src="SPC.Notes_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+<br></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb29-1"></a><span class="co"># MR</span></span>
+<span id="cb29-2"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb29-2"></a></span>
+<span id="cb29-3"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb29-3"></a>cMR&lt;-<span class="kw">qic</span>(cost, <span class="dt">chart =</span> <span class="st">&#39;mr&#39;</span>,<span class="dt">decimals=</span><span class="dv">3</span>); cMR</span></code></pre></div>
+<p><img src="SPC.Notes_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb30-1"></a><span class="co"># normallik kontrol</span></span>
+<span id="cb30-2"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb30-2"></a></span>
+<span id="cb30-3"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb30-3"></a><span class="kw">qqnorm</span>(cost)</span>
+<span id="cb30-4"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb30-4"></a><span class="kw">qqline</span>(cost, <span class="dt">col =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="SPC.Notes_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><br></p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb31-1"></a><span class="co"># log donusum normallik kontrol </span></span>
+<span id="cb31-2"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb31-2"></a></span>
+<span id="cb31-3"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb31-3"></a>z&lt;-<span class="kw">log</span>(cost)</span>
+<span id="cb31-4"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb31-4"></a><span class="kw">qqnorm</span>(z)       </span>
+<span id="cb31-5"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb31-5"></a><span class="kw">qqline</span>((z), <span class="dt">col =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="SPC.Notes_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><br></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb32-1"></a><span class="kw">library</span>(qicharts2)</span>
+<span id="cb32-2"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb32-2"></a>cI.z&lt;-<span class="kw">qic</span>(z, <span class="dt">chart =</span> <span class="st">&#39;i&#39;</span>,<span class="dt">decimals=</span><span class="dv">3</span>); cI.z        <span class="co"># I log donusum</span></span></code></pre></div>
+<p><img src="SPC.Notes_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><br></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#cb33-1"></a>cMR.z&lt;-<span class="kw">qic</span>(z, <span class="dt">chart =</span> <span class="st">&#39;mr&#39;</span>,<span class="dt">decimals=</span><span class="dv">3</span>); cMR.z     <span class="co"># MR log donusum </span></span></code></pre></div>
+<p><img src="SPC.Notes_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 
 </div>
 </div>
