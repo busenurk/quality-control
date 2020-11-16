@@ -240,3 +240,8 @@ doğruluk-ve-hassasiyet-3
 kontrol-diyagramlarına-giriş-3
 kontrol-limitlerinin-seçimi-3
 tekil-ölçümler-için-i-ve-mr-individual-moving-range-kontrol-diyagramları-3
+x-r-kontrol-diyagramları
+x-r-kontrol-diyagramları-1
+alt-grup-kavrami-ve-örneklem-büyüklüğünün-belirlenmesi
+alt-grup-kavramı-ve-örneklem-büyüklüğünün-belirlenmesi
+alt-grup-kavramı-ve-örneklem-büyüklüğünün-belirlenmesi-1

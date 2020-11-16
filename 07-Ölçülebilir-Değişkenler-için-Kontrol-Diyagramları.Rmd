@@ -1,3 +1,503 @@
 # Ölçülebilir Değişkenler için Kontrol Diyagramları
 
+## Tekil Ölçümler için I ve MR (Individual-Moving Range) Kontrol Diyagramları
 
+I ve MR (hareket aralığı) diyagramları, ölçülebilir değişkenler için verinin tekil gözlemler halinde toplandığı durumlarda kullanılmaktadır. Bu durumların bazı örnekleri aşağıdaki gibidir:
+
+- Veriler nispeten yavaş bir şekilde elde edilir ve analizden önce $n>1$ örnek boyutlarının birikmesine izin vermek zahmetlidir. Gözlemler arasındaki uzun aralık, alt gruplamayla ilgili sorunlara neden olacaktır. Bu, hem imalat hem de imalat dışı durumlarda sıklıkla meydana gelir.
+
+Tekil ölçümler için kontrol diyagramlarının birçok uygulamasında, işlem değişkenliğini tahmin etmenin temeli olarak iki ardışık gözlem hareket aralığını kullanırız. Hareket aralığı şu şekilde tanımlanır:
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/mri.png" style="float: center;" width="600" height="100" title="Factor Table" />
+
+
+**I kontrol diyagramında**, LCL, CL ve UCL aşağıdaki formüller kullanılarak hesaplanabilir.
+
+$UCL_{I}=\bar{I}+3(\overline{MR}/d_{2})$
+
+$CL_{I}=\bar{I}$
+
+$LCL_{I}=\bar{I}-3(\overline{MR}/d_{2})$
+
+Bu eşitliklerde yer alan $d_{2}$ değeri, kontrol limitleri faktör tablosu kullanılarak elde edilecektir. Tabloda `n` her örneklemede prosesden muayene edilmek üzere alınan örnek sayısını temsil etmektedir. I ve MR grafikleri için `n=2` seçilir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/factable.png" style="float: center;" width="500" height="300" title="Factor Table" />
+
+<br>
+
+**MR kontrol diyagramında ise**, LCL, CL ve UCL aşağıdaki formüller yardımı ile hesaplanabilir.
+
+$UCL_{MR}=D_{4}\overline{MR}$
+
+$CL_{MR}=\overline{MR}$
+
+$LCL_{MR}=D_{3}\overline{MR}$
+
+Bu eşitliklerde $D_{3}$ ve $D_{4}$ değerleri kontrol limitleri faktör tablosu kullanılarak elde edilecektir.
+
+<br>
+
+
+**Örnek 1:** Ambalaj endüstrisinde, oluklu mukavva üretiminde sıvı nişasta kullanılmaktadır. Nişastanın sıcaklığı sürekli olarak kontrol edilmiş 15 dk. aralıklarla değer kaydedilmiştir. 
+
+```{r echo=FALSE}
+library(DT)
+Time=c("08:00","08:15","08:30","08:45","09:00","09:15","09:30","09:45","10:00","10:15","10:30","10:45","11:00","11:15","11:30","11:45","12:00","12:15","12:30","12:45")
+Degree=c(27.2,27.6,26.8,27.2,27.1,26.6,27.6,27.7,27.5,26.6,27.2,26.7,25.9,27.1,27.6,27.5,28.3,26.5,29,27.2)
+data=data.frame(Time,Degree)
+
+
+DT::datatable(data,options = list(
+            columnDefs = list(list(className = 'dt-center', targets = 0:2))
+            ))
+
+# data %>%
+#   kbl() %>%
+#   kable_styling(full_width = FALSE)
+```
+
+<br>
+
+I ve MR kontrol diyagramlarının kontrol limitlerinin hesaplanabilmesi için ilk olarak gözlemlere ait hareket aralığı $(MR)$ değerlerinin ve bu değerlerin ortalamamasının $(\overline{MR})$ hesaplanması gerekmektedir. $MR$ değerleri iki ardıl gözlemin farkının mutlak değeri alınarak hesaplanabilir.
+
+```{r}
+MR=c()
+for(i in 1:20){
+  MR[i]=abs(Degree[i]-Degree[i-1])
+}
+
+MR  
+
+m.MR=mean(MR[-1]); m.MR   # NA olan ilk gozlemi cikar, ortalama hesapla 
+```
+
+<br>
+
+I kontrol diyagramında kontrol limitlerinin hesaplanması için gereken diğer bir değer, gözlem değerlerinin aritmetik ortalamasıdır. Bu değer, şu şekilde hesaplanabilir.
+
+
+```{r}
+m.I=mean(Degree); m.I
+```
+
+<br>
+
+I diyagramının oluşturulabilmesi için gerekli son değer; $d_{2}$ faktör değeridir. Bu değer $n=2$ için faktör tablosundan $d_{2}=1.128$ olarak bulunur.
+
+Bu değerler LCL, CL ve UCL eşitliklerinde yerlerine konularak kontrol limitleri hesaplanabilir. 
+
+```{r}
+d2=1.128
+UCL.I=m.I+3*(m.MR/d2)
+UCL.I
+```
+<br>
+
+```{r}
+CL.I=m.I
+CL.I
+```
+<br>
+
+```{r}
+LCL.I=m.I-3*(m.MR/d2)
+LCL.I
+```
+
+<br>
+
+Sınırlar manuel olarak hesaplanıp kontrol grafiği `plot()` ve `abline()` ile çizilebileceği gibi hazır paketlerden de yararlanılabilir. Bu paketlere örnek olarak `qicharts2` ve `ggQC` verilebilir.
+
+<br>
+
+```{r message=FALSE, warning=FALSE}
+library(qicharts2)
+# I
+
+chartI<-qic(Degree, chart = 'i',decimals=3); chartI
+
+```
+<br>
+
+```{r}
+D4=3.267
+UCL.MR=D4*m.MR
+UCL.MR
+```
+
+<br>
+
+```{r}
+CL.MR=m.MR
+CL.MR
+```
+
+<br>
+
+```{r}
+D3=0
+LCL.MR=D3*m.MR
+LCL.MR
+```
+<br>
+
+```{r}
+# MR
+chartMR<-qic(Degree, chart = 'mr',decimals=3); chartMR
+```
+
+<br>
+
+Kalite karakteristiğinin **normallik varsayımı** diyagramın hassasiyeti noktasında önem taşımaktadır. Analiz edilen veri setinin dağılımı incelenmeli ve normallik sağlanmıyorsa ilgili dönüşüm yapılarak inceleme sürecine devam edilmelidir. Özellikle I ve MR diyagramları normallikten sapmalara oldukça duyarlıdır.
+
+
+<br>
+
+**Örnek 2:** Bir bankanın ipotek kredisi işleme birimi, kredi başvurularının işleme alınma maliyetlerini izler. İzlenen miktar, toplam haftalık maliyetlerin hafta boyunca işlenen kredi sayısına bölünmesiyle elde edilen ortalama haftalık işlem maliyetleridir. Son 20 haftanın işlem maliyetleri Tablo 6.6'da gösterilmektedir. Bu veriler için I (bireysel) ve MR (hareketli aralık) kontrol diyagramlarını çiziniz.
+
+
+```{r echo=FALSE}
+cost<-c(310,288,297,298,307,303,294,297,308,306,294,299,297,299,314,295,293,306,301,304)
+MR<-c(NA,22,9,1,9,4,9,3,11,2,12,5,2,2,15,19,2,13,5,3)
+
+data2=data.frame(cost,MR)
+
+DT::datatable(data2,options = list(
+            columnDefs = list(list(className = 'dt-center', targets = 0:2))
+            ))
+
+```
+
+
+```{r}
+# I
+
+library(qicharts2)
+cI<-qic(cost, chart = 'i',decimals=3); cI
+```
+<br>
+
+
+```{r}
+# MR
+
+cMR<-qic(cost, chart = 'mr',decimals=3); cMR
+```
+
+```{r}
+# normallik kontrol
+
+qqnorm(cost)
+qqline(cost, col = "steelblue", lwd = 2)
+```
+
+<br>
+
+```{r}
+# log donusum normallik kontrol 
+
+z<-log(cost)
+qqnorm(z)       
+qqline((z), col = "steelblue", lwd = 2)
+```
+
+<br>
+
+```{r}
+library(qicharts2)
+cI.z<-qic(z, chart = 'i',decimals=3); cI.z        # I log donusum
+```
+
+<br>
+
+```{r}
+cMR.z<-qic(z, chart = 'mr',decimals=3); cMR.z     # MR log donusum 
+```
+<br>
+
+cost değişkenini farklı kontrol limitlerinde gözlemlemek de mümkündür. I kontrol diyagramının $\pm1\sigma$, $\pm2\sigma$ ve $\pm3\sigma$ versiyonlarının aynı diyagram üzerinde gözlenen hali aşağıda yer almaktadır.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+library(ggQC)
+
+
+### Data
+
+run.n<-1:20
+data2=data.frame(run.n,cost,MR)
+
+### Make the plot
+XmR_Plot <-
+  ggplot(data2, aes(x = run.n, y = cost)) + #init ggplot
+  geom_point() + geom_line() + # add the points and lines
+  stat_QC(method = "XmR",      # specify QC charting method
+          auto.label = T,      # Use Autolabels
+          label.digits = 2,    # Use two digit in the label
+          show.1n2.sigma = T   # Show 1 and two sigma lines
+  ) +
+  scale_x_continuous(expand =  expand_scale(mult = .15))  # Pad the x-axis
+
+XmR_Plot
+
+```
+
+<br>
+
+Benzer şekilde farklı varyasyonları aynı diyagram üzerinde değil ayrı ayrı ve yan yana kıyaslama imkanı gözlem açısından faydalı olacaktır.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+QC_Violations <-
+  ggplot(data2, aes(x = run.n, y = cost)) + #init ggplot
+  stat_qc_violations(method = "XmR"
+                     ,show.facets = c(2,3,4)
+  )
+QC_Violations
+```
+
+## X-R Kontrol Diyagramları
+
+İlgilenilen kalite karakteristiğinin $\mu$ ortalama ve $\sigma$ standart sapma ile normal dağıldığı varsayılmaktadır. 
+
+Uygulamada $\mu$ ve $\sigma$ bilinememektedir. Bu nedenle, sürecin kontrol altında olup olmadığı alınan ön numunelerin veya alt grupların tahmin sonuçlarına bağlı olarak değerlendirilir. Bu değerlendirme için en az 20-25 örneklem çekilmelidir. $m$ örnek çekildiği ve her birinin $n$ gözlem içerdiği varsayılsın, $n$ genellikle 4, 5 veya 6 gözlem içerecektir. Küçük n değerinin nedeni genellikle prosesde meydana gelen örnekleme maliyeti ve zaman kaybıdır.
+
+Burada $x_{1},x_{2},...,x_{n}$ ise $n$ büyüklüğünde örneklem ise bu örneklemin ortalaması;
+
+$\bar{x}=(x_{1}+x_{2}+...+x_{n})/n$
+
+$\bar{x}_{1},\bar{x}_{2},...,\bar{x}_{m}$ her bir örneklemin ortalaması olmak üzere $\mu$'nün en iyi tahmin edicisi proses ortalaması;
+
+$\bar{\bar{x}}=(\bar{x}_{1}+\bar{x}_{2}+...+\bar{x}_{m})/m$
+
+
+Böylece, $\bar{\bar{x}}$, $\bar{x}$ diyagramı için CL olarak kullanılabilir.
+
+Kontrol limitlerinin elde edilmesi için $\sigma$'nın tahminine ihtiyaç duyulur ve bu bakımdan range bilgisinden yararlanılır. 
+
+$R=x_{max}-x_{min}$
+
+m örneklem için $R_{1},R_{2},...,R_{m}$ elde edilir. Buradan ortalama range değeri;
+
+$\bar{R}=(R_{1}+R_{2}+...+R_{m})/m$
+
+elde edilir.
+
+<br>
+
+
+**$\bar{x}$ kontrol diyagramı** için LCL, CL ve UCL aşağıdaki formüller yardımı ile hesaplanabilir.
+
+
+$UCL=\bar{\bar{x}}+A_{2}\bar{R}$
+
+$CL=\bar{\bar{x}}$
+
+$LCL=\bar{\bar{x}}-A_{2}\bar{R}$
+
+
+<br>
+
+**$R$ kontrol diyagramı** için LCL, CL ve UCL aşağıdaki formüller yardımı ile hesaplanabilir.
+
+$UCL=D_{4}\bar{R}$
+
+$CL=\bar{R}$
+
+$LCL=D_{3}\bar{R}$
+
+
+<br>
+
+**$\bar{x}$ ve $R$ Diyagramlar Evre I:** Kontrol diyagramı kullanımında, $\bar{x}$ ve $R$ kontrol diyagramları oluşturmak için ön numuneler kullanıldığında, yukarıdaki eşitlikler yardımı ile elde edilen kontrol sınırlarının deneme kontrol sınırları olarak ele alınması gerekir. İlk numunelerın seçilerek prosesin kontrol altında olup olmadığının incelendiği bu evre I. evre olarak adlandırılır. 
+
+Tüm noktalar kontrol sınırları içinde işaretlenirse ve sistematik bir davranış yoksa, sürecin geçmişte kontrol altında olduğu ve deneme kontrol limitlerinin mevcut veya gelecekteki üretimi kontrol etmek için uygun olduğu sonucuna varılır. Deneme kontrol limitlerini hesaplamak için 20-25 numuneye veya n boyutunda (tipik olarak 3 ile 5 arası) alt gruba sahip olması istenir. Elbette daha az veriyle çalışılabilir ancak kontrol sınırlarının güvenilirliği dikkate alınmalıdır.
+
+Deneme kontrol limitleri ile karşılaştırıldığında $\bar{x}$ veya $R$ değerlerinden birinin veya daha fazlasının kontrol dışı olduğunu varsayalım. Açıktır ki, mevcut veya gelecekteki üretim için kontrol sınırları anlamlı olacaksa, bunlar kontrol altında olan bir süreçten gelen verilere dayanmalıdır. Bu nedenle, geçmiş kontrol hipotezi reddedildiğinde, deneme kontrol limitlerinin revize edilmesi gerekir.
+
+Bu aşamada kontrol dışı noktaların her biri incelenerek, özel değişkenliğin nedeni araştırılır. Özel bir neden bulunursa, nokta atılır ve deneme kontrol sınırları yalnızca kalan noktalar kullanılarak yeniden hesaplanır. Daha sonra bu kalan noktalar kontrol için yeniden incelenir. (Başlangıçta kontrol altında olan noktaların artık kontrolden çıkmış olabileceğini unutmayın, çünkü yeni deneme kontrol limitleri genellikle eskilere göre daha dar olacaktır.) Bu süreç, tüm noktalar kontrol altına alınana kadar sürdürülür.
+
+Bazı durumlarda, kontrolden çıkan bir nokta için özel bir neden bulmak mümkün olmayabilir. Bu noktada uygulanabilecek iki yaklaşım mevcuttur. Bunlardan ilki, sanki özel bir neden bulunmuş gibi noktayı ortadan kaldırmaktır. Bu eylemi seçmek için analitik bir gerekçe yoktur, bunun dışında, kontrol sınırları dışında kalan noktaların, kontrol dışı bir durumun olasılık dağılım özelliğinden alınmış olması muhtemeldir. Alternatif yaklaşım ise noktayı (veya noktaları) korumaktır. Elbette, nokta gerçekten kontrol dışı bir durumu temsil ediyorsa, ortaya çıkan kontrol sınırları çok geniş olacaktır. Ancak, bu tür yalnızca bir veya iki nokta varsa, bu, kontrol grafiğini önemli ölçüde bozmayacaktır. Gelecekteki numuneler hala kontrolü gösteriyorsa, açıklanamayan noktalar muhtemelen güvenli bir şekilde bırakılabilir.
+
+Bazı durumlarda, $\bar{x}$ ve $R$ diyagramları için ilk örnek değerleri deneme kontrol sınırlarına göre işaretlendiğinde, birçok nokta kontrol dışı kalacaktır. Açıktır ki, kontrol dışı noktalar keyfi olarak analiz dışı bırakılırsa güvenilir kontrol limitlerinin yeniden hesaplayabileceği çok az veri kalacaktır.
+
+Ayrıca, bu yaklaşım ile verideki yararlı bilgilerin göz ardı edilmesi de söz konusudur. Öte yandan, her bir kontrol dışı nokta için özel bir neden aramak da sürdürülebilir bir teknik olmayacaktır. Bu bakımdan kontrol limitleri dışında kalan veriler için ortaya çıkan desen ile ilgilenmek ve bu yapıyı belirlemek kullanışlı olmaktadır. Kontrol dışı noktaların modeliyle ilişkili özel nedenin belirlenmesi oldukça kolaydır ve bu sorununun ortadan kaldırılması genellikle büyük bir süreç iyileştirmesi ile sonuçlanmaktadır.
+
+
+**Revize (LCL, UCL ve CL): ** Herhangi bir kontrol diyagramının etkin kullanımı, kontrol limitlerinin ve merkez hatlarının periyodik olarak revize edilmesini gerektirecektir. Bazı uygulayıcılar, her hafta, her ay veya her 25, 50 veya 100 numunede bir gibi kontrol tablosu limitlerinin gözden geçirilmesi ve revizyonu için düzenli periyotlar belirler. Kontrol limitlerini gözden geçirirken, kontrol limitlerinin hesaplanmasında en az 25 örnek veya alt grup (bazı otoriteler 200-300 ayrı gözlem önermektedir) kullanılmasının oldukça arzu edildiğini unutmayın.
+
+
+
+**$\bar{x}$ ve $R$ Diyagramlar Evre II:** Bir dizi güvenilir kontrol limiti oluşturulduktan sonra, gelecekteki üretimi izlemek için kontrol diyagramını kullanılır, bu aşama evre II olarak adlandırılır.
+
+
+
+
+
+**Örnek 1:** Bir makine parçası üretiminde kama mili derinliği (mm) ile ilgili elde edilen ölçüm sonuçlarını içermektedir. Ölçümler, farklı zamanlarda üretilen 25 partiden 4 örnek alınarak gerçekleştirilmiştir. X-R kontrol diyagramını çizerek, prosesin istatistiksel olarak kontrol altında olup olmadığını analiz ediniz.
+
+```{r echo=FALSE}
+library(DT)
+alt_gr_no<-1:25
+
+tarih<-c(rep("26 Aralık",5),rep("27 Aralık",5),rep("28 Aralık",5),rep("29 Aralık",5),rep("30 Aralık",5))
+
+zaman<-c("08:50","11:30","01:45","03:45","04:20","08:35","09:00","09:40","01:30","02:50","08:30","01:35","02:25","02:35","03:55","08:25","09:25","11:00","02:35","03:15","09:35","10:20","11:35","02:00","04:25")
+  
+t1<-c(6.35,6.46,6.34,6.69,6.38,6.42,6.44,6.33,6.48,6.47,6.38,6.37,6.4,6.38,6.5,6.33,6.41,6.38,6.35,6.56,6.38,6.39,6.42,6.43,6.39)
+  
+t2<-c(6.4,6.37,6.4,6.64,6.34,6.41,6.41,6.41,6.44,6.43,6.41,6.37,6.38,6.39,6.42,6.35,6.4,6.44,6.41,6.55,6.4,6.42,6.39,6.36,6.38)
+  
+t3<-c(6.32,6.36,6.34,6.68,6.44,6.43,6.41,6.38,6.47,6.36,6.39,6.41,6.47,6.45,6.43,6.29,6.29,6.28,6.37,6.45,6.45,6.35,6.39,6.35,6.43)
+  
+t4<-c(6.37,6.41,6.36,6.59,6.4,6.34,6.46,6.36,6.45,6.42,6.38,6.37,6.35,6.42,6.45,6.39,6.34,6.58,6.38,6.48,6.37,6.4,6.36,6.38,6.44)
+  
+data=data.frame(alt_gr_no,tarih,zaman,t1,t2,t3,t4)
+
+DT::datatable(data,options = list(
+            columnDefs = list(list(className = 'dt-center', targets = 0:7))
+            ))
+  
+  
+```
+<br>
+
+Kontrol diyagramı için hesaplanması gereken değerlerden ilki $\bar{\bar{x}}$,
+
+```{r}
+xs<-data[,4:7]
+rmeans<-rowMeans(xs); rmeans
+
+m.x<-mean(rmeans); m.x
+```
+
+<br>
+
+İhtiyaç duyulacak diğer bir değer $\bar{R}$
+
+```{r}
+R<-c()
+for (i in 1:25){
+  R[i]=max(xs[i,])-min(xs[i,])}
+  m.R<-mean(R); m.R
+
+```
+<br>
+
+X kontrol diyagramı için CL, UCL ve LCL;
+
+```{r}
+CL.x<-m.x
+CL.x
+```
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/factable.png" style="float: center;" width="500" height="300" title="Factor Table" />
+
+```{r}
+A2=0.729
+UCL.x<-m.x+A2*m.R
+UCL.x
+```
+
+<br>
+
+```{r}
+LCL.x<-m.x-A2*m.R
+LCL.x
+```
+ 
+<br>
+
+R kontrol diyagramı için CL, UCL ve LCL;
+
+```{r}
+CL.R<-m.R
+CL.R
+```
+<br>
+
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/factable.png" style="float: center;" width="500" height="300" title="Factor Table" />
+
+```{r}
+D4=2.282
+UCL.R<-D4*m.R
+UCL.R
+```
+
+<br>
+
+```{r}
+D3=0
+LCL.R<-D3*m.R
+LCL.R
+```
+<br>
+
+**Mil Derinliği $\bar{X}$ Kontrol Diyagramı**
+
+```{r message=FALSE, warning=FALSE}
+library(ggQC)
+
+xs<-as.vector(t(xs))
+
+
+gr = as.factor(rep(1:25, each=4))
+
+dataX<-data.frame(gr,xs)
+
+DT::datatable(dataX,options = list(
+            columnDefs = list(list(className = 'dt-center', targets = 0:2))
+            ))
+
+Xbar <- ggplot(dataX, aes(x = gr, y = xs, group = 1)) +
+         stat_summary(fun.y = mean, geom = "point") +
+         stat_summary(fun.y = mean, geom = "line") +
+         stat_QC() 
+
+Xbar+stat_QC_labels()
+```
+$\bar{X}$ diyagramı incelendiğinde; 4, 16 ve 20 numaralı alt grupların kontrol dışı olduğu gözlenmektedir. Prosesin istatistiksel olarak kontrol altında olmadığı ve varyasyonun özel bir nedeninin olduğu sonucuna varılmaktadır. Bu noktada varyasyona neden olan faktörler incelenerek ortadan kaldırılmalıdır. 
+
+
+<br>
+
+**Mil Derinliği $R$ Kontrol Diyagramı**
+```{r message=FALSE, warning=FALSE}
+
+R_Bar <- ggplot(dataX, aes(x = gr, y = xs, group = 1)) +
+         stat_summary(fun.y = QCrange, geom = "point") +
+         stat_summary(fun.y = QCrange, geom = "line") +
+         stat_QC(method="rBar") +
+         stat_QC_labels(method="rBar") + ylab("R-Bar")
+
+R_Bar
+```
+
+$R$ diyagramı incelendiğinde; 18 numaralı alt grupların kontrol dışı olduğu gözlenmektedir. Prosesin istatistiksel olarak kontrol altında olmadığı ve varyasyonun özel bir nedeninin olduğu sonucuna varılmaktadır. Bu noktada varyasyona neden olan faktörler incelenerek ortadan kaldırılmalıdır. 
+
+İlk olarak $R$ diyagramındaki kontrol dışı noktalar analiz edilmektedir. Bu analiz sonucunda 18 numaralı alt gruptaki kontrol dışı noktanın hasarlı yağ hattından kaynaklandığı tespit edilmiştir. 
+
+$\bar{X}$ diyagramı analiz edildiğinde 4 ve 20 numaralı alt gruplardaki kontrol dışı noktaların nedeni belirlenmiştir. 4 numaralı alt grupta oluşan kontrol dışılık, yeni ve geçici çalışan operatörün yanlış ölçümünden ve 20 numaralı alt grupta görülen kontrol dışı noktanın kötü malzemeden kaynaklandığı saptanmıştır. 16 numaralı alt grupta söz konusu olan kontrol dışılığın nedeni işletme tarafından tespit edilememiştir ve rassal nedenlerden dolayı oluşan doğal değişkenliğin bir parçası olduğu varsayılmıştır.
+
+$\bar{X}$ ve $R$ diyagramları incelendikten sonra kontrol limitleri dışında gözlenen özel değişkenlik kaynağı gruplar çıkartılarak limitler tekrar belirlenir. 
+
+
+## Alt Grup Kavramı ve Örneklem Büyüklüğünün Belirlenmesi
+
+X-R kontrol diyagramları ile ilgili örneklerden görülebileceği gibi alt grup örnekleri, zamanın belli bir anında ya da periyodunda üretilen ürün ya da hizmetlerden seçilmektedir. Alt grup içindeki değişkenlik, kontrol limitlerini belirlemede kullanılırken, alt gruplar arasındaki değişkenlik  uzun dönemli kararlılığı değerlendirmede kullanılır.
+
+- Alt grup büyüklüğü arttıkça, kontrol limitleri merkez değerine daha yakın olacak ve proses ortalamasındaki küçük değişkenliklere kontrol diyagramı daha duyarlı hale gelecektir.
+
+- Alt grup büyüklüğü arttıkça, alt grup başına muayene maliyeti artar.
+
+- Tahribat veren test kullanıldığında ve öğe pahalı olduğunda, küçük bir alt grup gerekmektedir.
+
+<br>
+
+Örneklem büyüklüğünün belirlenmesi ile ilgili olarak ASQ tarafından aşağıdaki değerler önerilmiştir.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ornb.png" style="float: center;" width="400" height="270" title="Örneklem Büyüklüğü" />       
+
+Bu tablo, parti büyüklüklerine bağlı olarak önerilen örneklem büyüklüğü değerlerini sunmaktadır. Eğer bir proses günlük 4000 parça üretiyorsa, 75 toplam muayene önerilir. Bu nedenle alt grup büyüklüğü 4 ile 19 alt grup iyi bir başlangıç noktası olacaktır.
