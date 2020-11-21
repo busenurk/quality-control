@@ -543,7 +543,14 @@ Benzer şekilde, ölçüm değerlerinde bir trend, sürekli değişim, t
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/trend.png" style="float: center;" width="550" height="350" title="" />
 
 
+<br>
 
+Kontrol dışılık durumunun yanlış değerlendirilmesi sonucu istatistiksel kalite kontrolde aşağıdaki gibi iki tip hata oluşacaktır.
+
+- Tip I, Gerçekte olağan bir neden olduğunda, özel bir neden olarak değerlendirme
+
+- Tip II, Gerçekte değişkenliğin özel bir nedeni olduğunda olağan bir neden olarak
+değerlendirme
 
 
 
