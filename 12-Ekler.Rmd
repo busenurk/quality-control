@@ -1,0 +1,25 @@
+# Ekler
+
+**Relative range:** $W=\frac{R}{\sigma}$,    $E(W)=d_{2}$
+
+
+
+**Unbiased estimator of $\sigma$ of a normal dist.:** 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/shat.png" style="float:center;" width=900" height="100" title="" />
+
+- $n\geq10$, the range loss efficiency rapidly
+
+- $n\leq6$\ works very well
+
+
+
+## Ölçülebilir Değişkenler için Kontrol Grafiği Faktör Tablosu
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/Ek1.png" style="float:center;" width=900" height="600" title="" /> 
+
+
+## Standart Normal Dağılım Tablosu
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ztable.png" style="float:center;" width=800" height="1000" title="Z Tablosu" /> 
+

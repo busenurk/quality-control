@@ -2,6 +2,3 @@
 
 
 
-## Tablolar
-
-<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ztable.png" style="float:center;" width=800" height="1000" title="Z Tablosu" /> 

@@ -245,3 +245,9 @@ x-r-kontrol-diyagramları-1
 alt-grup-kavrami-ve-örneklem-büyüklüğünün-belirlenmesi
 alt-grup-kavramı-ve-örneklem-büyüklüğünün-belirlenmesi
 alt-grup-kavramı-ve-örneklem-büyüklüğünün-belirlenmesi-1
+ekler
+section
+ölçülebilir-değişkenler-için-kontrol-grafiği-faktör-tablosu
+standart-normal-dağılım-tablosu
+temsil-etmektedir.
+kontrol-dışı-olma-durumu
