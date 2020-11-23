@@ -554,6 +554,195 @@ değerlendirme
 
 
 
+## X-S Kontrol Diyagramları
+
+X-R kontrol diyagramları ölçülebilir değişkenler için en yaygın kullanılan diyagramlar olmalarına rağmen, bazı organizasyonlar alt grup yayılımının ölçüsü olarak örneklem standart sapmasını (s) tercih etmektedir. Bir s diyagramı ile bir R diyagramı karşılaştırıldığında, R diyagramının hesaplamaları ve açıklanması daha kolaydır. Diğer taraftan, R grafiğinde alt grupların en yüksek ve en düşük değerleri kullanılırken, s diyagramında tüm veri kullanılarak alt grup standart sapması hesaplanır. Bu nedenle, bir s diyagramı bir R diyagramından daha doğrudur. Alt grup büyüklüğü küçük olduğunda, her iki kontrol diyagramı grafiksel olarak benzer değişkenliği ortaya koymaktadır. Bununla birlikte, alt grup büyüklüğü 10 veya 12 den daha fazla olduğunda, ekstrem değerler R grafiği üzerinde aşırı etkiye sahip olacaktır. Bu nedenle büyük alt grup durumunda s diyagramı kullanılmalıdır.
+
+X kontrol diyagramları yığın ortalamasındaki değişimi bulmak için tasarlanmıştır. Yığın varyansındaki olası değişimlerin araştırıldığı durumlarda ise S kontrol diyagramı kullanılmaktadır.
+
+<br>
+
+**$X$ kontrol diyagramı** için LCL, CL ve UCL aşağıdaki formüller yardımı ile hesaplanabilir.
+
+$UCL=\bar{\bar{x}}+A_{3}\bar{s}$
+
+$CL=\bar{\bar{x}}$
+
+$LCL=\bar{\bar{x}}-A_{3}\bar{s}$
+
+-------
+
+**Not1:** Teoride $A_{3}$ değeri ve $n$'e bağlı bir katsayı olan $c_{4}$ üzerinden elde edilmektedir.
+
+$A_{3}=3/(c_{4}\sqrt{n})$
+
+--------
+
+<br>
+
+**$S$ kontrol diyagramı** için LCL, CL ve UCL aşağıdaki formüller yardımı ile hesaplanabilir.
+
+$UCL=B_{4}\bar{s}$
+
+$CL=\bar{s}$
+
+$LCL=B_{3}\bar{s}$
+
+----------
+
+
+**Not2:** Teoride $B_{5}$, $B_{6}$, $B_{3}$ ve $B_{4}$ değerleri aşağıdaki eşitlikler yardımıyla elde edilmektedir.
+
+$B_{5}=c_{4}-3\sqrt{1-c^{2}_{4}}$
+
+$B_{6}=c_{4}+3\sqrt{1-c^{2}_{4}}$
+
+$B_{4}=B_{6}/c_{4}$
+
+$B_{3}=B_{5}/c_{4}$
+
+----------
+
+<br>
+
+Örneklem standart sapmasını hatırlayalım; 
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/se.png" style="float: center;" width="200" height="100" title="" />
+
+<br>
+
+Proses standart sapması için yansız tahmin edici;
+
+$\hat{\sigma}=\bar{s}/c_{4}$
+
+olarak hesaplanır.
+
+<br>
+
+**Örnek 1:** Bir makine parçası üretiminde kama mili derinliği (mm) ile ilgili elde edilen ölçüm sonuçlarını içermektedir. Ölçümler, farklı zamanlarda üretilen 25 partiden 4 örnek alınarak gerçekleştirilmiştir. X-R kontrol diyagramını çizerek, prosesin istatistiksel olarak kontrol altında olup olmadığını analiz ediniz.
+
+```{r echo=FALSE}
+library(DT)
+alt_gr_no<-1:25
+
+tarih<-c(rep("26 Aralık",5),rep("27 Aralık",5),rep("28 Aralık",5),rep("29 Aralık",5),rep("30 Aralık",5))
+
+zaman<-c("08:50","11:30","01:45","03:45","04:20","08:35","09:00","09:40","01:30","02:50","08:30","01:35","02:25","02:35","03:55","08:25","09:25","11:00","02:35","03:15","09:35","10:20","11:35","02:00","04:25")
+  
+t1<-c(6.35,6.46,6.34,6.69,6.38,6.42,6.44,6.33,6.48,6.47,6.38,6.37,6.4,6.38,6.5,6.33,6.41,6.38,6.35,6.56,6.38,6.39,6.42,6.43,6.39)
+  
+t2<-c(6.4,6.37,6.4,6.64,6.34,6.41,6.41,6.41,6.44,6.43,6.41,6.37,6.38,6.39,6.42,6.35,6.4,6.44,6.41,6.55,6.4,6.42,6.39,6.36,6.38)
+  
+t3<-c(6.32,6.36,6.34,6.68,6.44,6.43,6.41,6.38,6.47,6.36,6.39,6.41,6.47,6.45,6.43,6.29,6.29,6.28,6.37,6.45,6.45,6.35,6.39,6.35,6.43)
+  
+t4<-c(6.37,6.41,6.36,6.59,6.4,6.34,6.46,6.36,6.45,6.42,6.38,6.37,6.35,6.42,6.45,6.39,6.34,6.58,6.38,6.48,6.37,6.4,6.36,6.38,6.44)
+  
+data=data.frame(alt_gr_no,tarih,zaman,t1,t2,t3,t4)
+
+DT::datatable(data,options = list(
+            columnDefs = list(list(className = 'dt-center', targets = 0:7))
+            ))
+  
+  
+```
+
+<br>
+
+**Mil Derinliği $\bar{X}$ Kontrol Diyagramı**
+
+```{r}
+qcc(xs, type="xbar")
+```
+
+
+**Mil Derinliği $\bar{S}$ Kontrol Diyagramı** 
+
+```{r message=FALSE, warning=FALSE}
+xs<-data[,4:7]
+schart<-qcc(xs, type="S")
+  
+```
+```{r}
+c4=0.9213
+std=schart$center/c4
+std
+```
+
+<br>
+
+```{r}
+newdt<-xs[-c(4,18,20),]
+
+qcc(newdt, type="xbar")
+qcc(newdt, type="S")
+```
+```{r}
+fx<-xs[-c(4,9,15,18,20),]    # out 9,15
+
+qcc(fx, type="xbar")
+qcc(fx, type="S")
+```
+
+**Gözlem sayısı her alt grupta aynı değilse?**
+
+X-R kontrol diyagramlarında alt grup örneklem büyüklükleri (n) aynı olmadığında $\bar{\bar{x}}$ ve $\bar{s}$ hesaplaması aşağıdaki ağırlıklı ortalama yaklaşımı kullanılarak hesaplanır ve ardından kontrol limitleri elde edilir.
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/weighted.png" style="float: center;" width="600" height="300" title="" />
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/examp2.png" style="float: center;" width="700" height="600" title="" />
+
+<br>
+
+Alt grup gözlem sayısının farklı olması durumunda proses standart sapması için yansız tahmin edici hesabı da farklılaşmaktadır. n sayısına bağlı olarak hesaplama yapılması gerektiğinden, her bir n sayısı için $\bar{s}$ hesaplanır, ardından ilgili n değerine bağlı $c_{4}$ değeri belirlenir ve 
+
+
+$\hat{\sigma}=\bar{s}/c_{4}$
+
+hesaplanır, örneğin alt grup büyüklüğü n=3,4 olan bir veri için n=3 ve n=4 için iki defa hesaplama yapılmalıdır.
+
+
+<br>
+
+
+```{r}
+library(qcc)
+library(DT)
+data("pistonrings")
+head(pistonrings)
+diameter = with(pistonrings, qcc.groups(diameter, sample))
+
+DT::datatable(diameter,options = list(
+            columnDefs = list(list(className = 'dt-center', targets = 0:5))
+            ))
+
+```
+<br>
+
+```{r}
+out = c(9, 10, 30, 35, 45, 64, 65, 74, 75, 85, 99, 100)
+diameter2 = with(pistonrings, qcc.groups(diameter[-out], sample[-out]))
+
+DT::datatable(diameter2,options = list(
+            columnDefs = list(list(className = 'dt-center', targets = 0:5))
+            ))
+```
+
+
+```{r message=FALSE, warning=FALSE}
+summary(qcc(diameter2[1:25,], type="xbar"))
+
+```
+
+
+```{r message=FALSE, warning=FALSE}
+z<-qcc(diameter2[1:25,], type="S");z
+z$limits
+```
+<br>
 
 
 
