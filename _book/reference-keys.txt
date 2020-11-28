@@ -454,3 +454,4 @@ kontrol-dışı-olma-durumu-6
 x-s-kontrol-diyagramları-6
 ölçülebilir-değişkenler-için-kontrol-grafiği-faktör-tablosu-6
 standart-normal-dağılım-tablosu-6
+p-kontrol-diyagramı

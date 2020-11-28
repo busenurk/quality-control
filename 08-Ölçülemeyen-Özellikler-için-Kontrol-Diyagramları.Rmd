@@ -1,2 +1,233 @@
 # Ölçülemeyen Özellikler için Kontrol Diyagramları
 
+Birçok kalite özelliği sayısal olarak uygun şekilde ifade edilemez. Bu gibi durumlarda, genellikle incelenen her bir öğeyi, o kalite özelliğiyle ilgili spesifikasyonlara uygun veya uygun olmayan olarak sınıflandırılır. Bu tür ölçülemeyen özelliklere örnek olarak bir kredi başvurusu süresince gerçekleşen hata sayısı, bir hastanede gerçekleşen tıbbi hataların sayısı gibi örnekler verilebilir.
+
+Ölçülebilir özellikler için oluşturulan kontrol diyagramları tabi ki daha fazla bilgi içerdiğinden verimlidir. Ancak her üretim tipinde ölçülebilir değerlerin elde edilmesi mümkün olamamaktadır.  Özellikle hizmet endüstrilerinde ve imalat dışı kalite geliştirme çalışmalarında ölçülemeyen özellikler için kontrol diyagramları oldukça faydalıdır çünkü bu ortamlarda bulunan kalite özelliklerinin çoğu sayısal ölçekte kolayca ölçülememektedir.
+
+
+## p kontrol diyagramı
+
+Bir partideki hatalı ya da kusurlu oranı için kullanılan p kontrol diyagramı, Binom dağılımını esas almaktadır.
+
+**p kontrol diyagramında**, LCL, CL ve UCL aşağıdaki formüller kullanılarak hesaplanabilir.
+
+$UCL_{p}=\bar{p}+3\sqrt{\frac{\bar{p}(1-\bar{p})}{n}}$
+
+$CL_{p}=\bar{p}$
+
+$LCL_{p}=\bar{p}-3\sqrt{\frac{\bar{p}(1-\bar{p})}{n}}$
+
+<br>
+
+Ölçülemeyen özellikler için kontrol diyagramlarında uygulanacak kontrol dışılık testleri;
+
+- Merkez çizgisinin $\pm3\sigma$ aralığının dışında 1 nokta
+- Merkez çizgisinin aynı tarafında yer alan ardıl 9 nokta
+- Sürekli artan ya da azalan 6 nokta
+- Bir artıp bir azalan 14 nokta
+
+olarak sıralanabilir.
+
+<br>
+
+**Örnek 1:** Büyük bir e-ticaret şirketi, müşterilerinden doğru olmayan faturalarla ilgili şikayetler almaktadır. Altı sigma projesinin ölçüm evresi boyunca bu durumu iyileştirmek amaçlanmış ve20 haftalık zaman dilimi için hatalı faturaları kontrol etmek amacı ile 200 faturalık rassal örnekler alınmıştır. Elde edilen değerler aşağıdaki yer almaktadır.
+
+```{r echo=FALSE}
+library(DT)
+h.say<-c(23,23,20,21,17,22,24,20,18,17,24,17,15,19,19,22,27,23,23,18)
+df<-data.frame(Hatalı_Sayısı=h.say)
+DT::datatable(df,options = list(
+            columnDefs = list(list(className = 'dt-center', targets = 0:1))
+            ))
+
+
+```
+
+Hatalı sayısı işlem kolaylığı açısından h.say değişkenine atanmıştır.
+
+```{r}
+sum(h.say)
+```
+
+<br>
+
+p kontrol diyagramı için ilk olarak haftalara ait hata oranlarının hesaplanması gerekmektedir. 20 haftalık zaman dilimi için hatalı faturaların kontrolü amacıyla 200 faturalık rassal örnekler alındığı bilgisi soruda verilmişti.
+
+```{r}
+h.or<-c()   # hatalı oranı (p)
+for (i in 1:20){
+  h.or[i]=h.say[i]/200
+}
+
+m.p=mean(h.or)
+```
+<br>
+
+Bu hesaplamalara göre ortalama  hata oranı $\bar{p}$;
+
+```{r}
+412/(200*20)    # % 10.3
+```
+
+<br>
+
+```{r echo=FALSE}
+
+df2<-data.frame(Hatalı_Sayısı=h.say, Hatalı_Oranı=h.or)
+
+DT::datatable(df2,options = list(
+            columnDefs = list(list(className = 'dt-center', targets = 0:2))
+            ))
+```
+
+<br>
+
+Hatalı oranı için UCL, CL ve LCL aşağıdaki gibi elde edilir;
+
+```{r}
+n=200
+UCLp=m.p+3*sqrt(m.p*(1-m.p)/n); UCLp
+
+UCLp<-round(UCLp,4); UCLp
+
+```
+
+<br>
+
+```{r}
+CLp=m.p
+CLp
+```
+
+
+<br>
+
+```{r}
+LCLp=m.p-3*sqrt(m.p*(1-m.p)/n); LCLp
+
+LCLp<-round(LCLp,4); LCLp
+```
+
+Kontrol limitleri hesaplandıktan sonra kontrol diyagramı elde edilerek değişkenliğin özel bir nedeninin olup olmadığı kontrol edilmelidir.
+
+```{r message=FALSE, warning=FALSE}
+library(qcc)
+qcc(h.say, sizes=200, type="p")
+```
+
+<br>
+
+Kontrol diyagramı incelendiğinde kontrol limitlerinin dışında gözlenen nokta bulunmamış ve kontrol testleri de herhangi bir özel değişkenlik göstermemiştir. Prosesin istatistiksel olarak kontrol altında ve mevcut değişkenliğin rassal olduğu söylenebilir.
+
+<br>
+
+p kontrol diyagramları örneklem büyüklüğünün sabit olmadığı durumlarda da kullanılabilir.
+
+**Örnek 2:** Bir modem üreticisi, Mart ayının sonu ve Nisan ayının tamamı için ürünlerin son testinden veri toplamıştır. Alt grup büyüklüğü, 1 günlük muayene sonuçlarıdır. 25 alt grup için muayene sonuçları aşağıda yer almaktadır.
+
+Günlük muayene sayısındaki değişkenlik farklı sebeplerden kaynaklanabilir. Makine arızaları, farklı üretim gereksinimlerine sahip ürünler değişkenliğe neden olmaktadır. 1238 muayene ileen düşük değer 9 Nisan tarihine aittir. Bu tarihte ikinci vardiya çalışılmamıştır. 2768 muayene ile 22 Nisan tarihinde en yüksek değer gerçekleşmiştir. Bu değer, fazla mesaiden kaynaklanmıştır.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+a.g<-c("29 Mart","30 Mart","31 Mart","1 Nisan","2 Nisan","5 Nisan","6 Nisan","7 Nisan","8 Nisan","9 Nisan","12 Nisan","13 Nisan","14 Nisan","15 Nisan","16 Nisan","19 Nisan","20 Nisan","21 Nisan","22 Nisan","23 Nisan","26 Nisan","27 Nisan","28 Nisan","29 Nisan", "30 Nisan")
+
+
+muay.s<-c(2385,1451,1935,2450,1997,2168,1941,1962,2244,1238,2289,1464,2061,1667,2350,2354,1509,2190,2678,2252,1641,1782,1993,2382,2132)
+
+kus.say<-c(55,18,50,42,39,52,47,34,29,53,45,26,47,34,31,38,28,30,113,58,34,19,30,17,46)
+
+
+df3<-data.frame(Alt_Grup=a.g, Muayene_Sayısı=muay.s,Kusurlu_Sayısı=kus.say)
+DT::datatable(df3,options = list(
+            columnDefs = list(list(className = 'dt-center', targets = 0:3))
+            ))
+
+       
+       
+```
+
+<br>
+
+Öncelikle kontrol diyagramının merkez çizgisini oluşturacak olan ortalama kusurlu oranı ($\bar{p}$) hesaplanmalıdır.
+
+```{r}
+# Kusurlu_Sayısı=kus.say
+# Muayene_Sayısı=muay.s
+
+pbar=sum(kus.say)/sum(muay.s)
+```
+<br>
+
+Örneklem büyüklükleri farklılık gösterdiğinden her bir örneklem için kontrol limitlerinin hesaplanması gerekmektedir.
+
+```{r}
+UCL.p=c()
+LCL.p=c()
+
+for(i in 1:25){
+  UCL.p[i]=pbar+3*sqrt(pbar*(1-pbar)/muay.s[i])
+  LCL.p[i]=pbar-3*sqrt(pbar*(1-pbar)/muay.s[i])
+}
+
+head(cbind(UCL.p,LCL.p))
+```
+
+<br>
+
+Her bir alt grup için kusurlu oranı elde edilirse,
+
+```{r}
+kus.or=c()  # Kusurlu oranı
+for(i in 1:25){
+  kus.or[i]=kus.say[i]/muay.s[i]
+}
+
+head(kus.or)
+```
+<br>
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+df4=data.frame(Alt_Grup=a.g, Muayene_Sayısı=muay.s,Kusurlu_Sayısı=kus.say, Kusurlu_Oranı=round(kus.or,2), UCL= round(UCL.p,3),LCL=round(LCL.p,3))
+
+DT::datatable(df4,options = list(
+            columnDefs = list(list(className = 'dt-center', targets = 0:6))
+            ))
+```
+
+
+p kontrol diyagramı;
+
+```{r message=FALSE, warning=FALSE}
+library(qcc)
+qcc(kus.say, sizes=muay.s, type="p")
+```
+Kontrol diyagramı incelendiğinde prosesin istatistiksel olarak kontrol altında olmadığı görülmektedir. 9, 22 ve 29 Nisan tarihlerindeki ölçümlerin kontrol limitlerini aştığı gözlenmektedir.  Bu üç noktanın da özel değişkenlik sebebi olduğu anlaşıldığından, gözlemlerin elimine edilerek hesaplamaların tekrarlanması gerekmektedir.
+
+```{r}
+df5<-df4[-c(10,19,24),]
+
+qcc(df5[,3], sizes=df5[,2], type="p")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
