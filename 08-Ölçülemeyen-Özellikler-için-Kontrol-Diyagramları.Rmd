@@ -7,7 +7,7 @@ Birçok kalite özelliği sayısal olarak uygun şekilde ifade edilemez. Bu gibi
 
 ## p kontrol diyagramı
 
-Bir partideki hatalı ya da kusurlu oranı için kullanılan p kontrol diyagramı, Binom dağılımını esas almaktadır.
+Bir partideki hatalı ya da **kusurlu oranı** için kullanılan **p kontrol diyagramı**, Binom dağılımını esas almaktadır.
 
 **p kontrol diyagramında**, LCL, CL ve UCL aşağıdaki formüller kullanılarak hesaplanabilir.
 
@@ -209,23 +209,88 @@ qcc(df5[,3], sizes=df5[,2], type="p")
 ```
 
 
+## np kontrol diyagramı
+
+Ölçülemeyen özellikler için hatalı ya da **kusurlu sayısının** analizinde ve alt grup büyüklükleri eşit olması durumunda **np kontrol diyagramları** kullanılmaktadır. Kontrol limitleri merkez çizgisinden $\pm3\sigma$ uzaklıkta oluşmaktadır.Standart sapma değeri;
+
+$\sigma=\sqrt{n\bar{p}(1-\bar{p})}$
+
+eşitliği ile hesaplanır.
+
+<br>
+
+**np kontrol diyagramında**, LCL, CL ve UCL aşağıdaki formüller kullanılarak hesaplanabilir.
+
+$UCL_{np}=n\bar{p}+3\sqrt{n\bar{p}(1-p)}$
+
+$CL_{np}=n\bar{p}$
+
+$LCL_{np}=n\bar{p}-3\sqrt{n\bar{p}(1-p)}$
+
+<br>
+
+Ölçülemeyen özellikler için kontrol diyagramlarında uygulanacak kontrol dışılık testleri p kontrol diyagramlarında olduğu gibi bu yöntem için de incelenmelidir.
+
+<br>
+
+**Örnek 1:** Bir analist bir üretim vardiyasında her biri 200 üründen oluşan 10 farklı örneklem almış ve her bir örneklemdeki hatalı parça sayısını belirleyerek kaydetmiştir. Hata sayıları aşağıdaki tabloda yer almaktadır. Kontrol limitlerini elde ederek np kontrol diyagramını oluşturunuz.
+
+```{r}
+hata=c(5,3,7,2,1,4,10,4,1,6)
+cat("hata:",hata)
+```
+<br>
+
+```{r}
+pbar=sum(hata)/(10*200); pbar
+```
+<br>
+
+```{r}
+n=200
+n.pbar=n*pbar
+n.pbar
+```
+
+<br>
+
+Kontrol limitlerinin hesabında gerekecek temel değerler olan $\bar{p}$ ve $n\bar{p}$ elde edildikten sonra kontrol limitleri hesabına geçilir.
+
+```{r}
+UCLnp=n.pbar+3*sqrt(n.pbar*(1-pbar))
+UCLnp
+```
+
+<br>
+
+```{r}
+CLnp=n.pbar
+CLnp
+```
+
+<br>
+
+```{r}
+LCLnp=n.pbar-3*sqrt(n.pbar*(1-pbar))
+LCLnp
+```
+
+Burada önemli nokta hata sayısının negatif olma ihtimalinin bulunmamasıdır. Bu bakımdan negatif hesaplanan LCL değeri 0 olarak alınır. Belirlenen limit değerleri ışığında kontrol diyagramı aşağıdaki gibi oluşur;
+
+```{r}
+library(qcc)
+qcc(hata, sizes=200, type="np")
+```
+
+Kontrol diyagram çıktısında elde edilen StdDev değerinin kontrolü de aşağıdaki şekilde yapılabilir;
+
+```{r}
+sigma=sqrt(n.pbar*(1-pbar))
+sigma
+```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+np kontrol diyagramında görüldüğü üzere kontrol limitlerini aşan gözlem bulunmamakta ve kontrol dışılık testinde değişkenlik gösteren gözlem bulunmamaktadır, proses kontrol altındadır ve elde edilen limitler evre II için kullanılabilir.
 
 
 
