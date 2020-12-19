@@ -458,3 +458,9 @@ p-kontrol-diyagramı
 np-kontrol-diyagramı
 soru1
 soru2
+c-kontrol-diyagramı
+p-kontrol-diyagramı-1
+np-kontrol-diyagramı-1
+c-kontrol-diyagramı-1
+soru1-1
+soru2-1

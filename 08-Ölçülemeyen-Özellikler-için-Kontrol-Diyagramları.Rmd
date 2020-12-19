@@ -294,5 +294,67 @@ np kontrol diyagramında görüldüğü üzere kontrol limitlerini aşan gözlem
 
 
 
+## c kontrol diyagramı
 
+c kontrol diyagramı eşit fırsattaki kusur sayısını kontrol etmek için kullanılır. Örneklem büyüklüğü sabittir. Bu eşit fırsat alanı; zaman alan ya da ürün grubu olabilir. Örneğin; bir saatteki iplik kırılmalarının sayısı, bir metrekare halıdaki kusur sayısı. 
+
+**c kontrol diyagramında**, LCL, CL ve UCL aşağıdaki formüller kullanılarak hesaplanabilir.
+
+$UCL_{c}=\bar{c}+3\sqrt{\bar{c}}$
+
+$CL_{c}=\bar{c}$
+
+$LCL_{c}=\bar{c}-3\sqrt{\bar{c}}$
+
+<br>
+
+burada $\bar{c}$ ortalama kusur sayısıdır.
+
+**Örnek 1:** Bir banka tarafından gerçekleştirilen ATM cihazlarının tahkiki sırasında, ATM cihazı bazlı olarak 1 aylık döneme ait tespit edilen hata sayıları aşağıdaki tablodaki gibidir. Kontrol limitlerini hesaplayınız, kontrol diyagramını oluşturunuz.
+
+```{r echo=FALSE}
+atm<-1:30
+hata.say<-c(5,4,7,9,4,6,5,8,9,11,5,10,6,6,5,4,7,10,6,9,8,8,4,8,8,4,4,7,3,12)
+
+dt<- data.frame(atm,hata.say)
+DT::datatable(dt,options = list(
+            columnDefs = list(list(className = 'dt-center', targets = 0:2))
+            ))
+```
+
+<br>
+
+Ortalama hata sayısı;
+
+```{r}
+mc<-mean(hata.say)
+mc
+```
+
+<br>
+
+```{r}
+UCLc=mc+3*sqrt(mc)
+UCLc
+```
+
+<br>
+
+```{r}
+CLc=mc
+```
+
+<br>
+
+```{r}
+LCLc=mc-3*sqrt(mc)
+LCLc
+```
+Hata sayısı değeri negatif olamayacağından LCL değeri 0 olarak alınır. Elde edilen kontrol limitlerine bağlı olarak c kontrol diyagramı aşağıdaki gibi çizilir.
+
+```{r}
+qcc(hata.say,30, type="c")
+```
+
+Kontrol diyagramı incelendiğinde, kontrol dışı bir noktanın olmadığı ve prosesin istatistiksel olarak kontrol altında olduğu görülmektedir. 
 
