@@ -464,3 +464,4 @@ np-kontrol-diyagramı-1
 c-kontrol-diyagramı-1
 soru1-1
 soru2-1
+u-kontrol-diyagramı

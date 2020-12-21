@@ -221,11 +221,11 @@ eşitliği ile hesaplanır.
 
 **np kontrol diyagramında**, LCL, CL ve UCL aşağıdaki formüller kullanılarak hesaplanabilir.
 
-$UCL_{np}=n\bar{p}+3\sqrt{n\bar{p}(1-p)}$
+$UCL_{np}=n\bar{p}+3\sqrt{n\bar{p}(1-\bar{p})}$
 
 $CL_{np}=n\bar{p}$
 
-$LCL_{np}=n\bar{p}-3\sqrt{n\bar{p}(1-p)}$
+$LCL_{np}=n\bar{p}-3\sqrt{n\bar{p}(1-\bar{p})}$
 
 <br>
 
@@ -358,3 +358,109 @@ qcc(hata.say,30, type="c")
 
 Kontrol diyagramı incelendiğinde, kontrol dışı bir noktanın olmadığı ve prosesin istatistiksel olarak kontrol altında olduğu görülmektedir. 
 
+## u kontrol diyagramı
+
+Ölçülemeyen niteliklerde ölçüm birimi başına hata sayısını kontrol etmek için u kontrol diyagramından faydalanılabilir. Örneklem büyüklüğü değişken ya da sabit olabilir. 
+
+**u kontrol diyagramında**, LCL, CL ve UCL aşağıdaki formüller kullanılarak hesaplanabilir.
+
+$UCL_{u}=\bar{u}+3\sqrt{\frac{\bar{u}}{n}}$
+
+$CL_{u}=\bar{u}$
+
+$LCL_{u}=\bar{u}-3\sqrt{\frac{\bar{u}}{n}}$
+
+<br>
+
+burada $\bar{u}$ ortalama kusur sayısıdır.
+
+
+**Örnek 1:** Bir analist, her bir vardiyadaki kontrplak levhaların üretimini incelemekte ve üretilen kontrplak levhaların sayısını ve her bir levhadaki hata sayısını kayıt altına almaktadır. Muayene birimi, bir kontrplak levhadır. Analist tarafından toplanan veri, aşağıdaki tabloda yer almaktadır. u kontrol diyagramını oluşturunuz.
+
+```{r echo=FALSE}
+var<-c("A","B","C","D")
+kont<-c(250,270,230,245)
+top.hat<-c(300,310,290,310)
+kont2<-c(1.200,1.148,1.261,1.265)
+
+df<-data.frame(var,kont,top.hat,kont2)
+names(df)<-c("Vardiya", "Kontrplak sayısı", "Toplam hata sayısı", "Kontrplak başına hata sayısı")
+
+DT::datatable(df,options = list(
+            columnDefs = list(list(className = 'dt-center', targets = 0:4))
+            ))
+```
+
+<br>
+
+Sabit olmayan örneklem büyüklüklerinde her bir alt grup için kontrol limiti bulunduğunu daha önceki konu başlarında görmüştük, burada da her bir alt grup için ilgili büyüklüğe (n) bağlı olarak gerekli hesaplamalar yapılacaktır. Soruda yer alan değişkenler kodlamada aşağıdaki değişken isimleri ile adlandırılmıştır.
+
+Kontrplak sayısı; kont
+
+Toplam hata sayısı; top.hat
+
+Kontrplak başına hata sayısı; kont2
+
+**Vardiya A**
+
+```{r}
+ubar=sum(top.hat)/sum(kont) ; ubar
+
+UCLu1=ubar+3*sqrt(ubar/kont[1])     # n=250 (kontrplak sayisi)
+UCLu1
+```
+
+<br>
+
+```{r}
+CLu1=ubar
+CLu1
+```
+
+<br>
+
+```{r}
+LCLu1=ubar-3*sqrt(ubar/kont[1])
+LCLu1
+```
+
+**Vardiya B**
+
+```{r}
+UCLu2=ubar+3*sqrt(ubar/kont[2])     # n=250 (kontrplak sayisi)
+UCLu2
+```
+
+<br>
+
+```{r}
+CLu2=ubar
+CLu2
+```
+
+<br>
+
+```{r}
+LCLu2=ubar-3*sqrt(ubar/kont[2])
+LCLu2
+```
+
+
+C ve D vardiyaları da benzer şekilde hesaplanabilir veya vardiyaların tamamı tek bir döngüde yazılarak elde edilebilir.
+
+```{r}
+limits=matrix(NA,4,2)
+for (i in 1:4){
+  limits[i,1]=ubar-3*sqrt(ubar/kont[i])
+  limits[i,2]=ubar+3*sqrt(ubar/kont[i])}
+  colnames(limits)<-c("LCL","UCL")
+  round(limits,3)
+
+```
+
+Elde edilen kontrol limitleri için u kontrol diyagramı;
+
+```{r}
+qcc(top.hat,sizes=kont, type="u")
+```
+Kontrol diyagramı incelendiğinde, üretim vardiyaları için kontrol dışılığın söz konusu olmadığı görülmektedir. 
