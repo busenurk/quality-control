@@ -1,2 +1,174 @@
 # Proses Yeterlilik Analizi
 
+## Proses Yeterliliği ve Sigma Kalite Seviyesi
+
+Yeterlilik indeksleri, müşteri gereksinimleri ile ilişkili şekilde proseslerin ne kadar iyi performans gösterdiklerinin değerlendirilmesinde yaygın şekilde kullanılmaktadır. Prosesin müşteri ihtiyaçlarına göre belirlenmiş spesifikasyon limitlerine göre değerlendirilmesi yeterlilik indeksleri ile gerçekleştirilir. Bu bakımdan sigma kalite seviyesi prosesin değerlendirilmesinde tek başına yeterli değildir.
+
+Hedef değerin 490 gr. ve spesifikasyon limitlerinin 485-495 gr. arasında olması gerektiğini belirten bir müşteri için aynı tip şişe üreten 4 proses olduğunu varsayalım. Prosesten alınan düzenli örnekler ile kontrol diyagramları oluşturulduğunda prosesin kontrol altında olduğunu varsayalım. Proseslerin ortalamaları ve standart sapmaları aşağıdaki gibidir:
+
+<br>
+
+|Üretim Hattı | Ortalama | Standart Sapma |
+|:-----:|:----:|:----:|
+| Hat 1 | 490 | 1.5 |
+| Hat 2 | 492 | 1.5 | 
+| Hat 3 | 490 | 3 |
+| Hat 4 | 487 | 0.9 |
+
+<br>
+
+Üretim hatlarının milyonda hata sayıları ve sigma kalite seviyeleri verilen ortalama, standart sapma ve spesifikasyon limiti değerlerine göre normal dağılım tablosu kullanılarak hesaplanabilir. Tüm üretim hatları için **spesifikasyon dışı ürün üretme olasılıkları;** alt spesifikasyon limiti olan 485 gr. dan daha düşük ve üst spesifikasyon limiti olan 495 gr. dan daha büyük parça üretme olasılıklarının toplamına eşittir. Hesaplama sonucu elde edilen değerler;
+
+<br>
+
+
+|Üretim Hattı | Ortalama | Standart Sapma | ppm | Sigma Seviyesi|
+|:-----:|:----:|:----:|:----:|:------:|
+| Hat 1 | 490 | 1.5 | 858| 4.64 |
+| Hat 2 | 492 | 1.5 | 22752| 3.50 | 
+| Hat 3 | 490 | 3 | 95580| 2.81 |
+| Hat 4 | 487 | 0.9 | 13134 | 3.72 |
+
+<br>
+
+Sigma kalite seviyesi, proses performansını tek bir değerde özetlemektedir. Yalnızca sigma kalite seviyesini kullananrak bir prosesin değerlendirilmesi tehlikelidir. Yalnızca sigma kalite seviyesine güvenme, verilen örnekteki Hat 4'ün yüksek potansiyelli performansını görmemizi engellemektedir. Proses yeterlilik endeksleri, sigma kalite seviyesi gibi müşteri gereksinimlerine göre proses performansını tek bir değerde özetlemektedir. Proses yeterlilik indeksleri, prosesin sesinin müşterinin sesi ile uyumunu göstermektedir.
+
+
+## $C_{p}$, $C_{pk}$ ve $C_{pm}$ Proses Yeterlilik İndeksleri
+
+### $C_{p}$ Proses Yeterlilik Indeksi
+
+Proses yeterlilik için kullanılan en basit indeks olan $C_{p}$, müşteri tolerans aralığının doğal tolerans aralığına oranı olarak tanımlanır ve şu şekilde hesaplanır;
+
+
+
+$C_{p}=\frac{Müşteri \ toleransı}{Doğal \ tolerans}=\frac{USL-ASL}{6 \sigma}$
+
+Verilen eşitlik üzerinden tüm hatlar için $C_{p}$ değeri hesaplanacak olursa;
+
+```{r}
+USL=495
+ASL=485
+
+d=USL-ASL
+
+Cp1=d/(6*1.5)     # paranteze dikkat!
+Cp2=d/(6*1.5)
+Cp3=d/(6*3)
+Cp4=d/(6*0.9)
+
+cp=c(Cp1,Cp2,Cp3,Cp4)
+names(cp)<-c("Cp1","Cp2","Cp3","Cp4")
+
+round(cp,2)
+```
+
+Her bir hat için $C_{p}$ değerleri incelendiğinde Hat 1 ve Hat 2'nin farklı milyonda kusur sayıları ve sigma kalite seviyelerine rağmen, aynı proses yeterlilik indeksine sahip olduğu görülmüştür. Bunun nedeni; $C_{p}$ indeksinin prosesin merkezi konumunu dikkate almamasıdır (Hat 2'nin ortalaması hedef değerde değildir). Bu noktada prosesin hem merkezi konumunu hem de yayılımını dikkate alan bir indekse ihtiyaç duyulmuş ve $C_{pk}$ indeksi önerilmiştir.  
+
+
+### $C_{pk}$ Proses Yeterlilik Indeksi
+
+Prosesin hem merkezi konumunu hem de yayılımını dikkate alan $C_{pk}$ indeksi, aşağıdaki şekilde hesaplanmaktadır.
+
+$C_{pk}=min[C_{palt},C_{püst}]=min[\frac{\mu-ASL}{3\sigma},\frac{USL-\mu}{3\sigma}]$
+
+Hat 2 için $C_{pk}$ proses yeterlilik indeksi hesaplanırsa;
+
+```{r}
+Calt=(492-485)/(3*1.5); Calt
+Cust=(495-492)/(3*1.5); Cust
+
+min(Calt,Cust)
+
+```
+
+Diğer hatlar için de benzer hesaplamalar yapılarak aşağıdaki tablo oluşturulmuştur.
+
+<br>
+
+|Üretim Hattı | Ortalama | Standart Sapma | ppm | Sigma Seviyesi| $C_{p}$ | $C_{pk}$ |
+|:-----:|:----:|:----:|:----:|:------:|:---:|:----:|
+| Hat 1 | 490 | 1.5 | 858| 4.64 |1.11 | 1.11|
+| Hat 2 | 492 | 1.5 | 22752| 3.50 | 1.11 | 0.67|
+| Hat 3 | 490 | 3 | 95580| 2.81 | 0.56 | 0.56|
+| Hat 4 | 487 | 0.9 | 13134 | 3.72 | 1.85 | 0.74|
+
+Hedef değer (bu problem için 490 gr.), ASL ve ÜSL'nin tam ortasında ve proses ortalaması hedef değere eşit olduğunda $C_{p}=C_{pk}$   olur ve proses merkezileşmiştir. $C_{p}$ ve  $C_{pk}$ için aşağıdaki çıkarımlar yapılabilir;
+
+- $C_{p}=C_{pk}$ ise proses merkezidir.
+
+- $C_{pk}$ değeri, $C_{p}$ değerinden her zaman küçük ya da eşittir. 
+
+- $C_{p}<1$ ise, proses yeterli değildir.
+
+- $C_{pk}<1$ ise, proses spesifikasyonlara uygun parça üretmemektedir.
+
+- Proses merkezi değiştiğinde, $C_{p}$ değeri değişmeyecektir.
+
+- $C_{pk}=0$ ise, ortalama spesifikasyon limitlerine eşittir.
+
+- Negatif $C_{pk}$ değeri ortalamanın spesifikasyon limitlerinin dışında olduğunu göstermektedir.
+
+- $C_{pk}>1$ ise, proses spesifikasyonlara uygun ürün üretmektedir.
+
+<br>
+
+Proses yeterliliği açısından $C_{p}$ ve  $C_{pk}$ değerleri için belirlenen minimum değerler, aşağıdaki tabloda yer almaktadır. Bu değerler, prosesin tek yönlü (sadece alt ya da sadece üst spesifikasyon limiti) ya da çift yönlü spesifikasyon limiti kullanmasına bağlı olarak farklılık göstermektedir.
+
+|Proses tipi| İki yönlü | Tek yönlü |
+|:-----|:----:|:----:|
+| Mevcut süreç | 1.33 | 1.25 |
+| Yeni süreç | 1.50  |  1.45| 
+| Güvenlik, kuvvet veya kritik parametreler (mevcut) | 1.50| 1.45  |
+| Güvenlik, kuvvet veya kritik parametreler (yeni) | 1.67 | 1.60 |
+
+<br>
+
+Merkezileşmiş bir proseste $C_{p}$ ve  $C_{pk}$ indeksleri ile milyon fırsattaki hata sayısı ve sigma kalite seviyesi arasındaki ilişki aşağıdaki tabloda sunulmaktadır.
+
+|$C_{p}$ | $C_{pk}$ | ppm | Sigma Seviyesi |
+|:-----|:----:|:----:|:---:|:-----:|
+|0.50|0.50|133614|1.5|
+|0.60|0.60|71861|1.8|
+|0.70|0.70|35729|2.1|
+|0.80|0.80|16395|2.4|
+|0.90|0.90|6934|2.7|
+|1.00|1.00|2700|3.0|
+|1.10|1.10|967|3.3|
+|1.20|1.20|318|3.6|
+|1.30|1.30|96|3.9|
+|1.40|1.40|27|4.2|
+|1.50|1.50|6.8|4.5|
+|1.60|1.60|1.6|4.8|
+|1.70|1.70|0.34|5.1|
+|1.80|1.80|0.067|5.4|
+|1.90|1.90|0.012|5.7|
+|2.00|2.00|0.002|6.0|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

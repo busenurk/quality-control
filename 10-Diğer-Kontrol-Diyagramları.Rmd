@@ -1,0 +1,9 @@
+# Diğer Kontrol Diyagramları
+
+## CUSUM (Cumulative Sum) Kontrol Diyagramı
+
+
+
+
+## EWMA (Exponentially Weighted Moving Average) Kontrol Diyagramı
+

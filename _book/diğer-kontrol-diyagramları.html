@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Bölüm 10 Proses Yeterlilik Analizi | İstatistiksel Kalite Kontrol</title>
+  <title>Bölüm 11 Diğer Kontrol Diyagramları | İstatistiksel Kalite Kontrol</title>
   <meta name="description" content="Statistical quality control lecture notes" />
   <meta name="generator" content="bookdown 0.20.6 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Bölüm 10 Proses Yeterlilik Analizi | İstatistiksel Kalite Kontrol" />
+  <meta property="og:title" content="Bölüm 11 Diğer Kontrol Diyagramları | İstatistiksel Kalite Kontrol" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Bölüm 10 Proses Yeterlilik Analizi | İstatistiksel Kalite Kontrol" />
+  <meta name="twitter:title" content="Bölüm 11 Diğer Kontrol Diyagramları | İstatistiksel Kalite Kontrol" />
   
   <meta name="twitter:description" content="Statistical quality control lecture notes" />
   
@@ -24,15 +24,15 @@
 <meta name="author" content="Dr. Busenur Kızılaslan" />
 
 
-<meta name="date" content="2020-12-26" />
+<meta name="date" content="2020-12-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ölçülemeyen-özellikler-için-kontrol-diyagramları.html"/>
-<link rel="next" href="diğer-kontrol-diyagramları.html"/>
+<link rel="prev" href="proses-yeterlilik-analizi.html"/>
+<link rel="next" href="örnekleme.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -55,70 +55,6 @@
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
-<style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -223,13 +159,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3" data-path="ölçülemeyen-özellikler-için-kontrol-diyagramları.html"><a href="ölçülemeyen-özellikler-için-kontrol-diyagramları.html#c-kontrol-diyagramı"><i class="fa fa-check"></i><b>9.3</b> c kontrol diyagramı</a></li>
 <li class="chapter" data-level="9.4" data-path="ölçülemeyen-özellikler-için-kontrol-diyagramları.html"><a href="ölçülemeyen-özellikler-için-kontrol-diyagramları.html#u-kontrol-diyagramı"><i class="fa fa-check"></i><b>9.4</b> u kontrol diyagramı</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="proses-yeterlilik-analizi.html"><a href="proses-yeterlilik-analizi.html"><i class="fa fa-check"></i><b>10</b> Proses Yeterlilik Analizi</a><ul>
-<li class="chapter" data-level="10.1" data-path="proses-yeterlilik-analizi.html"><a href="proses-yeterlilik-analizi.html#proses-yeterliliği-ve-sigma-kalite-seviyesi"><i class="fa fa-check"></i><b>10.1</b> Proses Yeterliliği ve Sigma Kalite Seviyesi</a></li>
-<li class="chapter" data-level="10.2" data-path="proses-yeterlilik-analizi.html"><a href="proses-yeterlilik-analizi.html#c_p-c_pk-ve-c_pm-proses-yeterlilik-indeksleri"><i class="fa fa-check"></i><b>10.2</b> <span class="math inline">\(C_{p}\)</span>, <span class="math inline">\(C_{pk}\)</span> ve <span class="math inline">\(C_{pm}\)</span> Proses Yeterlilik İndeksleri</a><ul>
-<li class="chapter" data-level="10.2.1" data-path="proses-yeterlilik-analizi.html"><a href="proses-yeterlilik-analizi.html#c_p-proses-yeterlilik-indeksi"><i class="fa fa-check"></i><b>10.2.1</b> <span class="math inline">\(C_{p}\)</span> Proses Yeterlilik Indeksi</a></li>
-<li class="chapter" data-level="10.2.2" data-path="proses-yeterlilik-analizi.html"><a href="proses-yeterlilik-analizi.html#c_pk-proses-yeterlilik-indeksi"><i class="fa fa-check"></i><b>10.2.2</b> <span class="math inline">\(C_{pk}\)</span> Proses Yeterlilik Indeksi</a></li>
-</ul></li>
-</ul></li>
+<li class="chapter" data-level="10" data-path="proses-yeterlilik-analizi.html"><a href="proses-yeterlilik-analizi.html"><i class="fa fa-check"></i><b>10</b> Proses Yeterlilik Analizi</a></li>
 <li class="chapter" data-level="11" data-path="diğer-kontrol-diyagramları.html"><a href="diğer-kontrol-diyagramları.html"><i class="fa fa-check"></i><b>11</b> Diğer Kontrol Diyagramları</a><ul>
 <li class="chapter" data-level="11.1" data-path="diğer-kontrol-diyagramları.html"><a href="diğer-kontrol-diyagramları.html#cusum-cumulative-sum-kontrol-diyagramı"><i class="fa fa-check"></i><b>11.1</b> CUSUM (Cumulative Sum) Kontrol Diyagramı</a></li>
 <li class="chapter" data-level="11.2" data-path="diğer-kontrol-diyagramları.html"><a href="diğer-kontrol-diyagramları.html#ewma-exponentially-weighted-moving-average-kontrol-diyagramı"><i class="fa fa-check"></i><b>11.2</b> EWMA (Exponentially Weighted Moving Average) Kontrol Diyagramı</a></li>
@@ -264,353 +194,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="proses-yeterlilik-analizi" class="section level1">
-<h1><span class="header-section-number">Bölüm 10</span> Proses Yeterlilik Analizi</h1>
-<div id="proses-yeterliliği-ve-sigma-kalite-seviyesi" class="section level2">
-<h2><span class="header-section-number">10.1</span> Proses Yeterliliği ve Sigma Kalite Seviyesi</h2>
-<p>Yeterlilik indeksleri, müşteri gereksinimleri ile ilişkili şekilde proseslerin ne kadar iyi performans gösterdiklerinin değerlendirilmesinde yaygın şekilde kullanılmaktadır. Prosesin müşteri ihtiyaçlarına göre belirlenmiş spesifikasyon limitlerine göre değerlendirilmesi yeterlilik indeksleri ile gerçekleştirilir. Bu bakımdan sigma kalite seviyesi prosesin değerlendirilmesinde tek başına yeterli değildir.</p>
-<p>Hedef değerin 490 gr. ve spesifikasyon limitlerinin 485-495 gr. arasında olması gerektiğini belirten bir müşteri için aynı tip şişe üreten 4 proses olduğunu varsayalım. Prosesten alınan düzenli örnekler ile kontrol diyagramları oluşturulduğunda prosesin kontrol altında olduğunu varsayalım. Proseslerin ortalamaları ve standart sapmaları aşağıdaki gibidir:</p>
-<p><br></p>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Üretim Hattı</th>
-<th align="center">Ortalama</th>
-<th align="center">Standart Sapma</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">Hat 1</td>
-<td align="center">490</td>
-<td align="center">1.5</td>
-</tr>
-<tr class="even">
-<td align="center">Hat 2</td>
-<td align="center">492</td>
-<td align="center">1.5</td>
-</tr>
-<tr class="odd">
-<td align="center">Hat 3</td>
-<td align="center">490</td>
-<td align="center">3</td>
-</tr>
-<tr class="even">
-<td align="center">Hat 4</td>
-<td align="center">487</td>
-<td align="center">0.9</td>
-</tr>
-</tbody>
-</table>
-<p><br></p>
-<p>Üretim hatlarının milyonda hata sayıları ve sigma kalite seviyeleri verilen ortalama, standart sapma ve spesifikasyon limiti değerlerine göre normal dağılım tablosu kullanılarak hesaplanabilir. Tüm üretim hatları için <strong>spesifikasyon dışı ürün üretme olasılıkları;</strong> alt spesifikasyon limiti olan 485 gr. dan daha düşük ve üst spesifikasyon limiti olan 495 gr. dan daha büyük parça üretme olasılıklarının toplamına eşittir. Hesaplama sonucu elde edilen değerler;</p>
-<p><br></p>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Üretim Hattı</th>
-<th align="center">Ortalama</th>
-<th align="center">Standart Sapma</th>
-<th align="center">ppm</th>
-<th align="center">Sigma Seviyesi</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">Hat 1</td>
-<td align="center">490</td>
-<td align="center">1.5</td>
-<td align="center">858</td>
-<td align="center">4.64</td>
-</tr>
-<tr class="even">
-<td align="center">Hat 2</td>
-<td align="center">492</td>
-<td align="center">1.5</td>
-<td align="center">22752</td>
-<td align="center">3.50</td>
-</tr>
-<tr class="odd">
-<td align="center">Hat 3</td>
-<td align="center">490</td>
-<td align="center">3</td>
-<td align="center">95580</td>
-<td align="center">2.81</td>
-</tr>
-<tr class="even">
-<td align="center">Hat 4</td>
-<td align="center">487</td>
-<td align="center">0.9</td>
-<td align="center">13134</td>
-<td align="center">3.72</td>
-</tr>
-</tbody>
-</table>
-<p><br></p>
-<p>Sigma kalite seviyesi, proses performansını tek bir değerde özetlemektedir. Yalnızca sigma kalite seviyesini kullananrak bir prosesin değerlendirilmesi tehlikelidir. Yalnızca sigma kalite seviyesine güvenme, verilen örnekteki Hat 4’ün yüksek potansiyelli performansını görmemizi engellemektedir. Proses yeterlilik endeksleri, sigma kalite seviyesi gibi müşteri gereksinimlerine göre proses performansını tek bir değerde özetlemektedir. Proses yeterlilik indeksleri, prosesin sesinin müşterinin sesi ile uyumunu göstermektedir.</p>
+<div id="diğer-kontrol-diyagramları" class="section level1">
+<h1><span class="header-section-number">Bölüm 11</span> Diğer Kontrol Diyagramları</h1>
+<div id="cusum-cumulative-sum-kontrol-diyagramı" class="section level2">
+<h2><span class="header-section-number">11.1</span> CUSUM (Cumulative Sum) Kontrol Diyagramı</h2>
 </div>
-<div id="c_p-c_pk-ve-c_pm-proses-yeterlilik-indeksleri" class="section level2">
-<h2><span class="header-section-number">10.2</span> <span class="math inline">\(C_{p}\)</span>, <span class="math inline">\(C_{pk}\)</span> ve <span class="math inline">\(C_{pm}\)</span> Proses Yeterlilik İndeksleri</h2>
-<div id="c_p-proses-yeterlilik-indeksi" class="section level3">
-<h3><span class="header-section-number">10.2.1</span> <span class="math inline">\(C_{p}\)</span> Proses Yeterlilik Indeksi</h3>
-<p>Proses yeterlilik için kullanılan en basit indeks olan <span class="math inline">\(C_{p}\)</span>, müşteri tolerans aralığının doğal tolerans aralığına oranı olarak tanımlanır ve şu şekilde hesaplanır;</p>
-<p><span class="math inline">\(C_{p}=\frac{Müşteri \ toleransı}{Doğal \ tolerans}=\frac{USL-ASL}{6 \sigma}\)</span></p>
-<p>Verilen eşitlik üzerinden tüm hatlar için <span class="math inline">\(C_{p}\)</span> değeri hesaplanacak olursa;</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="proses-yeterlilik-analizi.html#cb1-1"></a>USL=<span class="dv">495</span></span>
-<span id="cb1-2"><a href="proses-yeterlilik-analizi.html#cb1-2"></a>ASL=<span class="dv">485</span></span>
-<span id="cb1-3"><a href="proses-yeterlilik-analizi.html#cb1-3"></a></span>
-<span id="cb1-4"><a href="proses-yeterlilik-analizi.html#cb1-4"></a>d=USL<span class="op">-</span>ASL</span>
-<span id="cb1-5"><a href="proses-yeterlilik-analizi.html#cb1-5"></a></span>
-<span id="cb1-6"><a href="proses-yeterlilik-analizi.html#cb1-6"></a>Cp1=d<span class="op">/</span>(<span class="dv">6</span><span class="op">*</span><span class="fl">1.5</span>)     <span class="co"># paranteze dikkat!</span></span>
-<span id="cb1-7"><a href="proses-yeterlilik-analizi.html#cb1-7"></a>Cp2=d<span class="op">/</span>(<span class="dv">6</span><span class="op">*</span><span class="fl">1.5</span>)</span>
-<span id="cb1-8"><a href="proses-yeterlilik-analizi.html#cb1-8"></a>Cp3=d<span class="op">/</span>(<span class="dv">6</span><span class="op">*</span><span class="dv">3</span>)</span>
-<span id="cb1-9"><a href="proses-yeterlilik-analizi.html#cb1-9"></a>Cp4=d<span class="op">/</span>(<span class="dv">6</span><span class="op">*</span><span class="fl">0.9</span>)</span>
-<span id="cb1-10"><a href="proses-yeterlilik-analizi.html#cb1-10"></a></span>
-<span id="cb1-11"><a href="proses-yeterlilik-analizi.html#cb1-11"></a>cp=<span class="kw">c</span>(Cp1,Cp2,Cp3,Cp4)</span>
-<span id="cb1-12"><a href="proses-yeterlilik-analizi.html#cb1-12"></a><span class="kw">names</span>(cp)&lt;-<span class="kw">c</span>(<span class="st">&quot;Cp1&quot;</span>,<span class="st">&quot;Cp2&quot;</span>,<span class="st">&quot;Cp3&quot;</span>,<span class="st">&quot;Cp4&quot;</span>)</span>
-<span id="cb1-13"><a href="proses-yeterlilik-analizi.html#cb1-13"></a></span>
-<span id="cb1-14"><a href="proses-yeterlilik-analizi.html#cb1-14"></a><span class="kw">round</span>(cp,<span class="dv">2</span>)</span></code></pre></div>
-<pre><code>##  Cp1  Cp2  Cp3  Cp4 
-## 1.11 1.11 0.56 1.85</code></pre>
-<p>Her bir hat için <span class="math inline">\(C_{p}\)</span> değerleri incelendiğinde Hat 1 ve Hat 2’nin farklı milyonda kusur sayıları ve sigma kalite seviyelerine rağmen, aynı proses yeterlilik indeksine sahip olduğu görülmüştür. Bunun nedeni; <span class="math inline">\(C_{p}\)</span> indeksinin prosesin merkezi konumunu dikkate almamasıdır (Hat 2’nin ortalaması hedef değerde değildir). Bu noktada prosesin hem merkezi konumunu hem de yayılımını dikkate alan bir indekse ihtiyaç duyulmuş ve <span class="math inline">\(C_{pk}\)</span> indeksi önerilmiştir.</p>
-</div>
-<div id="c_pk-proses-yeterlilik-indeksi" class="section level3">
-<h3><span class="header-section-number">10.2.2</span> <span class="math inline">\(C_{pk}\)</span> Proses Yeterlilik Indeksi</h3>
-<p>Prosesin hem merkezi konumunu hem de yayılımını dikkate alan <span class="math inline">\(C_{pk}\)</span> indeksi, aşağıdaki şekilde hesaplanmaktadır.</p>
-<p><span class="math inline">\(C_{pk}=min[C_{palt},C_{püst}]=min[\frac{\mu-ASL}{3\sigma},\frac{USL-\mu}{3\sigma}]\)</span></p>
-<p>Hat 2 için <span class="math inline">\(C_{pk}\)</span> proses yeterlilik indeksi hesaplanırsa;</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="proses-yeterlilik-analizi.html#cb3-1"></a>Calt=(<span class="dv">492-485</span>)<span class="op">/</span>(<span class="dv">3</span><span class="op">*</span><span class="fl">1.5</span>); Calt</span></code></pre></div>
-<pre><code>## [1] 1.555556</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="proses-yeterlilik-analizi.html#cb5-1"></a>Cust=(<span class="dv">495-492</span>)<span class="op">/</span>(<span class="dv">3</span><span class="op">*</span><span class="fl">1.5</span>); Cust</span></code></pre></div>
-<pre><code>## [1] 0.6666667</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="proses-yeterlilik-analizi.html#cb7-1"></a><span class="kw">min</span>(Calt,Cust)</span></code></pre></div>
-<pre><code>## [1] 0.6666667</code></pre>
-<p>Diğer hatlar için de benzer hesaplamalar yapılarak aşağıdaki tablo oluşturulmuştur.</p>
-<p><br></p>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Üretim Hattı</th>
-<th align="center">Ortalama</th>
-<th align="center">Standart Sapma</th>
-<th align="center">ppm</th>
-<th align="center">Sigma Seviyesi</th>
-<th align="center"><span class="math inline">\(C_{p}\)</span></th>
-<th align="center"><span class="math inline">\(C_{pk}\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">Hat 1</td>
-<td align="center">490</td>
-<td align="center">1.5</td>
-<td align="center">858</td>
-<td align="center">4.64</td>
-<td align="center">1.11</td>
-<td align="center">1.11</td>
-</tr>
-<tr class="even">
-<td align="center">Hat 2</td>
-<td align="center">492</td>
-<td align="center">1.5</td>
-<td align="center">22752</td>
-<td align="center">3.50</td>
-<td align="center">1.11</td>
-<td align="center">0.67</td>
-</tr>
-<tr class="odd">
-<td align="center">Hat 3</td>
-<td align="center">490</td>
-<td align="center">3</td>
-<td align="center">95580</td>
-<td align="center">2.81</td>
-<td align="center">0.56</td>
-<td align="center">0.56</td>
-</tr>
-<tr class="even">
-<td align="center">Hat 4</td>
-<td align="center">487</td>
-<td align="center">0.9</td>
-<td align="center">13134</td>
-<td align="center">3.72</td>
-<td align="center">1.85</td>
-<td align="center">0.74</td>
-</tr>
-</tbody>
-</table>
-<p>Hedef değer (bu problem için 490 gr.), ASL ve ÜSL’nin tam ortasında ve proses ortalaması hedef değere eşit olduğunda <span class="math inline">\(C_{p}=C_{pk}\)</span> olur ve proses merkezileşmiştir. <span class="math inline">\(C_{p}\)</span> ve <span class="math inline">\(C_{pk}\)</span> için aşağıdaki çıkarımlar yapılabilir;</p>
-<ul>
-<li><p><span class="math inline">\(C_{p}=C_{pk}\)</span> ise proses merkezidir.</p></li>
-<li><p><span class="math inline">\(C_{pk}\)</span> değeri, <span class="math inline">\(C_{p}\)</span> değerinden her zaman küçük ya da eşittir.</p></li>
-<li><p><span class="math inline">\(C_{p}&lt;1\)</span> ise, proses yeterli değildir.</p></li>
-<li><p><span class="math inline">\(C_{pk}&lt;1\)</span> ise, proses spesifikasyonlara uygun parça üretmemektedir.</p></li>
-<li><p>Proses merkezi değiştiğinde, <span class="math inline">\(C_{p}\)</span> değeri değişmeyecektir.</p></li>
-<li><p><span class="math inline">\(C_{pk}=0\)</span> ise, ortalama spesifikasyon limitlerine eşittir.</p></li>
-<li><p>Negatif <span class="math inline">\(C_{pk}\)</span> değeri ortalamanın spesifikasyon limitlerinin dışında olduğunu göstermektedir.</p></li>
-<li><p><span class="math inline">\(C_{pk}&gt;1\)</span> ise, proses spesifikasyonlara uygun ürün üretmektedir.</p></li>
-</ul>
-<p><br></p>
-<p>Proses yeterliliği açısından <span class="math inline">\(C_{p}\)</span> ve <span class="math inline">\(C_{pk}\)</span> değerleri için belirlenen minimum değerler, aşağıdaki tabloda yer almaktadır. Bu değerler, prosesin tek yönlü (sadece alt ya da sadece üst spesifikasyon limiti) ya da çift yönlü spesifikasyon limiti kullanmasına bağlı olarak farklılık göstermektedir.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Proses tipi</th>
-<th align="center">İki yönlü</th>
-<th align="center">Tek yönlü</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Mevcut süreç</td>
-<td align="center">1.33</td>
-<td align="center">1.25</td>
-</tr>
-<tr class="even">
-<td align="left">Yeni süreç</td>
-<td align="center">1.50</td>
-<td align="center">1.45</td>
-</tr>
-<tr class="odd">
-<td align="left">Güvenlik, kuvvet veya kritik parametreler (mevcut)</td>
-<td align="center">1.50</td>
-<td align="center">1.45</td>
-</tr>
-<tr class="even">
-<td align="left">Güvenlik, kuvvet veya kritik parametreler (yeni)</td>
-<td align="center">1.67</td>
-<td align="center">1.60</td>
-</tr>
-</tbody>
-</table>
-<p><br></p>
-<p>Merkezileşmiş bir proseste <span class="math inline">\(C_{p}\)</span> ve <span class="math inline">\(C_{pk}\)</span> indeksleri ile milyon fırsattaki hata sayısı ve sigma kalite seviyesi arasındaki ilişki aşağıdaki tabloda sunulmaktadır.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"><span class="math inline">\(C_{p}\)</span></th>
-<th align="center"><span class="math inline">\(C_{pk}\)</span></th>
-<th align="center">ppm</th>
-<th align="center">Sigma Seviyesi</th>
-<th align="center"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">0.50</td>
-<td align="center">0.50</td>
-<td align="center">133614</td>
-<td align="center">1.5</td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="left">0.60</td>
-<td align="center">0.60</td>
-<td align="center">71861</td>
-<td align="center">1.8</td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="left">0.70</td>
-<td align="center">0.70</td>
-<td align="center">35729</td>
-<td align="center">2.1</td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="left">0.80</td>
-<td align="center">0.80</td>
-<td align="center">16395</td>
-<td align="center">2.4</td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="left">0.90</td>
-<td align="center">0.90</td>
-<td align="center">6934</td>
-<td align="center">2.7</td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="left">1.00</td>
-<td align="center">1.00</td>
-<td align="center">2700</td>
-<td align="center">3.0</td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="left">1.10</td>
-<td align="center">1.10</td>
-<td align="center">967</td>
-<td align="center">3.3</td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="left">1.20</td>
-<td align="center">1.20</td>
-<td align="center">318</td>
-<td align="center">3.6</td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="left">1.30</td>
-<td align="center">1.30</td>
-<td align="center">96</td>
-<td align="center">3.9</td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="left">1.40</td>
-<td align="center">1.40</td>
-<td align="center">27</td>
-<td align="center">4.2</td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="left">1.50</td>
-<td align="center">1.50</td>
-<td align="center">6.8</td>
-<td align="center">4.5</td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="left">1.60</td>
-<td align="center">1.60</td>
-<td align="center">1.6</td>
-<td align="center">4.8</td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="left">1.70</td>
-<td align="center">1.70</td>
-<td align="center">0.34</td>
-<td align="center">5.1</td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="left">1.80</td>
-<td align="center">1.80</td>
-<td align="center">0.067</td>
-<td align="center">5.4</td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="left">1.90</td>
-<td align="center">1.90</td>
-<td align="center">0.012</td>
-<td align="center">5.7</td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="left">2.00</td>
-<td align="center">2.00</td>
-<td align="center">0.002</td>
-<td align="center">6.0</td>
-<td align="center"></td>
-</tr>
-</tbody>
-</table>
+<div id="ewma-exponentially-weighted-moving-average-kontrol-diyagramı" class="section level2">
+<h2><span class="header-section-number">11.2</span> EWMA (Exponentially Weighted Moving Average) Kontrol Diyagramı</h2>
 
-</div>
 </div>
 </div>
             </section>
@@ -618,8 +209,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="ölçülemeyen-özellikler-için-kontrol-diyagramları.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="diğer-kontrol-diyagramları.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="proses-yeterlilik-analizi.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="örnekleme.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

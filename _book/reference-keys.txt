@@ -465,3 +465,13 @@ c-kontrol-diyagramı-1
 soru1-1
 soru2-1
 u-kontrol-diyagramı
+diğer-kontrol-diyagramları
+cusum-cumulative-sum-kontrol-diyagramı
+ewma-exponentially-weighted-moving-average-kontrol-diyagramı
+örnekleme
+proses-yeterliliği-ve-sigma-kalite-seviyesi
+c_p-c_pk-ve-c_pm-proses-yeterlilik-indeksleri
+c_p
+c_pk
+c_p-proses-yeterlilik-indeksi
+c_pk-proses-yeterlilik-indeksi
