@@ -1,4 +1,62 @@
-# Proses Yeterlilik Analizi
+# Proses Yeterlilik Analizi 
+
+## Neden PCA
+
+Proses yeterlilik analizi (Process Capability Analysis(PCA)) uygulanmasının nedenleri aşağıdaki gibi sıralanabilir.
+
+- Prosesin spesifikasyonları karşılama durumunun değerlendirilmesi
+- Değişkenliğin azaltılmasında sürekliliği sağlamak
+- Prosesteki sürekli iyileşmenin takibi
+- Ürünlerin özdeşliğinin araştırılması
+- İyileştirilmesi gereken proses veya kalite karakteristiğinin belirlenmesi
+- Müşterinin sesini duyarak gereksinimlerin karşılanma durumunu incelemek
+- Tedarikçi, makine veya proses seçimine karar verilmesi
+
+<br>
+
+Proses yeterlilik analizinden elde edilen veriler aşağıdaki amaçlar için kullanılabilir;
+
+- Prosesin toleransları karşılama miktarının öngörülmesi
+- Sorumlu kişileri proses seçimi ve modifikasyonu konularında yönlendirmesi
+- Örneklem alma sıklığının belirlenmesi
+- Tedarikçi seçimi
+- Proses değişkenliğinin azaltılması
+
+Bu bakımdan kullanılabilecek üç temel yöntem;
+
+- Histogramlar veya olasılık grafikleri
+- Kontrol diyagramları
+- Deney tasarımı
+
+## Histogramlar veya olasılık grafikleri
+
+Histogramın güvenilir bir PCA aracı olabilmesi için en az 100 ve üzeri gözleme ihtiyaç duyulmaktadır.
+
+**Örnek1:** 100 adet cam şişenin patlama gücüne ait değerler burst.st değişkeninde yer almaktadır. Prosesin yeterliliği hakkında ne söylenebilir?
+
+```{r echo=FALSE}
+burst.st<-c(265,205,263,307,220,268,260,234,299,215,197,286,274,243,231,267,281,265,214,318,346,317,242,258,276,300,208,187,264,271,280,242,260,321,228,250,299,258,267,293,265,254,281,294,223,260,308,235,283,277,200,235,246,328,296,276,264,269,235,290,221,176,248,263,231,334,280,265,272,283,265,262,271,245,301,280,274,253,287,258,261,248,260,274,337,250,278,254,274,275,278,250,265,270,298,257,210,280,269,251)
+
+DT::datatable(as.data.frame(burst.st),options = list(
+            columnDefs = list(list(className = 'dt-center', targets = 0:1))
+            ))
+```
+
+```{r}
+m=mean(burst.st)
+s=sd(burst.st)
+
+m-3*s
+m+3*s
+
+hist(burst.st)
+```
+Histogram incelendiğinde patlama gücü değişkeninin yaklaşık olarak normal dağıldığı söylenebilir. Böylece, bu proseste üretilen şişelerin yaklaşık %99.73'ünün 168 ile 360 (psi) arasında olacağını tahmin edebiliriz. Burada proses yeterliliğinin spesifikasyonlardan bağımsız ölçüldüğünü unutmayınız. 
+
+<br>
+
+Olasılık grafikleri histogramlara alternatif olmakla birlikte daha az gözlemle çalışabilmesi açısından avantajlıdır. Çizilen grafiğe bağlı olarak dağılım belirlenir ve buna bağlı olarak yorumlama yapılır. Olasılık grafikleri subjektif olduğundan dağılımın uyum iyiliği testleri ile teyit edilmesi önerilir.
+
 
 ## Proses Yeterliliği ve Sigma Kalite Seviyesi
 
@@ -42,15 +100,15 @@ Proses yeterlilik için kullanılan en basit indeks olan $C_{p}$, müşteri tole
 
 
 
-$C_{p}=\frac{Müşteri \ toleransı}{Doğal \ tolerans}=\frac{USL-ASL}{6 \sigma}$
+$\hat{C_{p}}=\frac{Müşteri \ toleransı}{Doğal \ tolerans}=\frac{USL-LSL}{6 \hat{\sigma}}$
 
 Verilen eşitlik üzerinden tüm hatlar için $C_{p}$ değeri hesaplanacak olursa;
 
 ```{r}
 USL=495
-ASL=485
+LSL=485
 
-d=USL-ASL
+d=USL-LSL
 
 Cp1=d/(6*1.5)     # paranteze dikkat!
 Cp2=d/(6*1.5)
@@ -65,12 +123,27 @@ round(cp,2)
 
 Her bir hat için $C_{p}$ değerleri incelendiğinde Hat 1 ve Hat 2'nin farklı milyonda kusur sayıları ve sigma kalite seviyelerine rağmen, aynı proses yeterlilik indeksine sahip olduğu görülmüştür. Bunun nedeni; $C_{p}$ indeksinin prosesin merkezi konumunu dikkate almamasıdır (Hat 2'nin ortalaması hedef değerde değildir). Bu noktada prosesin hem merkezi konumunu hem de yayılımını dikkate alan bir indekse ihtiyaç duyulmuş ve $C_{pk}$ indeksi önerilmiştir.  
 
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/cp.png" style="float: right;" width="300" height="400" title="" />
+
+$C_{p}$ indeksinin yorumlanması bakımından aşağıdaki görsel oldukça faydalıdır. Doğal tolerans limitlerinin spesifikasyon limitlerini kapsaması, sürecin spesifikasyonları sağlaması anlamına geldiğinden ideal durumdur. Bu durum $C_{p}>1$ olması anlamına gelmektedir. 
+
+<br>
+
+Doğal tolerans limitleri ve spesifikasyon limitlerinin eşit olması (çakışması) durumu istenen durum olarak adlandırılabilir, bu durum $C_{p}=1$ olması anlamına gelmektedir.
+
+<br>
+
+Spesifikasyon limitlerinin doğal tolerans limitlerini kapsaması ise kusurlu ürün üretimi anlamına geldiğinden istenmeyen durum olarak adlandırılır. Bu durum $C_{p}<1$ anlamına gelmektedir.
+
+<br>
 
 ### $C_{pk}$ Proses Yeterlilik Indeksi
 
 Prosesin hem merkezi konumunu hem de yayılımını dikkate alan $C_{pk}$ indeksi, aşağıdaki şekilde hesaplanmaktadır.
 
-$C_{pk}=min[C_{palt},C_{püst}]=min[\frac{\mu-ASL}{3\sigma},\frac{USL-\mu}{3\sigma}]$
+$\hat{C}_{pk}=min[\hat{C}_{palt},\hat{C}_{püst}]=min[\frac{\hat{\mu}-LSL}{3\hat{\sigma}},\frac{USL-\hat{\mu}}{3\hat{\sigma}}]$
 
 Hat 2 için $C_{pk}$ proses yeterlilik indeksi hesaplanırsa;
 
@@ -93,7 +166,7 @@ Diğer hatlar için de benzer hesaplamalar yapılarak aşağıdaki tablo oluştu
 | Hat 3 | 490 | 3 | 95580| 2.81 | 0.56 | 0.56|
 | Hat 4 | 487 | 0.9 | 13134 | 3.72 | 1.85 | 0.74|
 
-Hedef değer (bu problem için 490 gr.), ASL ve ÜSL'nin tam ortasında ve proses ortalaması hedef değere eşit olduğunda $C_{p}=C_{pk}$   olur ve proses merkezileşmiştir. $C_{p}$ ve  $C_{pk}$ için aşağıdaki çıkarımlar yapılabilir;
+Hedef değer (bu problem için 490 gr.), LSL ve USL'nin tam ortasında ve proses ortalaması hedef değere eşit olduğunda $C_{p}=C_{pk}$   olur ve proses merkezileşmiştir. $C_{p}$ ve  $C_{pk}$ için aşağıdaki çıkarımlar yapılabilir;
 
 - $C_{p}=C_{pk}$ ise proses merkezidir.
 
@@ -117,8 +190,8 @@ Proses yeterliliği açısından $C_{p}$ ve  $C_{pk}$ değerleri için belirlene
 
 |Proses tipi| İki yönlü | Tek yönlü |
 |:-----|:----:|:----:|
-| Mevcut süreç | 1.33 | 1.25 |
-| Yeni süreç | 1.50  |  1.45| 
+| Mevcut proses | 1.33 | 1.25 |
+| Yeni proses | 1.50  |  1.45| 
 | Güvenlik, kuvvet veya kritik parametreler (mevcut) | 1.50| 1.45  |
 | Güvenlik, kuvvet veya kritik parametreler (yeni) | 1.67 | 1.60 |
 
@@ -145,18 +218,107 @@ Merkezileşmiş bir proseste $C_{p}$ ve  $C_{pk}$ indeksleri ile milyon fırsatt
 |1.90|1.90|0.012|5.7|
 |2.00|2.00|0.002|6.0|
 
+<br>
+
+$C_{p}$ ve $C_{pk}$ değerlerini yorumlayalım.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/cpcpk.png" style="float: center;" width="600" height="700" title="" />
+
+### $C_{pm}$ Proses Yeterlilik Indeksi
+
+$C_{p}$ ve $C_{pk}$ indeksleri prosesin hedef değere göre konumunu değerlendirmemektedir. $C_{pk}$, iki yönlü spesifikasyon limiti söz konusu olduğunda, alt ve üst spesifikasyon limitine göre proses ortalamasının konumu ile ilgili herhangi bir ölçüm yapmamaktadır. Bu noktada; $C_{pm}$ indeksi önerilmiştir ve aşağıdaki eşitlik yardımı ile hesaplanmaktadır.
+
+$C_{pm}=\frac{USL-LSL}{6\sqrt{\sigma^2+(\mu-T)^2}}$
+
+-----
+
+Proses yeterlilik indekslerinin hesaplanması için probleme bağlı olarak 
+
+$\hat{\sigma}=\frac{\bar{s}}{c_{4}}$  veya $\hat{\sigma}=\frac{\bar{R}}{d_{2}}$
+
+kullanılır.
+
+
+**Örnek:** Bir vardiyada üretilen ürünlerden, örnek büyüklüğü 5 olacak şekilde 10 alt grup alınarak tartılmış ve gram olarak ağırlıkları aşağıdaki tablodaki gibi kaydedilmiştir. Başlangıçta; üst spesifikasyon limiti 26 gr. ve alt spesifikasyon limiti 23 gr. olarak belirlenmiştir. Bu verilere göre, prosesin yeterlilik indekslerini hesaplayarak analiz ediniz.
+
+```{r echo=FALSE}
+alt.gr<-1:10
+x1<-c(24.7,24.8,25.5,24.5,25,25.3,24.9,25.5,25.2,24.8)
+x2<-c(25.1,24.9,25.7,24.9,25.3,25.8,24.6,25.9,25.4,25.7)
+x3<-c(25.8,25,25.4,25.2,25.6,24.9,24.8,25.1,25.7,25.4)
+x4<-c(25.9,25.3,25.6,25.7,24.7,24.8,25.3,25.3,25.6,25.3)
+x5<-c(25.2,25.7,25.1,25.8,24.4,25,25.8,25.6,25.1,25)
+
+df<-data.frame(alt.gr,x1,x2,x3,x4,x5)
+
+DT::datatable(df,options = list(
+            columnDefs = list(list(className = 'dt-center', targets = 0:6))
+            ))
+
+```
+
+<br>
+
+```{r}
+USL=26
+LSL=23
+d2=2.326     # n=5
+
+
+# Range icin
+
+R<-c()
+for (i in 1:nrow(df)){
+R[i]<-max(df[,-1][i,])-min(df[,-1][i,])}
+R
+mr<-mean(R); mr
+
+sgm<-mr/d2
+sgm
+```
+
+<br>
+
+```{r}
+Cp1=(USL-LSL)/(6*sgm)
+Cp1
+```
+
+<br>
+
+```{r}
+# S icin
+c4= 0.94    #n=5
+
+s<-c()
+for (i in 1:nrow(df)){
+s[i]<-sd(df[,-1][i,])}
+s
+sb<-mean(s);sb
+
+sgm2<-sb/c4;sgm2
+```
+
+<br>
+
+```{r}
+Cp2=(USL-LSL)/(6*sgm2)
+Cp2
+```
 
 
 
 
 
+```{r}
+a<-qcc::qcc(df[,-1],type="R")
+b<-qcc::qcc(df[,-1],type="xbar")
+```
 
 
-
-
-
-
-
+```{r}
+qcc::process.capability(b, spec.limits=c(23,26))
+```
 
 
 

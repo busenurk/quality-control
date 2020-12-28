@@ -345,6 +345,12 @@ $LCL=D_{3}\bar{R}$
 
 <br>
 
+Proses standart sapması için yansız tahmin edici;
+
+$\hat{\sigma}=\frac{\bar{R}}{d_{2}}$
+
+olarak hesaplanır.
+
 **$\bar{x}$ ve $R$ Diyagramlar Evre I (Phase I):** Kontrol diyagramı kullanımında, $\bar{x}$ ve $R$ kontrol diyagramları oluşturmak için ön numuneler kullanıldığında, yukarıdaki eşitlikler yardımı ile elde edilen kontrol sınırlarının deneme kontrol sınırları olarak ele alınması gerekir. İlk numunelerın seçilerek prosesin kontrol altında olup olmadığının incelendiği bu evre I. evre olarak adlandırılır. 
 
 Tüm noktalar kontrol sınırları içinde işaretlenirse ve sistematik bir davranış yoksa, sürecin geçmişte kontrol altında olduğu ve deneme kontrol limitlerinin mevcut veya gelecekteki üretimi kontrol etmek için uygun olduğu sonucuna varılır. Deneme kontrol limitlerini hesaplamak için 20-25 numuneye veya n boyutunda (tipik olarak 3 ile 5 arası) alt gruba sahip olması istenir. Elbette daha az veriyle çalışılabilir ancak kontrol sınırlarının güvenilirliği dikkate alınmalıdır.

@@ -475,3 +475,16 @@ c_p
 c_pk
 c_p-proses-yeterlilik-indeksi
 c_pk-proses-yeterlilik-indeksi
+neden-pca
+histogramlar-veya-olasılık-grafikleri
+c_pm-proses-yeterlilik-indeksi
+u-kontrol-diyagramı-1
+neden-pca-1
+histogramlar-veya-olasılık-grafikleri-1
+proses-yeterliliği-ve-sigma-kalite-seviyesi-1
+c_p-c_pk-ve-c_pm-proses-yeterlilik-indeksleri-1
+c_p-proses-yeterlilik-indeksi-1
+c_pk-proses-yeterlilik-indeksi-1
+c_pm-proses-yeterlilik-indeksi-1
+cusum-cumulative-sum-kontrol-diyagramı-1
+ewma-exponentially-weighted-moving-average-kontrol-diyagramı-1
