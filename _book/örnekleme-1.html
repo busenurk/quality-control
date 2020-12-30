@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Bölüm 26 Örnekleme | İstatistiksel Kalite Kontrol</title>
+  <meta name="description" content="Statistical quality control lecture notes" />
+  <meta name="generator" content="bookdown 0.20.6 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Bölüm 26 Örnekleme | İstatistiksel Kalite Kontrol" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Statistical quality control lecture notes" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Bölüm 26 Örnekleme | İstatistiksel Kalite Kontrol" />
+  
+  <meta name="twitter:description" content="Statistical quality control lecture notes" />
+  
+
+<meta name="author" content="Dr. Busenur Kızılaslan" />
+
+
+<meta name="date" content="2020-12-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="diğer-kontrol-diyagramları-1.html"/>
+<link rel="next" href="ekler-1.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">İstatistiksel Kalite Kontrol</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Ön Bilgi</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#hakkımda"><i class="fa fa-check"></i><b>1.1</b> Hakkımda</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="motivasyon.html"><a href="motivasyon.html"><i class="fa fa-check"></i><b>2</b> Motivasyon</a></li>
+<li class="chapter" data-level="3" data-path="ders-planı.html"><a href="ders-planı.html"><i class="fa fa-check"></i><b>3</b> Ders Planı</a></li>
+<li class="chapter" data-level="4" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html"><i class="fa fa-check"></i><b>4</b> Kalite Yönetimi Temel Kavramları</a><ul>
+<li class="chapter" data-level="4.1" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-kavramı"><i class="fa fa-check"></i><b>4.1</b> Kalite Kavramı</a></li>
+<li class="chapter" data-level="4.2" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-boyutları"><i class="fa fa-check"></i><b>4.2</b> Kalite Boyutları</a></li>
+<li class="chapter" data-level="4.3" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-mühendislik-terminolojisi"><i class="fa fa-check"></i><b>4.3</b> Kalite Mühendislik Terminolojisi</a></li>
+<li class="chapter" data-level="4.4" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#toplam-kalite-yönetiminin-tarihsel-gelişimi"><i class="fa fa-check"></i><b>4.4</b> Toplam Kalite Yönetiminin Tarihsel Gelişimi</a></li>
+<li class="chapter" data-level="4.5" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-kontrol-ve-iyileştirme-için-istatistiksel-yöntemler"><i class="fa fa-check"></i><b>4.5</b> Kalite Kontrol ve İyileştirme için İstatistiksel Yöntemler</a></li>
+<li class="chapter" data-level="4.6" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-iyileştirmede-yönetim-cephesi"><i class="fa fa-check"></i><b>4.6</b> Kalite İyileştirmede Yönetim Cephesi</a></li>
+<li class="chapter" data-level="4.7" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-yönetimi-liderleri"><i class="fa fa-check"></i><b>4.7</b> Kalite Yönetimi Liderleri</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#walter-shewhart"><i class="fa fa-check"></i><b>4.7.1</b> Walter Shewhart</a></li>
+<li class="chapter" data-level="4.7.2" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#w.-edwards-deming"><i class="fa fa-check"></i><b>4.7.2</b> W. Edwards Deming</a></li>
+<li class="chapter" data-level="4.7.3" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#joseph-m.-juran"><i class="fa fa-check"></i><b>4.7.3</b> Joseph M. Juran</a></li>
+<li class="chapter" data-level="4.7.4" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#armand-v.-feigenbaum"><i class="fa fa-check"></i><b>4.7.4</b> Armand V. Feigenbaum</a></li>
+<li class="chapter" data-level="4.7.5" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#philip-crosby"><i class="fa fa-check"></i><b>4.7.5</b> Philip Crosby</a></li>
+<li class="chapter" data-level="4.7.6" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kaoru-ishikawa"><i class="fa fa-check"></i><b>4.7.6</b> Kaoru Ishikawa</a></li>
+<li class="chapter" data-level="4.7.7" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#genichi-taguchi"><i class="fa fa-check"></i><b>4.7.7</b> Genichi Taguchi</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#toplam-kalite-yönetimi"><i class="fa fa-check"></i><b>4.8</b> Toplam Kalite Yönetimi</a></li>
+<li class="chapter" data-level="4.9" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-sistemleri-ve-standartları"><i class="fa fa-check"></i><b>4.9</b> Kalite Sistemleri ve Standartları</a></li>
+<li class="chapter" data-level="4.10" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#iso-9000-kalite-standartları"><i class="fa fa-check"></i><b>4.10</b> ISO 9000 Kalite Standartları</a></li>
+<li class="chapter" data-level="4.11" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#malcolm-baldrige-ulusal-kalite-ödülü"><i class="fa fa-check"></i><b>4.11</b> Malcolm Baldrige Ulusal Kalite Ödülü</a></li>
+<li class="chapter" data-level="4.12" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#altı-sigma"><i class="fa fa-check"></i><b>4.12</b> Altı Sigma</a><ul>
+<li class="chapter" data-level="4.12.1" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#neden-6sigma"><i class="fa fa-check"></i><b>4.12.1</b> Neden 6<span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="4.12.2" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#sigma-kalite-seviyesi"><i class="fa fa-check"></i><b>4.12.2</b> Sigma Kalite Seviyesi</a></li>
+<li class="chapter" data-level="4.12.3" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#altı-sigma-proje-yönetimi"><i class="fa fa-check"></i><b>4.12.3</b> Altı Sigma Proje Yönetimi</a></li>
+</ul></li>
+<li class="chapter" data-level="4.13" data-path="kalite-yönetimi-temel-kavramları.html"><a href="kalite-yönetimi-temel-kavramları.html#kalite-maliyetleri"><i class="fa fa-check"></i><b>4.13</b> Kalite Maliyetleri</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="dmaic-süreci.html"><a href="dmaic-süreci.html"><i class="fa fa-check"></i><b>5</b> DMAIC Süreci</a></li>
+<li class="chapter" data-level="6" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html"><i class="fa fa-check"></i><b>6</b> İstatistiksel Kavramlar</a><ul>
+<li class="chapter" data-level="6.1" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#verilerin-toplanması-ve-sunulması"><i class="fa fa-check"></i><b>6.1</b> Verilerin Toplanması ve Sunulması</a></li>
+<li class="chapter" data-level="6.2" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#değişkenliğin-tanımlanması"><i class="fa fa-check"></i><b>6.2</b> Değişkenliğin Tanımlanması</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#dal-yaprak-grafiği"><i class="fa fa-check"></i><b>6.2.1</b> Dal-Yaprak Grafiği</a></li>
+<li class="chapter" data-level="6.2.2" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#frekans-dağılımı"><i class="fa fa-check"></i><b>6.2.2</b> Frekans Dağılımı</a></li>
+<li class="chapter" data-level="6.2.3" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#histogram"><i class="fa fa-check"></i><b>6.2.3</b> Histogram</a></li>
+<li class="chapter" data-level="6.2.4" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#merkezi-eğilim-ölçüleri"><i class="fa fa-check"></i><b>6.2.4</b> Merkezi Eğilim Ölçüleri</a></li>
+<li class="chapter" data-level="6.2.5" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#yayılım-ölçüleri"><i class="fa fa-check"></i><b>6.2.5</b> Yayılım Ölçüleri</a></li>
+<li class="chapter" data-level="6.2.6" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#kutu-grafiği-box-plot"><i class="fa fa-check"></i><b>6.2.6</b> Kutu Grafiği (Box Plot)</a></li>
+<li class="chapter" data-level="6.2.7" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#olasılık-dağılımları"><i class="fa fa-check"></i><b>6.2.7</b> Olasılık Dağılımları</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#önemli-kesikli-olasılık-dağılımları"><i class="fa fa-check"></i><b>6.3</b> Önemli Kesikli Olasılık Dağılımları</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#hipergeometrik-dağılım"><i class="fa fa-check"></i><b>6.3.1</b> Hipergeometrik Dağılım</a></li>
+<li class="chapter" data-level="6.3.2" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#binom-dağılımı"><i class="fa fa-check"></i><b>6.3.2</b> Binom Dağılımı</a></li>
+<li class="chapter" data-level="6.3.3" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#poisson-dağılımı"><i class="fa fa-check"></i><b>6.3.3</b> Poisson Dağılımı</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#önemli-sürekli-olasılık-dağılımları"><i class="fa fa-check"></i><b>6.4</b> Önemli Sürekli Olasılık Dağılımları</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#normal-dağılım"><i class="fa fa-check"></i><b>6.4.1</b> Normal Dağılım</a></li>
+<li class="chapter" data-level="6.4.2" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#üstel-dağılım"><i class="fa fa-check"></i><b>6.4.2</b> Üstel Dağılım</a></li>
+<li class="chapter" data-level="6.4.3" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#gamma-dağılımı"><i class="fa fa-check"></i><b>6.4.3</b> Gamma Dağılımı</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#olasılık-grafikleri"><i class="fa fa-check"></i><b>6.5</b> Olasılık Grafikleri</a></li>
+<li class="chapter" data-level="6.6" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#bazı-faydalı-yaklaşımlar"><i class="fa fa-check"></i><b>6.6</b> Bazı Faydalı Yaklaşımlar</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#binom---hipergeometrik"><i class="fa fa-check"></i><b>6.6.1</b> Binom - Hipergeometrik</a></li>
+<li class="chapter" data-level="6.6.2" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#binom---poisson"><i class="fa fa-check"></i><b>6.6.2</b> Binom - Poisson</a></li>
+<li class="chapter" data-level="6.6.3" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#normal---binom"><i class="fa fa-check"></i><b>6.6.3</b> Normal - Binom</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#pareto-analizi"><i class="fa fa-check"></i><b>6.7</b> Pareto Analizi</a></li>
+<li class="chapter" data-level="6.8" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#sebep-sonuç-cause-and-effect-analizi"><i class="fa fa-check"></i><b>6.8</b> Sebep-Sonuç (Cause and Effect) Analizi</a></li>
+<li class="chapter" data-level="6.9" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#kontrol-listeleri"><i class="fa fa-check"></i><b>6.9</b> Kontrol Listeleri</a></li>
+<li class="chapter" data-level="6.10" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#serpilme-scatter-diyagramı"><i class="fa fa-check"></i><b>6.10</b> Serpilme (Scatter) Diyagramı</a></li>
+<li class="chapter" data-level="6.11" data-path="istatistiksel-kavramlar.html"><a href="istatistiksel-kavramlar.html#kusur-konsantrasyon-diyagramı"><i class="fa fa-check"></i><b>6.11</b> Kusur Konsantrasyon Diyagramı</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="değişkenlik-ve-kontrol-diyagramlarına-giriş.html"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html"><i class="fa fa-check"></i><b>7</b> Değişkenlik ve Kontrol Diyagramlarına Giriş</a><ul>
+<li class="chapter" data-level="7.1" data-path="değişkenlik-ve-kontrol-diyagramlarına-giriş.html"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#değişkenlik-kavramı-ve-kaynakları"><i class="fa fa-check"></i><b>7.1</b> Değişkenlik Kavramı ve Kaynakları</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="değişkenlik-ve-kontrol-diyagramlarına-giriş.html"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#doğruluk-ve-hassasiyet"><i class="fa fa-check"></i><b>7.1.1</b> Doğruluk ve Hassasiyet</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="değişkenlik-ve-kontrol-diyagramlarına-giriş.html"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#kontrol-diyagramlarına-giriş"><i class="fa fa-check"></i><b>7.2</b> Kontrol Diyagramlarına Giriş</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="değişkenlik-ve-kontrol-diyagramlarına-giriş.html"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş.html#kontrol-limitlerinin-seçimi"><i class="fa fa-check"></i><b>7.2.1</b> Kontrol Limitlerinin Seçimi</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ölçülebilir-değişkenler-için-kontrol-diyagramları.html"><a href="ölçülebilir-değişkenler-için-kontrol-diyagramları.html"><i class="fa fa-check"></i><b>8</b> Ölçülebilir Değişkenler için Kontrol Diyagramları</a><ul>
+<li class="chapter" data-level="8.1" data-path="ölçülebilir-değişkenler-için-kontrol-diyagramları.html"><a href="ölçülebilir-değişkenler-için-kontrol-diyagramları.html#tekil-ölçümler-için-i-ve-mr-individual-moving-range-kontrol-diyagramları"><i class="fa fa-check"></i><b>8.1</b> Tekil Ölçümler için I ve MR (Individual-Moving Range) Kontrol Diyagramları</a></li>
+<li class="chapter" data-level="8.2" data-path="ölçülebilir-değişkenler-için-kontrol-diyagramları.html"><a href="ölçülebilir-değişkenler-için-kontrol-diyagramları.html#x-r-kontrol-diyagramları"><i class="fa fa-check"></i><b>8.2</b> X-R Kontrol Diyagramları</a></li>
+<li class="chapter" data-level="8.3" data-path="ölçülebilir-değişkenler-için-kontrol-diyagramları.html"><a href="ölçülebilir-değişkenler-için-kontrol-diyagramları.html#alt-grup-kavramı-ve-örneklem-büyüklüğünün-belirlenmesi"><i class="fa fa-check"></i><b>8.3</b> Alt Grup Kavramı ve Örneklem Büyüklüğünün Belirlenmesi</a></li>
+<li class="chapter" data-level="8.4" data-path="ölçülebilir-değişkenler-için-kontrol-diyagramları.html"><a href="ölçülebilir-değişkenler-için-kontrol-diyagramları.html#kontrol-dışı-olma-durumu"><i class="fa fa-check"></i><b>8.4</b> Kontrol Dışı Olma Durumu</a></li>
+<li class="chapter" data-level="8.5" data-path="ölçülebilir-değişkenler-için-kontrol-diyagramları.html"><a href="ölçülebilir-değişkenler-için-kontrol-diyagramları.html#x-s-kontrol-diyagramları"><i class="fa fa-check"></i><b>8.5</b> X-S Kontrol Diyagramları</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ölçülemeyen-özellikler-için-kontrol-diyagramları.html"><a href="ölçülemeyen-özellikler-için-kontrol-diyagramları.html"><i class="fa fa-check"></i><b>9</b> Ölçülemeyen Özellikler için Kontrol Diyagramları</a><ul>
+<li class="chapter" data-level="9.1" data-path="ölçülemeyen-özellikler-için-kontrol-diyagramları.html"><a href="ölçülemeyen-özellikler-için-kontrol-diyagramları.html#p-kontrol-diyagramı"><i class="fa fa-check"></i><b>9.1</b> p kontrol diyagramı</a></li>
+<li class="chapter" data-level="9.2" data-path="ölçülemeyen-özellikler-için-kontrol-diyagramları.html"><a href="ölçülemeyen-özellikler-için-kontrol-diyagramları.html#np-kontrol-diyagramı"><i class="fa fa-check"></i><b>9.2</b> np kontrol diyagramı</a></li>
+<li class="chapter" data-level="9.3" data-path="ölçülemeyen-özellikler-için-kontrol-diyagramları.html"><a href="ölçülemeyen-özellikler-için-kontrol-diyagramları.html#c-kontrol-diyagramı"><i class="fa fa-check"></i><b>9.3</b> c kontrol diyagramı</a></li>
+<li class="chapter" data-level="9.4" data-path="ölçülemeyen-özellikler-için-kontrol-diyagramları.html"><a href="ölçülemeyen-özellikler-için-kontrol-diyagramları.html#u-kontrol-diyagramı"><i class="fa fa-check"></i><b>9.4</b> u kontrol diyagramı</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="proses-yeterlilik-analizi.html"><a href="proses-yeterlilik-analizi.html"><i class="fa fa-check"></i><b>10</b> Proses Yeterlilik Analizi</a><ul>
+<li class="chapter" data-level="10.1" data-path="proses-yeterlilik-analizi.html"><a href="proses-yeterlilik-analizi.html#neden-pca"><i class="fa fa-check"></i><b>10.1</b> Neden PCA</a></li>
+<li class="chapter" data-level="10.2" data-path="proses-yeterlilik-analizi.html"><a href="proses-yeterlilik-analizi.html#histogramlar-veya-olasılık-grafikleri"><i class="fa fa-check"></i><b>10.2</b> Histogramlar veya olasılık grafikleri</a></li>
+<li class="chapter" data-level="10.3" data-path="proses-yeterlilik-analizi.html"><a href="proses-yeterlilik-analizi.html#proses-yeterliliği-ve-sigma-kalite-seviyesi"><i class="fa fa-check"></i><b>10.3</b> Proses Yeterliliği ve Sigma Kalite Seviyesi</a></li>
+<li class="chapter" data-level="10.4" data-path="proses-yeterlilik-analizi.html"><a href="proses-yeterlilik-analizi.html#c_p-c_pk-ve-c_pm-proses-yeterlilik-indeksleri"><i class="fa fa-check"></i><b>10.4</b> <span class="math inline">\(C_{p}\)</span>, <span class="math inline">\(C_{pk}\)</span> ve <span class="math inline">\(C_{pm}\)</span> Proses Yeterlilik İndeksleri</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="proses-yeterlilik-analizi.html"><a href="proses-yeterlilik-analizi.html#c_p-proses-yeterlilik-indeksi"><i class="fa fa-check"></i><b>10.4.1</b> <span class="math inline">\(C_{p}\)</span> Proses Yeterlilik Indeksi</a></li>
+<li class="chapter" data-level="10.4.2" data-path="proses-yeterlilik-analizi.html"><a href="proses-yeterlilik-analizi.html#c_pk-proses-yeterlilik-indeksi"><i class="fa fa-check"></i><b>10.4.2</b> <span class="math inline">\(C_{pk}\)</span> Proses Yeterlilik Indeksi</a></li>
+<li class="chapter" data-level="10.4.3" data-path="proses-yeterlilik-analizi.html"><a href="proses-yeterlilik-analizi.html#c_pm-proses-yeterlilik-indeksi"><i class="fa fa-check"></i><b>10.4.3</b> <span class="math inline">\(C_{pm}\)</span> Proses Yeterlilik Indeksi</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="diğer-kontrol-diyagramları.html"><a href="diğer-kontrol-diyagramları.html"><i class="fa fa-check"></i><b>11</b> Diğer Kontrol Diyagramları</a><ul>
+<li class="chapter" data-level="11.1" data-path="diğer-kontrol-diyagramları.html"><a href="diğer-kontrol-diyagramları.html#cusum-cumulative-sum-kontrol-diyagramı"><i class="fa fa-check"></i><b>11.1</b> CUSUM (Cumulative Sum) Kontrol Diyagramı</a></li>
+<li class="chapter" data-level="11.2" data-path="diğer-kontrol-diyagramları.html"><a href="diğer-kontrol-diyagramları.html#ewma-exponentially-weighted-moving-average-kontrol-diyagramı"><i class="fa fa-check"></i><b>11.2</b> EWMA (Exponentially Weighted Moving Average) Kontrol Diyagramı</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="örnekleme.html"><a href="örnekleme.html"><i class="fa fa-check"></i><b>12</b> Örnekleme</a></li>
+<li class="chapter" data-level="13" data-path="ekler.html"><a href="ekler.html"><i class="fa fa-check"></i><b>13</b> Ekler</a><ul>
+<li class="chapter" data-level="13.1" data-path="ekler.html"><a href="ekler.html#ölçülebilir-değişkenler-için-kontrol-grafiği-faktör-tablosu"><i class="fa fa-check"></i><b>13.1</b> Ölçülebilir Değişkenler için Kontrol Grafiği Faktör Tablosu</a></li>
+<li class="chapter" data-level="13.2" data-path="ekler.html"><a href="ekler.html#standart-normal-dağılım-tablosu"><i class="fa fa-check"></i><b>13.2</b> Standart Normal Dağılım Tablosu</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="kısaltmalar.html"><a href="kısaltmalar.html"><i class="fa fa-check"></i><b>14</b> Kısaltmalar</a></li>
+<li class="chapter" data-level="15" data-path="ön-bilgi-1.html"><a href="ön-bilgi-1.html"><i class="fa fa-check"></i><b>15</b> Ön Bilgi</a><ul>
+<li class="chapter" data-level="15.1" data-path="ön-bilgi-1.html"><a href="ön-bilgi-1.html#hakkımda-1"><i class="fa fa-check"></i><b>15.1</b> Hakkımda</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="motivasyon-1.html"><a href="motivasyon-1.html"><i class="fa fa-check"></i><b>16</b> Motivasyon</a></li>
+<li class="chapter" data-level="17" data-path="ders-planı-1.html"><a href="ders-planı-1.html"><i class="fa fa-check"></i><b>17</b> Ders Planı</a></li>
+<li class="chapter" data-level="18" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html"><i class="fa fa-check"></i><b>18</b> Kalite Yönetimi Temel Kavramları</a><ul>
+<li class="chapter" data-level="18.1" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#kalite-kavramı-1"><i class="fa fa-check"></i><b>18.1</b> Kalite Kavramı</a></li>
+<li class="chapter" data-level="18.2" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#kalite-boyutları-1"><i class="fa fa-check"></i><b>18.2</b> Kalite Boyutları</a></li>
+<li class="chapter" data-level="18.3" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#kalite-mühendislik-terminolojisi-1"><i class="fa fa-check"></i><b>18.3</b> Kalite Mühendislik Terminolojisi</a></li>
+<li class="chapter" data-level="18.4" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#toplam-kalite-yönetiminin-tarihsel-gelişimi-1"><i class="fa fa-check"></i><b>18.4</b> Toplam Kalite Yönetiminin Tarihsel Gelişimi</a></li>
+<li class="chapter" data-level="18.5" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#kalite-kontrol-ve-iyileştirme-için-istatistiksel-yöntemler-1"><i class="fa fa-check"></i><b>18.5</b> Kalite Kontrol ve İyileştirme için İstatistiksel Yöntemler</a></li>
+<li class="chapter" data-level="18.6" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#kalite-iyileştirmede-yönetim-cephesi-1"><i class="fa fa-check"></i><b>18.6</b> Kalite İyileştirmede Yönetim Cephesi</a></li>
+<li class="chapter" data-level="18.7" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#kalite-yönetimi-liderleri-1"><i class="fa fa-check"></i><b>18.7</b> Kalite Yönetimi Liderleri</a><ul>
+<li class="chapter" data-level="18.7.1" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#walter-shewhart-1"><i class="fa fa-check"></i><b>18.7.1</b> Walter Shewhart</a></li>
+<li class="chapter" data-level="18.7.2" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#w.-edwards-deming-1"><i class="fa fa-check"></i><b>18.7.2</b> W. Edwards Deming</a></li>
+<li class="chapter" data-level="18.7.3" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#joseph-m.-juran-1"><i class="fa fa-check"></i><b>18.7.3</b> Joseph M. Juran</a></li>
+<li class="chapter" data-level="18.7.4" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#armand-v.-feigenbaum-1"><i class="fa fa-check"></i><b>18.7.4</b> Armand V. Feigenbaum</a></li>
+<li class="chapter" data-level="18.7.5" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#philip-crosby-1"><i class="fa fa-check"></i><b>18.7.5</b> Philip Crosby</a></li>
+<li class="chapter" data-level="18.7.6" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#kaoru-ishikawa-1"><i class="fa fa-check"></i><b>18.7.6</b> Kaoru Ishikawa</a></li>
+<li class="chapter" data-level="18.7.7" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#genichi-taguchi-1"><i class="fa fa-check"></i><b>18.7.7</b> Genichi Taguchi</a></li>
+</ul></li>
+<li class="chapter" data-level="18.8" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#toplam-kalite-yönetimi-1"><i class="fa fa-check"></i><b>18.8</b> Toplam Kalite Yönetimi</a></li>
+<li class="chapter" data-level="18.9" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#kalite-sistemleri-ve-standartları-1"><i class="fa fa-check"></i><b>18.9</b> Kalite Sistemleri ve Standartları</a></li>
+<li class="chapter" data-level="18.10" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#iso-9000-kalite-standartları-1"><i class="fa fa-check"></i><b>18.10</b> ISO 9000 Kalite Standartları</a></li>
+<li class="chapter" data-level="18.11" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#malcolm-baldrige-ulusal-kalite-ödülü-1"><i class="fa fa-check"></i><b>18.11</b> Malcolm Baldrige Ulusal Kalite Ödülü</a></li>
+<li class="chapter" data-level="18.12" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#altı-sigma-1"><i class="fa fa-check"></i><b>18.12</b> Altı Sigma</a><ul>
+<li class="chapter" data-level="18.12.1" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#neden-6sigma-1"><i class="fa fa-check"></i><b>18.12.1</b> Neden 6<span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="18.12.2" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#sigma-kalite-seviyesi-1"><i class="fa fa-check"></i><b>18.12.2</b> Sigma Kalite Seviyesi</a></li>
+<li class="chapter" data-level="18.12.3" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#altı-sigma-proje-yönetimi-1"><i class="fa fa-check"></i><b>18.12.3</b> Altı Sigma Proje Yönetimi</a></li>
+</ul></li>
+<li class="chapter" data-level="18.13" data-path="kalite-yönetimi-temel-kavramları-1.html"><a href="kalite-yönetimi-temel-kavramları-1.html#kalite-maliyetleri-1"><i class="fa fa-check"></i><b>18.13</b> Kalite Maliyetleri</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="dmaic-süreci-1.html"><a href="dmaic-süreci-1.html"><i class="fa fa-check"></i><b>19</b> DMAIC Süreci</a></li>
+<li class="chapter" data-level="20" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html"><i class="fa fa-check"></i><b>20</b> İstatistiksel Kavramlar</a><ul>
+<li class="chapter" data-level="20.1" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#verilerin-toplanması-ve-sunulması-1"><i class="fa fa-check"></i><b>20.1</b> Verilerin Toplanması ve Sunulması</a></li>
+<li class="chapter" data-level="20.2" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#değişkenliğin-tanımlanması-1"><i class="fa fa-check"></i><b>20.2</b> Değişkenliğin Tanımlanması</a><ul>
+<li class="chapter" data-level="20.2.1" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#dal-yaprak-grafiği-1"><i class="fa fa-check"></i><b>20.2.1</b> Dal-Yaprak Grafiği</a></li>
+<li class="chapter" data-level="20.2.2" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#frekans-dağılımı-1"><i class="fa fa-check"></i><b>20.2.2</b> Frekans Dağılımı</a></li>
+<li class="chapter" data-level="20.2.3" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#histogram-1"><i class="fa fa-check"></i><b>20.2.3</b> Histogram</a></li>
+<li class="chapter" data-level="20.2.4" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#merkezi-eğilim-ölçüleri-1"><i class="fa fa-check"></i><b>20.2.4</b> Merkezi Eğilim Ölçüleri</a></li>
+<li class="chapter" data-level="20.2.5" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#yayılım-ölçüleri-1"><i class="fa fa-check"></i><b>20.2.5</b> Yayılım Ölçüleri</a></li>
+<li class="chapter" data-level="20.2.6" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#kutu-grafiği-box-plot-1"><i class="fa fa-check"></i><b>20.2.6</b> Kutu Grafiği (Box Plot)</a></li>
+<li class="chapter" data-level="20.2.7" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#olasılık-dağılımları-1"><i class="fa fa-check"></i><b>20.2.7</b> Olasılık Dağılımları</a></li>
+</ul></li>
+<li class="chapter" data-level="20.3" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#önemli-kesikli-olasılık-dağılımları-1"><i class="fa fa-check"></i><b>20.3</b> Önemli Kesikli Olasılık Dağılımları</a><ul>
+<li class="chapter" data-level="20.3.1" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#hipergeometrik-dağılım-1"><i class="fa fa-check"></i><b>20.3.1</b> Hipergeometrik Dağılım</a></li>
+<li class="chapter" data-level="20.3.2" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#binom-dağılımı-1"><i class="fa fa-check"></i><b>20.3.2</b> Binom Dağılımı</a></li>
+<li class="chapter" data-level="20.3.3" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#poisson-dağılımı-1"><i class="fa fa-check"></i><b>20.3.3</b> Poisson Dağılımı</a></li>
+</ul></li>
+<li class="chapter" data-level="20.4" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#önemli-sürekli-olasılık-dağılımları-1"><i class="fa fa-check"></i><b>20.4</b> Önemli Sürekli Olasılık Dağılımları</a><ul>
+<li class="chapter" data-level="20.4.1" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#normal-dağılım-1"><i class="fa fa-check"></i><b>20.4.1</b> Normal Dağılım</a></li>
+<li class="chapter" data-level="20.4.2" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#üstel-dağılım-1"><i class="fa fa-check"></i><b>20.4.2</b> Üstel Dağılım</a></li>
+<li class="chapter" data-level="20.4.3" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#gamma-dağılımı-1"><i class="fa fa-check"></i><b>20.4.3</b> Gamma Dağılımı</a></li>
+</ul></li>
+<li class="chapter" data-level="20.5" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#olasılık-grafikleri-1"><i class="fa fa-check"></i><b>20.5</b> Olasılık Grafikleri</a></li>
+<li class="chapter" data-level="20.6" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#bazı-faydalı-yaklaşımlar-1"><i class="fa fa-check"></i><b>20.6</b> Bazı Faydalı Yaklaşımlar</a><ul>
+<li class="chapter" data-level="20.6.1" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#binom---hipergeometrik-1"><i class="fa fa-check"></i><b>20.6.1</b> Binom - Hipergeometrik</a></li>
+<li class="chapter" data-level="20.6.2" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#binom---poisson-1"><i class="fa fa-check"></i><b>20.6.2</b> Binom - Poisson</a></li>
+<li class="chapter" data-level="20.6.3" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#normal---binom-1"><i class="fa fa-check"></i><b>20.6.3</b> Normal - Binom</a></li>
+</ul></li>
+<li class="chapter" data-level="20.7" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#pareto-analizi-1"><i class="fa fa-check"></i><b>20.7</b> Pareto Analizi</a></li>
+<li class="chapter" data-level="20.8" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#sebep-sonuç-cause-and-effect-analizi-1"><i class="fa fa-check"></i><b>20.8</b> Sebep-Sonuç (Cause and Effect) Analizi</a></li>
+<li class="chapter" data-level="20.9" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#kontrol-listeleri-1"><i class="fa fa-check"></i><b>20.9</b> Kontrol Listeleri</a></li>
+<li class="chapter" data-level="20.10" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#serpilme-scatter-diyagramı-1"><i class="fa fa-check"></i><b>20.10</b> Serpilme (Scatter) Diyagramı</a></li>
+<li class="chapter" data-level="20.11" data-path="istatistiksel-kavramlar-1.html"><a href="istatistiksel-kavramlar-1.html#kusur-konsantrasyon-diyagramı-1"><i class="fa fa-check"></i><b>20.11</b> Kusur Konsantrasyon Diyagramı</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="değişkenlik-ve-kontrol-diyagramlarına-giriş-1.html"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş-1.html"><i class="fa fa-check"></i><b>21</b> Değişkenlik ve Kontrol Diyagramlarına Giriş</a><ul>
+<li class="chapter" data-level="21.1" data-path="değişkenlik-ve-kontrol-diyagramlarına-giriş-1.html"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş-1.html#değişkenlik-kavramı-ve-kaynakları-1"><i class="fa fa-check"></i><b>21.1</b> Değişkenlik Kavramı ve Kaynakları</a><ul>
+<li class="chapter" data-level="21.1.1" data-path="değişkenlik-ve-kontrol-diyagramlarına-giriş-1.html"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş-1.html#doğruluk-ve-hassasiyet-1"><i class="fa fa-check"></i><b>21.1.1</b> Doğruluk ve Hassasiyet</a></li>
+</ul></li>
+<li class="chapter" data-level="21.2" data-path="değişkenlik-ve-kontrol-diyagramlarına-giriş-1.html"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş-1.html#kontrol-diyagramlarına-giriş-1"><i class="fa fa-check"></i><b>21.2</b> Kontrol Diyagramlarına Giriş</a><ul>
+<li class="chapter" data-level="21.2.1" data-path="değişkenlik-ve-kontrol-diyagramlarına-giriş-1.html"><a href="değişkenlik-ve-kontrol-diyagramlarına-giriş-1.html#kontrol-limitlerinin-seçimi-1"><i class="fa fa-check"></i><b>21.2.1</b> Kontrol Limitlerinin Seçimi</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="ölçülebilir-değişkenler-için-kontrol-diyagramları-1.html"><a href="ölçülebilir-değişkenler-için-kontrol-diyagramları-1.html"><i class="fa fa-check"></i><b>22</b> Ölçülebilir Değişkenler için Kontrol Diyagramları</a><ul>
+<li class="chapter" data-level="22.1" data-path="ölçülebilir-değişkenler-için-kontrol-diyagramları-1.html"><a href="ölçülebilir-değişkenler-için-kontrol-diyagramları-1.html#tekil-ölçümler-için-i-ve-mr-individual-moving-range-kontrol-diyagramları-1"><i class="fa fa-check"></i><b>22.1</b> Tekil Ölçümler için I ve MR (Individual-Moving Range) Kontrol Diyagramları</a></li>
+<li class="chapter" data-level="22.2" data-path="ölçülebilir-değişkenler-için-kontrol-diyagramları-1.html"><a href="ölçülebilir-değişkenler-için-kontrol-diyagramları-1.html#x-r-kontrol-diyagramları-1"><i class="fa fa-check"></i><b>22.2</b> X-R Kontrol Diyagramları</a></li>
+<li class="chapter" data-level="22.3" data-path="ölçülebilir-değişkenler-için-kontrol-diyagramları-1.html"><a href="ölçülebilir-değişkenler-için-kontrol-diyagramları-1.html#alt-grup-kavramı-ve-örneklem-büyüklüğünün-belirlenmesi-1"><i class="fa fa-check"></i><b>22.3</b> Alt Grup Kavramı ve Örneklem Büyüklüğünün Belirlenmesi</a></li>
+<li class="chapter" data-level="22.4" data-path="ölçülebilir-değişkenler-için-kontrol-diyagramları-1.html"><a href="ölçülebilir-değişkenler-için-kontrol-diyagramları-1.html#kontrol-dışı-olma-durumu-1"><i class="fa fa-check"></i><b>22.4</b> Kontrol Dışı Olma Durumu</a></li>
+<li class="chapter" data-level="22.5" data-path="ölçülebilir-değişkenler-için-kontrol-diyagramları-1.html"><a href="ölçülebilir-değişkenler-için-kontrol-diyagramları-1.html#x-s-kontrol-diyagramları-1"><i class="fa fa-check"></i><b>22.5</b> X-S Kontrol Diyagramları</a></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="ölçülemeyen-özellikler-için-kontrol-diyagramları-1.html"><a href="ölçülemeyen-özellikler-için-kontrol-diyagramları-1.html"><i class="fa fa-check"></i><b>23</b> Ölçülemeyen Özellikler için Kontrol Diyagramları</a><ul>
+<li class="chapter" data-level="23.1" data-path="ölçülemeyen-özellikler-için-kontrol-diyagramları-1.html"><a href="ölçülemeyen-özellikler-için-kontrol-diyagramları-1.html#p-kontrol-diyagramı-1"><i class="fa fa-check"></i><b>23.1</b> p kontrol diyagramı</a></li>
+<li class="chapter" data-level="23.2" data-path="ölçülemeyen-özellikler-için-kontrol-diyagramları-1.html"><a href="ölçülemeyen-özellikler-için-kontrol-diyagramları-1.html#np-kontrol-diyagramı-1"><i class="fa fa-check"></i><b>23.2</b> np kontrol diyagramı</a></li>
+<li class="chapter" data-level="23.3" data-path="ölçülemeyen-özellikler-için-kontrol-diyagramları-1.html"><a href="ölçülemeyen-özellikler-için-kontrol-diyagramları-1.html#c-kontrol-diyagramı-1"><i class="fa fa-check"></i><b>23.3</b> c kontrol diyagramı</a></li>
+<li class="chapter" data-level="23.4" data-path="ölçülemeyen-özellikler-için-kontrol-diyagramları-1.html"><a href="ölçülemeyen-özellikler-için-kontrol-diyagramları-1.html#u-kontrol-diyagramı-1"><i class="fa fa-check"></i><b>23.4</b> u kontrol diyagramı</a></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="proses-yeterlilik-analizi-1.html"><a href="proses-yeterlilik-analizi-1.html"><i class="fa fa-check"></i><b>24</b> Proses Yeterlilik Analizi</a><ul>
+<li class="chapter" data-level="24.1" data-path="proses-yeterlilik-analizi-1.html"><a href="proses-yeterlilik-analizi-1.html#neden-pca-1"><i class="fa fa-check"></i><b>24.1</b> Neden PCA</a></li>
+<li class="chapter" data-level="24.2" data-path="proses-yeterlilik-analizi-1.html"><a href="proses-yeterlilik-analizi-1.html#histogramlar-veya-olasılık-grafikleri-1"><i class="fa fa-check"></i><b>24.2</b> Histogramlar veya olasılık grafikleri</a></li>
+<li class="chapter" data-level="24.3" data-path="proses-yeterlilik-analizi-1.html"><a href="proses-yeterlilik-analizi-1.html#proses-yeterliliği-ve-sigma-kalite-seviyesi-1"><i class="fa fa-check"></i><b>24.3</b> Proses Yeterliliği ve Sigma Kalite Seviyesi</a></li>
+<li class="chapter" data-level="24.4" data-path="proses-yeterlilik-analizi-1.html"><a href="proses-yeterlilik-analizi-1.html#c_p-c_pk-ve-c_pm-proses-yeterlilik-indeksleri-1"><i class="fa fa-check"></i><b>24.4</b> <span class="math inline">\(C_{p}\)</span>, <span class="math inline">\(C_{pk}\)</span> ve <span class="math inline">\(C_{pm}\)</span> Proses Yeterlilik İndeksleri</a><ul>
+<li class="chapter" data-level="24.4.1" data-path="proses-yeterlilik-analizi-1.html"><a href="proses-yeterlilik-analizi-1.html#c_p-proses-yeterlilik-indeksi-1"><i class="fa fa-check"></i><b>24.4.1</b> <span class="math inline">\(C_{p}\)</span> Proses Yeterlilik Indeksi</a></li>
+<li class="chapter" data-level="24.4.2" data-path="proses-yeterlilik-analizi-1.html"><a href="proses-yeterlilik-analizi-1.html#c_pk-proses-yeterlilik-indeksi-1"><i class="fa fa-check"></i><b>24.4.2</b> <span class="math inline">\(C_{pk}\)</span> Proses Yeterlilik Indeksi</a></li>
+<li class="chapter" data-level="24.4.3" data-path="proses-yeterlilik-analizi-1.html"><a href="proses-yeterlilik-analizi-1.html#c_pm-proses-yeterlilik-indeksi-1"><i class="fa fa-check"></i><b>24.4.3</b> <span class="math inline">\(C_{pm}\)</span> Proses Yeterlilik Indeksi</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="diğer-kontrol-diyagramları-1.html"><a href="diğer-kontrol-diyagramları-1.html"><i class="fa fa-check"></i><b>25</b> Diğer Kontrol Diyagramları</a><ul>
+<li class="chapter" data-level="25.1" data-path="diğer-kontrol-diyagramları-1.html"><a href="diğer-kontrol-diyagramları-1.html#cusum-cumulative-sum-kontrol-diyagramı-1"><i class="fa fa-check"></i><b>25.1</b> CUSUM (Cumulative Sum) Kontrol Diyagramı</a></li>
+<li class="chapter" data-level="25.2" data-path="diğer-kontrol-diyagramları-1.html"><a href="diğer-kontrol-diyagramları-1.html#ewma-exponentially-weighted-moving-average-kontrol-diyagramı-1"><i class="fa fa-check"></i><b>25.2</b> EWMA (Exponentially Weighted Moving Average) Kontrol Diyagramı</a></li>
+</ul></li>
+<li class="chapter" data-level="26" data-path="örnekleme-1.html"><a href="örnekleme-1.html"><i class="fa fa-check"></i><b>26</b> Örnekleme</a></li>
+<li class="chapter" data-level="27" data-path="ekler-1.html"><a href="ekler-1.html"><i class="fa fa-check"></i><b>27</b> Ekler</a><ul>
+<li class="chapter" data-level="27.1" data-path="ekler-1.html"><a href="ekler-1.html#ölçülebilir-değişkenler-için-kontrol-grafiği-faktör-tablosu-1"><i class="fa fa-check"></i><b>27.1</b> Ölçülebilir Değişkenler için Kontrol Grafiği Faktör Tablosu</a></li>
+<li class="chapter" data-level="27.2" data-path="ekler-1.html"><a href="ekler-1.html#standart-normal-dağılım-tablosu-1"><i class="fa fa-check"></i><b>27.2</b> Standart Normal Dağılım Tablosu</a></li>
+</ul></li>
+<li class="chapter" data-level="28" data-path="kısaltmalar-1.html"><a href="kısaltmalar-1.html"><i class="fa fa-check"></i><b>28</b> Kısaltmalar</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">İstatistiksel Kalite Kontrol</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="örnekleme-1" class="section level1">
+<h1><span class="header-section-number">Bölüm 26</span> Örnekleme</h1>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="diğer-kontrol-diyagramları-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ekler-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["SPC.Notes.pdf", "SPC.Notes.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
