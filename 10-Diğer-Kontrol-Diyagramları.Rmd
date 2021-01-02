@@ -1,6 +1,157 @@
 # Diğer Kontrol Diyagramları
 
+CUSUM kontrol diyagramları, 1960’lı yıllarda Shewhart kontrol çizelgelerine alternatif olarak ortaya çıkmıştır. Bu diyagramlar Shewhart kontrol diyagramlarına göre ortalamalar üzerindeki küçük değişimlerin fark edilmesinde daha etkilidir. Temelde sürecin kontrolde olup olmadığını inceleyebilmek için alternatif bir yol olarak ortaya konmuştur. CUSUM kontrol diyagramları E.S Page tarafından 1954 yılında geliştirilmiş olup, örneklem ortalaması ile hedef değer olarak tanımladığı bir değer arasındaki farkların birikimli toplamına dayalı bir yöntemdir.
+
+Shewhart tarafından önerilen kontrol diyagramlarının temel zayıflığı yığın ortalamasında gözlemlenen küçük değişimlere karşı nispeten hassas olmamasıdır. Yani, bu tür bir değişim ortaya çıktığında, çizilen her bir değer sadece bir alt gruba dayandığından ve bu nedenle nispeten daha büyük varyansa sahip olma eğiliminde olduğundan, değişimi ortaya koymak ortalama olarak çok sayıda çizilmiş değer gerektirir. Bu zayıflığı düzeltmenin bir yolu çizilen her bir değerin sadece en son alt grup ortalamasına değil, aynı zamanda diğer alt grup ortalamalarına da bağlı olmasına izin verilmelidir.
+
+Shewhart tarafından önerilen kontrol diyagramlarının eksik yanları;
+
+- Sadece bir noktaya ya da tek bir örnekleme dayanarak karar verilmesi
+- Prosesteki küçük ancak sürekli kaymalara karşı yeterince duyarlı olmaması
+
+olarak açıklanabilir. Bu bakımdan alternatif kontrol diyagramları önerilmiştir. Bu diyagramlar, Shewhart diyagramlara kıyasla performansta oldukça artış sağlamaktadır.
+
 ## CUSUM (Cumulative Sum) Kontrol Diyagramı
+
+Hem nicel hem de nitel gözlemler için kullanılabilen CUSUM (Cumulative Sum) kontrol diyagramı tabular yöntem veya V maskesi yöntemi ile uygulanabilmektedir. CUSUM diyagramı, UCL, LCL ve CL yerine Barnhard (1959) tarafından geliştirilen V maskesini kullanabilmektedir. V maskesi ile üretim sürecinin kontrol sınırları belirlenmektedir. 
+
+CUSUM kontrol diyagramı, örneklem ortalamaları serisi yerine daha basit bir seri niteliğindeki bireysel gözlem değerleri kullanılmaktadır. 
+
+Proses ortalamasından küçük sapmalarda ($0.5\sigma$) CUSUM kontrol diyagramları iyi sonuç verirken, ($1.5\sigma$ veya $2\sigma$) gibi daha büyük sapma miktarlarında Shewhart  kontrol diyagramlarının daha iyi sonuç verdiği görülmektedir. Ayrıca örneklem büyüklüğünün $n=1$ olduğu durumda verimli sonuçlar elde edilmektedir. 
+
+$\mu_{1}=\mu_{0}$ ise eğim 0 dır.
+
+$\mu_{1}>\mu_{0}$ ise eğim pozitif 
+
+$\mu_{1}<\mu_{0}$ ise eğim negatif 
+
+Diyagramda gözlenen pozitif veya negatif trend proses ortalamasında kayma olduğunun bir kanıtı olarak görülür ve özel değişkenlik kaynağı incelenir.
+
+$\mu_{1}=\mu_{0}$ ise noktalar 0 etrafında dağılır.
+
+$\mu_{1}>\mu_{0}$ ise noktalar pozitif yönde yukarı doğru dağılır.
+
+$\mu_{1}<\mu_{0}$ ise noktalar negatif yönde aşağı doğru dağılır.
+
+
+### Çizelge (Tabular) Yöntemi
+
+Proses ortalamasını izlemek için kullanılan yöntemlerden biri çizelge (tabular) yöntemidir. Hem bireysel gözlemler, hem de alt grup ortalamaları için elde edilebilir.
+
+$C^+_{i}=max[0,x_{i}-(\mu_{0}+K)+C^+_{i-1}]$
+
+$C^-_{i}=max[0,(\mu_{0}-K)-x_{i}+C^-_{i-1}]$
+
+$C^+_{0}=C^-_{0}=0$
+
+burada $\mu_{0}$ hedef (target) değer ve $K$ referans değerdir. $n>2$ için $x_{i}$ yerine  $\bar{x}_{i}$ kullanılır.
+
+<br>
+
+$K=\frac{\delta}{2}\sigma=\frac{|\mu_{1}-\mu_{0}|}{2}$
+
+Genellikle $\mu_{1}=\mu_{0}\pm1\sigma$ dolayısı ile $K=\sigma/2$
+
+<br>
+
+$H$ (decision interval) karar aralığı, genellikle $5\sigma$ seçilir. $C^+_{i}$ veya $C^-_{i}$ karar aralığını ($\pm H$) aşarsa, proses kontrol altında değildir.
+
+<br>
+
+**Örnek1:** Aşağıda yer alan x verisi toplam 30 gözlemden oluşmakta olup ilk 20 gözlemi $\mu=10$ ve $\sigma=1$ olan normal dağılımdan rasgele üretilmiştir. Kalan 10 gözlem ise $\mu=11$ ve $\sigma=1$ olan normal dağılımdan rasgele üretilmiştir. Veri için CUSUM diyagramını oluşturunuz.
+
+```{r echo=FALSE}
+x<-c(9.45,7.99,9.29,11.66,12.16,10.18,8.04,11.46,9.20,10.34,9.03,11.47,10.51,9.40,10.08,9.37,10.62,10.31,8.52,10.84,10.90,9.33,12.29,11.50,10.60,11.08,10.38,11.62,11.31,10.52)
+
+DT::datatable(as.data.frame(x),options = list(
+  columnDefs = list(list(className = 'dt-center', targets = 0:1))
+))
+```
+
+<br>
+
+```{r}
+c0p=0
+c0n=0
+
+m0=10
+k=1/2
+
+
+c1p=max(0,x[1]-(m0+k)+c0p)
+
+c1n=max(0,(m0-k)-x[1]+c0n)
+
+
+c2p=max(0,x[2]-(m0+k)+c1p)
+
+c2n=max(0,(m0-k)-x[2]+c1n)
+
+
+c3p=max(0,x[3]-(m0+k)+c2p)
+
+c3n=max(0,(m0-k)-x[3]+c2n)
+
+
+c(c1p=c1p,c1n=c1n,c2p=c2p,c2n=c2n,c3p=c3p,c3n=c3n)
+```
+<br>
+
+**Örnek2:**
+```{r message=FALSE, warning=FALSE}
+library(qcc)
+data(pistonrings)
+attach(pistonrings)
+diameter <- qcc.groups(diameter, sample)
+
+q <- cusum(diameter[1:25,], decision.interval = 4, se.shift = 1)
+summary(q)
+
+```
+<br>
+
+```{r message=FALSE, warning=FALSE}
+q <- cusum(diameter[1:25,], newdata=diameter[26:40,])
+summary(q)
+
+```
+
+<br>
+
+```{r message=FALSE, warning=FALSE}
+plot(q, chart.all=FALSE)
+```
+
+
+
+### V Maskesi Yöntemi
+
+V maskesi yöntemi Barnard tarafından 1959 yılında önerilmiştir. Temel düşünce $C_{1},C_{2},...,C_{i}$ bütün kümülatif toplamların V maskesinin kolları arasında kalmasıdır, bu durumda proses kontrol altındadır. Kolların dışında kalan herhangi bir kümülatif toplam olması halinde proses kontrol altında değildir. V maske yapısı aşağıda yer almaktadır.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/vmask.png" style="float:center;" width="500" height="400" title="" />
+
+$d=(\frac{2}{\delta^{2}})ln(\frac{1-\beta}{\alpha}))$
+
+$\theta=tan^{-1}(\frac{\delta}{2A})$
+
+$\delta=\frac{\Delta}{\sigma_{\bar{x}}}$
+
+- $\alpha:$ Proses ortalamasında kayma yok iken kaymanın olduğuna karar verme ihtimali
+
+- $\beta:$ Gerçekte kayma var iken bunu tespit edememe ihtimali
+
+- $\Delta:$ Proses ortalamasında meydana gelen kayma miktarı
+
+- $A:$ Bir ölçek faktörüdür ve bu değer yatay eksen üzerindeki 1 birimlik uzunluğa dikey eksen üzerinde karşılık gelen değerdir. A değeri $\sigma_{\bar{x}}$ ile $2\sigma_{\bar{x}}$ arasında değişir ve genellikle $2\sigma_{\bar{x}}$ olarak tercih edilir. 
+
+- $\delta:$ Araştırılmasına karar verilen proses seviyesindeki en küçük kayma miktarı
+
+- $\theta:$ Orta çizgi ile kol arasındaki açı
+
+
+
+
+
 
 
 
