@@ -128,7 +128,7 @@ plot(q, chart.all=FALSE)
 
 V maskesi yöntemi Barnard tarafından 1959 yılında önerilmiştir. Temel düşünce $C_{1},C_{2},...,C_{i}$ bütün kümülatif toplamların V maskesinin kolları arasında kalmasıdır, bu durumda proses kontrol altındadır. Kolların dışında kalan herhangi bir kümülatif toplam olması halinde proses kontrol altında değildir. V maske yapısı aşağıda yer almaktadır.
 
-<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/vmask.png" style="float:center;" width="500" height="400" title="" />
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/vmask2.png" style="float:center;" width="500" height="400" title="" />
 
 $d=(\frac{2}{\delta^{2}})ln(\frac{1-\beta}{\alpha}))$
 
@@ -136,25 +136,218 @@ $\theta=tan^{-1}(\frac{\delta}{2A})$
 
 $\delta=\frac{\Delta}{\sigma_{\bar{x}}}$
 
-- $\alpha:$ Proses ortalamasında kayma yok iken kaymanın olduğuna karar verme ihtimali
+- $\alpha:$ Proses ortalamasında sapma yok iken sapmanın olduğuna karar verme ihtimali
 
-- $\beta:$ Gerçekte kayma var iken bunu tespit edememe ihtimali
+- $\beta:$ Gerçekte sapma var iken bunu tespit edememe ihtimali
 
-- $\Delta:$ Proses ortalamasında meydana gelen kayma miktarı
+- $\Delta:$ Proses ortalamasında meydana gelen sapma miktarı
 
 - $A:$ Bir ölçek faktörüdür ve bu değer yatay eksen üzerindeki 1 birimlik uzunluğa dikey eksen üzerinde karşılık gelen değerdir. A değeri $\sigma_{\bar{x}}$ ile $2\sigma_{\bar{x}}$ arasında değişir ve genellikle $2\sigma_{\bar{x}}$ olarak tercih edilir. 
 
-- $\delta:$ Araştırılmasına karar verilen proses seviyesindeki en küçük kayma miktarı
+- $\delta:$ Araştırılmasına karar verilen proses seviyesindeki en küçük sapma miktarı
 
 - $\theta:$ Orta çizgi ile kol arasındaki açı
 
+Genel kullanımda V maskesi grafiklendirilen her yeni noktaya uygulanır yani her yeni örneklem ilavesinde maske yeniden düzenlenir. V maskesinin performansı d uzaklığı ve   açısı ile belirlenir.
 
+V maskesi, hesaplanan CUSUM değerlerinin sonuncusuna karşılık gelen O noktası ile OP doğrusu arasında merkezlenir.
 
+V maskesinin performansı, d ve $\theta$ parametreleri ile belirlenmektedir. Bu parametreler, karar verici tarafından tolere edilmek istenen 1. ve 2. tip hataları içeren risklere göre belirlenmektedir. 1. tip hata olasılığı $(\alpha)$, proses kontrol altında olmasına rağmen kontrol dışında olduğu kararına varma riskini ifade ederken, 2. tip hata olasılığı $(\beta)$ ise proses kontrol altında olmamasına rağmen kontrol altında olduğu kararına varma riskini ifade etmektedir.
 
-
-
-
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/vmask.png" style="float:center;" width="700" height="300" title="" />
 
 
 ## EWMA (Exponentially Weighted Moving Average) Kontrol Diyagramı
+
+1959 yılında Roberts tarafından geliştirilen EWMA (Üstel Ağırlıklı Hareketli Ortalama) kalite kontrol diyagramı, süreç ortalamalarındaki küçük fakat sürekli sapmalara karşı daha duyarlı olması sebebiyle Shewhart kalite kontrol diyagramlarına alternatif olarak geliştirilmiş olan bir diğer kalite kontrol diyagramıdır.
+
+EWMA diyagramı, CUSUM diyagramı gibi süreçte meydana gelen küçük sapmaları saptamak amacıyla kullanılan ağırlıklandırılmış bir hareketli ortalama kontrol diyagramıdır.
+
+EWMA’nın performansı, yani küçük sapmaları çabuk algılayabilmesi, CUSUM’la aynı olmakla beraber bu teknik kullanım açısından daha kolaydır. Genellikle bireysel gözlem değerlendirmede kullanılır, ancak örneklem ortalamalarının değerlendirilmesinde de kullanılabilir.
+
+<br>
+
+$z_{i}=\lambda x_{i}+(1-\lambda)z_{i}$
+
+burada $0<\lambda\leq1$ ve $z_{0}=\mu_{0}$'dır. Hedef değerin bilinmediği durumda ise $z_{0}=\bar{x}$ olarak seçilir.
+
+<br>
+
+EWMA kontrol diyagramı, $z_{i}$ değerlerinin zamana ya da gözlemlerin sırasına göre çizilmesiyle elde edilir.
+
+
+$z_{i}$, şimdiki ve geçmişteki tüm gözlem değerlerinin ağırlıklı ortalamasıdır ve bu nedenle normallik varsayımına oldukça duyarlıdır.
+
+<br>
+
+$z_{i}=\lambda x_{i}+(1-\lambda)[\lambda x_{i}+(1-\lambda)z_{i-2}]$
+
+<br>
+
+$z_{i}=\lambda x_{i}+\lambda(1-\lambda)x_{i-1}+(1-\lambda)^2z_{i-2}$
+
+<br>
+
+$z_{i-j}$, $j=2,3,...,t$ için;
+
+$z_{i}=\lambda \sum_{j=0}^{i-1}(1-\lambda)^{j}x_{i-j}+(1-\lambda)^{i}z_{0}$
+
+<br>
+
+EWMA kontrol diyagramlarında, ağırlık değerleri zamana bağlı olarak alınan örneklerin sayısı arttıkça, geometrik olarak azalır ve ağırlıklar toplamı 1’e doğru yaklaşır. Geçmiş örneklere doğru gittikçe, örnek ağırlığı $\lambda(1-\lambda)^{j}$ geometrik olarak azalacaktır.
+
+EWMA bazen geometrik hareketli ortalama (geometric moving average (GMA)) olarak da adlandırılır.
+
+Örneğin, $\lambda=0.2$ olması durumunda (şuanki ağırlık), geçmiş örneklere atanan ağırlıklar sırası ile 0.16, 0.128, 0.1024 şeklinde azalan bie seyir izleyecektir.
+
+EWMA, proses ortalamasından sapmaların küçük olduğu durumda (genellikle $0.5\sigma-2\sigma$ aralığında)  oldukça hızlı tespit imkanı sunar. Ancak büyük sapmaların tespitinde yavaş olduundan Shewhart kontrol diyagramlarını kullanmak daha doğru olacaktır.
+
+<br>
+
+$Z_{i}$ değerlerinin varyansı;
+
+
+$\sigma^{2}_{z_{i}}=\sigma^{2}(\frac{\lambda}{2-\lambda})[1-(1-\lambda)^{2i}]$
+
+olup, UCL, CL ve LCL aşağıda yer almaktadır.
+
+
+$UCL=\mu_{0}+L\sigma\sqrt{\frac{\lambda}{(2-\lambda)}[1-(1-\lambda)^{2i}]}$
+
+
+$CL=\mu_{0}$
+
+
+$LCL=\mu_{0}-L\sigma\sqrt{\frac{\lambda}{(2-\lambda)}[1-(1-\lambda)^{2i}]}$
+
+
+bu noktada $L$ ve $\lambda$ parametrelerinin seçimi önemlidir.
+
+<br>
+
+Örneklem büyüklüğü arttıkça $[1-(1-\lambda)^{2i}]$ çarpanı 1'e yaklaşacağından kontrol limitleri aşağıdaki şekli alır. Küçük örneklem durumunda çarpanı içeren eşitlik kullanılmalıdır.
+
+$UCL=\mu_{0}+L\sigma\sqrt{\frac{\lambda}{(2-\lambda)}}$
+
+$LCL=\mu_{0}-L\sigma\sqrt{\frac{\lambda}{(2-\lambda)}}$
+
+<br>
+
+**Alt kontrol grupları ile çalışma durumu;**
+
+Hedef değer bilinmiyorken;
+
+$UCL=\bar{\bar{x}}+3\sigma\sqrt{\frac{\lambda}{(2-\lambda)n}}$
+
+$CL=\bar{\bar{x}}$
+
+$LCL=\bar{\bar{x}}-3\sigma\sqrt{\frac{\lambda}{(2-\lambda)n}}$
+
+<br>
+
+Hedef değeri ve proses standart sapması bilinmiyorken;
+
+$UCL=\bar{\bar{x}}+A_{2}\bar{R}\sqrt{\frac{\lambda}{(2-\lambda)}}$
+
+$CL=\bar{\bar{x}}$
+
+$LCL=\bar{\bar{x}}-A_{2}\bar{R}\sqrt{\frac{\lambda}{(2-\lambda)}}$
+
+
+**Örnek1:** CUSUM başlığında yer alan Örnek1 verisi (x) için $\lambda=0.1$ ve $L=2.7$ durumunda EWMA kontrol diyagramını oluşturunuz.
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ewma.png" style="float:center;" width="800" height="370" title="" />
+
+```{r}
+# 1. gozlem icin EWMA
+
+z0=m0=10
+sgm=1
+lambda=0.1
+L=2.7
+
+z1=lambda*x[1]+(1-lambda)*z0
+z1
+```
+
+<br>
+
+```{r}
+# 2. gozlem icin EWMA
+
+z2=lambda*x[2]+(1-lambda)*z1
+z2
+
+```
+
+<br>
+
+Kontrol limitleri;
+
+```{r}
+# 1. gozlem icin (i=1)
+
+UCL1=m0+L*sgm*sqrt((lambda/(2-lambda)*(1-(1-lambda)^(2*1))))
+
+CL1=m0
+
+LCL1=m0-L*sgm*sqrt((lambda/(2-lambda)*(1-(1-lambda)^(2*1))))
+
+c(UCL1=UCL1,CL1=CL1,LCL1=LCL1)
+```
+
+<br>
+
+```{r}
+# 2. gozlem icin (i=2)
+
+UCL2=m0+L*sgm*sqrt((lambda/(2-lambda)*(1-(1-lambda)^(2*2))))
+
+CL2=m0
+
+LCL2=m0-L*sgm*sqrt((lambda/(2-lambda)*(1-(1-lambda)^(2*2))))
+
+round(c(UCL2=UCL2,CL2=CL2,LCL2=LCL2),2)
+```
+
+<br>
+
+```{r}
+v<-qcc::ewma(x, lambda=0.1, nsigmas=2.7,center=10)
+head(v$y)  # EWMA zi
+head(v$limits)  #limits
+```
+
+
+<br>
+
+```{r}
+library(qcc)
+u <- ewma(diameter[1:25,], lambda=0.2, nsigmas=3)
+summary(u)
+
+```
+
+<br>
+
+```{r}
+ewma(diameter[1:25,], lambda=0.2, nsigmas=3, newdata=diameter[26:40,]) 
+```
+
+<br>
+
+Bu noktada önemli olan $L$ ve $\lambda$ değerlerinin seçimidir. Prosesteki küçük sapmaları tespit edebilmek için $\lambda$ değerlerinin küçük seçilmesi gereklidir. $\lambda$ için genellikle 0.05, 0.1, 0.20 ve 0.25 değerleri tercih edilmektedir. Büyük $\lambda$ değerleri için $L=3$ seçilirken, küçük $\lambda$ değerlerinde ise 2.6-2.8 aralığında seçilir (Lucas ve Saccucci (1990)).
+
+
+
+
+
+
+
+
+
+
+
+
+
 

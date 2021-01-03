@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Busenur Kızılaslan" />
 
 
-<meta name="date" content="2021-01-02" />
+<meta name="date" content="2021-01-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -310,8 +310,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="math inline">\(H\)</span> (decision interval) karar aralığı, genellikle <span class="math inline">\(5\sigma\)</span> seçilir. <span class="math inline">\(C^+_{i}\)</span> veya <span class="math inline">\(C^-_{i}\)</span> karar aralığını (<span class="math inline">\(\pm H\)</span>) aşarsa, proses kontrol altında değildir.</p>
 <p><br></p>
 <p><strong>Örnek1:</strong> Aşağıda yer alan x verisi toplam 30 gözlemden oluşmakta olup ilk 20 gözlemi <span class="math inline">\(\mu=10\)</span> ve <span class="math inline">\(\sigma=1\)</span> olan normal dağılımdan rasgele üretilmiştir. Kalan 10 gözlem ise <span class="math inline">\(\mu=11\)</span> ve <span class="math inline">\(\sigma=1\)</span> olan normal dağılımdan rasgele üretilmiştir. Veri için CUSUM diyagramını oluşturunuz.</p>
-<div id="htmlwidget-b9cb8e5ff8a88c199b80" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b9cb8e5ff8a88c199b80">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"],[9.45,7.99,9.29,11.66,12.16,10.18,8.04,11.46,9.2,10.34,9.03,11.47,10.51,9.4,10.08,9.37,10.62,10.31,8.52,10.84,10.9,9.33,12.29,11.5,10.6,11.08,10.38,11.62,11.31,10.52]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>x<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":[0,1]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-79c271dd885b6e481bda" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-79c271dd885b6e481bda">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"],[9.45,7.99,9.29,11.66,12.16,10.18,8.04,11.46,9.2,10.34,9.03,11.47,10.51,9.4,10.08,9.37,10.62,10.31,8.52,10.84,10.9,9.33,12.29,11.5,10.6,11.08,10.38,11.62,11.31,10.52]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>x<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":[0,1]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p><br></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="diğer-kontrol-diyagramları.html#cb1-1"></a>c0p=<span class="dv">0</span></span>
 <span id="cb1-2"><a href="diğer-kontrol-diyagramları.html#cb1-2"></a>c0n=<span class="dv">0</span></span>
@@ -400,22 +400,190 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="v-maskesi-yöntemi" class="section level3">
 <h3><span class="header-section-number">11.1.2</span> V Maskesi Yöntemi</h3>
 <p>V maskesi yöntemi Barnard tarafından 1959 yılında önerilmiştir. Temel düşünce <span class="math inline">\(C_{1},C_{2},...,C_{i}\)</span> bütün kümülatif toplamların V maskesinin kolları arasında kalmasıdır, bu durumda proses kontrol altındadır. Kolların dışında kalan herhangi bir kümülatif toplam olması halinde proses kontrol altında değildir. V maske yapısı aşağıda yer almaktadır.</p>
-<p><img src="images/vmask.png" style="float:center;" width="500" height="400" title="" /></p>
+<p><img src="images/vmask2.png" style="float:center;" width="500" height="400" title="" /></p>
 <p><span class="math inline">\(d=(\frac{2}{\delta^{2}})ln(\frac{1-\beta}{\alpha}))\)</span></p>
 <p><span class="math inline">\(\theta=tan^{-1}(\frac{\delta}{2A})\)</span></p>
 <p><span class="math inline">\(\delta=\frac{\Delta}{\sigma_{\bar{x}}}\)</span></p>
 <ul>
-<li><p><span class="math inline">\(\alpha:\)</span> Proses ortalamasında kayma yok iken kaymanın olduğuna karar verme ihtimali</p></li>
-<li><p><span class="math inline">\(\beta:\)</span> Gerçekte kayma var iken bunu tespit edememe ihtimali</p></li>
-<li><p><span class="math inline">\(\Delta:\)</span> Proses ortalamasında meydana gelen kayma miktarı</p></li>
+<li><p><span class="math inline">\(\alpha:\)</span> Proses ortalamasında sapma yok iken sapmanın olduğuna karar verme ihtimali</p></li>
+<li><p><span class="math inline">\(\beta:\)</span> Gerçekte sapma var iken bunu tespit edememe ihtimali</p></li>
+<li><p><span class="math inline">\(\Delta:\)</span> Proses ortalamasında meydana gelen sapma miktarı</p></li>
 <li><p><span class="math inline">\(A:\)</span> Bir ölçek faktörüdür ve bu değer yatay eksen üzerindeki 1 birimlik uzunluğa dikey eksen üzerinde karşılık gelen değerdir. A değeri <span class="math inline">\(\sigma_{\bar{x}}\)</span> ile <span class="math inline">\(2\sigma_{\bar{x}}\)</span> arasında değişir ve genellikle <span class="math inline">\(2\sigma_{\bar{x}}\)</span> olarak tercih edilir.</p></li>
-<li><p><span class="math inline">\(\delta:\)</span> Araştırılmasına karar verilen proses seviyesindeki en küçük kayma miktarı</p></li>
+<li><p><span class="math inline">\(\delta:\)</span> Araştırılmasına karar verilen proses seviyesindeki en küçük sapma miktarı</p></li>
 <li><p><span class="math inline">\(\theta:\)</span> Orta çizgi ile kol arasındaki açı</p></li>
 </ul>
+<p>Genel kullanımda V maskesi grafiklendirilen her yeni noktaya uygulanır yani her yeni örneklem ilavesinde maske yeniden düzenlenir. V maskesinin performansı d uzaklığı ve açısı ile belirlenir.</p>
+<p>V maskesi, hesaplanan CUSUM değerlerinin sonuncusuna karşılık gelen O noktası ile OP doğrusu arasında merkezlenir.</p>
+<p>V maskesinin performansı, d ve <span class="math inline">\(\theta\)</span> parametreleri ile belirlenmektedir. Bu parametreler, karar verici tarafından tolere edilmek istenen 1. ve 2. tip hataları içeren risklere göre belirlenmektedir. 1. tip hata olasılığı <span class="math inline">\((\alpha)\)</span>, proses kontrol altında olmasına rağmen kontrol dışında olduğu kararına varma riskini ifade ederken, 2. tip hata olasılığı <span class="math inline">\((\beta)\)</span> ise proses kontrol altında olmamasına rağmen kontrol altında olduğu kararına varma riskini ifade etmektedir.</p>
+<p><img src="images/vmask.png" style="float:center;" width="700" height="300" title="" /></p>
 </div>
 </div>
 <div id="ewma-exponentially-weighted-moving-average-kontrol-diyagramı" class="section level2">
 <h2><span class="header-section-number">11.2</span> EWMA (Exponentially Weighted Moving Average) Kontrol Diyagramı</h2>
+<p>1959 yılında Roberts tarafından geliştirilen EWMA (Üstel Ağırlıklı Hareketli Ortalama) kalite kontrol diyagramı, süreç ortalamalarındaki küçük fakat sürekli sapmalara karşı daha duyarlı olması sebebiyle Shewhart kalite kontrol diyagramlarına alternatif olarak geliştirilmiş olan bir diğer kalite kontrol diyagramıdır.</p>
+<p>EWMA diyagramı, CUSUM diyagramı gibi süreçte meydana gelen küçük sapmaları saptamak amacıyla kullanılan ağırlıklandırılmış bir hareketli ortalama kontrol diyagramıdır.</p>
+<p>EWMA’nın performansı, yani küçük sapmaları çabuk algılayabilmesi, CUSUM’la aynı olmakla beraber bu teknik kullanım açısından daha kolaydır. Genellikle bireysel gözlem değerlendirmede kullanılır, ancak örneklem ortalamalarının değerlendirilmesinde de kullanılabilir.</p>
+<p><br></p>
+<p><span class="math inline">\(z_{i}=\lambda x_{i}+(1-\lambda)z_{i}\)</span></p>
+<p>burada <span class="math inline">\(0&lt;\lambda\leq1\)</span> ve <span class="math inline">\(z_{0}=\mu_{0}\)</span>’dır. Hedef değerin bilinmediği durumda ise <span class="math inline">\(z_{0}=\bar{x}\)</span> olarak seçilir.</p>
+<p><br></p>
+<p>EWMA kontrol diyagramı, <span class="math inline">\(z_{i}\)</span> değerlerinin zamana ya da gözlemlerin sırasına göre çizilmesiyle elde edilir.</p>
+<p><span class="math inline">\(z_{i}\)</span>, şimdiki ve geçmişteki tüm gözlem değerlerinin ağırlıklı ortalamasıdır ve bu nedenle normallik varsayımına oldukça duyarlıdır.</p>
+<p><br></p>
+<p><span class="math inline">\(z_{i}=\lambda x_{i}+(1-\lambda)[\lambda x_{i}+(1-\lambda)z_{i-2}]\)</span></p>
+<p><br></p>
+<p><span class="math inline">\(z_{i}=\lambda x_{i}+\lambda(1-\lambda)x_{i-1}+(1-\lambda)^2z_{i-2}\)</span></p>
+<p><br></p>
+<p><span class="math inline">\(z_{i-j}\)</span>, <span class="math inline">\(j=2,3,...,t\)</span> için;</p>
+<p><span class="math inline">\(z_{i}=\lambda \sum_{j=0}^{i-1}(1-\lambda)^{j}x_{i-j}+(1-\lambda)^{i}z_{0}\)</span></p>
+<p><br></p>
+<p>EWMA kontrol diyagramlarında, ağırlık değerleri zamana bağlı olarak alınan örneklerin sayısı arttıkça, geometrik olarak azalır ve ağırlıklar toplamı 1’e doğru yaklaşır. Geçmiş örneklere doğru gittikçe, örnek ağırlığı <span class="math inline">\(\lambda(1-\lambda)^{j}\)</span> geometrik olarak azalacaktır.</p>
+<p>EWMA bazen geometrik hareketli ortalama (geometric moving average (GMA)) olarak da adlandırılır.</p>
+<p>Örneğin, <span class="math inline">\(\lambda=0.2\)</span> olması durumunda (şuanki ağırlık), geçmiş örneklere atanan ağırlıklar sırası ile 0.16, 0.128, 0.1024 şeklinde azalan bie seyir izleyecektir.</p>
+<p>EWMA, proses ortalamasından sapmaların küçük olduğu durumda (genellikle <span class="math inline">\(0.5\sigma-2\sigma\)</span> aralığında) oldukça hızlı tespit imkanı sunar. Ancak büyük sapmaların tespitinde yavaş olduundan Shewhart kontrol diyagramlarını kullanmak daha doğru olacaktır.</p>
+<p><br></p>
+<p><span class="math inline">\(Z_{i}\)</span> değerlerinin varyansı;</p>
+<p><span class="math inline">\(\sigma^{2}_{z_{i}}=\sigma^{2}(\frac{\lambda}{2-\lambda})[1-(1-\lambda)^{2i}]\)</span></p>
+<p>olup, UCL, CL ve LCL aşağıda yer almaktadır.</p>
+<p><span class="math inline">\(UCL=\mu_{0}+L\sigma\sqrt{\frac{\lambda}{(2-\lambda)}[1-(1-\lambda)^{2i}]}\)</span></p>
+<p><span class="math inline">\(CL=\mu_{0}\)</span></p>
+<p><span class="math inline">\(LCL=\mu_{0}-L\sigma\sqrt{\frac{\lambda}{(2-\lambda)}[1-(1-\lambda)^{2i}]}\)</span></p>
+<p>bu noktada <span class="math inline">\(L\)</span> ve <span class="math inline">\(\lambda\)</span> parametrelerinin seçimi önemlidir.</p>
+<p><br></p>
+<p>Örneklem büyüklüğü arttıkça <span class="math inline">\([1-(1-\lambda)^{2i}]\)</span> çarpanı 1’e yaklaşacağından kontrol limitleri aşağıdaki şekli alır. Küçük örneklem durumunda çarpanı içeren eşitlik kullanılmalıdır.</p>
+<p><span class="math inline">\(UCL=\mu_{0}+L\sigma\sqrt{\frac{\lambda}{(2-\lambda)}}\)</span></p>
+<p><span class="math inline">\(LCL=\mu_{0}-L\sigma\sqrt{\frac{\lambda}{(2-\lambda)}}\)</span></p>
+<p><br></p>
+<p><strong>Alt kontrol grupları ile çalışma durumu;</strong></p>
+<p>Hedef değer bilinmiyorken;</p>
+<p><span class="math inline">\(UCL=\bar{\bar{x}}+3\sigma\sqrt{\frac{\lambda}{(2-\lambda)n}}\)</span></p>
+<p><span class="math inline">\(CL=\bar{\bar{x}}\)</span></p>
+<p><span class="math inline">\(LCL=\bar{\bar{x}}-3\sigma\sqrt{\frac{\lambda}{(2-\lambda)n}}\)</span></p>
+<p><br></p>
+<p>Hedef değeri ve proses standart sapması bilinmiyorken;</p>
+<p><span class="math inline">\(UCL=\bar{\bar{x}}+A_{2}\bar{R}\sqrt{\frac{\lambda}{(2-\lambda)}}\)</span></p>
+<p><span class="math inline">\(CL=\bar{\bar{x}}\)</span></p>
+<p><span class="math inline">\(LCL=\bar{\bar{x}}-A_{2}\bar{R}\sqrt{\frac{\lambda}{(2-\lambda)}}\)</span></p>
+<p><strong>Örnek1:</strong> CUSUM başlığında yer alan Örnek1 verisi (x) için <span class="math inline">\(\lambda=0.1\)</span> ve <span class="math inline">\(L=2.7\)</span> durumunda EWMA kontrol diyagramını oluşturunuz.</p>
+<p><img src="images/ewma.png" style="float:center;" width="800" height="370" title="" /></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="diğer-kontrol-diyagramları.html#cb10-1"></a><span class="co"># 1. gozlem icin EWMA</span></span>
+<span id="cb10-2"><a href="diğer-kontrol-diyagramları.html#cb10-2"></a></span>
+<span id="cb10-3"><a href="diğer-kontrol-diyagramları.html#cb10-3"></a>z0=m0=<span class="dv">10</span></span>
+<span id="cb10-4"><a href="diğer-kontrol-diyagramları.html#cb10-4"></a>sgm=<span class="dv">1</span></span>
+<span id="cb10-5"><a href="diğer-kontrol-diyagramları.html#cb10-5"></a>lambda=<span class="fl">0.1</span></span>
+<span id="cb10-6"><a href="diğer-kontrol-diyagramları.html#cb10-6"></a>L=<span class="fl">2.7</span></span>
+<span id="cb10-7"><a href="diğer-kontrol-diyagramları.html#cb10-7"></a></span>
+<span id="cb10-8"><a href="diğer-kontrol-diyagramları.html#cb10-8"></a>z1=lambda<span class="op">*</span>x[<span class="dv">1</span>]<span class="op">+</span>(<span class="dv">1</span><span class="op">-</span>lambda)<span class="op">*</span>z0</span>
+<span id="cb10-9"><a href="diğer-kontrol-diyagramları.html#cb10-9"></a>z1</span></code></pre></div>
+<pre><code>## [1] 9.945</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="diğer-kontrol-diyagramları.html#cb12-1"></a><span class="co"># 2. gozlem icin EWMA</span></span>
+<span id="cb12-2"><a href="diğer-kontrol-diyagramları.html#cb12-2"></a></span>
+<span id="cb12-3"><a href="diğer-kontrol-diyagramları.html#cb12-3"></a>z2=lambda<span class="op">*</span>x[<span class="dv">2</span>]<span class="op">+</span>(<span class="dv">1</span><span class="op">-</span>lambda)<span class="op">*</span>z1</span>
+<span id="cb12-4"><a href="diğer-kontrol-diyagramları.html#cb12-4"></a>z2</span></code></pre></div>
+<pre><code>## [1] 9.7495</code></pre>
+<p><br></p>
+<p>Kontrol limitleri;</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="diğer-kontrol-diyagramları.html#cb14-1"></a><span class="co"># 1. gozlem icin (i=1)</span></span>
+<span id="cb14-2"><a href="diğer-kontrol-diyagramları.html#cb14-2"></a></span>
+<span id="cb14-3"><a href="diğer-kontrol-diyagramları.html#cb14-3"></a>UCL1=m0<span class="op">+</span>L<span class="op">*</span>sgm<span class="op">*</span><span class="kw">sqrt</span>((lambda<span class="op">/</span>(<span class="dv">2</span><span class="op">-</span>lambda)<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>(<span class="dv">1</span><span class="op">-</span>lambda)<span class="op">^</span>(<span class="dv">2</span><span class="op">*</span><span class="dv">1</span>))))</span>
+<span id="cb14-4"><a href="diğer-kontrol-diyagramları.html#cb14-4"></a></span>
+<span id="cb14-5"><a href="diğer-kontrol-diyagramları.html#cb14-5"></a>CL1=m0</span>
+<span id="cb14-6"><a href="diğer-kontrol-diyagramları.html#cb14-6"></a></span>
+<span id="cb14-7"><a href="diğer-kontrol-diyagramları.html#cb14-7"></a>LCL1=m0<span class="op">-</span>L<span class="op">*</span>sgm<span class="op">*</span><span class="kw">sqrt</span>((lambda<span class="op">/</span>(<span class="dv">2</span><span class="op">-</span>lambda)<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>(<span class="dv">1</span><span class="op">-</span>lambda)<span class="op">^</span>(<span class="dv">2</span><span class="op">*</span><span class="dv">1</span>))))</span>
+<span id="cb14-8"><a href="diğer-kontrol-diyagramları.html#cb14-8"></a></span>
+<span id="cb14-9"><a href="diğer-kontrol-diyagramları.html#cb14-9"></a><span class="kw">c</span>(<span class="dt">UCL1=</span>UCL1,<span class="dt">CL1=</span>CL1,<span class="dt">LCL1=</span>LCL1)</span></code></pre></div>
+<pre><code>##  UCL1   CL1  LCL1 
+## 10.27 10.00  9.73</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="diğer-kontrol-diyagramları.html#cb16-1"></a><span class="co"># 2. gozlem icin (i=2)</span></span>
+<span id="cb16-2"><a href="diğer-kontrol-diyagramları.html#cb16-2"></a></span>
+<span id="cb16-3"><a href="diğer-kontrol-diyagramları.html#cb16-3"></a>UCL2=m0<span class="op">+</span>L<span class="op">*</span>sgm<span class="op">*</span><span class="kw">sqrt</span>((lambda<span class="op">/</span>(<span class="dv">2</span><span class="op">-</span>lambda)<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>(<span class="dv">1</span><span class="op">-</span>lambda)<span class="op">^</span>(<span class="dv">2</span><span class="op">*</span><span class="dv">2</span>))))</span>
+<span id="cb16-4"><a href="diğer-kontrol-diyagramları.html#cb16-4"></a></span>
+<span id="cb16-5"><a href="diğer-kontrol-diyagramları.html#cb16-5"></a>CL2=m0</span>
+<span id="cb16-6"><a href="diğer-kontrol-diyagramları.html#cb16-6"></a></span>
+<span id="cb16-7"><a href="diğer-kontrol-diyagramları.html#cb16-7"></a>LCL2=m0<span class="op">-</span>L<span class="op">*</span>sgm<span class="op">*</span><span class="kw">sqrt</span>((lambda<span class="op">/</span>(<span class="dv">2</span><span class="op">-</span>lambda)<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>(<span class="dv">1</span><span class="op">-</span>lambda)<span class="op">^</span>(<span class="dv">2</span><span class="op">*</span><span class="dv">2</span>))))</span>
+<span id="cb16-8"><a href="diğer-kontrol-diyagramları.html#cb16-8"></a></span>
+<span id="cb16-9"><a href="diğer-kontrol-diyagramları.html#cb16-9"></a><span class="kw">round</span>(<span class="kw">c</span>(<span class="dt">UCL2=</span>UCL2,<span class="dt">CL2=</span>CL2,<span class="dt">LCL2=</span>LCL2),<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>##  UCL2   CL2  LCL2 
+## 10.36 10.00  9.64</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="diğer-kontrol-diyagramları.html#cb18-1"></a>v&lt;-qcc<span class="op">::</span><span class="kw">ewma</span>(x, <span class="dt">lambda=</span><span class="fl">0.1</span>, <span class="dt">nsigmas=</span><span class="fl">2.7</span>,<span class="dt">center=</span><span class="dv">10</span>)</span></code></pre></div>
+<p><img src="SPC.Notes_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="diğer-kontrol-diyagramları.html#cb19-1"></a><span class="kw">head</span>(v<span class="op">$</span>y)  <span class="co"># EWMA zi</span></span></code></pre></div>
+<pre><code>##         1         2         3         4         5         6 
+##  9.945000  9.749500  9.703550  9.899195 10.125276 10.130748</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="diğer-kontrol-diyagramları.html#cb21-1"></a><span class="kw">head</span>(v<span class="op">$</span>limits)  <span class="co">#limits</span></span></code></pre></div>
+<pre><code>##           LCL      UCL
+## [1,] 9.676036 10.32396
+## [2,] 9.564151 10.43585
+## [3,] 9.491253 10.50875
+## [4,] 9.439108 10.56089
+## [5,] 9.400185 10.59981
+## [6,] 9.370419 10.62958</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="diğer-kontrol-diyagramları.html#cb23-1"></a><span class="kw">library</span>(qcc)</span>
+<span id="cb23-2"><a href="diğer-kontrol-diyagramları.html#cb23-2"></a>u &lt;-<span class="st"> </span><span class="kw">ewma</span>(diameter[<span class="dv">1</span><span class="op">:</span><span class="dv">25</span>,], <span class="dt">lambda=</span><span class="fl">0.2</span>, <span class="dt">nsigmas=</span><span class="dv">3</span>)</span></code></pre></div>
+<p><img src="SPC.Notes_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="diğer-kontrol-diyagramları.html#cb24-1"></a><span class="kw">summary</span>(u)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## ewma(data = diameter[1:25, ], lambda = 0.2, nsigmas = 3)
+## 
+## ewma chart for diameter[1:25, ] 
+## 
+## Summary of group statistics:
+##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+## 73.99020 73.99820 74.00080 74.00118 74.00420 74.01020 
+## 
+## Group sample size:  5
+## Number of groups:  25
+## Center of group statistics:  74.00118
+## Standard deviation:  0.009785039 
+## 
+## Smoothing parameter: 0.2 
+## Control limits:
+##          LCL      UCL
+## 1   73.99855 74.00380
+## 2   73.99781 74.00454
+## ...                  
+## 25  73.99680 74.00555</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="diğer-kontrol-diyagramları.html#cb26-1"></a><span class="kw">ewma</span>(diameter[<span class="dv">1</span><span class="op">:</span><span class="dv">25</span>,], <span class="dt">lambda=</span><span class="fl">0.2</span>, <span class="dt">nsigmas=</span><span class="dv">3</span>, <span class="dt">newdata=</span>diameter[<span class="dv">26</span><span class="op">:</span><span class="dv">40</span>,]) </span></code></pre></div>
+<p><img src="SPC.Notes_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre><code>## List of 19
+##  $ call        : language ewma(data = diameter[1:25, ], lambda = 0.2, nsigmas = 3, newdata = diameter[26:40,      ])
+##  $ type        : chr &quot;ewma&quot;
+##  $ data.name   : chr &quot;diameter[1:25, ]&quot;
+##  $ data        : num [1:25, 1:5] 74 74 74 74 74 ...
+##   ..- attr(*, &quot;dimnames&quot;)=List of 2
+##  $ statistics  : Named num [1:25] 74 74 74 74 74 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:25] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##  $ sizes       : Named int [1:25] 5 5 5 5 5 5 5 5 5 5 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:25] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##  $ center      : num 74
+##  $ std.dev     : num 0.00979
+##  $ newstats    : Named num [1:15] 74 74 74 74 74 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:15] &quot;26&quot; &quot;27&quot; &quot;28&quot; &quot;29&quot; ...
+##  $ newdata     : num [1:15, 1:5] 74 74 74 74 74 ...
+##   ..- attr(*, &quot;dimnames&quot;)=List of 2
+##  $ newsizes    : Named int [1:15] 5 5 5 5 5 5 5 5 5 5 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:15] &quot;26&quot; &quot;27&quot; &quot;28&quot; &quot;29&quot; ...
+##  $ newdata.name: chr &quot;diameter[26:40, ]&quot;
+##  $ x           : int [1:40] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ y           : Named num [1:40] 74 74 74 74 74 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:40] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##  $ sigma       : Named num [1:40] 0.000875 0.001121 0.001253 0.001331 0.001378 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:40] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##  $ lambda      : num 0.2
+##  $ nsigmas     : num 3
+##  $ limits      : num [1:40, 1:2] 74 74 74 74 74 ...
+##   ..- attr(*, &quot;dimnames&quot;)=List of 2
+##  $ violations  : Named int [1:4] 37 38 39 40
+##   ..- attr(*, &quot;names&quot;)= chr [1:4] &quot;37&quot; &quot;38&quot; &quot;39&quot; &quot;40&quot;
+##  - attr(*, &quot;class&quot;)= chr &quot;ewma.qcc&quot;</code></pre>
+<p><br></p>
+<p>Bu noktada önemli olan <span class="math inline">\(L\)</span> ve <span class="math inline">\(\lambda\)</span> değerlerinin seçimidir. Prosesteki küçük sapmaları tespit edebilmek için <span class="math inline">\(\lambda\)</span> değerlerinin küçük seçilmesi gereklidir. <span class="math inline">\(\lambda\)</span> için genellikle 0.05, 0.1, 0.20 ve 0.25 değerleri tercih edilmektedir. Büyük <span class="math inline">\(\lambda\)</span> değerleri için <span class="math inline">\(L=3\)</span> seçilirken, küçük <span class="math inline">\(\lambda\)</span> değerlerinde ise 2.6-2.8 aralığında seçilir (Lucas ve Saccucci (1990)).</p>
 
 </div>
 </div>
