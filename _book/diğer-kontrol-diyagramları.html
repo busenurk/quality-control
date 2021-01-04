@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Busenur Kızılaslan" />
 
 
-<meta name="date" content="2021-01-03" />
+<meta name="date" content="2021-01-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -310,8 +310,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="math inline">\(H\)</span> (decision interval) karar aralığı, genellikle <span class="math inline">\(5\sigma\)</span> seçilir. <span class="math inline">\(C^+_{i}\)</span> veya <span class="math inline">\(C^-_{i}\)</span> karar aralığını (<span class="math inline">\(\pm H\)</span>) aşarsa, proses kontrol altında değildir.</p>
 <p><br></p>
 <p><strong>Örnek1:</strong> Aşağıda yer alan x verisi toplam 30 gözlemden oluşmakta olup ilk 20 gözlemi <span class="math inline">\(\mu=10\)</span> ve <span class="math inline">\(\sigma=1\)</span> olan normal dağılımdan rasgele üretilmiştir. Kalan 10 gözlem ise <span class="math inline">\(\mu=11\)</span> ve <span class="math inline">\(\sigma=1\)</span> olan normal dağılımdan rasgele üretilmiştir. Veri için CUSUM diyagramını oluşturunuz.</p>
-<div id="htmlwidget-79c271dd885b6e481bda" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-79c271dd885b6e481bda">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"],[9.45,7.99,9.29,11.66,12.16,10.18,8.04,11.46,9.2,10.34,9.03,11.47,10.51,9.4,10.08,9.37,10.62,10.31,8.52,10.84,10.9,9.33,12.29,11.5,10.6,11.08,10.38,11.62,11.31,10.52]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>x<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":[0,1]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-37de845ee0e74337d481" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-37de845ee0e74337d481">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"],[9.45,7.99,9.29,11.66,12.16,10.18,8.04,11.46,9.2,10.34,9.03,11.47,10.51,9.4,10.08,9.37,10.62,10.31,8.52,10.84,10.9,9.33,12.29,11.5,10.6,11.08,10.38,11.62,11.31,10.52]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>x<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":[0,1]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p><br></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="diğer-kontrol-diyagramları.html#cb1-1"></a>c0p=<span class="dv">0</span></span>
 <span id="cb1-2"><a href="diğer-kontrol-diyagramları.html#cb1-2"></a>c0n=<span class="dv">0</span></span>
@@ -424,7 +424,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>EWMA diyagramı, CUSUM diyagramı gibi süreçte meydana gelen küçük sapmaları saptamak amacıyla kullanılan ağırlıklandırılmış bir hareketli ortalama kontrol diyagramıdır.</p>
 <p>EWMA’nın performansı, yani küçük sapmaları çabuk algılayabilmesi, CUSUM’la aynı olmakla beraber bu teknik kullanım açısından daha kolaydır. Genellikle bireysel gözlem değerlendirmede kullanılır, ancak örneklem ortalamalarının değerlendirilmesinde de kullanılabilir.</p>
 <p><br></p>
-<p><span class="math inline">\(z_{i}=\lambda x_{i}+(1-\lambda)z_{i}\)</span></p>
+<p><span class="math inline">\(z_{i}=\lambda x_{i}+(1-\lambda)z_{i-1}\)</span></p>
 <p>burada <span class="math inline">\(0&lt;\lambda\leq1\)</span> ve <span class="math inline">\(z_{0}=\mu_{0}\)</span>’dır. Hedef değerin bilinmediği durumda ise <span class="math inline">\(z_{0}=\bar{x}\)</span> olarak seçilir.</p>
 <p><br></p>
 <p>EWMA kontrol diyagramı, <span class="math inline">\(z_{i}\)</span> değerlerinin zamana ya da gözlemlerin sırasına göre çizilmesiyle elde edilir.</p>

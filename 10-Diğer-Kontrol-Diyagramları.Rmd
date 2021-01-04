@@ -167,7 +167,7 @@ EWMA’nın performansı, yani küçük sapmaları çabuk algılayabilmesi, 
 
 <br>
 
-$z_{i}=\lambda x_{i}+(1-\lambda)z_{i}$
+$z_{i}=\lambda x_{i}+(1-\lambda)z_{i-1}$
 
 burada $0<\lambda\leq1$ ve $z_{0}=\mu_{0}$'dır. Hedef değerin bilinmediği durumda ise $z_{0}=\bar{x}$ olarak seçilir.
 
