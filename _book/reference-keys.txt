@@ -167,3 +167,10 @@ v-maskesi-yöntemi-1
 ewma-exponentially-weighted-moving-average-kontrol-diyagramı-1
 ölçülebilir-değişkenler-için-kontrol-grafiği-faktör-tablosu-1
 standart-normal-dağılım-tablosu-1
+kabul-örneklemesi
+örnekleme-planı-tipleri
+parti-oluşturma
+rasgele-örnek-alma
+niteliksel-özellikler-için-basit-örnekleme-planları
+çalışma-karakteristiği-eğrisi-oc-operating-characteristic-curve
+oc-eğrisi-üzerindeki-önemli-noktalar

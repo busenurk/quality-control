@@ -41,6 +41,8 @@ Ders notunuz bookdown^[https://bookdown.org] ile hazırlanmış olup [linkten](h
 
 - [İstatistiksel Kalite Kontrol Ders Notları - Tuncay Özcan](http://auzefkitap.istanbul.edu.tr/kitap/endustrimuhlt_ue/istatistikselkalitekontrolu.pdf)
 
+- [Kalite Planlama ve Kontrol Ders Notları - Kemal Subulan](https://kisi.deu.edu.tr/kemal.subulan/Kalite_Planlama_Kontrol_Week11_KS.pdf)
+
 ## Hakkımda
 
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/busenur1.jpg" style="float: right;" width="270" height="350" title="Busenur" /> 

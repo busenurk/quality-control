@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Bölüm 3 Ders Planı | İstatistiksel Kalite Kontrol</title>
+  <title>Bölüm 12 Kabul Örneklemesi | İstatistiksel Kalite Kontrol</title>
   <meta name="description" content="Statistical quality control lecture notes" />
   <meta name="generator" content="bookdown 0.20.6 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Bölüm 3 Ders Planı | İstatistiksel Kalite Kontrol" />
+  <meta property="og:title" content="Bölüm 12 Kabul Örneklemesi | İstatistiksel Kalite Kontrol" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Bölüm 3 Ders Planı | İstatistiksel Kalite Kontrol" />
+  <meta name="twitter:title" content="Bölüm 12 Kabul Örneklemesi | İstatistiksel Kalite Kontrol" />
   
   <meta name="twitter:description" content="Statistical quality control lecture notes" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="motivasyon.html"/>
-<link rel="next" href="kalite-yönetimi-temel-kavramları.html"/>
+<link rel="prev" href="diğer-kontrol-diyagramları.html"/>
+<link rel="next" href="ekler.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -209,45 +209,196 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ders-planı" class="section level1">
-<h1><span class="header-section-number">Bölüm 3</span> Ders Planı</h1>
-<p><strong>Öğretim elemanı:</strong> Arş. Gör. Dr. Busenur KIZILASLAN</p>
-<p><strong>e-posta:</strong> <a href="mailto:busenur.sarica@marmara.edu.tr" class="email">busenur.sarica@marmara.edu.tr</a></p>
-<p><strong>Ders saati ve şekli:</strong> Pzts 15:00-17:00, Cmts 11:00-13:00, UZEM</p>
-<p><strong>Ders amacı:</strong> İstatistiksel Kalite Kontrol tarihçesi, yöntemler ve işleyiş hakkında bilgi sahibi olmak, R uygulamaları ile güncel hayat uygulamaları gerçekleştirmek</p>
-<p><br></p>
-<p><strong>Kaynaklar:</strong></p>
+<div id="kabul-örneklemesi" class="section level1">
+<h1><span class="header-section-number">Bölüm 12</span> Kabul Örneklemesi</h1>
+<p>Hammadde, yarı mamul veya üretimi tamamlanmış nihai ürünün kabul/red kararının verilebilmesi için kullanılan bir yaklaşımdır. Kabul örneklemesi muayene ve ürünler hakkında karar verme işlemi ile ilgili en eski kalite güvencesi esaslarından biridir. 1930 ve 1940’lı yıllarda, kabul örneklemesi SQC alanında temel konulardan biriydi ve esasen muayene amaçlı kullanılmaktaydı. Son yıllarda, deney tasarımı yöntemi kullanımı yoluyla üreticilerin proses performansını arttırmak tipik uygulamalardır ve esas kalite güvencesi aracı olarak kabul örneklemesine fazla bağımlı kalınmamaktadır.</p>
+<p>Tipik bir kabul örneklemesi örneği; bir şirket, bir tedarikçiden ürün alır. Bu ürün genellikle firma içindeki üretim prosesinde kullanılacak bir ham malzemedir. Partiden örnek alınır ve örnekteki birimlerin bazı kalite karakteristikleri muayene edilir. Bu örnekten elde edilen bilgiye dayanarak, partinin ne şekilde değerlendirileceğine karar verilir. Karar, partinin <strong>kabulü</strong> veya <strong>reddi</strong> şeklindedir. Bu işlem <strong>parti hakkında hüküm verme işlemi</strong> olarak da adlandırılır. Kabul edilen partiler üretim bandına gönderilir, reddedilen partiler tedarikçiye geri gönderilir veya parti üzerinde başka bir işlem yapmak üzere ayrı bir yerde bekletilir.</p>
+<p>Kabul örneklemesinin girdi muayenesine ait bir faaliyet gibi görünmesinin yanında, örnekleme metodlarının diğer kullanım alanları da mevcuttur. Örneğin, bir üretici, üretimin çeşitli aşamalarında sıkça örnekleme yaparak ürününü muayene yoluna gidebilir. Kabul görmüş partiler üretimin bir sonraki aşamasına gönderilirken, reddedilen partiler, ya düzeltme işlemine uğratılır ya da kullanım dışı bırakılır.</p>
 <ul>
-<li><p><a href="http://endustri.eskisehir.edu.tr/ipoyraz/TKY302/icerik/text%20book_montgomery_6th%20edition.pdf">Introduction to Statistical Quality Control - Douglas C. Montgomery</a></p></li>
-<li><p><a href="http://www.diliev.com/Home/materiali/KHEA/referati/6812268-Statistical-Process-Control-eBook-VG.pdf">Statistical Process Control - John S. Oakland</a></p></li>
-<li><p>İstatistiksel Kalite Kontrol Ders Notları - Erhan Öner</p></li>
-<li><p><a href="http://auzefkitap.istanbul.edu.tr/kitap/endustrimuhlt_ue/istatistikselkalitekontrolu.pdf">İstatistiksel Kalite Kontrol Ders Notları - Tuncay Özcan</a></p></li>
-<li><p><a href="https://kisi.deu.edu.tr/kemal.subulan/Kalite_Planlama_Kontrol_Week11_KS.pdf">Kalite Planlama ve Kontrol Ders Notları - Kemal Subulan</a></p></li>
+<li><p>Kabul örneklemesinin amacı, parti kalitesi hakkında bir tahminde bulunmak değil, partiler hakkında bir hüküm vermektir. Kabul örneklemesi planlarının çoğu, tahmin amaçlı tasarımlanmamaktadır.</p></li>
+<li><p>Kabul örneklemesi planları, kalite kontrolün direkt olarak herhangi bir şeklini sağlamaz. Kabul örneklemesi, basitçe partilerin kabul veya reddedilmesi işlemidir. Hatta tüm partilerin aynı kalitede olması durumunda bile, örnekleme, bazı partileri kabul bazı partileri reddedecektir. Bu durumda, kabul edilmiş partilerin, reddedilenlerden daha iyi olduğu söylenemez. <strong>Proses kontrolleri, kaliteyi kontrol etmek ve sistematik bir şekilde iyileştirmek için kullanılırken, kabul örneklemesi bu amaçlar için kullanılmaz.</strong></p></li>
+<li><p>Kabul örneklemesinin en etkin kullanımı, ürünün kalitesini muayene etmek işleminden ziyade, bir prosesin çıktısının gereksinimleri karşılayıp karşılamadığından emin olmak üzere tetkik aracı olarak yapıldığındadır.</p></li>
+</ul>
+<p>Genellikle, parti hakkında karar verme işleminde üç yaklaşım söz konusudur;</p>
+<ul>
+<li>Muayene etmeden kabul işlemi,</li>
+<li>%100 Muayene,</li>
+<li>Kabul örneklemesi</li>
+</ul>
+<p>Muayene etmeden kabul işlemi, tedarikçinin prosesinin çok iyi olması ve hemen hemen partide hiç hatalı birimin bulunmaması veya hatalı birimleri aramanın ekonomik bir yaptırımı olmaması durumlarında geçerlidir. Ayrıca, ekonomik açıdan önemi az olan partiler için, yeniden üretim maliyeti az olan ürünler için kullanılabilir. Örneğin, tedarikçi proses yeterliliği 3 veya 4 ise kabul örneklemesinin hatalı ürün bulması olanaksızdır.</p>
+<p>%100 muayene işlemi, bileşenlerin oldukça kritik ve herhangi bir hatalı bileşenin çeşitli aşamalarda yüksek hata maliyetlerine yol açabileceği veya tedarikçinin proses yeterliliğinin spesifikasyonları karşılamaması durumlarında kullanılır.</p>
+<p>Kabul örneklemesi ise aşağıdaki durumlarda faydalıdır;</p>
+<ul>
+<li>Numunelerde hasara yol açan test işlemlerinin kullanılması durumunda,</li>
+<li>%100 muayene işlemine ait maliyetin oldukça yüksek olması durumunda,</li>
+<li>%100 muayene işleminin teknolojik olarak mümkün olamaması veya uzun zaman alarak üretim akışını engellemesi durumunda,</li>
+<li>Tedarikçinin mükemmel bir kalite geçmişine sahip olması durumunda,</li>
+<li>Ürün güvenilirliğine ait risk potansiyelinin bulunması ve tedarikçinin prosesinin yeterli olmasına rağmen ürünün sürekli gözlemlenmesine ait bir programın mevcut olması durumunda.</li>
 </ul>
 <p><br></p>
-<p><strong>Ders Planı:</strong></p>
+<p><strong>Avantaj ve Dezavantajlar</strong></p>
+<p>Kabul örneklemesi, %100 muayene ile karşılaştırıldığında aşağıdaki avantajlara sahiptir;</p>
 <ul>
-<li><p>Terminoloji ve genel bakış</p></li>
-<li><p>Kalite öncüleri</p></li>
-<li><p>Çıkarımsal istatistik</p></li>
-<li><p>Kontrol grafikleri</p>
+<li>Daha az muayene yapılacak olmasından dolayı daha az maliyetlidir.</li>
+<li>Ürünün taşınması daha az olacağından, hasar azaltılmış olacaktır.</li>
+<li>Üründe hasar oluşturan muayene işlemine uygulanabilir.</li>
+<li>Muayene faaliyetlerinde daha az eleman görevlendirilecektir.</li>
+<li>Muayene hatasına ait miktar, büyük ölçüde azalacaktır.</li>
+<li>Yalnızca hatalı olanların tedarikçiye teslimi yerine partilerin tümünün reddedilmesi, genellikle tedarikçinin kalitesini iyileştirmesi için güçlü bir motivasyonu sağlayacaktır.</li>
+</ul>
+<p>Kabul örneklemesi bazı dezavantajlara da sahiptir;</p>
 <ul>
-<li>Ölçülebilir değişkenler için kontrol diyagramları</li>
-<li>Ölçülemeyen özellikler için kontrol diyagramları</li>
-</ul></li>
-<li><p>Proses yeterlilik analizi, CUSUM ve EWMA diyagramları</p></li>
-<li><p>Kabul örneklemesi</p></li>
-<li><p>R uygulamaları <em>(Uygulamalar her konu içeriğinde yer alacaktır.)</em></p></li>
+<li>Kötü partileri kabul etme ve iyi partileri reddetme riski mevcuttur.</li>
+<li>Genellikle ürün hakkında ve ürünün meydana getirildiği proses hakkında az bilgi elde edilebilmektedir.</li>
+<li>Kabul örneklemesi, kabul örnekleme prosedürüne ait planlamaya ve dökümantasyona ihtiyaç duymasına rağmen, %100 muayenede bunlara gerek yoktur.</li>
+</ul>
+<p>Düzgün bir kabul örneklemesi planının tasarımı genellikle müşteri tarafından gerekli kılınan gerçek kalite seviyesinin bilinmesine ihtiyaç duymaktadır.</p>
+<p>Kabul örneklemesi, %100 örnekleme gibi ekstrem bir koşul ile, hiç örnekleme yapmamak şeklindeki bir yaklaşımın orta noktasıdır. Kabul örneklemesi planı ile bir partinin ayrılması işleminin kalite üzerinde direkt bir kontrolü olmamasına rağmen, bir örnekleme planının, bir tedarikçi tarafından sürekli temin edilen partilere uygulanması ile hem partinin üreticisi hem de müşteri için bir şekilde koruma temin edilmiş olacaktır. Ayrıca, tedarikçinin üretim prosesini iyileştirmesi yönünde ekonomik ve psikolojik bir baskı sağlanmış olacaktır.</p>
+<div id="örnekleme-planı-tipleri" class="section level2">
+<h2><span class="header-section-number">12.1</span> Örnekleme Planı Tipleri</h2>
+<p>Kabul örneklemesi planları farklı şekillerde sınıflandırılabilir. Temel bir sınıflandırma aşağıdaki şekilde yapılabilir.</p>
+<ul>
+<li>Değişkenler ile oluşturulan planlar</li>
+<li>Niteliksel özellikler ile oluşturulan planlar</li>
+</ul>
+<p>Değişkenler sayısal bir cetvel üzerinde ölçülebilen kalite özellikleridir. Niteliksel özellikler ise ‘uygun’ ve ‘uygun olmayan’ şeklinde ifade edilen kalite özellikleridir.</p>
+<p><strong>Basit örnekleme planı (Tek örnekleme):</strong> partiden rasgele n birimlik bir örnekleme yapmak ve parti hakkında bu örneklemede elde edilen bilgiye göre karar vermek işlemidir. Örneğin, örnek büyüklüğü n ve kabul sayısı c ise, partiden rasgele n birim alınır. Eğer numunede c veya daha az sayıda hatalı varsa parti kabul edilir. Eğer numunede c’den daha fazla sayıda hatalı varsa parti reddedilir.</p>
+<p><img src="images/basitor.png" style="float:center;" width="400" height="200" title="" /></p>
+<p><br></p>
+<p><strong>Çift örnekleme planı:</strong> daha karmaşıktır. Başlangıç örneklemesinde elde edilen bilgi doğrultusunda (a) parti kabul edilir, (b) reddedilir veya (c) ikinci bir örnekleme yapılır. Eğer ikinci örnekleme yapılmış ise, ilk ve ikinci örneklerden elde edilen bilgi birleştirilerek partinin kabulü veya reddedilmesi hakkında karara varılır.</p>
+<p><img src="images/ciftkatli.png" style="float:center;" width="700" height="250" title="" /></p>
+<p><br></p>
+<p><strong>Çok Katlı Örnekleme Planı:</strong> çift örnekleme planı’nın geliştirilmiş halidir. Parti hakkında karar vermek için ikiden fazla örnekleme yapılması gereklidir. Çok katlı planlarda örnek büyüklükleri, genellikle Tek Örnekleme ve Çift Örnekleme planlarındakilerden daha küçüktür.</p>
+<p><strong>Ardışık Örnekleme Planı:</strong> çok katlı örnekleme planının geliştirilmiş şeklidir. Birimler, partiden tek tek seçilmekte ve birimin muayenesinden sonra partinin kabulüne, reddine veya yeni bir birimin seçimine karar verilmektedir.</p>
+<p>Örnekleme prosedürünün tipinin belirlenmesinde, işin yapılmasına yönelik verimlilik, plan tarafından oluşturulan bilginin şekli, prosedür tarafından gerekli görülen ortalama muayene adedi ve prosedürün üretim organizasyonundaki materyal akışına etkisi göz önüne alınmalıdır.</p>
+<p>Örnek büyüklüğü fazla olan örnekleme planları, hem üretici hem de tüketici açısından daha yüksek kalite güvence sağlayacaktır.</p>
+</div>
+<div id="parti-oluşturma" class="section level2">
+<h2><span class="header-section-number">12.2</span> Parti Oluşturma</h2>
+<p>Partinin ne şekilde oluşturulduğu, kabul örneklemesi planının verimliliğini etkileyebilmektedir. Muayene için parti oluşturmada göz önüne alınması gereken hususlardan bazıları şunlardır.</p>
+<ul>
+<li>Partiler homojen yapıda olmalıdır. (Aynı operatör ile üretim, aynı ham madde ile üretim vb.)</li>
+<li>Küçük partilerden ziyade büyük partiler tercih edilmelidir. (Büyük partileri muayene etmek ekonomik açıdan daha verimlidir.)</li>
+<li>Partiler, hem tedarikçi hem de müşterideki materyal taşıma sistemleri ile uyumlu olmalıdır. (Birimler, taşıma ve yükleme sırasındaki hasarı en aza indirecek şekilde paketlenmiş olmalıdır.)</li>
+</ul>
+</div>
+<div id="rasgele-örnek-alma" class="section level2">
+<h2><span class="header-section-number">12.3</span> Rasgele Örnek Alma</h2>
+<p>Partiden alınan birimler, rasgele seçilmeli ve partideki tüm birimleri temsil edebilmelidir. Önce, partideki her bir birime numara verilir, daha sonra n adet rasgele sayı belirlenir. Bu tesadüfi sayılarca temsil edilen birimler muayene için ayrılır.</p>
+<p>Rasgele örnekleme yapılmaz ise hatalar meydana gelebilir. Örneğin, tedarikçi partinin üst kısmına en iyi parçaları koyabilir, ancak bu iyi parçalar, partinin bütününü temsil etmez ve ancak rassal örnekleme ile bu sorunun üstesinden gelinebilir.</p>
+<p>Numaralandırmanın mümkün olmadığı durumlarda ise çeşitli teknikler uygulanabilir. Örneğin; bir konteynır için muayene sorumlusu konteynırı farklı katmanlara ayırarak buralardan farklı örnekler alabilir, ya da üç haneli rassal sayı üretilerek en, boy, yükseklik ifade edilebilir, bu koordinatlara denk gelen parça muayene edilebilir.</p>
+</div>
+<div id="niteliksel-özellikler-için-basit-örnekleme-planları" class="section level2">
+<h2><span class="header-section-number">12.4</span> Niteliksel Özellikler için Basit Örnekleme Planları</h2>
+<p>N büyüklüğünde bir partinin muayene işlemini ele alalım. Basit örnekleme planı, örnek büyüklüğü n ve kabul sayısı c ile tanımlanmaktadır. Böylece, eğer parti büyüklüğü <span class="math inline">\(N=10.000\)</span> ise, örnekleme planı, <span class="math inline">\(n=89\)</span> ve <span class="math inline">\(c=2\)</span> olsun. Bu, <span class="math inline">\(N=10.000\)</span> boyutundaki bir partiden rasgele olarak seçilen <span class="math inline">\(n=89\)</span> birimin muayene edildiği anlamına gelmektedir ve uygun olmayan veya hatalı birimlerden d adet bulunmuş ise, eğer gözlemlenen hatalı sayısı d, 2 veya daha az olduğunda parti kabul edilecek anlamını taşımaktadır. Eğer d, 2’den büyükse, parti reddedilecektir. Muayene edilen kalite karakteristiği niteliksel olduğundan, örnekteki her bir birim, uygun veya uygun olmayan olarak değerlendirilecektir. Bu işlem, n büyüklüğündeki bir partiden elde edilen bilgiye dayanarak parti hakkında karar verilmesinden dolayı basit örnekleme planı olarak adlandırılır.</p>
+</div>
+<div id="çalışma-karakteristiği-eğrisi-oc-operating-characteristic-curve" class="section level2">
+<h2><span class="header-section-number">12.5</span> Çalışma Karakteristiği Eğrisi (OC-Operating Characteristic Curve)</h2>
+<p>Kabul örneklemesi planının performansının önemli bir ölçütü Çalışma Karakteristiği (OC) Eğrisi’dir. Bu eğri, değişen kalite düzeyi (p) karşısında partilerin kabul olasılıklarını (<span class="math inline">\(P_{a}\)</span>) ifade eder. Başka bir ifade ile, belli bir kalite düzeyindeki bir partinin kabul veya reddedilme olasılığını gösterir. Kabul olasılığı, d’nin c’den daha küçük veya eşit olma olasılığı yani örneklemdeki kusurlu sayısının kabul sayısına eşit ya da daha az olması olasılığıdır.</p>
+<p>ve aşağıdaki gibi ifade edilir.</p>
+<p><span class="math inline">\(P_{a}=P(d\leq c)=\sum_{d=0}^{c}\frac{n!}{d!(n-d)!}p^{d}(1-p)^{n-d}\)</span></p>
+<p>Çift katlı örnekleme planı için <span class="math inline">\(P_{a}\)</span>,</p>
+<p><span class="math inline">\(P_{a}=P_{a}^{I}+P_{a}^{II}\)</span></p>
+<p>Basit örnekleme planı için kabul olasılıkları (<span class="math inline">\(n=89, c=2\)</span>)</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Kalite düzeyi, p</th>
+<th align="center">Kabul olasılığı <span class="math inline">\(P_{a}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0.005</td>
+<td align="center">0.9897</td>
+</tr>
+<tr class="even">
+<td align="center">0.010</td>
+<td align="center">0.9397</td>
+</tr>
+<tr class="odd">
+<td align="center">0.020</td>
+<td align="center">0.7366</td>
+</tr>
+<tr class="even">
+<td align="center">0.030</td>
+<td align="center">0.4985</td>
+</tr>
+<tr class="odd">
+<td align="center">0.040</td>
+<td align="center">0.3042</td>
+</tr>
+<tr class="even">
+<td align="center">0.50</td>
+<td align="center">0.1721</td>
+</tr>
+<tr class="odd">
+<td align="center">0.60</td>
+<td align="center">0.0919</td>
+</tr>
+<tr class="even">
+<td align="center">0.70</td>
+<td align="center">0.0468</td>
+</tr>
+<tr class="odd">
+<td align="center">0.80</td>
+<td align="center">0.023</td>
+</tr>
+<tr class="even">
+<td align="center">0.90</td>
+<td align="center">0.0109</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><strong>Basit örnekleme planı <span class="math inline">\(n=89, c=2\)</span> için OC eğrisi;</strong></p>
+<p><img src="images/oc.png" style="float:center;" width="400" height="300" title="" /></p>
+<p>Eğer, örnekleme planı <span class="math inline">\(n=89, c=2\)</span> ise ve parti %2 hatalı ise, kabul olasılığı 0.74’dür. Bu değer, bu örnekleme planı kullanıldığında %2 hatalı üretim yapan bir prosesten 100 partinin alınması durumunda, partilerin 74’ünün kabul ve 26’sının reddedileceği anlamına gelmektedir.</p>
+<p>Bir örnekleme planı için OC eğrisi, üretici ve tüketici riskinin ölçülmesini sağlar.</p>
+<p><br></p>
+<p><strong>İdeal OC eğrisi;</strong></p>
+<p><img src="images/idealoc.png" style="float:right;" width="300" height="250" title="" /></p>
+<p>İyi ve kötü partileri kusursuzca ayıran bir örnekleme planına ait ideal OC eğrisi yanda görülmektedir. Bu şekildeki ideal bir OC eğrisi pratikte elde edilemez. Gönderilen her parti malın aynı kalite düzeyinde olması yani, aynı oranda kusurlu parça içermesi beklenemez. Dolayısıyla, bir örnekleme planında değişen kalite seviyeleri p (kusurlu oranı) karşısında partilerin kabul olasılıkları P(a) değişimini OC eğrisi ile izlemek mümkündür.. İdeal eğrinin şekline, örnek büyüklüğünü arttırmakla yaklaşılabilir. Böylece iyi ve kötü partileri birbirinden ayırma hassasiyeti, örnekleme planında artan örnek büyüklüğü ile artar. OC eğrisinin eğitimi ne kadar büyükse, ayırma gücü o kadar büyüktür. Genellikle, kabul sayısını değiştirmek, OC eğrisinin eğimini önemli ölçüde değiştirmez. Kabul sayısı azaldığında OC eğrisi sola kayar.</p>
+<p>Eğer üretici ve tüketici riskleri sıfır olursa bu plan eğrisine şekilde görüldüğü üzere “İdeal OC eğrisi” adı verilir.</p>
+<p><br></p>
+<p><strong>Farklı örneklem büyüklükleri için OC eğrileri;</strong></p>
+<p><img src="images/difsamp.png" style="float:center;" width="400" height="250" title="" /></p>
+<p><br></p>
+<p><strong>Kabul sayısındaki değişikliğin OC eğrisi üzerindeki etkisi;</strong></p>
+<p><img src="images/effectoc.png" style="float:center;" width="400" height="250" title="" /></p>
+</div>
+<div id="oc-eğrisi-üzerindeki-önemli-noktalar" class="section level2">
+<h2><span class="header-section-number">12.6</span> OC Eğrisi Üzerindeki Önemli Noktalar</h2>
+<p>Kalite mühendisi, OC eğrisi üzerinde belli noktalara önem vermektedir. Tedarikçi, hangi seviyede parti veya proses kalitesinin yüksek bir kabul olasılığını vereceğini bilmek isteyecektir. Örneğin, kabul olasılığını 0.95 noktasında isteyecektir. Bu durumda, partilerin kabulü %95’lik şansa sahiptir. Buna karşılık müşteri, OC eğrisinin diğer kısmına önem verecektir. Başka bir ifade ile, hangi seviyede parti veya proses kalitesinin düşük bir kabul olasılığını verceğini bilmek isteyecektir.</p>
+<p><strong>Üretici riski (<span class="math inline">\(\alpha\)</span>):</strong> İyi bir parti malın reddedilme olasılığı. Pratikte genellikle 0.05 alınır ve böylece bir partinin kabul olasılığı 0.95 olur.</p>
+<p><strong>Tüketici riski (<span class="math inline">\(\beta\)</span>):</strong> Kötü bir parti malın kabul edilme olasılığı. Pratikte 0.1 alınır. Böylece kötü kalitede bir partinin kabul olasılığı 0.1 olur.</p>
+<p><strong>Kabul edilebilir kalite düzeyi (Acceptable Quality Level (AQL)):</strong> <span class="math inline">\(\alpha\)</span> riski ile reddedilme olasılığı bulunan iyi kalitede bir partinin kusurlu parça oranı.</p>
+<p><strong>Parti kalite düzeyi toleransı (Lot Tolerance Percent Defective (LTPD)):</strong> <span class="math inline">\(\beta\)</span> riski ile kabul edilme olasılığı bulunan kötü kalitede bir partinin kusurlu parça oranı.</p>
+<p><strong>Eşit riskli kalite düzeyi (IQL):</strong> Kabul veya red olasılığı eşit, yani %50 olan partinin kusurlu parça oranı</p>
+<p><br></p>
+<p><img src="images/ho.png" style="float:center;" width="600" height="150" title="" /></p>
+<p><br></p>
+<p><img src="images/oc5.png" style="float:center;" width="550" height="350" title="" /></p>
+<p><br></p>
+<ul>
+<li>AQL azaldığında, iyi bir partiyi reddetme ihtimali (<span class="math inline">\(\alpha\)</span>) de azalır.</li>
+<li>LTPD arttığında, kötü partiyi kabul etme olasılığı (<span class="math inline">\(\beta\)</span>) azalır.</li>
+<li>AQL üzerine üretici ve tüketicinin anlaşması gerekir ve bu değer kontratlarda müzakere edilen bir husustur.</li>
+<li>Daha düşük bir AQL üreticinin riskini azaltır fakat aynı zamanda imalatta daha sıkı bir kontrol gerektirir. Bu nedenle kalite özelliklerini belirlemede ekonomik analiz önemlidir.</li>
+<li><span class="math inline">\(\alpha\)</span>= %5 ve AQL= %2 olması, %2 kusurlu içeren 100 partiden 95’inin kabul, 5’inin reddedileceği anlamına gelmektedir.</li>
+<li><span class="math inline">\(\beta\)</span>= %10 ve LTPD= %5 olması, %5 kusurlu içeren 100 partiden 90’ının red 10’unun kabul edileceği anlamına gelmektedir.</li>
+<li>Örnek büyüklüğü arttıkça üretici riski (<span class="math inline">\(\alpha\)</span>) artar, tüketici riski (̆<span class="math inline">\(\beta\)</span>) azalır.</li>
 </ul>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="motivasyon.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="kalite-yönetimi-temel-kavramları.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="diğer-kontrol-diyagramları.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ekler.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
