@@ -117,6 +117,19 @@ $P_{a}=P(d\leq c)=\sum_{d=0}^{c}\frac{n!}{d!(n-d)!}p^{d}(1-p)^{n-d}$
 
 $P_{a}=P_{a}^{I}+P_{a}^{II}$
 
+<br>
+
+```{r}
+n=89
+c=2
+p=0.005
+result<-c()
+for(d in 0:2){
+  result[d+1]=(factorial(n)/(factorial(d)*factorial(n-d)))*(p^d)*((1-p)^(n-d))
+}
+sum(result)
+```
+
 Basit örnekleme planı için kabul olasılıkları ($n=89, c=2$) 
 
 |Kalite düzeyi, p|Kabul olasılığı $P_{a}$|
@@ -178,13 +191,17 @@ Kalite mühendisi, OC eğrisi üzerinde belli noktalara önem vermektedir. Tedar
 
 **Eşit riskli kalite düzeyi (IQL):** Kabul veya red olasılığı eşit, yani %50 olan partinin kusurlu parça oranı
 
+
 <br>
 
 <img src="/Users/busenursarica/Documents/GitHub/quality-control/images/ho.png" style="float:center;" width="600" height="150" title="" />
 
 <br>
 
-<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/oc5.png" style="float:center;" width="550" height="350" title="" />
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/oc23.png" style="float:center;" width="400" height="250" title="" />
+
+<img src="/Users/busenursarica/Documents/GitHub/quality-control/images/oc5.png" style="float:center;" width="500" height="350" title="" /> 
+
 
 <br>
 
