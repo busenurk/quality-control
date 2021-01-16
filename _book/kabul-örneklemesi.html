@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Busenur Kızılaslan" />
 
 
-<meta name="date" content="2021-01-11" />
+<meta name="date" content="2021-01-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -464,6 +464,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(\beta\)</span>= %10 ve LTPD= %5 olması, %5 kusurlu içeren 100 partiden 90’ının red 10’unun kabul edileceği anlamına gelmektedir.</li>
 <li>Örnek büyüklüğü arttıkça üretici riski (<span class="math inline">\(\alpha\)</span>) artar, tüketici riski (̆<span class="math inline">\(\beta\)</span>) azalır.</li>
 </ul>
+<p><br></p>
+<p><strong>Örnek1:</strong> <span class="math inline">\(\begin{bmatrix} N=500\\n=20\\c=2 \end{bmatrix}\)</span> kabul planı için</p>
+<p><strong>a)</strong> Kabul planını yorumlayınız.</p>
+<p><strong>b)</strong> 0.02, 0.08 kusurlu oranları için kabul olasılıklarını bulunuz.</p>
+<p><br></p>
+<p><strong>a)</strong> Parti hacmi 500 birim olup bu partiden 20 birimlik örnek rasgele olarak alınacaktır. Bu örnekte yer alan birimler incelenerek kusurlu sayısı belirlenecektir. Eğer incelenen 20 birimlik örnekte en fazla 2 birim kusurlu olarak tespit edilirse bu 500 birimlik parti kabul edilecek aksi durumda parti reddedilecektir.</p>
+<p><strong>b)</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="kabul-örneklemesi.html#cb3-1"></a>kabul&lt;-<span class="cf">function</span>(n,c,p){</span>
+<span id="cb3-2"><a href="kabul-örneklemesi.html#cb3-2"></a>out&lt;-<span class="kw">c</span>()</span>
+<span id="cb3-3"><a href="kabul-örneklemesi.html#cb3-3"></a><span class="cf">for</span>(d <span class="cf">in</span> <span class="dv">0</span><span class="op">:</span>c){</span>
+<span id="cb3-4"><a href="kabul-örneklemesi.html#cb3-4"></a>  out[d<span class="op">+</span><span class="dv">1</span>]=(<span class="kw">factorial</span>(n)<span class="op">/</span>(<span class="kw">factorial</span>(d)<span class="op">*</span><span class="kw">factorial</span>(n<span class="op">-</span>d)))<span class="op">*</span>(p<span class="op">^</span>d)<span class="op">*</span>((<span class="dv">1</span><span class="op">-</span>p)<span class="op">^</span>(n<span class="op">-</span>d))</span>
+<span id="cb3-5"><a href="kabul-örneklemesi.html#cb3-5"></a>}</span>
+<span id="cb3-6"><a href="kabul-örneklemesi.html#cb3-6"></a>fin=<span class="kw">sum</span>(out)</span>
+<span id="cb3-7"><a href="kabul-örneklemesi.html#cb3-7"></a><span class="kw">return</span>(fin)}</span></code></pre></div>
+<p><br></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="kabul-örneklemesi.html#cb4-1"></a>k1&lt;-<span class="kw">kabul</span>(<span class="dv">20</span>,<span class="dv">2</span>,<span class="fl">0.02</span>)  </span>
+<span id="cb4-2"><a href="kabul-örneklemesi.html#cb4-2"></a>k2&lt;-<span class="kw">kabul</span>(<span class="dv">89</span>,<span class="dv">2</span>,<span class="fl">0.08</span>)</span>
+<span id="cb4-3"><a href="kabul-örneklemesi.html#cb4-3"></a></span>
+<span id="cb4-4"><a href="kabul-örneklemesi.html#cb4-4"></a><span class="kw">cat</span>(<span class="st">&quot;0.02 kusurlu oranı için kabul olasılığı&quot;</span>, k1,<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 0.02 kusurlu oranı için kabul olasılığı 0.9929313</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="kabul-örneklemesi.html#cb6-1"></a><span class="kw">cat</span>(<span class="st">&quot;0.08 kusurlu oranı için kabul olasılığı&quot;</span>, k2 )</span></code></pre></div>
+<pre><code>## 0.08 kusurlu oranı için kabul olasılığı 0.02295508</code></pre>
+<p><br></p>
+<p><strong>Örnek2:</strong> Kabul edilebilir hata düzeyi (AQL), 0.10, parti kalite düzeyi toleransı (LTPD), 0.30 olarak verilen proseste üretici riski (<span class="math inline">\(\alpha\)</span>), 0.0702 iken, tüketici riski (<span class="math inline">\(\beta\)</span>), 0.3828’dir. Örnek büyüklüğü (n) ve kabul sayısı (c)’yi bulunuz.</p>
+<p><strong>Not:</strong> PRP(AQL, <span class="math inline">\(1-\alpha\)</span>), CRP(LTPD, <span class="math inline">\(\beta\)</span>)</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="kabul-örneklemesi.html#cb8-1"></a><span class="kw">library</span>(AcceptanceSampling)</span>
+<span id="cb8-2"><a href="kabul-örneklemesi.html#cb8-2"></a></span>
+<span id="cb8-3"><a href="kabul-örneklemesi.html#cb8-3"></a><span class="kw">find.plan</span>(<span class="dt">PRP=</span><span class="kw">c</span>(<span class="fl">0.1</span>,(<span class="dv">1</span><span class="fl">-0.0702</span>)),   <span class="co"># producer risk point</span></span>
+<span id="cb8-4"><a href="kabul-örneklemesi.html#cb8-4"></a>          <span class="dt">CRP=</span><span class="kw">c</span>(<span class="fl">0.3</span>,<span class="fl">0.3828</span>),       <span class="co"># consumer risk point</span></span>
+<span id="cb8-5"><a href="kabul-örneklemesi.html#cb8-5"></a>          <span class="dt">type=</span><span class="st">&quot;binom&quot;</span>)</span></code></pre></div>
+<pre><code>## $n
+## [1] 10
+## 
+## $c
+## [1] 2
+## 
+## $r
+## [1] 3</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="kabul-örneklemesi.html#cb10-1"></a>u&lt;-<span class="kw">OC2c</span>(<span class="dt">n=</span><span class="dv">10</span>,<span class="dt">c=</span><span class="dv">2</span>,<span class="dt">type=</span><span class="st">&quot;binomial&quot;</span>)</span>
+<span id="cb10-2"><a href="kabul-örneklemesi.html#cb10-2"></a><span class="kw">plot</span>(u, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</span>
+<span id="cb10-3"><a href="kabul-örneklemesi.html#cb10-3"></a><span class="kw">grid</span>(<span class="dv">5</span>,<span class="dt">lty=</span><span class="st">&quot;solid&quot;</span>)</span>
+<span id="cb10-4"><a href="kabul-örneklemesi.html#cb10-4"></a><span class="kw">abline</span>(<span class="dt">v=</span><span class="fl">0.3</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb10-5"><a href="kabul-örneklemesi.html#cb10-5"></a><span class="kw">abline</span>(<span class="dt">h=</span><span class="fl">0.382</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb10-6"><a href="kabul-örneklemesi.html#cb10-6"></a><span class="kw">text</span>(<span class="dt">x =</span> <span class="fl">0.3</span>, </span>
+<span id="cb10-7"><a href="kabul-örneklemesi.html#cb10-7"></a>     <span class="dt">y =</span> <span class="fl">0.382</span>,</span>
+<span id="cb10-8"><a href="kabul-örneklemesi.html#cb10-8"></a>     <span class="dt">labels =</span> <span class="st">&quot;(LTPD, beta)&quot;</span>)</span></code></pre></div>
+<p><img src="SPC.Notes_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 
 </div>
 </div>

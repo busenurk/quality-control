@@ -213,15 +213,66 @@ Kalite mühendisi, OC eğrisi üzerinde belli noktalara önem vermektedir. Tedar
 - $\beta$= %10 ve LTPD= %5 olması, %5 kusurlu içeren 100 partiden 90'ının red 10'unun kabul edileceği anlamına gelmektedir.
 - Örnek büyüklüğü arttıkça üretici riski  ($\alpha$) artar, tüketici riski (̆$\beta$) azalır.
 
+<br>
 
+**Örnek1:** $\begin{bmatrix} N=500\\n=20\\c=2  \end{bmatrix}$ kabul planı için 
 
+  **a)** Kabul planını yorumlayınız.
+  
+  **b)** 0.02, 0.08 kusurlu oranları için kabul olasılıklarını bulunuz.
 
+<br>
 
+  **a)** Parti hacmi 500 birim olup bu partiden 20 birimlik örnek rasgele olarak alınacaktır. Bu örnekte yer alan birimler incelenerek kusurlu sayısı belirlenecektir. Eğer incelenen 20 birimlik örnekte en fazla 2 birim kusurlu olarak tespit edilirse bu 500 birimlik parti kabul edilecek aksi durumda parti reddedilecektir.
+  
+  **b)** 
+  
+```{r}
 
+kabul<-function(n,c,p){
+out<-c()
+for(d in 0:c){
+  out[d+1]=(factorial(n)/(factorial(d)*factorial(n-d)))*(p^d)*((1-p)^(n-d))
+}
+fin=sum(out)
+return(fin)}
+```
 
+<br>
 
+```{r}
+k1<-kabul(20,2,0.02)  
+k2<-kabul(89,2,0.08)
 
+cat("0.02 kusurlu oranı için kabul olasılığı", k1,"\n")
+cat("0.08 kusurlu oranı için kabul olasılığı", k2 )
+```
 
+<br>
+
+**Örnek2:** Kabul edilebilir hata düzeyi (AQL), 0.10, parti kalite düzeyi toleransı (LTPD), 0.30 olarak verilen proseste üretici riski ($\alpha$), 0.0702 iken, tüketici riski ($\beta$), 0.3828'dir. Örnek büyüklüğü (n) ve kabul sayısı (c)'yi bulunuz. 
+
+**Not:** PRP(AQL, $1-\alpha$), CRP(LTPD, $\beta$)
+
+```{r message=FALSE, warning=FALSE}
+library(AcceptanceSampling)
+
+find.plan(PRP=c(0.1,(1-0.0702)),   # producer risk point
+          CRP=c(0.3,0.3828),       # consumer risk point
+          type="binom")
+```
+<br>
+
+```{r}
+u<-OC2c(n=10,c=2,type="binomial")
+plot(u, type="l")
+grid(5,lty="solid")
+abline(v=0.3,col="red")
+abline(h=0.382,col="blue")
+text(x = 0.3, 
+     y = 0.382,
+     labels = "(LTPD, beta)")
+```
 
 
 
