@@ -242,7 +242,7 @@ return(fin)}
 
 ```{r}
 k1<-kabul(20,2,0.02)  
-k2<-kabul(89,2,0.08)
+k2<-kabul(20,2,0.08)
 
 cat("0.02 kusurlu oranı için kabul olasılığı", k1,"\n")
 cat("0.08 kusurlu oranı için kabul olasılığı", k2 )
